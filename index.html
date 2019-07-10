@@ -2,61 +2,124 @@
 <html>
 <head>
 	<title>HTML Coding Practice</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="styles/header.css">
-	<link rel="stylesheet" type="text/css" href="styles/main.css">
-	<link rel="stylesheet" type="text/css" href="styles/debug.css">
+	<meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="styles/default.css"/>
+	<link rel="stylesheet" type="text/css" href="styles/main.css"/>
+	<link rel="stylesheet" type="text/css" href="styles/debug.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/daterangepicker.css">
 </head>
 <body>
-	<header>
-		<div class="header">
-			<div class="header_logo">
-				<img src="images/icons/logo_icon.svg" class="header_icon">
-				<img src="images/icons/logo_brand.svg" class="header_brand">
+	<header class="bar content-bar">
+		<div class="wrap-align wrap">
+			<div class="logo">
+				<img src="images/icons/logo_icon.svg" class="icon"/>
+				<img src="images/icons/logo_brand.svg" class="brand"/>
 			</div>
 
-			<nav class="header_content">
-				<div class="header_links">О нас</div>
-				<div class="header_links" id="services">Услуги</div>
-				<div class="header_expand_more"></div>
-				<div class="header_links">Вакансии</div>
-				<div class="header_links">Новости</div>
-				<div class="header_links" id="deals">Соглашения</div>
-				<div class="header_expand_more"></div>
-				<div class="header_signin_button">
-					<div class="header_signin_border"></div>
-					<div class="header_signin_title">Войти</div>
+			<nav class="header-content">
+				<div class="header-links">О нас</div>
+				<div class="header-links" id="services">Услуги</div>
+				<div class="header-expand-more"></div>
+				<div class="header-links">Вакансии</div>
+				<div class="header-links">Новости</div>
+				<div class="header-links" id="deals">Соглашения</div>
+				<div class="header-expand-more"></div>
+				<div class="header-signin-button">
+					<div class="header-signin-border"></div>
+					<div class="header-signin-title">Войти</div>
 				</div>
-				<div class="header_signup_button">Зарегистрироваться</div>
+				<div class="header-signup-button">Зарегистрироваться</div>
 			</nav>
 		</div>
 	</header>
 
 	<div class="main">
-		<div class="main_block">
-			<div class="main_title">
-				Найдём номера под
-				<br>
-				<span>ваши пожелания</span>
-			</div>
-			<form method="GET" action="fake-script/change-me" class="main_search">
-				<div>
-					<label for="comein" class="search_label">Прибытие</label>
-					<input type="text" name="comin" class="search_input search_comein">
-				</div>
-				<div>
-					<label for="comeout" class="search_label">Выезд</label>
-					<input type="text" name="comout" class="search_input search_comeout">
-				</div>
-				<div>
-					<label for="guests" class="search_label">Гости</label>
-					<input type="text" name="guests" class="search_long_input search_guests">
-				</div>
-			</form>
-		</div>
+        <div class="wrap">
+    		<div class="main-block">
+    			<div class="main-title">
+    				<span class="main-line" data-index="0">Найдём номера под</span>
+    				<br/>
+    				<span class="main-line" data-index="1">ваши пожелания</span>
+    			</div>
+    			<form method="GET" action="fake-script/change-me" class="main-search">
+    				<div class="search-field search-parameters" data-index="0">
+    					<label for="comein" class="search-label">Прибытие</label>
+    					<input readonly="readonly" type="text" name="comin" class="search-param-input search-comein" data-size="short" value="ДД.ММ.ГГГГ"/>
+    				</div>
+    				<div class="search-field search-parameters" data-index="1">
+    					<label for="comeout" class="search-label">Выезд</label>
+    					<input readonly="readonly" type="text" name="comout" class="search-param-input search-comeout" data-size="short" value="ДД.ММ.ГГГГ"/>
+    				</div>
+    				<div class="search-field search-parameters" data-index="2">
+    					<label for="guests" class="search-label">Гости</label>
+    					<input readonly="readonly" type="text" name="guests" class="search-param-input search-guests" data-size="long" value="Сколько гостей"/>
+    				</div>
+    				<div class="search-field" data-index="3">
+    					<input type="submit" name="find-room" value="Подобрать номер" class="search-submit-input" />
+    				</div>
+    			</form>
+    		</div>
+        </div>
 	</div>
 
-	
-	<!-- <img src="images/Sketches/LandingPage4x3.jpg" class="sketch"> -->
+	<footer>
+		<nav class="footer-nav content-bar">
+            <div class="footer-nav-wrap wrap">
+    			<div class="footer-brand">
+    				<div class="logo">
+    					<img src="images/icons/logo_icon.svg" class="icon"/>
+    					<img src="images/icons/logo_brand.svg" class="brand"/>
+    				</div>
+    				<div class="footer-slogan">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</div>
+    			</div>
+    			<div class="footer-info">
+    				<div class="footer-column-name">Навигация</div>
+    				<div>О нас</div>
+    				<div>Новости</div>
+    				<div>Служба поддержки</div>
+    				<div>Услуги</div>
+    			</div>
+    			<div class="footer-info">
+    				<div class="footer-column-name">О нас</div>
+    				<div>О сервисе</div>
+    				<div>Наша команда</div>
+    				<div>Вакансии</div>
+    				<div>Инвесторы</div>
+    			</div>
+    			<div class="footer-info">
+    				<div class="footer-column-name">Служба поддержки</div>
+    				<div>Соглашения</div>
+    				<div>Сообщества</div>
+    				<div>Связь с нами</div>
+    			</div>
+    			<div class="footer-info">
+    				<div class="footer-column-name">Подписка</div>
+    				<div class="footer-mail-line">Получайте специальные<br/>предложения и новости сервиса</div>
+    				<form method="GET" action="fake-script/change-me" class="footer-email">
+    					<input type="text" name="email" class="email-input" placeholder="Email">
+    					<input type="submit" name="email-submit" class="email-submit" value="">
+    				</form>
+    			</div>
+            </div>
+		</nav>
+		<div class="bar content-bar">
+            <div class="wrap-align wrap">
+    			<div class="footer-copyright-text">Copyright © 2018 Toxin отель. Все права зачищены.</div>
+    			<div>
+    				<img src="images/icons/twitter_icon.svg" class="footer-social"/>
+    				<img src="images/icons/facebook_icon.svg" class="footer-social"/>
+    				<img src="images/icons/instagram_icon.svg" class="footer-social"/>
+    			</div>
+            </div>
+		</div>
+	</footer>
+
+	<script type="text/javascript" src="scripts/jQuery.js"></script>
+    <script type="text/javascript" src="scripts/moment.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.daterangepicker.min.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+
+	<!-- <img src="images/Sketches/LandingPage4x3.jpg" class="sketch"/> -->
 </body>
 </html>
