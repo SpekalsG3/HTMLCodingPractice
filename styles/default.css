@@ -184,10 +184,6 @@ footer {
     border: 1px solid rgba(31, 32, 65, 0.25);
 }
 
-::placeholder {
-    color: rgba(31, 32, 65, .25);
-}
-
 .email-submit {
     position: absolute;
     top: 0;

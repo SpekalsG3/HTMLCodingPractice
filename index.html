@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="styles/default.css"/>
 	<link rel="stylesheet" type="text/css" href="styles/main.css"/>
-	<link rel="stylesheet" type="text/css" href="styles/debug.css"/>
-    <link rel="stylesheet" type="text/css" href="styles/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="lib/styles/daterangepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/styles/dropdown.css">
+    <link rel="stylesheet" type="text/css" href="styles/ui-kit.css">
+    <link rel="stylesheet" type="text/css" href="styles/debug.css"/>
 </head>
 <body>
 	<header class="bar content-bar">
@@ -36,27 +38,30 @@
 
 	<div class="main">
         <div class="wrap">
-    		<div class="main-block">
-    			<div class="main-title">
+    		<div class="main-block kit-form">
+    			<div class="kit-form-title">
     				<span class="main-line" data-index="0">Найдём номера под</span>
     				<br/>
     				<span class="main-line" data-index="1">ваши пожелания</span>
     			</div>
     			<form method="GET" action="fake-script/change-me" class="main-search">
-    				<div class="search-field search-parameters" data-index="0">
-    					<label for="comein" class="search-label">Прибытие</label>
-    					<input readonly="readonly" type="text" name="comin" class="search-param-input search-comein" data-size="short" value="ДД.ММ.ГГГГ"/>
+    				<div class="kit-form-field" data-index="0">
+    					<div class="kit-form-label">Прибытие</div>
+                        <div class="expand arrow-after"></div>
+    					<input readonly="readonly" type="text" name="comin" class="kit-form-input search-comein" data-size="short" value="ДД.ММ.ГГГГ"/>
     				</div>
-    				<div class="search-field search-parameters" data-index="1">
-    					<label for="comeout" class="search-label">Выезд</label>
-    					<input readonly="readonly" type="text" name="comout" class="search-param-input search-comeout" data-size="short" value="ДД.ММ.ГГГГ"/>
+    				<div class="kit-form-field" data-index="1" data-space="left">
+    					<div class="kit-form-label">Выезд</div>
+                        <div class="expand arrow-after"></div>
+    					<input readonly="readonly" type="text" name="comout" class="kit-form-input search-comeout" data-size="short" value="ДД.ММ.ГГГГ"/>
     				</div>
-    				<div class="search-field search-parameters" data-index="2">
-    					<label for="guests" class="search-label">Гости</label>
-    					<input readonly="readonly" type="text" name="guests" class="search-param-input search-guests" data-size="long" value="Сколько гостей"/>
+    				<div class="kit-form-field" data-index="2" data-space="up">
+                        <div class="kit-form-label">Гости</div>
+                        
     				</div>
-    				<div class="search-field" data-index="3">
-    					<input type="submit" name="find-room" value="Подобрать номер" class="search-submit-input" />
+    				<div class="kit-form-field">
+                        <div class="forward arrow-after"></div>
+    					<input type="submit" name="find-room" value="Подобрать номер" class="search-submit-input kit-form-submit" />
     				</div>
     			</form>
     		</div>
@@ -115,10 +120,14 @@
 		</div>
 	</footer>
 
-	<script type="text/javascript" src="scripts/jQuery.js"></script>
-    <script type="text/javascript" src="scripts/moment.min.js"></script>
-    <script type="text/javascript" src="scripts/jquery.daterangepicker.min.js"></script>
+	<script type="text/javascript" src="lib/scripts/jQuery.js"></script>
+    <script type="text/javascript" src="lib/scripts/moment.min.js"></script>
+    <script type="text/javascript" src="lib/scripts/jquery.daterangepicker.min.js"></script>
+
+    <script type="text/javascript" src="lib/scripts/jquery.dropdown.js"></script>
+
     <script type="text/javascript" src="scripts/main.js"></script>
+    <script type="text/javascript" src="scripts/ui-kit.js"></script>
 
 	<!-- <img src="images/Sketches/LandingPage4x3.jpg" class="sketch"/> -->
 </body>
