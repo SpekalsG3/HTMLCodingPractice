@@ -9,10 +9,10 @@
     <link rel="stylesheet" type="text/css" href="lib/styles/daterangepicker.min.css">
     <link rel="stylesheet" type="text/css" href="lib/styles/dropdown.css">
     <link rel="stylesheet" type="text/css" href="styles/ui-kit.css">
-    <link rel="stylesheet" type="text/css" href="styles/debug.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/pixelperfect.css">
 </head>
 <body>
-	<header class="bar content-bar">
+	<header class="bar content-bar wrap-container">
 		<div class="wrap-align wrap">
 			<div class="logo">
 				<img src="images/icons/logo_icon.svg" class="icon"/>
@@ -36,7 +36,7 @@
 		</div>
 	</header>
 
-	<div class="main">
+	<div class="main wrap-container">
         <div class="wrap">
     		<div class="main-block kit-form">
     			<div class="kit-form-title">
@@ -44,23 +44,22 @@
     				<br/>
     				<span class="main-line" data-index="1">ваши пожелания</span>
     			</div>
-    			<form method="GET" action="fake-script/change-me" class="main-search">
+    			<form method="GET" action="filter/" class="main-search">
     				<div class="kit-form-field" data-index="0">
     					<div class="kit-form-label">Прибытие</div>
-                        <div class="expand arrow-after"></div>
-    					<input readonly="readonly" type="text" name="comin" class="kit-form-input search-comein" data-size="short" value="ДД.ММ.ГГГГ"/>
+                        <div class="expand kit-arrow"></div>
+    					<input readonly="readonly" type="text" name="comein" class="kit-form-input search-comein" data-size="short" value="ДД.ММ.ГГГГ"/>
     				</div>
     				<div class="kit-form-field" data-index="1" data-space="left">
     					<div class="kit-form-label">Выезд</div>
-                        <div class="expand arrow-after"></div>
-    					<input readonly="readonly" type="text" name="comout" class="kit-form-input search-comeout" data-size="short" value="ДД.ММ.ГГГГ"/>
+                        <div class="expand kit-arrow"></div>
+    					<input readonly="readonly" type="text" name="comeout" class="kit-form-input search-comeout" data-size="short" value="ДД.ММ.ГГГГ"/>
     				</div>
     				<div class="kit-form-field" data-index="2" data-space="up">
                         <div class="kit-form-label">Гости</div>
-                        
     				</div>
     				<div class="kit-form-field">
-                        <div class="forward arrow-after"></div>
+                        <div class="forward kit-arrow"></div>
     					<input type="submit" name="find-room" value="Подобрать номер" class="search-submit-input kit-form-submit" />
     				</div>
     			</form>
@@ -69,7 +68,7 @@
 	</div>
 
 	<footer>
-		<nav class="footer-nav content-bar">
+		<nav class="footer-nav content-bar wrap-container">
             <div class="footer-nav-wrap wrap">
     			<div class="footer-brand">
     				<div class="logo">
@@ -108,7 +107,7 @@
     			</div>
             </div>
 		</nav>
-		<div class="bar content-bar">
+		<div class="bar content-bar wrap-container">
             <div class="wrap-align wrap">
     			<div class="footer-copyright-text">Copyright © 2018 Toxin отель. Все права зачищены.</div>
     			<div>
@@ -120,15 +119,18 @@
 		</div>
 	</footer>
 
+
+    <img src="images/Sketches/Landing4x3.jpg" class="pixelperfect">
+
+
 	<script type="text/javascript" src="lib/scripts/jQuery.js"></script>
     <script type="text/javascript" src="lib/scripts/moment.min.js"></script>
+    
     <script type="text/javascript" src="lib/scripts/jquery.daterangepicker.min.js"></script>
-
     <script type="text/javascript" src="lib/scripts/jquery.dropdown.js"></script>
 
+    <script type="text/javascript" src="scripts/landing.js"></script>
     <script type="text/javascript" src="scripts/main.js"></script>
     <script type="text/javascript" src="scripts/ui-kit.js"></script>
-
-	<!-- <img src="images/Sketches/LandingPage4x3.jpg" class="sketch"/> -->
 </body>
 </html>

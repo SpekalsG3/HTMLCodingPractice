@@ -1,7 +1,8 @@
 $(".kit-form-field[data-index='0']").dateRangePicker({
 	format: "DD.MM.YYYY",
-	separator: " to ",
+	separator: " по ",
 	singleMonth: true,
+	language: "ru",
 	getValue: function() {
 		if ($(".search-comein").val() && $(".search-comeout").val() )
 			return $(".search-comein").val() + " to " + $(".search-comeout").val();
@@ -29,7 +30,7 @@ $(".kit-form-field[data-index='2']").dropdown({
 	valuePattern: "T",
 	specClass: "guests",
 	placeholder: "Сколько гостей",
-	placeholderSpelling: function(value) {
+	TplaceholderSpelling: function(value) {
 		if (value == 1)
 			return "гость";
 		else if (value > 1 && value < 5)

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML Coding Practice</title>
+	<meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../styles/default.css"/>
+	<link rel="stylesheet" type="text/css" href="../styles/filter.css"/>
+    <link rel="stylesheet" type="text/css" href="../lib/styles/daterangepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="../lib/styles/dropdown.css">
+    <link rel="stylesheet" type="text/css" href="../lib/styles/rangeslider.min.css">
+    <link rel="stylesheet" type="text/css" href="../styles/ui-kit.css">
+    <link rel="stylesheet" type="text/css" href="../styles/pixelperfect.css">
+</head>
+<body>
+	<header class="bar content-bar wrap-container">
+		<div class="wrap-align wrap">
+			<div class="logo">
+				<img src="../images/icons/logo_icon.svg" class="icon"/>
+				<img src="../images/icons/logo_brand.svg" class="brand"/>
+			</div>
+
+			<nav class="header-content">
+				<div class="header-links">О нас</div>
+				<div class="header-links" id="services">Услуги</div>
+				<div class="header-expand-more"></div>
+				<div class="header-links">Вакансии</div>
+				<div class="header-links">Новости</div>
+				<div class="header-links" id="deals">Соглашения</div>
+				<div class="header-expand-more"></div>
+				<div class="header-signin-button">
+					<div class="header-signin-border"></div>
+					<div class="header-signin-title">Войти</div>
+				</div>
+				<div class="header-signup-button">Зарегистрироваться</div>
+			</nav>
+		</div>
+	</header>
+
+
+	<div class="content wrap-container">
+		<div class="wrap">
+			<div class="content-settings">
+				<div class="kit-form-field settings-date" data-index="0">
+					<div class="kit-form-label">Даты пребывания в отеле</div>
+                    <div class="expand kit-arrow"></div>
+					<input readonly="readonly" type="text" name="comeinout" class="kit-form-input search-comeinout" data-size="medium"/>
+				</div>
+				<div class="kit-form-field" data-index="1" data-space="up">
+                    <div class="kit-form-label">Гости</div>
+				</div>
+				<div class="kit-form-field" data-space="long-up">
+                    <div class="kit-form-label">Диапазон цены</div>
+                    <div class="settings-price">
+                    	5 000
+                    	<span class="ruble">Р</span>
+                    	 - 10 000
+                    	<span class="ruble">Р</span>
+                    </div>
+                    <input type="text" name="price-range" class="settings-price-range"/>
+				</div>
+			</div>
+			<div class="content-items">
+				
+			</div>
+		</div>
+	</div>
+
+
+	<footer>
+		<nav class="footer-nav content-bar wrap-container">
+            <div class="footer-nav-wrap wrap">
+    			<div class="footer-brand">
+    				<div class="logo">
+    					<img src="../images/icons/logo_icon.svg" class="icon"/>
+    					<img src="../images/icons/logo_brand.svg" class="brand"/>
+    				</div>
+    				<div class="footer-slogan">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</div>
+    			</div>
+    			<div class="footer-info">
+    				<div class="footer-column-name">Навигация</div>
+    				<div>О нас</div>
+    				<div>Новости</div>
+    				<div>Служба поддержки</div>
+    				<div>Услуги</div>
+    			</div>
+    			<div class="footer-info">
+    				<div class="footer-column-name">О нас</div>
+    				<div>О сервисе</div>
+    				<div>Наша команда</div>
+    				<div>Вакансии</div>
+    				<div>Инвесторы</div>
+    			</div>
+    			<div class="footer-info">
+    				<div class="footer-column-name">Служба поддержки</div>
+    				<div>Соглашения</div>
+    				<div>Сообщества</div>
+    				<div>Связь с нами</div>
+    			</div>
+    			<div class="footer-info">
+    				<div class="footer-column-name">Подписка</div>
+    				<div class="footer-mail-line">Получайте специальные<br/>предложения и новости сервиса</div>
+    				<form method="GET" action="fake-script/change-me" class="footer-email">
+    					<input type="text" name="email" class="email-input" placeholder="Email">
+    					<input type="submit" name="email-submit" class="email-submit" value="">
+    				</form>
+    			</div>
+            </div>
+		</nav>
+		<div class="bar content-bar">
+            <div class="wrap-align wrap">
+    			<div class="footer-copyright-text">Copyright © 2018 Toxin отель. Все права зачищены.</div>
+    			<div>
+    				<img src="../images/icons/twitter_icon.svg" class="footer-social"/>
+    				<img src="../images/icons/facebook_icon.svg" class="footer-social"/>
+    				<img src="../images/icons/instagram_icon.svg" class="footer-social"/>
+    			</div>
+            </div>
+		</div>
+	</footer>
+
+	<img src="../images/Sketches/Filter4x3.jpg" class="pixelperfect">
+
+	<script type="text/javascript" src="../lib/scripts/jQuery.js"></script>
+    <script type="text/javascript" src="../lib/scripts/moment.min.js"></script>
+    
+    <script type="text/javascript" src="../lib/scripts/jquery.daterangepicker.min.js"></script>
+    <script type="text/javascript" src="../lib/scripts/jquery.dropdown.js"></script>
+    <script type="text/javascript" src="../lib/scripts/jquery.rangeslider.js"></script>
+
+    <script type="text/javascript" src="../scripts/filter.js"></script>
+    <script type="text/javascript" src="../scripts/ui-kit.js"></script>
+</body>
+</html>

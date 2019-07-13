@@ -27,12 +27,16 @@
 }
 
 .kit-form-field[data-space="up"] {
-    margin-top: 20px;
+    margin-top: 22px;
+}
+
+.kit-form-field[data-space="long-up"] {
+    margin-top: 31px;
 }
 
 .kit-form-label {
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
     font-size: 12px;
     font-weight: bold;
     text-transform: uppercase;
@@ -42,23 +46,27 @@
 
 .kit-form-input {
     position: relative;
-    padding-left: 15px;
-    padding-top: 0;
-    padding-bottom: 0;
-    height: 44px;
+    padding: 0 44px 0 15px;
+    height: 42px;
     background: #fff;
     border: 1px solid rgba(31, 32, 65, .25);
     border-radius: 4px;
     font: 14px Montserrat;
     color: rgba(31, 32, 65, .75);
+    cursor: pointer;
+    text-overflow: ellipsis;
 }
 
 .kit-form-input[data-size="short"] {
-    width: 134px;
+    width: 90px;
+}
+
+.kit-form-input[data-size="medium"] {
+    width: 206px;
 }
 
 .kit-form-input[data-size="long"] {
-    width: 305px;
+    width: 260px;
 }
 
 .kit-form-submit {
@@ -72,22 +80,24 @@
     color: #fff;
     text-transform: uppercase;
     letter-spacing: .2px;
+    cursor: pointer;
 }
 
-.arrow-after {
+.kit-arrow {
     content: "";
     position: absolute;
     z-index: 2;
     width: 44px;
     height: 44px;
+    cursor: pointer;
 }
 
-.arrow-after.expand {
+.kit-arrow.expand {
     right: 0px;
     background: url(../images/icons/expand_more.svg) center no-repeat;
 }
 
-.arrow-after.forward {
+.kit-arrow.forward {
     top: 30px;
     right: -1px;
     background: url(../images/icons/arrow_forward.svg) center no-repeat;
