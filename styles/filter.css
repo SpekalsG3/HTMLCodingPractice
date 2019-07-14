@@ -1,7 +1,24 @@
 .content {
-	padding: 30px 0;
+	padding: 31px 0;
 }
 
 .content-items {
 	margin-left: 60px;
 }
+
+.settings-field-top {
+	display: flex;
+	justify-content: space-between;
+}
+
+.settings-price {
+	display: inline-block;
+	font: 12px Montserrat;
+	color: rgba(31, 32, 65, .5);
+}
+
+.settings-note {
+	font: 12px Montserrat;
+	color: rgba(31, 32, 65, .5);
+}
+

@@ -68,12 +68,22 @@ $(".kit-form-field[data-index='1']").dropdown({
 	applyBtn: true
 });
 
-$(".settings-price-range").ionRangeSlider({
+var $priceRange = $(".settings-price-range");
+
+$priceRange.ionRangeSlider({
 		skin: "round",
 		type: "double",
-		min: 5000,
-		max: 10000,
+		from: 5000,
+		to: 10000,
+		min: 0,
+		max: 15800,
         grid: false,
         hide_min_max: true,
         hide_from_to: true
+});
+
+$priceRange.on("change", function() {
+	var $inp = $(this);
+	$(".settings-price-from").text($inp.data("from"));
+	$(".settings-price-to").text($inp.data("to"));
 });

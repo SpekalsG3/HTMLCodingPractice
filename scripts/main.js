@@ -4,8 +4,10 @@ $(".kit-form-field[data-index='0']").dateRangePicker({
 	singleMonth: true,
 	language: "ru",
 	getValue: function() {
-		if ($(".search-comein").val() && $(".search-comeout").val() )
-			return $(".search-comein").val() + " to " + $(".search-comeout").val();
+		if ($(".search-comein").val() && $(".search-comeout").val())
+			return $(".search-comein").val() + " по " + $(".search-comeout").val();
+		else if ($(".search-comeout").val())
+			return " по " + $(".search-comeout").val();
 		else
 			return '';
 	},
@@ -27,10 +29,9 @@ $(".kit-form-field[data-index='1']").dateRangePicker({
 });
 
 $(".kit-form-field[data-index='2']").dropdown({
-	valuePattern: "T",
 	specClass: "guests",
 	placeholder: "Сколько гостей",
-	TplaceholderSpelling: function(value) {
+	TPlaceholderSpelling: function(value) {
 		if (value == 1)
 			return "гость";
 		else if (value > 1 && value < 5)

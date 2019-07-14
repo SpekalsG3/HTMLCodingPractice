@@ -162,9 +162,7 @@ footer {
 }
 
 .footer-column-name {
-    font-family: MontserratBold;
-    font-weight: bold;
-    font-size: 12px;
+    font: bold 12px MontserratBold;
     text-transform: uppercase;
     color: #1F2041;
 }
