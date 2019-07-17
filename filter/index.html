@@ -61,41 +61,193 @@
                     <input type="text" name="price-range" class="settings-price-range"/>
                     <div class="settings-note">Стоимость за сутки пребывания в номере</div>
 				</div>
-				<div class="kit-form-field" data-space="long-up">
+				<div class="kit-form-field checkbox" data-space="long-up">
 					<div class="kit-form-label">Checkbox buttons</div>
-					<div class="checkbox">
-						<div class="checkbox-option">
-							<label class="checkbox-option">
+					<div class="checkbox-options">
+						<label class="checkbox-option">
+							<input type="checkbox" name="smoke" value="0"/>
+							<span class="input-box">
+								<div class="checkmark"></div>
+							</span>
+							<div class="checkbox-text">
 								<div class="checkbox-title">Можно курить</div>
-								<input type="checkbox" name="smoke" value="0"/>
-								<span class="input-box">
-									<div class="checkmark"></div>
-								</span>
-							</label>
-						</div>
-						<div class="checkbox-option">
-							<label class="checkbox-option">
+							</div>
+						</label>
+						<label class="checkbox-option">
+							<input type="checkbox" name="pets" value="1"/>
+							<span class="input-box">
+								<div class="checkmark"></div>
+							</span>
+							<div class="checkbox-text">
 								<div class="checkbox-title">Можно с питомцами</div>
-								<input type="checkbox" name="pets" value="1"/>
-								<span class="input-box">
-									<div class="checkmark"></div>
-								</span>
-							</label>
-						</div>
-						<div class="checkbox-option">
-							<label class="checkbox-option">
+							</div>
+						</label>
+						<label class="checkbox-option">
+							<input type="checkbox" name="guests" value="2"/>
+							<span class="input-box">
+								<div class="checkmark"></div>
+							</span>
+							<div class="checkbox-text">
 								<div class="checkbox-title">Можно пригласить гостей<br>(до 10 человек)</div>
-								<input type="checkbox" name="guests" value="2"/>
-								<span class="input-box">
-									<div class="checkmark"></div>
-								</span>
-							</label>
-						</div>
+							</div>
+						</label>
+					</div>
+				</div>
+				<div class="kit-form-field checkbox" data-space="long-up">
+					<div class="kit-form-label">Доступность</div>
+					<div class="checkbox-options">
+						<label class="checkbox-option">
+							<input type="checkbox" name="wide" value="3"/>
+							<span class="input-box">
+								<div class="checkmark"></div>
+							</span>
+							<div class="checkbox-text">
+								<div class="checkbox-title bold">Широкий коридор</div>
+								<div class="checkbox-note">Ширина коридоров в номере<br>не менее 91 см.</div>
+							</div>
+						</label>
+						<label class="checkbox-option">
+							<input type="checkbox" name="helper" value="4"/>
+							<span class="input-box">
+								<div class="checkmark"></div>
+							</span>
+							<div class="checkbox-text">
+								<div class="checkbox-title bold">Помощник для инвалидов</div>
+								<div class="checkbox-note">На 1 этаже вас встретит специалист<br>и проводит до номера.</div>
+							</div>
+						</label>
+					</div>
+				</div>
+				<div class="kit-form-field" data-index="5" data-space="long-up">
+					<div class="kit-form-label">Удобства номера</div>
+				</div>
+				<div class="kit-form-field checkbox convertible default" data-space="long-up">
+					<div class="kit-form-label">Дополнительные удобства</div>
+					<div class="kit-arrow expand checkbox-arrow"></div>
+					<div class="checkbox-options">
+						<label class="checkbox-option">
+							<input type="checkbox" name="breakfast" value="5"/>
+							<span class="input-box">
+								<div class="checkmark"></div>
+							</span>
+							<div class="checkbox-text">
+								<div class="checkbox-title">Завтрак</div>
+							</div>
+						</label>
+						<label class="checkbox-option">
+							<input type="checkbox" name="desk" value="6"/>
+							<span class="input-box">
+								<div class="checkmark"></div>
+							</span>
+							<div class="checkbox-text">
+								<div class="checkbox-title">Письменный стол</div>
+							</div>
+						</label>
+						<label class="checkbox-option">
+							<input type="checkbox" name="feeding" value="7"/>
+							<span class="input-box">
+								<div class="checkmark"></div>
+							</span>
+							<div class="checkbox-text">
+								<div class="checkbox-title">Стул для кормления</div>
+							</div>
+						</label>
+						<label class="checkbox-option">
+							<input type="checkbox" name="cradle" value="8"/>
+							<span class="input-box">
+								<div class="checkmark"></div>
+							</span>
+							<div class="checkbox-text">
+								<div class="checkbox-title">Кроватка</div>
+							</div>
+						</label>
+						<label class="checkbox-option">
+							<input type="checkbox" name="tv" value="9"/>
+							<span class="input-box">
+								<div class="checkmark"></div>
+							</span>
+							<div class="checkbox-text">
+								<div class="checkbox-title">Телевизор</div>
+							</div>
+						</label>
+						<label class="checkbox-option">
+							<input type="checkbox" name="shampoo" value="10"/>
+							<span class="input-box">
+								<div class="checkmark"></div>
+							</span>
+							<div class="checkbox-text">
+								<div class="checkbox-title">Шампунь</div>
+							</div>
+						</label>
+						<label class="checkbox-option">
+							<input type="checkbox" name="tv" value="11"/>
+							<span class="input-box">
+								<div class="checkmark"></div>
+							</span>
+							<div class="checkbox-text">
+								<div class="checkbox-title">Телевизор</div>
+							</div>
+						</label>
+						<label class="checkbox-option">
+							<input type="checkbox" name="shampoo" value="12"/>
+							<span class="input-box">
+								<div class="checkmark"></div>
+							</span>
+							<div class="checkbox-text">
+								<div class="checkbox-title">Шампунь</div>
+							</div>
+						</label>
 					</div>
 				</div>
 			</div>
 			<div class="content-items">
-				
+				<div class="content-items-title">Номера, которые мы для вас подобрали</div>
+				<div class="content-room">
+					<div class="content-room-gallery">
+						<div class="content-room-prev">
+							<div class="kit-arrow prev"></div>
+						</div>
+						<div class="content-room-images">
+							<img src="../images/rooms/888-0.jpg">
+							<!-- <img src="../images/rooms/888-1.jpg">
+							<img src="../images/rooms/888-2.jpg">
+							<img src="../images/rooms/888-3.jpg"> -->
+						</div>
+						<div class="content-room-next">
+							<div class="kit-arrow next"></div>
+						</div>
+						<div class="content-room-indexes">
+							<div data-selected></div>
+							<div></div>
+							<div></div>
+							<div></div>
+						</div>
+					</div>
+					<div class="content-room-main">
+						<div class="content-room-title">
+							<span class="content-room-n">№</span>
+							<span class="content-room-number">888</span>
+							<span class="content-room-special">Люкс</span>
+						</div>
+						<div class="content-room-price">
+							<span>9 990Р</span>
+							в сутки
+						</div>
+					</div>
+					<div class="content-room-feedback">
+						<div class="content-room-stars">
+							<div data-full="true"></div>
+							<div data-full="true"></div>
+							<div data-full="true"></div>
+							<div data-full="true"></div>
+							<div data-full="true"></div>
+						</div>
+						<div class="content-room-amount">
+							<span>145</span>
+							Отзывов
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

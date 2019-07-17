@@ -38,8 +38,7 @@
     display: block;
     margin-bottom: 4px;
     margin-left: 1px;
-    font: 12px MontserratBold, sans-serif;
-    font-weight: bold;
+    font: bold 12px Montserrat, sans-serif;
     text-transform: uppercase;
     letter-spacing: .1px;
     color: #1F2041;
@@ -63,7 +62,7 @@
 }
 
 .kit-form-input[data-size="medium"] {
-    width: 206px;
+    width: 205px;
 }
 
 .kit-form-input[data-size="long"] {
@@ -85,11 +84,10 @@
 }
 
 .kit-arrow {
-    content: "";
     position: absolute;
     z-index: 2;
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
     cursor: pointer;
 }
 
@@ -104,48 +102,73 @@
     background: url(../images/icons/arrow_forward.svg) center no-repeat;
 }
 
+.kit-arrow.prev,
+.kit-arrow.next {
+    background: url(../images/icons/slider_arrow.svg) center no-repeat;
+    background-size: 14px;
+}
+
+.kit-arrow.prev {
+    transform: rotateZ(90deg);
+}
+
+.kit-arrow.next {
+    transform: rotateZ(-90deg);
+}
 
 
-.checkbox {
+
+.checkbox.default .checkbox-options {
+    display: none;
+}
+
+.checkbox.expanded .checkbox-options {
+    display: block;
+}
+
+.checkbox .kit-form-label {
+    cursor: pointer;
+}
+
+.checkbox-options {
     margin-top: 16px;
 }
 
+.checkbox-arrow {
+    height: 14px;
+    top: 0;
+}
+
 .checkbox-option {
-  display: block;
-  position: relative;
-  margin-bottom: 14px;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    display: block;
+    position: relative;
+    margin-bottom: 14px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .checkbox-option input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-.checkbox-title {
-    margin-left: 31px;
-    font: 14px Montserrat;
-    color: rgba(31, 32, 65, .5);
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
 }
 
 .input-box {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  left: 1px;
-  height: 18px;
-  width: 18px;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  border-radius: 4px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 1px;
+    height: 18px;
+    width: 18px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 4px;
 }
 
 .checkmark {
@@ -160,13 +183,32 @@
 .checkmark:after {
     content: "";
     position: absolute;
-    width: 5px;
-    height: 7px;
+    width: 83%;
+    height: 87%;
     top: -1px;
     left: -1px;
     background: #fff;
 }
 
 .checkbox-option input:checked ~ .input-box .checkmark {
-  display: block;
+    display: block;
+}
+
+.checkbox-text {
+    margin-left: 31px;
+}
+
+.checkbox-title {
+    font: 14px Montserrat;
+    color: rgba(31, 32, 65, .75);
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.checkbox-note {
+    margin-top: 5px;
+    font: 12px Montserrat;
+    color: rgba(31, 32, 65, 0.5);
 }

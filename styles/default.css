@@ -1,11 +1,27 @@
 @font-face {
     font-family: Montserrat;
+    font-weight: normal;
     src: url(../fonts/Montserrat-Regular.ttf);
 }
 @font-face {
-    font-family: MontserratBold;
+    font-family: Montserrat;
+    font-weight: bold;
     src: url(../fonts/Montserrat-Bold.ttf);
 }
+
+@font-face {
+    font-family: Quicksand;
+    font-weight: normal;
+    src: url(../fonts/Quicksand-Regular.ttf);
+}
+
+@font-face {
+    font-family: Quicksand;
+    font-weight: bold;
+    src: url(../fonts/Quicksand-Bold.ttf);
+}
+
+
 
 body {
     margin: 0;
@@ -88,7 +104,7 @@ input {
 .header-signup-button {
     position: relative;
     height: 34px;
-    padding: 0 20px;
+    padding: 0 19px;
     margin-left: 20px;
     border-radius: 22px;
     font-weight: bold;

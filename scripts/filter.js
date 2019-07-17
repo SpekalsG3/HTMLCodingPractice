@@ -68,6 +68,54 @@ $(".kit-form-field[data-index='1']").dropdown({
 	applyBtn: true
 });
 
+$(".kit-form-field[data-index='5']").dropdown({
+	valuePattern: "S",
+	placeholder: "Удобства номера",
+	SPlaceholderSpelling: function(index, value) {
+		switch (index) {
+			case 0:
+				if (value == 1)
+					return "спальня";
+				else if (value > 1 && value < 5)
+					return "спальни";
+				else
+					return "спален";
+				break;
+			case 1:
+				if (value == 1)
+					return "кровать";
+				else if (value > 1 && value < 5)
+					return "кровати";
+				else
+					return "кроватей";
+				break;
+			case 2:
+				if (value == 1)
+					return "ванная комната";
+				else
+					return "ванных комнат";
+				break;
+		}
+	},
+	dataSize: "medium",
+	options: [
+		{
+			title: "Спальни"
+		},
+		{
+			title: "Кровати"
+		},
+		{
+			title: "Ванные комнаты"
+		}
+	]
+});
+
+$(".checkbox.convertible").click(function() {
+	$(this).toggleClass("default");
+	$(this).toggleClass("expanded");
+});
+
 var $priceRange = $(".settings-price-range");
 
 $priceRange.ionRangeSlider({
