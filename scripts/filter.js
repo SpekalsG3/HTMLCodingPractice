@@ -135,3 +135,57 @@ $priceRange.on("change", function() {
 	$(".settings-price-from").text($inp.data("from"));
 	$(".settings-price-to").text($inp.data("to"));
 });
+
+var images = document.getElementsByClassName("content-room-images");
+var imagePoints = document.getElementsByClassName("content-room-points");
+var sliderIndexes = [];
+
+for (var i = 0; i < images.length; i++) {
+	var photos = images[i].children;
+	sliderIndexes[i] = 0;
+	for (var j = 0; j < photos.length; j++) {
+		photos[j].style.left = j * 100 + "%";
+	}
+}
+
+function SlidePrev(index) {
+	var thisImages = images[index].children;
+	for (var i = 0; i < thisImages.length; i++) {
+		thisImages[i].style.left = parseInt(thisImages[i].style.left) + 100 + "%";
+	}
+	imagePoints[index].children[sliderIndexes[index]].style.background = "none";
+	sliderIndexes[index]--;
+	imagePoints[index].children[sliderIndexes[index]].style.background = "#fff";
+}
+
+function SlideNext(index) {
+	var thisImages = images[index].children;
+	for (var i = 0; i < thisImages.length; i++) {
+		thisImages[i].style.left = parseInt(thisImages[i].style.left) - 100 + "%";
+	}
+	imagePoints[index].children[sliderIndexes[index]].style.background = "none";
+	sliderIndexes[index]++;
+	imagePoints[index].children[sliderIndexes[index]].style.background = "#fff";
+}
+
+$(".content-room-prev").click(function() {
+	var index = parseInt(this.parentNode.getAttribute("data-index"));
+	if (sliderIndexes[index] == 0) {
+		for (var i = 0; i < images[index].children.length-1; i++) {
+			SlideNext(index);
+		}
+	} else {
+		SlidePrev(index);
+	}
+});
+
+$(".content-room-next").click(function() {
+	var index = parseInt(this.parentNode.getAttribute("data-index"));
+	if (sliderIndexes[index] == images[index].children.length - 1) {
+		for (var i = 0; i < images[index].children.length-1; i++) {
+			SlidePrev(index);
+		}
+	} else {
+		SlideNext(index);
+	}
+});
