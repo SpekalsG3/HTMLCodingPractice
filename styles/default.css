@@ -41,6 +41,7 @@ input {
 
 .bar {
     height: 70px;
+    box-shadow: 0 10px 20px rgba(31, 32, 65, .05);
 }
 
 .wrap-container {
@@ -158,6 +159,7 @@ footer {
 }
 
 .footer-nav {
+    position: relative;
     padding: 103px 0;
     box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
 }
@@ -178,7 +180,7 @@ footer {
 }
 
 .footer-column-name {
-    font: bold 12px MontserratBold;
+    font: bold 12px Montserrat;
     text-transform: uppercase;
     color: #1F2041;
 }

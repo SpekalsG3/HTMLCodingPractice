@@ -97,8 +97,8 @@
 }
 
 .kit-arrow.forward {
-    top: 30px;
-    right: -1px;
+    top: 34px;
+    right: 0;
     background: url(../images/icons/arrow_forward.svg) center no-repeat;
 }
 
@@ -120,10 +120,6 @@
 
 .checkbox.default .checkbox-options {
     display: none;
-}
-
-.checkbox.expanded .checkbox-options {
-    display: block;
 }
 
 .checkbox .kit-form-label {

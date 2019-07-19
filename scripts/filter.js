@@ -113,7 +113,6 @@ $(".kit-form-field[data-index='5']").dropdown({
 
 $(".checkbox.convertible").click(function() {
 	$(this).toggleClass("default");
-	$(this).toggleClass("expanded");
 });
 
 var $priceRange = $(".settings-price-range");
@@ -148,7 +147,7 @@ for (var i = 0; i < images.length; i++) {
 	}
 }
 
-function SlidePrev(index) {
+function SlidePrevPhoto(index) {
 	var thisImages = images[index].children;
 	for (var i = 0; i < thisImages.length; i++) {
 		thisImages[i].style.left = parseInt(thisImages[i].style.left) + 100 + "%";
@@ -158,7 +157,7 @@ function SlidePrev(index) {
 	imagePoints[index].children[sliderIndexes[index]].style.background = "#fff";
 }
 
-function SlideNext(index) {
+function SlideNextPhoto(index) {
 	var thisImages = images[index].children;
 	for (var i = 0; i < thisImages.length; i++) {
 		thisImages[i].style.left = parseInt(thisImages[i].style.left) - 100 + "%";
@@ -172,10 +171,10 @@ $(".content-room-prev").click(function() {
 	var index = parseInt(this.parentNode.getAttribute("data-index"));
 	if (sliderIndexes[index] == 0) {
 		for (var i = 0; i < images[index].children.length-1; i++) {
-			SlideNext(index);
+			SlideNextPhoto(index);
 		}
 	} else {
-		SlidePrev(index);
+		SlidePrevPhoto(index);
 	}
 });
 
@@ -183,9 +182,64 @@ $(".content-room-next").click(function() {
 	var index = parseInt(this.parentNode.getAttribute("data-index"));
 	if (sliderIndexes[index] == images[index].children.length - 1) {
 		for (var i = 0; i < images[index].children.length-1; i++) {
-			SlidePrev(index);
+			SlidePrevPhoto(index);
 		}
 	} else {
-		SlideNext(index);
+		SlideNextPhoto(index);
 	}
 });
+
+
+var pageNow = 1;
+var lastPage = parseInt(document.getElementsByClassName("content-page-number")[document.getElementsByClassName("content-page-number").length-1].innerHTML);
+
+function GoPrevPage() {
+	pageNow--;
+	if (pageNow == lastPage - 2 || pageNow == lastPage - 1) {
+		$(".content-page-next").css("display", "block");
+		$(".content-page-number")[pageNow - lastPage + 5].removeAttribute("data-selected");
+		$(".content-page-number")[pageNow - lastPage + 4].setAttribute("data-selected", "");
+	} else if (pageNow > 2 && pageNow < lastPage - 1) {
+		$(".content-page-skip.next").css("display", "block");
+		var pageNumbers = $(".content-page-number");
+		for (var i = 1; i < pageNumbers.length - 1; i++) {
+			pageNumbers[i].innerHTML = pageNow - 2 + i;
+		}
+		if (pageNow == 3) {
+			$(".content-page-skip.prev").css("display", "none");
+		}
+	} else if (pageNow == 1 || pageNow == 2) {
+		$(".content-page-number")[pageNow].removeAttribute("data-selected");
+		$(".content-page-number")[pageNow-1].setAttribute("data-selected", "");
+		if (pageNow == 1) {
+			$(".content-page-prev").css("display", "none");
+		}
+	}
+}
+
+function GoNextPage() {
+	pageNow++;
+	if (pageNow == 2 || pageNow == 3) {
+		$(".content-page-prev").css("display", "block");
+		$(".content-page-number")[pageNow-2].removeAttribute("data-selected");
+		$(".content-page-number")[pageNow-1].setAttribute("data-selected", "");
+	} else if (pageNow > 3 && pageNow < lastPage - 1) {
+		$(".content-page-skip.prev").css("display", "block");
+		var pageNumbers = $(".content-page-number");
+		for (var i = 1; i < pageNumbers.length - 1; i++) {
+			pageNumbers[i].innerHTML = pageNow - 2 + i;
+		}
+		if (pageNow == lastPage - 2) {
+			$(".content-page-skip.next").css("display", "none");
+		}
+	} else if (pageNow == lastPage - 1 || pageNow == lastPage) {
+		$(".content-page-number")[pageNow - lastPage + 3].removeAttribute("data-selected");
+		$(".content-page-number")[pageNow - lastPage + 4].setAttribute("data-selected", "");
+		if (pageNow == lastPage) {
+			$(".content-page-next").css("display", "none");
+		}
+	}
+}
+
+$(".content-page-prev").click(GoPrevPage);
+$(".content-page-next").click(GoNextPage);
