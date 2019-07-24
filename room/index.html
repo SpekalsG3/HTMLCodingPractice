@@ -11,8 +11,7 @@
     <link rel="stylesheet" type="text/css" href="../lib/styles/daterangepicker.min.css">
     <link rel="stylesheet" type="text/css" href="../lib/styles/dropdown.css">
 
-    <link href="http://cdn-na.infragistics.com/igniteui/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet"></link>
-    <link href="http://cdn-na.infragistics.com/igniteui/latest/css/structure/infragistics.css" rel="stylesheet"></link>
+    <link href="../lib/styles/infragistics.theme.css" rel="stylesheet"></link>
 
     <link rel="stylesheet" type="text/css" href="../styles/ui-kit.css">
     <link rel="stylesheet" type="text/css" href="../styles/pixelperfect.css">
@@ -58,7 +57,7 @@
 			</div>
 		</div>
 		<div class="wrap">
-			<div class="room-info-info">
+			<div class="room-info">
 				<div class="room-tags">
 					<div class="room-info-label">Сведения о номере</div>
 					<div class="room-tag">
@@ -91,8 +90,20 @@
 				</div>
 				<div class="room-info-total">
 					<div class="room-info-label">Впечатления от номера</div>
-					<div class="room-total-graph"></div>
-					<div class="room-total-legend"></div>
+					<div class="room-total-statistic">
+						<div class="room-total-chart">
+							<div class="room-total-number">
+								<div>260</div>
+								<span>голосов</span>
+							</div>
+						</div>
+						<div class="room-total-legend">
+							<div data-index="0">Великолепно</div>
+							<div data-index="1">Хорошо</div>
+							<div data-index="2">Удовлетворительно</div>
+							<div data-index="3">Разочарован</div>
+						</div>
+					</div>
 				</div>
 				<div class="room-info-reviews">
 					<div class="room-info-label"></div>
@@ -193,11 +204,11 @@
     
     <script type="text/javascript" src="../lib/scripts/jquery.daterangepicker.min.js"></script>
     <script type="text/javascript" src="../lib/scripts/jquery.dropdown.js"></script>
-    <script type="text/javascript" src="../lib/scripts/jquery.donutchart.js"></script>
 
-    <script src="http://igniteui.com/js/modernizr.min.js"></script>
-    <script src="http://cdn-na.infragistics.com/igniteui/latest/js/infragistics.core.js"></script>
-    <script src="http://cdn-na.infragistics.com/igniteui/latest/js/infragistics.dv.js"></script>
+    <script src="../lib/scripts/modernizr.min.js"></script>
+	<script src="../lib/scripts/jquery-ui.min.js"></script>
+	<script src="../lib/scripts/infragistics.core.js"></script>
+	<script src="../lib/scripts/infragistics.dv.js"></script>
 
     <script type="text/javascript" src="../scripts/room.js"></script>
     <script type="text/javascript" src="../scripts/ui-kit.js"></script>
