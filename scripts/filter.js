@@ -115,6 +115,10 @@ $(".checkbox.convertible").click(function() {
 	$(this).toggleClass("default");
 });
 
+var URISearch = window.location.search.slice(1).split(/(&|=)/).filter(function(v, i) {
+	return !(i % 2);
+});
+
 var $priceRange = $(".settings-price-range");
 
 $priceRange.ionRangeSlider({
@@ -167,7 +171,14 @@ function SlideNextPhoto(index) {
 	imagePoints[index].children[sliderIndexes[index]].style.background = "#fff";
 }
 
-$(".content-room-prev").click(function() {
+$(".content-rooms a").click(function(e) {
+	e.preventDefault();
+	var targetClassName = e.target.className.slice(0, -5);
+	if (targetClassName == "kit-arrow" || targetClassName == "content-room")
+		e.preventDefault();
+});
+
+$(".content-room-prev").click(function(e) {
 	var index = parseInt(this.parentNode.getAttribute("data-index"));
 	if (sliderIndexes[index] == 0) {
 		for (var i = 0; i < images[index].children.length-1; i++) {

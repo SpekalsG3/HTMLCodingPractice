@@ -37,7 +37,9 @@
 .room-info {
 	display: flex;
 	flex-wrap: wrap;
-	max-width: 80%;
+	justify-content: space-between;
+	max-width: 61.5%;
+	margin-bottom: 72px;
 }
 
 
@@ -84,8 +86,9 @@
 
 
 
+
 .room-info-total {
-	margin-left: 81px;
+	margin-right: 40px;
 }
 
 .room-total-statistic {
@@ -170,8 +173,9 @@
 
 
 .room-info-reviews {
-	width: 76.7%;
+	width: 100%;
 	margin-top: 13px;
+	margin-bottom: 31px;
 }
 
 .room-review + .room-review {
@@ -216,7 +220,9 @@
 }
 
 .room-review-content {
-	margin-top: 9px;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 12px;
 }
 
 .room-review-likes {
@@ -253,8 +259,129 @@
 }
 
 .room-review-text {
-	display: inline-block;
+	width: calc(100% - 57px);
 	margin-left: 13px;
 	font: 14px Montserrat;
 	color: rgba(31, 32, 65, .75);
+    line-height: 23px;
+}
+
+
+
+.room-rules {
+	width: 240px;
+}
+
+.room-rules .room-info-label {
+	margin-left: 19px;
+}
+
+.room-rules-list {
+	font: 14px Montserrat;
+	color: rgba(31, 32, 65, .75);
+}
+
+.room-rules-list div {
+	width: 100%;
+	position: relative;
+	padding-left: 20px;
+	line-height: 24px;
+}
+
+.room-rules-list div + div {
+	margin-top: 10px;
+}
+
+.room-rules-list div:before {
+	content: "";
+	position: absolute;
+	top: 4px;
+	left: 0;
+	width: 10px;
+	height: 10px;
+	background: rgba(31, 32, 65, .25);
+	border-radius: 25px;
+}
+
+.room-repeal {
+	margin-right: 11px;
+	width: 340px;
+}
+
+.room-repeal-text {
+	width: 100%;
+	font: 14px Montserrat;
+	color: rgba(31, 32, 65, .75);
+    line-height: 23px;
+}
+
+
+
+
+
+.room-booking {
+	height: 440px;
+	margin-left: 68px;
+}
+
+.content-room-main {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 38px;
+	font-family: Montserrat;
+	padding-right: 29px;
+}
+
+.content-room-title {
+	display: flex;
+	align-items: flex-end;
+	height: 16px;
+	color: #1F2041;
+}
+
+.content-room-title span + span {
+	margin-left: 4px;
+}
+
+.content-room-n {
+	font-weight: bold;
+    font-size: 13px;
+}
+
+.content-room-number {
+	font-weight: bold;
+	font-size: 22px;
+}
+
+.content-room-special {
+	font-weight: bold;
+	font-size: 12px;
+	text-transform: uppercase;
+	color: #BC9CFF;
+}
+
+.content-room-price {
+	display: flex;
+	align-items: center;
+	font-size: 12px;
+	color: rgba(31, 32, 65, .5);
+}
+
+.content-room-price span {
+	margin-right: 4px;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.main-search {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	position: relative;
+	margin-top: 20px;
+}
+
+.search-submit-input {
+	margin-top: 34px;
 }

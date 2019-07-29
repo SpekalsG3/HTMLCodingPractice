@@ -14,3 +14,30 @@ $(".room-total-chart").igDoughnutChart({
         dataSource: data
     }]
 });
+
+$(".kit-form-field[data-index='2']").dropdown({
+    specClass: "guests",
+    placeholder: "Сколько гостей",
+    TPlaceholderSpelling: function(value) {
+        if (value == 1)
+            return "гость";
+        else if (value > 1 && value < 5)
+            return "гостя";
+        else
+            return "гостей";
+    },
+    dataSize: "long",
+    options: [
+        {
+            title: "Взрослые"
+        },
+        {
+            title: "Дети"
+        },
+        {
+            title: "Младенцы"
+        }
+    ],
+    clearBtn: true,
+    applyBtn: true
+});

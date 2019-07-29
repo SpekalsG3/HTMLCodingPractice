@@ -27,16 +27,17 @@
     font: 12px Montserrat;
 }
 
-.dropdown-input {
+.dropdown-placeholder {
     width: 100%;
     border-radius: 0;
     border-top: none;
     border-left: none;
     border-right: none;
     font: 14px Montserrat;
+    line-height: 44px;
 }
 
-.dropdown.extended .dropdown-input.kit-form-input {
+.dropdown.extended .dropdown-placeholder.kit-form-input {
     border-top: none;
     border-left: none;
     border-right: none;
@@ -88,6 +89,7 @@
 }
 
 .option-amount {
+    border: none;
     width: 32px;
     text-align: center;
     font-weight: bold;

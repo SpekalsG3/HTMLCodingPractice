@@ -46,12 +46,13 @@
 
 .kit-form-input {
     position: relative;
-    padding: 0 44px 0 15px;
-    height: 42px;
+    padding: 0 44px 0 14px;
+    height: 44px;
     background: #fff;
     border: 1px solid rgba(31, 32, 65, .25);
     border-radius: 4px;
-    font: 14px Montserrat;
+    font-size: 14px;
+    font-family: Montserrat;
     color: rgba(31, 32, 65, .75);
     cursor: pointer;
     text-overflow: ellipsis;
@@ -72,7 +73,7 @@
 .kit-form-submit {
     position: relative;
     width: 320px;
-    height: 43px;
+    height: 44px;
     background: linear-gradient(#BC9CFF, #8BA4F9);
     border: none;
     border-radius: 22px;
@@ -97,7 +98,7 @@
 }
 
 .kit-arrow.forward {
-    top: 34px;
+    top: 32px;
     right: 0;
     background: url(../images/icons/arrow_forward.svg) center no-repeat;
 }
@@ -118,24 +119,24 @@
 
 
 
-.checkbox.default .checkbox-options {
+.kit-checkbox.default .kit-checkbox-options {
     display: none;
 }
 
-.checkbox .kit-form-label {
+.kit-checkbox .kit-form-label {
     cursor: pointer;
 }
 
-.checkbox-options {
+.kit-checkbox-options {
     margin-top: 16px;
 }
 
-.checkbox-arrow {
+.kit-checkbox-arrow {
     height: 14px;
     top: 0;
 }
 
-.checkbox-option {
+.kit-checkbox-option {
     display: block;
     position: relative;
     margin-bottom: 14px;
@@ -146,7 +147,7 @@
     user-select: none;
 }
 
-.checkbox-option input {
+.kit-checkbox-option input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -154,7 +155,7 @@
     width: 0;
 }
 
-.input-box {
+.kit-input-box {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -167,7 +168,7 @@
     border-radius: 4px;
 }
 
-.checkmark {
+.kit-checkmark {
     display: none;
     position: absolute;
     width: 6px;
@@ -176,7 +177,7 @@
     transform: rotateZ(45deg);
 }
 
-.checkmark:after {
+.kit-checkmark:after {
     content: "";
     position: absolute;
     width: 83%;
@@ -186,24 +187,24 @@
     background: #fff;
 }
 
-.checkbox-option input:checked ~ .input-box .checkmark {
+.kit-checkbox-option input:checked ~ .kit-input-box .kit-checkmark {
     display: block;
 }
 
-.checkbox-text {
+.kit-checkbox-text {
     margin-left: 31px;
 }
 
-.checkbox-title {
+.kit-checkbox-title {
     font: 14px Montserrat;
     color: rgba(31, 32, 65, .75);
 }
 
-.bold {
+.kit-bold {
     font-weight: bold;
 }
 
-.checkbox-note {
+.kit-checkbox-note {
     margin-top: 5px;
     font: 12px Montserrat;
     color: rgba(31, 32, 65, 0.5);
