@@ -35,6 +35,9 @@
     border-right: none;
     font: 14px Montserrat;
     line-height: 44px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .dropdown.extended .dropdown-placeholder.kit-form-input {

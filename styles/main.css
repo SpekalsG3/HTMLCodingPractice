@@ -48,6 +48,10 @@
 	text-align: right;
 }
 
+.kit-form {
+	padding-left: 30px;
+}
+
 @media screen and (max-width: 1300px) {
 	.main {
 		background-position: top;

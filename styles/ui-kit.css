@@ -5,7 +5,8 @@
 .kit-form {
     position: relative;
     width: 350px;
-    padding: 40px 0 30px 30px;
+    padding-top: 40px;
+    padding-bottom: 30px;
     background: #fff;
     border: 1px solid rgba(0, 0, 0, .12);
     box-shadow: 0 0 25px rgba(0, 0, 0, .2);
@@ -98,7 +99,7 @@
 }
 
 .kit-arrow.forward {
-    top: 32px;
+    top: 1px;
     right: 0;
     background: url(../images/icons/arrow_forward.svg) center no-repeat;
 }
