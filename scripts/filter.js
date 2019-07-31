@@ -62,7 +62,7 @@ for (var i = 0; i < 3; i++) {
 
 $(".kit-form-field[data-index='0']").dateRangePicker({
 	format: "DD MMM",
-	separator: " - ",
+	separator: " по ",
 	singleMonth: true,
 	language: "ru",
 	getValue: function() {
@@ -72,7 +72,7 @@ $(".kit-form-field[data-index='0']").dateRangePicker({
 		var date1 = parsedDate[0] + " " + months[parsedDate[1]];
 		var parsedDate = URISearch[3].split('.');
 		parsedDate.forEach(function(el, i, arr) { arr[i] = parseInt(el); });
-		return date1 + " - " + parsedDate[0] + " " + months[parsedDate[1]];
+		return date1 + " по " + parsedDate[0] + " " + months[parsedDate[1]];
 	},
 	setValue: function(s, s1, s2) {
 		$(".search-comeinout").val(s1 + " - " + s2);
@@ -179,9 +179,11 @@ function SlideNextPhoto(index) {
 }
 
 $(".content-rooms a").click(function(e) {
+	e.preventDefault();
 	var targetClassName = e.target.className.slice(0, -5);
 	if (targetClassName == "kit-arrow" || targetClassName == "content-room")
-		e.preventDefault();
+		return;
+	window.location.href = e.currentTarget.href + "&" + window.location.search.slice(1);
 });
 
 $(".content-room-prev").click(function(e) {

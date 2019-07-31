@@ -47,7 +47,7 @@ var URISearch = window.location.search.slice(1).split(/(&|=)/).filter(function(v
 });
 
 for (var i = 0; i < 3; i++) {
-    $(".kit-form-field[data-index='2']")[0].controller.setOptionValue(decodeURI(URISearch[4 + i * 2]), parseInt(URISearch[5 + i * 2]));
+    $(".kit-form-field[data-index='2']")[0].controller.setOptionValue(decodeURI(URISearch[6 + i * 2]), parseInt(URISearch[7 + i * 2]));
 }
 
 $(".kit-form-field[data-index='0']").dateRangePicker({
@@ -57,12 +57,12 @@ $(".kit-form-field[data-index='0']").dateRangePicker({
     language: "ru",
     getValue: function() {
         var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-        var parsedDate = URISearch[1].split('.');
-        parsedDate.forEach(function(el, i, arr) { arr[i] = parseInt(el); });
-        var date1 = parsedDate[0] + " " + months[parsedDate[1]];
         var parsedDate = URISearch[3].split('.');
         parsedDate.forEach(function(el, i, arr) { arr[i] = parseInt(el); });
-        return date1 + " - " + parsedDate[0] + " " + months[parsedDate[1]];
+        var date1 = parsedDate[0] + " " + months[parsedDate[1]];
+        var parsedDate = URISearch[5].split('.');
+        parsedDate.forEach(function(el, i, arr) { arr[i] = parseInt(el); });
+        return date1 + " по " + parsedDate[0] + " " + months[parsedDate[1]];
     },
     setValue: function(s, s1, s2) {
         $(".search-comein").val(s1);

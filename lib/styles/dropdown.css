@@ -91,11 +91,11 @@
     color: 1px solid rgba(31, 32, 65, .25);
 }
 
-.option-amount {
+.option-value {
     border: none;
     width: 32px;
     text-align: center;
-    font-weight: bold;
+    font: bold 14px Montserrat;
 }
 
 .dropdown-confirm div {
