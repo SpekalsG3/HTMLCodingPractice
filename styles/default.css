@@ -21,7 +21,9 @@
     src: url(../fonts/Quicksand-Bold.ttf);
 }
 
-
+::placeholder {
+    color: rgba(31, 32, 65, .25);
+}
 
 body {
     margin: 0;
@@ -30,8 +32,12 @@ body {
 header, footer {
     box-shadow: 0 10px 20px rgba(31, 32, 65, .05);
 }
+
 input {
     outline: none;
+}
+a {
+    text-decoration: none;
 }
 
 .content-bar {
@@ -114,36 +120,12 @@ input {
     text-transform: uppercase;
 }
 
-.header-signin-border {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 22px;
-}
-
-.header-signin-border:after {
-    content: "";
-    position: absolute;
-    left: 2px;
-    top: 2px;
-    width: -webkit-calc(100% - 4px);
-    height: -webkit-calc(100% - 4px);
-    width: -moz-calc(100% - 4px);
-    height: -moz-calc(100% - 4px);
-    width: calc(100% - 4px);
-    height: calc(100% - 4px);
-    background: #fff;
-    border-radius: 22px;
-}
-
-.header-signin-title {
-    position: relative;
-    z-index: 2;
+.header-signin-button {
     color: #BC9CFF;
+    background: url(../images/icons/gradient_border.svg) center no-repeat;
+    background-size: 90%;
 }
 
-.header-signin-border,
 .header-signup-button {
     background: linear-gradient(#BC9CFF, #8BA4F9);
 }

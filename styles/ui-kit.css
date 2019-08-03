@@ -1,5 +1,10 @@
-::placeholder {
-    color: rgba(31, 32, 65, .25);
+.kit-one-main {
+    position: relative;
+    width: 100%;
+    /*min-height: calc(100vh - 442px);*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .kit-form {
@@ -169,7 +174,7 @@
     border-radius: 4px;
 }
 
-.kit-checkmark {
+.kit-checkbox-checkmark {
     display: none;
     position: absolute;
     width: 6px;
@@ -178,7 +183,7 @@
     transform: rotateZ(45deg);
 }
 
-.kit-checkmark:after {
+.kit-checkbox-checkmark:after {
     content: "";
     position: absolute;
     width: 83%;
@@ -209,4 +214,57 @@
     margin-top: 5px;
     font: 12px Montserrat;
     color: rgba(31, 32, 65, 0.5);
+}
+
+.kit-radio {
+    margin-top: 10px;
+    font: 14px Montserrat;
+    color: rgba(31, 32, 65, .75);
+}
+
+.kit-radio label {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.kit-radio input {
+    position: absolute;
+    opacity: 0;
+}
+
+.kit-radio-checkmark {
+    position: relative;
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #BC9CFF;
+    border-radius: 25px;
+}
+
+.kit-radio-checkmark div {
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 25px;
+    background: linear-gradient(#BC9CFF, #8BA4F9);
+}
+
+.kit-radio-checkmark div:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #fff;
+    border-radius: 25px;
+    transition: .2s;
+}
+
+.kit-radio input:checked + .kit-radio-checkmark div:after {
+    opacity: 0;
 }
