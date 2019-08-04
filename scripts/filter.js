@@ -122,7 +122,7 @@ $(".kit-form-field[data-index='5']").dropdown({
 	]
 });
 
-$(".checkbox.convertible").click(function() {
+$(".kit-checkbox.convertible").click(function() {
 	$(this).toggleClass("default");
 });
 

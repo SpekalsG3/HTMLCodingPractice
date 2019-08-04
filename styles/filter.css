@@ -19,6 +19,17 @@
 	color: rgba(31, 32, 65, .5);
 }
 
+.kit-checkbox[data-index="2"] {
+    align-items: center;
+}
+
+.kit-form-field[data-index="4"] {
+	margin-top: 35px;
+}
+
+.kit-form-field[data-index="4"] label + label {
+	margin-top: 12px;
+}
 
 .content-items {
 	margin-left: 60px;

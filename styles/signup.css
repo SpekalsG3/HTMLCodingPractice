@@ -5,3 +5,11 @@
 .kit-radio {
 	display: flex;
 }
+
+.main-signup {
+	margin-top: 20px;
+}
+
+.kit-form-title {
+	letter-spacing: 1.2px;
+}

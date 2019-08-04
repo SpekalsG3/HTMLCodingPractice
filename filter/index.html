@@ -18,10 +18,12 @@
 <body>
 	<header class="bar content-bar wrap-container">
 		<div class="wrap-align wrap">
-			<div class="logo">
-				<img src="../images/icons/logo_icon.svg" class="icon"/>
-				<img src="../images/icons/logo_brand.svg" class="brand"/>
-			</div>
+			<a href="../">
+				<div class="logo">
+					<img src="../images/icons/logo_icon.svg" class="icon"/>
+					<img src="../images/icons/logo_brand.svg" class="brand"/>
+				</div>
+			</a>
 
 			<nav class="header-content">
 				<div class="header-links">О нас</div>
@@ -66,60 +68,60 @@
                     <input type="text" name="price-range" class="settings-price-range"/>
                     <div class="settings-note">Стоимость за сутки пребывания в номере</div>
 				</div>
-				<div class="kit-form-field kit-checkbox" data-space="long-up">
+				<div class="kit-form-field kit-checkbox" data-index="2" data-space="long-up">
 					<div class="kit-form-label">Checkbox buttons</div>
 					<div class="kit-checkbox-options">
-						<label class="kit-checkbox-option">
-							<input type="kit-checkbox" name="smoke" value="0"/>
-							<span class="kit-input-box">
-								<div class="kit-checkbox-checkmark"></div>
-							</span>
-							<div class="kit-checkbox-text">
+						<label>
+							<input type="checkbox" name="smoke" value="0"/>
+							<div class="kit-checkbox-checkmark">
+								<div></div>
+							</div>
+							<span class="kit-checkbox-text">
 								<div class="kit-checkbox-title">Можно курить</div>
-							</div>
-						</label>
-						<label class="kit-checkbox-option">
-							<input type="kit-checkbox" name="pets" value="1"/>
-							<span class="kit-input-box">
-								<div class="kit-checkbox-checkmark"></div>
 							</span>
-							<div class="kit-checkbox-text">
+						</label>
+						<label>
+							<input type="checkbox" name="pets" value="1"/>
+							<div class="kit-checkbox-checkmark">
+								<div></div>
+							</div>
+							<span class="kit-checkbox-text">
 								<div class="kit-checkbox-title">Можно с питомцами</div>
-							</div>
-						</label>
-						<label class="kit-checkbox-option">
-							<input type="kit-checkbox" name="guests" value="2"/>
-							<span class="kit-input-box">
-								<div class="kit-checkbox-checkmark"></div>
 							</span>
-							<div class="kit-checkbox-text">
-								<div class="kit-checkbox-title">Можно пригласить гостей<br>(до 10 человек)</div>
+						</label>
+						<label>
+							<input type="checkbox" name="guests" value="2"/>
+							<div class="kit-checkbox-checkmark">
+								<div></div>
 							</div>
+							<span class="kit-checkbox-text">
+								<div class="kit-checkbox-title">Можно пригласить гостей<br>(до 10 человек)</div>
+							</span>
 						</label>
 					</div>
 				</div>
-				<div class="kit-form-field kit-checkbox" data-space="long-up">
+				<div class="kit-form-field kit-checkbox" data-index="4">
 					<div class="kit-form-label">Доступность</div>
 					<div class="kit-checkbox-options">
-						<label class="kit-checkbox-option">
-							<input type="kit-checkbox" name="wide" value="3"/>
-							<span class="kit-input-box">
-								<div class="kit-checkbox-checkmark"></div>
-							</span>
-							<div class="kit-checkbox-text">
+						<label>
+							<input type="checkbox" name="wide" value="3"/>
+							<div class="kit-checkbox-checkmark">
+								<div></div>
+							</div>
+							<span class="kit-checkbox-text">
 								<div class="kit-checkbox-title kit-bold">Широкий коридор</div>
 								<div class="kit-checkbox-note">Ширина коридоров в номере<br>не менее 91 см.</div>
-							</div>
-						</label>
-						<label class="kit-checkbox-option">
-							<input type="kit-checkbox" name="helper" value="4"/>
-							<span class="kit-input-box">
-								<div class="kit-checkbox-checkmark"></div>
 							</span>
-							<div class="kit-checkbox-text">
+						</label>
+						<label>
+							<input type="checkbox" name="helper" value="4"/>
+							<div class="kit-checkbox-checkmark">
+								<div></div>
+							</div>
+							<span class="kit-checkbox-text">
 								<div class="kit-checkbox-title kit-bold">Помощник для инвалидов</div>
 								<div class="kit-checkbox-note">На 1 этаже вас встретит специалист<br>и проводит до номера.</div>
-							</div>
+							</span>
 						</label>
 					</div>
 				</div>
@@ -130,8 +132,8 @@
 					<div class="kit-form-label">Дополнительные удобства</div>
 					<div class="kit-arrow expand kit-checkbox-arrow"></div>
 					<div class="kit-checkbox-options">
-						<label class="kit-checkbox-option">
-							<input type="kit-checkbox" name="breakfast" value="5"/>
+						<label>
+							<input type="checkbox" name="breakfast" value="5"/>
 							<span class="kit-input-box">
 								<div class="kit-checkbox-checkmark"></div>
 							</span>
@@ -139,8 +141,8 @@
 								<div class="kit-checkbox-title">Завтрак</div>
 							</div>
 						</label>
-						<label class="kit-checkbox-option">
-							<input type="kit-checkbox" name="desk" value="6"/>
+						<label>
+							<input type="checkbox" name="desk" value="6"/>
 							<span class="kit-input-box">
 								<div class="kit-checkbox-checkmark"></div>
 							</span>
@@ -148,8 +150,8 @@
 								<div class="kit-checkbox-title">Письменный стол</div>
 							</div>
 						</label>
-						<label class="kit-checkbox-option">
-							<input type="kit-checkbox" name="feeding" value="7"/>
+						<label>
+							<input type="checkbox" name="feeding" value="7"/>
 							<span class="kit-input-box">
 								<div class="kit-checkbox-checkmark"></div>
 							</span>
@@ -157,8 +159,8 @@
 								<div class="kit-checkbox-title">Стул для кормления</div>
 							</div>
 						</label>
-						<label class="kit-checkbox-option">
-							<input type="kit-checkbox" name="cradle" value="8"/>
+						<label>
+							<input type="checkbox" name="cradle" value="8"/>
 							<span class="kit-input-box">
 								<div class="kit-checkbox-checkmark"></div>
 							</span>
@@ -166,8 +168,8 @@
 								<div class="kit-checkbox-title">Кроватка</div>
 							</div>
 						</label>
-						<label class="kit-checkbox-option">
-							<input type="kit-checkbox" name="tv" value="9"/>
+						<label>
+							<input type="checkbox" name="tv" value="9"/>
 							<span class="kit-input-box">
 								<div class="kit-checkbox-checkmark"></div>
 							</span>
@@ -175,8 +177,8 @@
 								<div class="kit-checkbox-title">Телевизор</div>
 							</div>
 						</label>
-						<label class="kit-checkbox-option">
-							<input type="kit-checkbox" name="shampoo" value="10"/>
+						<label>
+							<input type="checkbox" name="shampoo" value="10"/>
 							<span class="kit-input-box">
 								<div class="kit-checkbox-checkmark"></div>
 							</span>
@@ -184,8 +186,8 @@
 								<div class="kit-checkbox-title">Шампунь</div>
 							</div>
 						</label>
-						<label class="kit-checkbox-option">
-							<input type="kit-checkbox" name="tv" value="11"/>
+						<label>
+							<input type="checkbox" name="tv" value="11"/>
 							<span class="kit-input-box">
 								<div class="kit-checkbox-checkmark"></div>
 							</span>
@@ -193,8 +195,8 @@
 								<div class="kit-checkbox-title">Телевизор</div>
 							</div>
 						</label>
-						<label class="kit-checkbox-option">
-							<input type="kit-checkbox" name="shampoo" value="12"/>
+						<label>
+							<input type="checkbox" name="shampoo" value="12"/>
 							<span class="kit-input-box">
 								<div class="kit-checkbox-checkmark"></div>
 							</span>

@@ -19,7 +19,7 @@ $(".kit-form-field[data-index='0']").dateRangePicker({
 
 $(".kit-form-field[data-index='1']").dateRangePicker({
 	autoClose: true,
-	singleDate : true,
+	singleDate: true,
 	showShortcuts: false,
 	singleMonth: true,
 	format: "DD.MM.YYYY",

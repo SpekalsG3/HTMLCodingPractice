@@ -36,8 +36,15 @@ header, footer {
 input {
     outline: none;
 }
+
 a {
     text-decoration: none;
+}
+
+a:focus,
+button:focus,
+input:focus {
+    outline: none;
 }
 
 .content-bar {
