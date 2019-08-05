@@ -69,15 +69,15 @@
     transition: box-shadow .2s;
 }
 
-.kit-form-input[data-size="short"] {
+[data-size="short"] {
     width: 90px;
 }
 
-.kit-form-input[data-size="medium"] {
+[data-size="medium"] {
     width: 205px;
 }
 
-.kit-form-input[data-size="long"] {
+[data-size="long"] {
     width: 258px;
 }
 

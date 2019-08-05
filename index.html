@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="styles/default.css"/>
     <link rel="stylesheet" type="text/css" href="styles/main.css"/>
 
+    <link rel="stylesheet" type="text/css" href="styles/mobile.css"/>
     <link rel="stylesheet" type="text/css" href="styles/pixelperfect.css"/>
 </head>
 <body>
@@ -22,14 +23,21 @@
 				<img src="images/icons/logo_brand.svg" class="brand"/>
 			</div>
 
+            <div class="header-menu-icon">
+            </div>
+
 			<nav class="header-content">
-				<div class="header-links">О нас</div>
-				<div class="header-links" id="services">Услуги</div>
-				<div class="header-expand-more"></div>
-				<div class="header-links">Вакансии</div>
-				<div class="header-links">Новости</div>
-				<div class="header-links" id="deals">Соглашения</div>
-				<div class="header-expand-more"></div>
+				<a href="fake-link/change-me" class="header-links">О нас</a>
+				<a href="fake-link/change-me" class="header-links services convertible">
+                    <div class="expand kit-arrow"></div>
+                    <div>Услуги</div>
+                </a>
+				<a href="fake-link/change-me" class="header-links">Вакансии</a>
+				<a href="fake-link/change-me" class="header-links">Новости</a>
+				<a href="fake-link/change-me" class="header-links deals convertible">
+                    <div class="expand kit-arrow"></div>
+                    <div>Соглашения</div>
+                </a>
 				<a href="signin/">
                     <div class="header-signin-button">Войти</div>
                 </a>
@@ -40,7 +48,8 @@
 		</div>
 	</header>
 
-	<div class="kit-one-main wrap-container">
+	<div class="kit-one-main wrap-container content">
+        <div class="content-cover"></div>
         <div class="wrap">
     		<div class="main-block kit-form">
     			<div class="kit-form-title">
@@ -137,7 +146,6 @@
     <script type="text/javascript" src="lib/scripts/jquery.daterangepicker.min.js"></script>
     <script type="text/javascript" src="lib/scripts/jquery.dropdown.js"></script>
 
-    <script type="text/javascript" src="scripts/landing.js"></script>
     <script type="text/javascript" src="scripts/main.js"></script>
     <script type="text/javascript" src="scripts/ui-kit.js"></script>
 </body>
