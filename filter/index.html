@@ -13,6 +13,8 @@
     <link rel="stylesheet" type="text/css" href="../styles/ui-kit.css"/>
 	<link rel="stylesheet" type="text/css" href="../styles/filter.css"/>
 
+    <link rel="stylesheet" type="text/css" href="../styles/mobile.css"/>
+    <link rel="stylesheet" type="text/css" href="../styles/filter_mobile.css"/>
     <link rel="stylesheet" type="text/css" href="../styles/pixelperfect.css"/>
 </head>
 <body>
@@ -25,16 +27,23 @@
 				</div>
 			</a>
 
+            <div class="header-menu-icon">
+            </div>
+
 			<nav class="header-content">
-				<div class="header-links">О нас</div>
-				<div class="header-links" id="services">Услуги</div>
-				<div class="header-expand-more"></div>
-				<div class="header-links">Вакансии</div>
-				<div class="header-links">Новости</div>
-				<div class="header-links" id="deals">Соглашения</div>
-				<div class="header-expand-more"></div>
+				<a href="fake-link/change-me" class="header-links">О нас</a>
+				<a href="fake-link/change-me" class="header-links services convertible">
+                    <div class="expand kit-arrow"></div>
+                    <div>Услуги</div>
+                </a>
+				<a href="fake-link/change-me" class="header-links">Вакансии</a>
+				<a href="fake-link/change-me" class="header-links">Новости</a>
+				<a href="fake-link/change-me" class="header-links deals convertible">
+                    <div class="expand kit-arrow"></div>
+                    <div>Соглашения</div>
+                </a>
 				<a href="../signin/">
-                	<div class="header-signin-button">Войти</div>
+                    <div class="header-signin-button">Войти</div>
                 </a>
                 <a href="../signup/">
 				    <div class="header-signup-button">Зарегистрироваться</div>
@@ -44,164 +53,167 @@
 	</header>
 
 	<div class="content wrap-container">
+        <div class="content-cover"></div>
 		<div class="wrap">
 			<form class="content-settings">
-				<div class="kit-form-field settings-date" data-index="0">
-					<div class="kit-form-label">Даты пребывания в отеле</div>
-                    <div class="expand kit-arrow"></div>
-					<input readonly="readonly" type="text" name="comeinout" class="kit-form-input search-comeinout" data-size="medium"/>
-				</div>
-				<div class="kit-form-field" data-index="1" data-space="up">
-                    <div class="kit-form-label">Гости</div>
-				</div>
-				<div class="kit-form-field" data-space="long-up">
-					<div class="settings-field-top">
-	                    <div class="kit-form-label">Диапазон цены</div>
-	                    <div class="settings-price">
-	                    	<span class="settings-price-from">5 000</span><span class="ruble">Р</span>
-	                    	-
-	                    	<span class="settings-price-to">10 000</span><span class="ruble">Р</span>
+				<div class="content-settings-wrap">
+					<div class="kit-form-field settings-date" data-index="0" data-size="medium">
+						<div class="kit-form-label">Даты пребывания в отеле</div>
+	                    <div class="expand kit-arrow"></div>
+						<input readonly="readonly" type="text" name="comeinout" class="kit-form-input search-comeinout"/>
+					</div>
+					<div class="kit-form-field" data-index="1" data-space="up" data-size="medium">
+	                    <div class="kit-form-label">Гости</div>
+					</div>
+					<div class="kit-form-field" data-space="long-up">
+						<div class="settings-field-top">
+		                    <div class="kit-form-label">Диапазон цены</div>
+		                    <div class="settings-price">
+		                    	<span class="settings-price-from">5 000</span><span class="ruble">Р</span>
+		                    	-
+		                    	<span class="settings-price-to">10 000</span><span class="ruble">Р</span>
+		                    </div>
 	                    </div>
-                    </div>
-                    <input type="text" name="price-range" class="settings-price-range"/>
-                    <div class="settings-note">Стоимость за сутки пребывания в номере</div>
-				</div>
-				<div class="kit-form-field kit-checkbox" data-index="2" data-space="long-up">
-					<div class="kit-form-label">Checkbox buttons</div>
-					<div class="kit-checkbox-options">
-						<label>
-							<input type="checkbox" name="smoke" value="0"/>
-							<div class="kit-checkbox-checkmark">
-								<div></div>
-							</div>
-							<span class="kit-checkbox-text">
-								<div class="kit-checkbox-title">Можно курить</div>
-							</span>
-						</label>
-						<label>
-							<input type="checkbox" name="pets" value="1"/>
-							<div class="kit-checkbox-checkmark">
-								<div></div>
-							</div>
-							<span class="kit-checkbox-text">
-								<div class="kit-checkbox-title">Можно с питомцами</div>
-							</span>
-						</label>
-						<label>
-							<input type="checkbox" name="guests" value="2"/>
-							<div class="kit-checkbox-checkmark">
-								<div></div>
-							</div>
-							<span class="kit-checkbox-text">
-								<div class="kit-checkbox-title">Можно пригласить гостей<br>(до 10 человек)</div>
-							</span>
-						</label>
+	                    <input type="text" name="price-range" class="settings-price-range"/>
+	                    <div class="settings-note">Стоимость за сутки пребывания в номере</div>
 					</div>
-				</div>
-				<div class="kit-form-field kit-checkbox" data-index="4">
-					<div class="kit-form-label">Доступность</div>
-					<div class="kit-checkbox-options">
-						<label>
-							<input type="checkbox" name="wide" value="3"/>
-							<div class="kit-checkbox-checkmark">
-								<div></div>
-							</div>
-							<span class="kit-checkbox-text">
-								<div class="kit-checkbox-title kit-bold">Широкий коридор</div>
-								<div class="kit-checkbox-note">Ширина коридоров в номере<br>не менее 91 см.</div>
-							</span>
-						</label>
-						<label>
-							<input type="checkbox" name="helper" value="4"/>
-							<div class="kit-checkbox-checkmark">
-								<div></div>
-							</div>
-							<span class="kit-checkbox-text">
-								<div class="kit-checkbox-title kit-bold">Помощник для инвалидов</div>
-								<div class="kit-checkbox-note">На 1 этаже вас встретит специалист<br>и проводит до номера.</div>
-							</span>
-						</label>
+					<div class="kit-form-field kit-checkbox" data-index="2" data-space="long-up">
+						<div class="kit-form-label">Checkbox buttons</div>
+						<div class="kit-checkbox-options">
+							<label>
+								<input type="checkbox" name="smoke" value="0"/>
+								<div class="kit-checkbox-checkmark">
+									<div></div>
+								</div>
+								<span class="kit-checkbox-text">
+									<div class="kit-checkbox-title">Можно курить</div>
+								</span>
+							</label>
+							<label>
+								<input type="checkbox" name="pets" value="1"/>
+								<div class="kit-checkbox-checkmark">
+									<div></div>
+								</div>
+								<span class="kit-checkbox-text">
+									<div class="kit-checkbox-title">Можно с питомцами</div>
+								</span>
+							</label>
+							<label>
+								<input type="checkbox" name="guests" value="2"/>
+								<div class="kit-checkbox-checkmark">
+									<div></div>
+								</div>
+								<span class="kit-checkbox-text">
+									<div class="kit-checkbox-title">Можно пригласить гостей<br>(до 10 человек)</div>
+								</span>
+							</label>
+						</div>
 					</div>
-				</div>
-				<div class="kit-form-field" data-index="5" data-space="long-up">
-					<div class="kit-form-label">Удобства номера</div>
-				</div>
-				<div class="kit-form-field kit-checkbox convertible default" data-space="long-up">
-					<div class="kit-form-label">Дополнительные удобства</div>
-					<div class="kit-arrow expand kit-checkbox-arrow"></div>
-					<div class="kit-checkbox-options">
-						<label>
-							<input type="checkbox" name="breakfast" value="5"/>
-							<span class="kit-input-box">
-								<div class="kit-checkbox-checkmark"></div>
-							</span>
-							<div class="kit-checkbox-text">
-								<div class="kit-checkbox-title">Завтрак</div>
-							</div>
-						</label>
-						<label>
-							<input type="checkbox" name="desk" value="6"/>
-							<span class="kit-input-box">
-								<div class="kit-checkbox-checkmark"></div>
-							</span>
-							<div class="kit-checkbox-text">
-								<div class="kit-checkbox-title">Письменный стол</div>
-							</div>
-						</label>
-						<label>
-							<input type="checkbox" name="feeding" value="7"/>
-							<span class="kit-input-box">
-								<div class="kit-checkbox-checkmark"></div>
-							</span>
-							<div class="kit-checkbox-text">
-								<div class="kit-checkbox-title">Стул для кормления</div>
-							</div>
-						</label>
-						<label>
-							<input type="checkbox" name="cradle" value="8"/>
-							<span class="kit-input-box">
-								<div class="kit-checkbox-checkmark"></div>
-							</span>
-							<div class="kit-checkbox-text">
-								<div class="kit-checkbox-title">Кроватка</div>
-							</div>
-						</label>
-						<label>
-							<input type="checkbox" name="tv" value="9"/>
-							<span class="kit-input-box">
-								<div class="kit-checkbox-checkmark"></div>
-							</span>
-							<div class="kit-checkbox-text">
-								<div class="kit-checkbox-title">Телевизор</div>
-							</div>
-						</label>
-						<label>
-							<input type="checkbox" name="shampoo" value="10"/>
-							<span class="kit-input-box">
-								<div class="kit-checkbox-checkmark"></div>
-							</span>
-							<div class="kit-checkbox-text">
-								<div class="kit-checkbox-title">Шампунь</div>
-							</div>
-						</label>
-						<label>
-							<input type="checkbox" name="tv" value="11"/>
-							<span class="kit-input-box">
-								<div class="kit-checkbox-checkmark"></div>
-							</span>
-							<div class="kit-checkbox-text">
-								<div class="kit-checkbox-title">Телевизор</div>
-							</div>
-						</label>
-						<label>
-							<input type="checkbox" name="shampoo" value="12"/>
-							<span class="kit-input-box">
-								<div class="kit-checkbox-checkmark"></div>
-							</span>
-							<div class="kit-checkbox-text">
-								<div class="kit-checkbox-title">Шампунь</div>
-							</div>
-						</label>
+					<div class="kit-form-field kit-checkbox" data-index="4">
+						<div class="kit-form-label">Доступность</div>
+						<div class="kit-checkbox-options">
+							<label>
+								<input type="checkbox" name="wide" value="3"/>
+								<div class="kit-checkbox-checkmark">
+									<div></div>
+								</div>
+								<span class="kit-checkbox-text">
+									<div class="kit-checkbox-title kit-bold">Широкий коридор</div>
+									<div class="kit-checkbox-note">Ширина коридоров в номере<br>не менее 91 см.</div>
+								</span>
+							</label>
+							<label>
+								<input type="checkbox" name="helper" value="4"/>
+								<div class="kit-checkbox-checkmark">
+									<div></div>
+								</div>
+								<span class="kit-checkbox-text">
+									<div class="kit-checkbox-title kit-bold">Помощник для инвалидов</div>
+									<div class="kit-checkbox-note">На 1 этаже вас встретит специалист<br>и проводит до номера.</div>
+								</span>
+							</label>
+						</div>
+					</div>
+					<div class="kit-form-field" data-index="5" data-space="long-up" data-size="medium">
+						<div class="kit-form-label">Удобства номера</div>
+					</div>
+					<div class="kit-form-field kit-checkbox convertible default" data-space="long-up">
+						<div class="kit-form-label">Дополнительные удобства</div>
+						<div class="kit-arrow expand kit-checkbox-arrow"></div>
+						<div class="kit-checkbox-options">
+							<label>
+								<input type="checkbox" name="breakfast" value="5"/>
+								<span class="kit-input-box">
+									<div class="kit-checkbox-checkmark"></div>
+								</span>
+								<div class="kit-checkbox-text">
+									<div class="kit-checkbox-title">Завтрак</div>
+								</div>
+							</label>
+							<label>
+								<input type="checkbox" name="desk" value="6"/>
+								<span class="kit-input-box">
+									<div class="kit-checkbox-checkmark"></div>
+								</span>
+								<div class="kit-checkbox-text">
+									<div class="kit-checkbox-title">Письменный стол</div>
+								</div>
+							</label>
+							<label>
+								<input type="checkbox" name="feeding" value="7"/>
+								<span class="kit-input-box">
+									<div class="kit-checkbox-checkmark"></div>
+								</span>
+								<div class="kit-checkbox-text">
+									<div class="kit-checkbox-title">Стул для кормления</div>
+								</div>
+							</label>
+							<label>
+								<input type="checkbox" name="cradle" value="8"/>
+								<span class="kit-input-box">
+									<div class="kit-checkbox-checkmark"></div>
+								</span>
+								<div class="kit-checkbox-text">
+									<div class="kit-checkbox-title">Кроватка</div>
+								</div>
+							</label>
+							<label>
+								<input type="checkbox" name="tv" value="9"/>
+								<span class="kit-input-box">
+									<div class="kit-checkbox-checkmark"></div>
+								</span>
+								<div class="kit-checkbox-text">
+									<div class="kit-checkbox-title">Телевизор</div>
+								</div>
+							</label>
+							<label>
+								<input type="checkbox" name="shampoo" value="10"/>
+								<span class="kit-input-box">
+									<div class="kit-checkbox-checkmark"></div>
+								</span>
+								<div class="kit-checkbox-text">
+									<div class="kit-checkbox-title">Шампунь</div>
+								</div>
+							</label>
+							<label>
+								<input type="checkbox" name="tv" value="11"/>
+								<span class="kit-input-box">
+									<div class="kit-checkbox-checkmark"></div>
+								</span>
+								<div class="kit-checkbox-text">
+									<div class="kit-checkbox-title">Телевизор</div>
+								</div>
+							</label>
+							<label>
+								<input type="checkbox" name="shampoo" value="12"/>
+								<span class="kit-input-box">
+									<div class="kit-checkbox-checkmark"></div>
+								</span>
+								<div class="kit-checkbox-text">
+									<div class="kit-checkbox-title">Шампунь</div>
+								</div>
+							</label>
+						</div>
 					</div>
 				</div>
 			</form>
@@ -805,7 +817,7 @@
             </div>
 		</nav>
 		<div class="bar content-bar wrap-container">
-            <div class="wrap-align wrap">
+            <div class="wrap-align wrap footer-copyright">
     			<div class="footer-copyright-text">Copyright © 2018 Toxin отель. Все права зачищены.</div>
     			<div>
     				<img src="../images/icons/twitter_icon.svg" class="footer-social"/>
@@ -826,6 +838,6 @@
     <script type="text/javascript" src="../lib/scripts/jquery.rangeslider.js"></script>
 
     <script type="text/javascript" src="../scripts/filter.js"></script>
-    <script type="text/javascript" src="../scripts/ui-kit.js"></script>
+    <script type="text/javascript" src="../scripts/default.js"></script>
 </body>
 </html>

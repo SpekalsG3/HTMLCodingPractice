@@ -28,15 +28,15 @@
     position: relative;
 }
 
-.kit-form-field[data-space="left"] {
-    margin-left: 19px;
+[data-space="left"] {
+    margin-left: 20px;
 }
 
-.kit-form-field[data-space="up"] {
-    margin-top: 22px;
+[data-space="up"] {
+    margin-top: 20px;
 }
 
-.kit-form-field[data-space="long-up"] {
+[data-space="long-up"] {
     margin-top: 32px;
 }
 
@@ -52,8 +52,10 @@
 
 .kit-form-input {
     position: relative;
-    padding: 0 44px 0 14px;
-    height: 44px;
+    padding-left: 14px;
+    padding-right: 44px;
+    height: 42px;
+    width: calc(100% - 58px);
     background: #fff;
     border: 1px solid rgba(31, 32, 65, .25);
     border-radius: 4px;
@@ -70,15 +72,15 @@
 }
 
 [data-size="short"] {
-    width: 90px;
+    width: 149px;
 }
 
 [data-size="medium"] {
-    width: 205px;
+    width: 265px;
 }
 
 [data-size="long"] {
-    width: 258px;
+    width: 317px;
 }
 
 .kit-form-submit {
@@ -98,19 +100,19 @@
 .kit-arrow {
     position: absolute;
     z-index: 2;
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 46px;
     cursor: pointer;
 }
 
 .kit-arrow.expand {
-    right: 0px;
+    right: -2px;
     background: url(../images/icons/expand_more.svg) center no-repeat;
 }
 
 .kit-arrow.forward {
-    top: 1px;
     right: 0;
+    top: 0;
     background: url(../images/icons/arrow_forward.svg) center no-repeat;
 }
 

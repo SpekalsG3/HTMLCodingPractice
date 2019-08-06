@@ -6,8 +6,12 @@
 	display: flex;
 }
 
+.main-block {
+	margin-bottom: 2px;
+}
+
 .main-signup {
-	margin-top: 20px;
+	margin-top: 19px;
 }
 
 .kit-form-title {

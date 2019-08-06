@@ -12,6 +12,8 @@
     <link rel="stylesheet" type="text/css" href="../styles/authorization.css"/>
     <link rel="stylesheet" type="text/css" href="../styles/signup.css"/>
 
+    <link rel="stylesheet" type="text/css" href="../styles/mobile.css"/>
+    <link rel="stylesheet" type="text/css" href="../styles/authorization_mobile.css"/>
     <link rel="stylesheet" type="text/css" href="../styles/pixelperfect.css"/>
 </head>
 <body>
@@ -24,14 +26,21 @@
                 </div>
             </a>
 
+            <div class="header-menu-icon">
+            </div>
+
             <nav class="header-content">
-                <div class="header-links">О нас</div>
-                <div class="header-links" id="services">Услуги</div>
-                <div class="header-expand-more"></div>
-                <div class="header-links">Вакансии</div>
-                <div class="header-links">Новости</div>
-                <div class="header-links" id="deals">Соглашения</div>
-                <div class="header-expand-more"></div>
+                <a href="fake-link/change-me" class="header-links">О нас</a>
+                <a href="fake-link/change-me" class="header-links services convertible">
+                    <div class="expand kit-arrow"></div>
+                    <div>Услуги</div>
+                </a>
+                <a href="fake-link/change-me" class="header-links">Вакансии</a>
+                <a href="fake-link/change-me" class="header-links">Новости</a>
+                <a href="fake-link/change-me" class="header-links deals convertible">
+                    <div class="expand kit-arrow"></div>
+                    <div>Соглашения</div>
+                </a>
                 <a href="../signin/">
                     <div class="header-signin-button">Войти</div>
                 </a>
@@ -41,13 +50,14 @@
     </header>
 
     <div class="content kit-one-main wrap-container">
+        <div class="content-cover"></div>
         <div class="wrap">
             <div class="main-block kit-form">
                 <div class="kit-form-title">Регистрация аккаунта</div>
                 <form method="POST" action="fake-script/change-me" class="main-signup">
-                    <div class="kit-form-field">
-                        <input placeholder="Имя" type="text" name="firstname" class="kit-form-input" data-size="long"/>
-                        <input placeholder="Фамилия" type="text" name="lastname" class="kit-form-input main-second-field" data-size="long"/>
+                    <div class="kit-form-field" data-size="long">
+                        <input placeholder="Имя" type="text" name="firstname" class="kit-form-input"/>
+                        <input placeholder="Фамилия" type="text" name="lastname" class="kit-form-input main-second-field"/>
                     </div>
                     <div class="kit-form-field kit-radio">
                         <label>
@@ -65,16 +75,16 @@
                             <span>Женщина</span>
                         </label>
                     </div>
-                    <div class="kit-form-field" data-index="2" data-space="up">
+                    <div class="kit-form-field" data-index="2" data-space="up" data-size="long">
                         <div class="kit-form-label">Дата рождения</div>
-                        <input readonly="readonly" placeholder="ДД.ММ.ГГГГ" type="text" name="birthday" class="kit-form-input signup-birthday" data-size="long"/>
+                        <input readonly="readonly" placeholder="ДД.ММ.ГГГГ" type="text" name="birthday" class="kit-form-input signup-birthday"/>
                     </div>
-                    <div class="kit-form-field" data-space="up">
+                    <div class="kit-form-field" data-space="up" data-size="long">
                         <div class="kit-form-label">Данные для входа в сервис</div>
-                        <input placeholder="Email" type="text" name="email" class="kit-form-input" data-size="long"/>
-                        <input placeholder="Пароль" type="password" name="password" class="kit-form-input main-second-field" data-size="long"/>
+                        <input placeholder="Email" type="text" name="email" class="kit-form-input"/>
+                        <input placeholder="Пароль" type="password" name="password" class="kit-form-input main-second-field"/>
                     </div>
-                    <div class="kit-form-field kit-switch">
+                    <div class="kit-form-field kit-switch" data-size="long">
                         <label>
                             <input type="checkbox" name="offer">
                             <div class="kit-switch-checkmark">
@@ -90,7 +100,7 @@
                         <button class="kit-form-submit">Перейти к оплате</button>
                     </div>
                     <div class="kit-form-field main-question">
-                        <span>Уже есть аккаунт на Toxin</span>
+                        <span>Уже есть аккаунт на Toxin?</span>
                         <a href="../signin/"><div>Войти</div></a>
                     </div>
                 </form>
@@ -139,7 +149,7 @@
             </div>
 		</nav>
 		<div class="bar content-bar wrap-container">
-            <div class="wrap-align wrap">
+            <div class="wrap-align wrap footer-copyright">
     			<div class="footer-copyright-text">Copyright © 2018 Toxin отель. Все права зачищены.</div>
     			<div>
     				<img src="../images/icons/twitter_icon.svg" class="footer-social"/>
@@ -159,6 +169,6 @@
 
     <script type="text/javascript" src="../scripts/signup.js"></script>
     <script type="text/javascript" src="../scripts/authorization.js"></script>
-    <script type="text/javascript" src="../scripts/ui-kit.js"></script>
+    <script type="text/javascript" src="../scripts/default.js"></script>
 </body>
 </html>

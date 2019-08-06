@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="../styles/authorization.css"/>
     <link rel="stylesheet" type="text/css" href="../styles/signin.css"/>
 
+    <link rel="stylesheet" type="text/css" href="../styles/mobile.css"/>
+    <link rel="stylesheet" type="text/css" href="../styles/authorization_mobile.css"/>
     <link rel="stylesheet" type="text/css" href="../styles/pixelperfect.css"/>
 </head>
 <body>
@@ -22,30 +24,38 @@
                 </div>
             </a>
 
+            <div class="header-menu-icon">
+            </div>
+
             <nav class="header-content">
-                <div class="header-links">О нас</div>
-                <div class="header-links" id="services">Услуги</div>
-                <div class="header-expand-more"></div>
-                <div class="header-links">Вакансии</div>
-                <div class="header-links">Новости</div>
-                <div class="header-links" id="deals">Соглашения</div>
-                <div class="header-expand-more"></div>
+                <a href="fake-link/change-me" class="header-links">О нас</a>
+                <a href="fake-link/change-me" class="header-links services convertible">
+                    <div class="expand kit-arrow"></div>
+                    <div>Услуги</div>
+                </a>
+                <a href="fake-link/change-me" class="header-links">Вакансии</a>
+                <a href="fake-link/change-me" class="header-links">Новости</a>
+                <a href="fake-link/change-me" class="header-links deals convertible">
+                    <div class="expand kit-arrow"></div>
+                    <div>Соглашения</div>
+                </a>
                 <div class="header-signin-button">Войти</div>
                 <a href="../signup/">
                     <div class="header-signup-button">Зарегистрироваться</div>
-                </a> 
+                </a>
             </nav>
         </div>
     </header>
 
     <div class="content kit-one-main wrap-container">
+        <div class="content-cover"></div>
         <div class="wrap">
             <div class="main-block kit-form">
                 <div class="kit-form-title">Войти</div>
-                <form method="POST" action="fake-script/change-me" class="main-signup">
-                    <div class="kit-form-field" data-index="0">
-                        <input placeholder="Email" type="text" name="email" class="kit-form-input" data-size="long"/>
-                        <input placeholder="Пароль" type="password" name="password" class="kit-form-input main-second-field" data-size="long"/>
+                <form method="POST" action="fake-script/change-me" class="main-signup" data-space="up">
+                    <div class="kit-form-field" data-index="0" data-size="long">
+                        <input placeholder="Email" type="text" name="email" class="kit-form-input"/>
+                        <input placeholder="Пароль" type="password" name="password" class="kit-form-input main-second-field"/>
                     </div>
                     <div class="kit-form-field form-submit-input" data-space="up">
                         <div class="forward kit-arrow"></div>
@@ -101,7 +111,7 @@
             </div>
 		</nav>
 		<div class="bar content-bar wrap-container">
-            <div class="wrap-align wrap">
+            <div class="wrap-align wrap footer-copyright">
     			<div class="footer-copyright-text">Copyright © 2018 Toxin отель. Все права зачищены.</div>
     			<div>
     				<img src="../images/icons/twitter_icon.svg" class="footer-social"/>
@@ -117,6 +127,6 @@
 	<script type="text/javascript" src="../lib/scripts/jQuery.js"></script>
 
     <script type="text/javascript" src="../scripts/authorization.js"></script>
-    <script type="text/javascript" src="../scripts/ui-kit.js"></script>
+    <script type="text/javascript" src="../scripts/default.js"></script>
 </body>
 </html>

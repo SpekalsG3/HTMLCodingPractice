@@ -407,12 +407,12 @@
 }
 
 .room-booking-option + .room-booking-option {
-	margin-top: 16px;
+	margin-top: 17px;
 }
 
 .room-booking-total {
 	position: relative;
-	margin-top: 28px;
+	margin-top: 30px;
     margin-left: 2px;
 	font: bold 19px Montserrat;
 	color: #1F2041;

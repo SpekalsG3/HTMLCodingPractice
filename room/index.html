@@ -13,6 +13,8 @@
     <link rel="stylesheet" type="text/css" href="../styles/ui-kit.css"/>
 	<link rel="stylesheet" type="text/css" href="../styles/room.css"/>
 
+    <link rel="stylesheet" type="text/css" href="../styles/mobile.css"/>
+    <link rel="stylesheet" type="text/css" href="../styles/room_mobile.css"/>
     <link rel="stylesheet" type="text/css" href="../styles/pixelperfect.css"/>
 </head>
 <body>
@@ -25,16 +27,23 @@
 				</div>
 			</a>
 
+            <div class="header-menu-icon">
+            </div>
+
 			<nav class="header-content">
-				<div class="header-links">О нас</div>
-				<div class="header-links" id="services">Услуги</div>
-				<div class="header-expand-more"></div>
-				<div class="header-links">Вакансии</div>
-				<div class="header-links">Новости</div>
-				<div class="header-links" id="deals">Соглашения</div>
-				<div class="header-expand-more"></div>
+				<a href="fake-link/change-me" class="header-links">О нас</a>
+				<a href="fake-link/change-me" class="header-links services convertible">
+                    <div class="expand kit-arrow"></div>
+                    <div>Услуги</div>
+                </a>
+				<a href="fake-link/change-me" class="header-links">Вакансии</a>
+				<a href="fake-link/change-me" class="header-links">Новости</a>
+				<a href="fake-link/change-me" class="header-links deals convertible">
+                    <div class="expand kit-arrow"></div>
+                    <div>Соглашения</div>
+                </a>
 				<a href="../signin/">
-                	<div class="header-signin-button">Войти</div>
+                    <div class="header-signin-button">Войти</div>
                 </a>
                 <a href="../signup/">
 				    <div class="header-signup-button">Зарегистрироваться</div>
@@ -45,6 +54,7 @@
 
 
 	<div class="room content wrap-container">
+        <div class="content-cover"></div>
 		<div class="room-images">
 			<div data-index="0">
 				<img src="../images/rooms/888-0.jpg">
@@ -169,17 +179,17 @@
 					</div>
     			</div>
     			<form method="GET" action="filter/" class="main-search">
-    				<div class="kit-form-field" data-index="0">
+    				<div class="kit-form-field" data-index="0" data-size="short">
     					<div class="kit-form-label">Прибытие</div>
                         <div class="expand kit-arrow"></div>
-    					<input readonly="readonly" type="text" name="comein" class="kit-form-input search-comein" data-size="short" value="ДД.ММ.ГГГГ"/>
+    					<input readonly="readonly" type="text" name="comein" class="kit-form-input search-comein" value="ДД.ММ.ГГГГ"/>
     				</div>
-    				<div class="kit-form-field" data-index="1" data-space="left">
+    				<div class="kit-form-field" data-index="1" data-space="left" data-size="short">
     					<div class="kit-form-label">Выезд</div>
                         <div class="expand kit-arrow"></div>
-    					<input readonly="readonly" type="text" name="comeout" class="kit-form-input search-comeout" data-size="short" value="ДД.ММ.ГГГГ"/>
+    					<input readonly="readonly" type="text" name="comeout" class="kit-form-input search-comeout" value="ДД.ММ.ГГГГ"/>
     				</div>
-    				<div class="kit-form-field" data-index="2" data-space="up">
+    				<div class="kit-form-field" data-index="2" data-space="up" data-size="long">
                         <div class="kit-form-label">Гости</div>
     				</div>
     				<div class="kit-form-field" data-index="3" data-space="up">
@@ -252,7 +262,7 @@
             </div>
 		</nav>
 		<div class="bar content-bar wrap-container">
-            <div class="wrap-align wrap">
+            <div class="wrap-align wrap footer-copyright">
     			<div class="footer-copyright-text">Copyright © 2018 Toxin отель. Все права зачищены.</div>
     			<div>
     				<img src="../images/icons/twitter_icon.svg" class="footer-social"/>
@@ -277,6 +287,6 @@
 	<script src="../lib/scripts/infragistics.dv.js"></script>
 
     <script type="text/javascript" src="../scripts/room.js"></script>
-    <script type="text/javascript" src="../scripts/ui-kit.js"></script>
+    <script type="text/javascript" src="../scripts/default.js"></script>
 </body>
 </html>
