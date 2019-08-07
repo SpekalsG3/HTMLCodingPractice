@@ -103,16 +103,8 @@
         text-align: center;
     }
 
-    .kit-form-input {
-        padding-right: 38px;
-    }
-
     .kit-form-submit {
         width: 100%;
-    }
-
-    .kit-arrow {
-        width: 38px;
     }
 
     [data-size="short"] {

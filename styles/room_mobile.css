@@ -41,6 +41,7 @@
 
 	.room-info {
 		max-width: 100%;
+		justify-content: center;
 	}
 
 	.room-info-label {
@@ -49,6 +50,10 @@
 
 	.room-info > div {
 		margin-top: 44px;
+	}
+
+	.room-info-total {
+		margin-right: 0;
 	}
 
 	.room-total-legend {
@@ -65,5 +70,19 @@
 
 	.room-repeal {
 		margin-right: 0
+	}
+
+	.content-room-main {
+		width: 88%;
+		padding-right: 0;
+	}
+
+	.form {
+		justify-content: center;
+	}
+
+	.kit-form-field[data-index="2"],
+	.kit-form-field[data-index="3"] {
+		width: 88%;
 	}
 }
