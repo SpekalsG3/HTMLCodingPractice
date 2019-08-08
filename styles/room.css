@@ -150,15 +150,15 @@
 }
 
 .room-total-legend div[data-index="0"]:before {
-	background-color: #d3dc9d;
+	background-color: #fec9c2;
 }
 
 .room-total-legend div[data-index="1"]:before {
-	background-color: #fcbca8;
+	background-color: #bfdfe7;
 }
 
 .room-total-legend div[data-index="2"]:before {
-	background-color: #cbb9e5;
+	background-color: #ffe5ac;
 }
 
 .room-total-legend div[data-index="3"]:before {

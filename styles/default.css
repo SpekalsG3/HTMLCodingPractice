@@ -122,19 +122,8 @@ input:focus {
     width: 21px;
 }
 
-.header-menu {
-    display: flex;
-    align-items: center;
-}
-
 .header-content .header-links + .header-links {
     margin-left: 20px;
-}
-
-.header-expand-more {
-    background: url(../images/icons/expand_more.svg) center no-repeat;
-    width: 24px;
-    height: 21px;
 }
 
 .header-signin-button,
