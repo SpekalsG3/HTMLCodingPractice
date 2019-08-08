@@ -1,13 +1,12 @@
 .kit-one-main {
     position: relative;
     width: 100%;
-    /*min-height: calc(100vh - 442px);*/
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
 
-.kit-form {
+.kit-form-block {
     position: relative;
     width: 350px;
     padding-top: 40px;
@@ -16,6 +15,13 @@
     border: 1px solid rgba(0, 0, 0, .12);
     box-shadow: 0 0 25px rgba(0, 0, 0, .2);
     border-radius: 4px;
+}
+
+.kit-form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .kit-form-title {
