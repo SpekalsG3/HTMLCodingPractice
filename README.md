@@ -1,6 +1,6 @@
 <h2>TOXIN - сайт для поиска номеров.</h2>
 
-<p><a href="https://spekalsg3.github.io">https://spekalsg3.github.io</a> - Демонстрация на Github Pages.</p>
+<p><a href="https://spekalsg3.github.io/HTMLPractice">https://spekalsg3.github.io/HTMLPractice</a> - Демонстрация на Github Pages.</p>
 
 <hr/>
 
@@ -43,7 +43,7 @@
 
 <hr>
 
-<h4>Страницы входа и регистрации.</h4>
+<h3>Страницы входа и регистрации.</h3>
 
 <br>
 
