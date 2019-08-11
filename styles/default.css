@@ -1,24 +1,24 @@
 @font-face {
     font-family: Montserrat;
     font-weight: normal;
-    src: url(../fonts/Montserrat-Regular.ttf);
+    src: url(/fonts/Montserrat-Regular.ttf);
 }
 @font-face {
     font-family: Montserrat;
     font-weight: bold;
-    src: url(../fonts/Montserrat-Bold.ttf);
+    src: url(/fonts/Montserrat-Bold.ttf);
 }
 
 @font-face {
     font-family: Quicksand;
     font-weight: normal;
-    src: url(../fonts/Quicksand-Regular.ttf);
+    src: url(/fonts/Quicksand-Regular.ttf);
 }
 
 @font-face {
     font-family: Quicksand;
     font-weight: bold;
-    src: url(../fonts/Quicksand-Bold.ttf);
+    src: url(/fonts/Quicksand-Bold.ttf);
 }
 
 ::placeholder {
@@ -140,7 +140,7 @@ input:focus {
 
 .header-signin-button {
     height: 41px;
-    background: url(../images/icons/gradient_border.svg) center no-repeat;
+    background: url(/images/icons/gradient_border.svg) center no-repeat;
     background-size: 95%;
     line-height: 41px;
     color: #BC9CFF;
@@ -225,7 +225,7 @@ footer {
     width: 44px;
     padding: 0;
     border: none;
-    background: url(../images/icons/arrow_forward_purple.svg) center no-repeat;
+    background: url(/images/icons/arrow_forward_purple.svg) center no-repeat;
 }
 
 .footer-copyright-text {
