@@ -76,6 +76,12 @@
     transition: box-shadow .2s;
 }
 
+.kit-form-input:hover,
+.kit-form-input:focus {
+    border-radius: 4px;
+    border: 1px solid rgba(31, 32, 65, .5);
+}
+
 [data-size="short"] {
     width: 149px;
 }
@@ -112,18 +118,18 @@
 
 .kit-arrow.expand {
     right: -2px;
-    background: url(../images/icons/expand_more.svg) center no-repeat;
+    background: url(../img/icons/expand_more.svg) center no-repeat;
 }
 
 .kit-arrow.forward {
     right: 0;
     top: 0;
-    background: url(../images/icons/arrow_forward.svg) center no-repeat;
+    background: url(../img/icons/arrow_forward.svg) center no-repeat;
 }
 
 .kit-arrow.prev,
 .kit-arrow.next {
-    background: url(../images/icons/slider_arrow.svg) center no-repeat;
+    background: url(../img/icons/slider_arrow.svg) center no-repeat;
     background-size: 14px;
 }
 
