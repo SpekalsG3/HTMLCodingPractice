@@ -226,11 +226,11 @@
 }
 
 .content-room-stars div[data-full="true"] {
-	background: url(../img/icons/star.svg) center no-repeat;
+	background: url(../images/icons/star.svg) center no-repeat;
 }
 
 .content-room-stars div[data-full="false"] {
-	background: url(../img/icons/star_border.svg) center no-repeat;
+	background: url(../images/icons/star_border.svg) center no-repeat;
 }
 
 
@@ -288,7 +288,7 @@
 	height: 100%;
 	left: 0;
 	top: 0;
-	background: url(../img/icons/arrow_forward.svg) center no-repeat;
+	background: url(../images/icons/arrow_forward.svg) center no-repeat;
 }
 
 .content-page-prev:after {

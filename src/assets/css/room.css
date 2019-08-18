@@ -255,11 +255,11 @@
 }
 
 .room-review-likes[data-liked="true"] .room-review-heart {
-	background: url(../img/icons/favorite.svg) center no-repeat;
+	background: url(../images/icons/favorite.svg) center no-repeat;
 }
 
 .room-review-likes[data-liked="false"] .room-review-heart {
-	background: url(../img/icons/favorite_border.svg) center no-repeat;
+	background: url(../images/icons/favorite_border.svg) center no-repeat;
 }
 
 .room-review-text {
@@ -450,5 +450,5 @@
 	height: 18px;
 	border: 1px solid rgba(31, 32, 65, .25);
 	border-radius: 25px;
-	background: url(../img/icons/hint.svg) center no-repeat;
+	background: url(../images/icons/hint.svg) center no-repeat;
 }

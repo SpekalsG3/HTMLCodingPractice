@@ -1,5 +1,5 @@
 .kit-one-main {
-    background-image: url(../img/authorization.jpg);
+    background-image: url(../images/authorization.jpg);
 }
 
 .kit-one-main .wrap {
@@ -34,7 +34,7 @@
 .main-question div {
 	height: 45px;
 	width: 110px;
-	background: url(../img/icons/gradient_border.svg) center no-repeat;
+	background: url(../images/icons/gradient_border.svg) center no-repeat;
 	background-size: 90%;
 	font: bold 12px Montserrat;
 	line-height: 45px;
