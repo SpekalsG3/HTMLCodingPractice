@@ -1,3 +1,5 @@
+import "../assets/scss/filter.scss";
+
 $(".kit-form-field[data-index='1']").dropdown({
 	valuePattern: "TS",
 	specClass: "guests",

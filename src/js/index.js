@@ -1,3 +1,5 @@
+import "../assets/scss/index.scss";
+
 $(".kit-form-field[data-index='0']").dateRangePicker({
     format: "DD.MM.YYYY",
     separator: " по ",

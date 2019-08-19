@@ -1,3 +1,5 @@
+import "../assets/scss/authorization.scss";
+
 var flag = true;
 
 $(".form-submit-input").click(function(e) {

@@ -18,7 +18,13 @@ module.exports = {
     paths: PATHS
   },
   entry: {
-    app: PATHS.src
+    default: `${PATHS.src}/js/default.js`,
+    index: `${PATHS.src}/js/index.js`,
+    filter: `${PATHS.src}/js/filter.js`,
+    room: `${PATHS.src}/js/room.js`,
+    authorization: `${PATHS.src}/js/authorization.js`,
+    signin: `${PATHS.src}/js/signin.js`,
+    signup: `${PATHS.src}/js/signup.js`
   },
   output: {
     filename: `${PATHS.assets}js/[name].[hash].js`,
@@ -87,7 +93,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: `${PATHS.assets}css/[name].[hash].css`,
+      filename: `${PATHS.assets}css/[name].[contenthash].css`,
     }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
@@ -96,11 +102,13 @@ module.exports = {
     ]),
     new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/index.html`,
-      filename: `./index.html`
+      filename: `./index.html`,
+      inject: false
     }),
     ...PAGES.map(page => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
-      filename: `./${page.split(".")[0]}/index.html`
+      filename: `./${page.split(".")[0]}/index.html`,
+      inject: false
     }))
   ]
 }
