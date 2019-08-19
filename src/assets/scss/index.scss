@@ -1,0 +1,72 @@
+@import "utils/mixins.scss";
+@import "utils/fonts.scss";
+@import "utils/vars.scss";
+
+.kit-one-main {
+    background-image: url(../img/landing_main.jpg);
+    height: 830px;
+}
+
+.main-block {
+	margin-top: 70px;
+	height: 302px;
+	padding-left: 30px;
+}
+
+.main-line[data-index="0"] {
+	letter-spacing: 1.2px;
+}
+
+.main-line[data-index="1"] {
+	letter-spacing: 1.5px;
+}
+
+.form-submit-input {
+	margin-top: 32px;
+}
+
+.main-slogan {
+	position: absolute;
+	right: 52px;
+	bottom: 21px;
+	width: 297px;
+	height: 48px;
+	font: 14px $mainFont;
+	color: rgba(31, 32, 65, .75);
+	line-height: 24px;
+	text-align: right;
+}
+
+@media screen and (max-width: 1300px) {
+	.main {
+		background-position: top;
+		background-size: auto calc(100% + 100px);
+	}
+}
+
+@media screen and (max-width: 979px) {
+    .content {
+        height: calc(100vh - 70px);
+    }
+    
+    .main-block {
+        width: 100%;
+        padding-left: 0;
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-slogan {
+        right: auto;
+    }
+
+    .kit-form-title {
+        text-align: center;
+    }
+
+    .main-search {
+        justify-content: center;
+    }
+}

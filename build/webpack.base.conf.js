@@ -1,3 +1,4 @@
+const webpack =  require("webpack");
 const path = require("path");
 const fs = require("fs");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -49,13 +50,7 @@ module.exports = {
       loader: "babel-loader",
       exclude: "/node_modules/"
     }, {
-      test: /\.(|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-      loader: "file-loader",
-      options: {
-        name: "[name].[ext]"
-      }
-    }, {
-      test: /\.(png|jpg|gif|svg)$/,
+      test: /\.(woff(2)?|ttf|eot|svg|jpg|png)(\?v=\d+\.\d+\.\d+)?$/,
       loader: "file-loader",
       options: {
         name: "[name].[ext]"
@@ -100,15 +95,20 @@ module.exports = {
       { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
       { from: `${PATHS.src}/static`, to: "" }
     ]),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery"
+    }),
     new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/index.html`,
       filename: `./index.html`,
-      inject: false
+      chunks: ["vendors", "default", "index"]
     }),
     ...PAGES.map(page => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
       filename: `./${page.split(".")[0]}/index.html`,
-      inject: false
+      chunks: ["vendors", "default", page.split(".")[0]]
     }))
   ]
 }
