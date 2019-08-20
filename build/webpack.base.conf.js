@@ -30,19 +30,22 @@ module.exports = {
   output: {
     filename: `${PATHS.assets}js/[name].[hash].js`,
     path: PATHS.dist,
-    publicPath: "/"
+    publicPath: "/src/"
   },
   optimization: {
+    runtimeChunk: "single",
     splitChunks: {
+      chunks: "all",
+      maxInitialRequests: Infinity,
+      minSize: 0,
       cacheGroups: {
         vendor: {
-          name: "vendors",
-          test: /node_modules/,
-          chunks: "all",
-          enforce: true
-        }
-      }
-    }
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendor",
+          chunks: "all"
+        },
+      },
+    },
   },
   module: {
     rules: [{
@@ -50,10 +53,16 @@ module.exports = {
       loader: "babel-loader",
       exclude: "/node_modules/"
     }, {
-      test: /\.(woff(2)?|ttf|eot|svg|jpg|png)(\?v=\d+\.\d+\.\d+)?$/,
+      test: /\.(woff(2)?|ttf)$/,
       loader: "file-loader",
       options: {
-        name: "[name].[ext]"
+        name: `${PATHS.assets}fonts/[name].[ext]`
+      }
+    }, {
+      test: /\.(svg|jpg|png)$/,
+      loader: "file-loader",
+      options: {
+        name: `[path]/[name].[ext]`
       }
     }, {
       test: /\.scss$/,
@@ -103,12 +112,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/index.html`,
       filename: `./index.html`,
-      chunks: ["vendors", "default", "index"]
+      chunks: ["vendor", "default", "index"]
     }),
     ...PAGES.map(page => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
       filename: `./${page.split(".")[0]}/index.html`,
-      chunks: ["vendors", "default", page.split(".")[0]]
+      chunks: ["vendor", "default", page.split(".")[0]]
     }))
   ]
 }

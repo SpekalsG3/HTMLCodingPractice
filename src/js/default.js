@@ -1,9 +1,5 @@
 import "../assets/scss/default.scss";
 import "../assets/scss/ui-kit.scss";
-import $ from "jquery";
-
-window.jQuery = $;
-window.$ = $;
 
 var $content = $(".content");
 
