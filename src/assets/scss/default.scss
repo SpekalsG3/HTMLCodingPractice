@@ -118,7 +118,7 @@ input:focus {
 
 .header-signin-button {
     height: 41px;
-    background: url(../img/icons/gradient_border.svg) center no-repeat;
+    background: url(/assets/img/icons/gradient_border.svg) center no-repeat;
     background-size: 95%;
     line-height: 41px;
     color: $purpleColor;
@@ -203,7 +203,7 @@ footer {
     width: 44px;
     padding: 0;
     border: none;
-    background: url(../img/icons/arrow_forward_purple.svg) center no-repeat;
+    background: url(/assets/img/icons/arrow_forward_purple.svg) center no-repeat;
 }
 
 .footer-copyright-text {
@@ -229,7 +229,7 @@ footer {
     display: none;
     width: 44px;
     height: 44px;
-    background: url(../img/icons/menu.svg) center no-repeat;
+    background: url(/assets/img/icons/menu.svg) center no-repeat;
 }
 
 @media screen and (max-width: 979px) {

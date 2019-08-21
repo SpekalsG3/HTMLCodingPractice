@@ -14,9 +14,20 @@ const PATHS = {
 const PAGES_DIR = `${PATHS.src}/html`;
 const PAGES = fs.readdirSync(PAGES_DIR).filter(el => el != "index.html");
 
+function isExternal(module) {
+  var context = module.context;
+
+  if (typeof context !== 'string') {
+    return false;
+  }
+
+  return context.indexOf('node_modules') !== -1;
+}
+
 module.exports = {
   externals: {
-    paths: PATHS
+    paths: PATHS,
+    "jquery": "jQuery"
   },
   entry: {
     default: `${PATHS.src}/js/default.js`,
@@ -30,7 +41,7 @@ module.exports = {
   output: {
     filename: `${PATHS.assets}js/[name].[hash].js`,
     path: PATHS.dist,
-    publicPath: "/src/"
+    publicPath: "/"
   },
   optimization: {
     runtimeChunk: "single",
@@ -39,13 +50,26 @@ module.exports = {
       maxInitialRequests: Infinity,
       minSize: 0,
       cacheGroups: {
+        /*common: {
+          name: "common",
+          minChunks: function(module, count) {
+            return !isExternal(module) && count >= 2;
+          }
+        },*/
         vendor: {
           test: /[\\/]node_modules[\\/]/,
-          name: "vendor",
-          chunks: "all"
-        },
+          name: "vendors",
+          filename: "[name].[hash].js",
+          minChunks: 2,
+          chunks: 'all'
+        }
       },
     },
+  },
+  resolve: {
+    alias: {
+      'jquery': '/node_modules/jquery/dist/jquery.js',
+    }
   },
   module: {
     rules: [{
@@ -57,12 +81,6 @@ module.exports = {
       loader: "file-loader",
       options: {
         name: `${PATHS.assets}fonts/[name].[ext]`
-      }
-    }, {
-      test: /\.(svg|jpg|png)$/,
-      loader: "file-loader",
-      options: {
-        name: `[path]/[name].[ext]`
       }
     }, {
       test: /\.scss$/,
@@ -107,17 +125,18 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",
-      "window.jQuery": "jquery"
+      "window.jQuery": "jquery",
+      "window.$": "jquery"
     }),
     new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/index.html`,
       filename: `./index.html`,
-      chunks: ["vendor", "default", "index"]
+      // chunks: ["vendor", "default", "index"]
     }),
     ...PAGES.map(page => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
       filename: `./${page.split(".")[0]}/index.html`,
-      chunks: ["vendor", "default", page.split(".")[0]]
+      // chunks: ["vendor", "default", page.split(".")[0]]
     }))
   ]
 }
