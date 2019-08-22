@@ -3,13 +3,6 @@ import "../assets/scss/index.scss";
 import "../lib/js/jquery.daterangepicker.min.js";
 import "../lib/js/jquery.dropdown.js";*/
 
-import $ from "jquery";
-window.$ = window.jQuery = $;
-// var $ = require('jquery')(require("jsdom").jsdom().parentWindow);
-/*var jsdom = require("jsdom"); 
-$ = require("jquery")(jsdom.jsdom().createWindow());*/
-// window.$ = require('jquery')(window);
-
 $(".kit-form-field[data-index='0']").dateRangePicker({
     format: "DD.MM.YYYY",
     separator: " по ",
