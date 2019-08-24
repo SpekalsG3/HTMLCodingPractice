@@ -1,7 +1,9 @@
 import "../assets/scss/index.scss";
-/*import "../lib/js/moment.min.js";
-import "../lib/js/jquery.daterangepicker.min.js";
-import "../lib/js/jquery.dropdown.js";*/
+import "moment";
+import "../static/lib/css/daterangepicker.min.css";
+import "../static/lib/js/jquery.daterangepicker.min.js";
+import "../static/lib/css/dropdown.css";
+import "../static/lib/js/jquery.dropdown.js";
 
 $(".kit-form-field[data-index='0']").dateRangePicker({
     format: "DD.MM.YYYY",

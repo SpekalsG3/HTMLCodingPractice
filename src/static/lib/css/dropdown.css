@@ -29,11 +29,7 @@
 }
 
 .dropdown-placeholder {
-    width: 100%;
     border-radius: 0;
-    border-top: none;
-    border-left: none;
-    border-right: none;
     font: 14px Montserrat;
     line-height: 44px;
     overflow: hidden;
@@ -42,7 +38,7 @@
 }
 
 .dropdown.extended .dropdown-placeholder.kit-form-input {
-    width: calc(100% - 56px);
+    width: calc(100% - 57px);
     border-top: none;
     border-left: none;
     border-right: none;

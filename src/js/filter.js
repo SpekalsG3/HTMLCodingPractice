@@ -1,4 +1,9 @@
 import "../assets/scss/filter.scss";
+import "moment";
+import "../static/lib/css/daterangepicker.min.css";
+import "../static/lib/js/jquery.daterangepicker.min.js";
+import "../static/lib/css/dropdown.css";
+import "../static/lib/js/jquery.dropdown.js";
 
 $(".kit-form-field[data-index='1']").dropdown({
 	valuePattern: "TS",

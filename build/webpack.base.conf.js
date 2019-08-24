@@ -38,6 +38,8 @@ module.exports = {
       chunks: "all",
       cacheGroups: {
         vendor: {
+          maxInitialRequests: 20,
+          maxAsyncRequests: 20,
           test: /[\\/]node_modules[\\/]/,
           name: "vendors",
           filename: `${PATHS.assets}js/[name].[hash].js`,
@@ -105,12 +107,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/index.html`,
       filename: `./index.html`,
-      // chunks: ["vendor", "default", "index"]
+      chunks: ["runtime", "vendors", "default", "index"]
     }),
     ...PAGES.map(page => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
       filename: `./${page.split(".")[0]}/index.html`,
-      // chunks: ["vendor", "default", page.split(".")[0]]
+      chunks: ["runtime", "vendors", "default", page.split(".")[0]]
     }))
   ]
 }

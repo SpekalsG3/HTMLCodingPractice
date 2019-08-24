@@ -233,6 +233,10 @@ footer {
 }
 
 @media screen and (max-width: 979px) {
+    .wrap {
+        width: 100%;
+    }
+
     .header-menu-icon {
         display: block;
     }
@@ -291,7 +295,7 @@ footer {
 
     .footer-copyright {
         background: #fff;
-        padding-bottom: 20px;
+        padding: 20px 0;
     }
 
     .footer-copyright-text {
