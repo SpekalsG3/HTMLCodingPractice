@@ -14,19 +14,21 @@ const PATHS = {
 const PAGES_DIR = `${PATHS.src}/html`;
 const PAGES = fs.readdirSync(PAGES_DIR).filter(el => el != "index.html");
 
+const ENTRIES = {
+  default: `${PATHS.src}/js/default.js`,
+  index: `${PATHS.src}/js/index.js`,
+  filter: `${PATHS.src}/js/filter.js`,
+  room: `${PATHS.src}/js/room.js`,
+  authorization: `${PATHS.src}/js/authorization.js`,
+  signin: `${PATHS.src}/js/signin.js`,
+  signup: `${PATHS.src}/js/signup.js`
+}
+
 module.exports = {
   externals: {
     paths: PATHS
   },
-  entry: {
-    default: `${PATHS.src}/js/default.js`,
-    index: `${PATHS.src}/js/index.js`,
-    filter: `${PATHS.src}/js/filter.js`,
-    room: `${PATHS.src}/js/room.js`,
-    authorization: `${PATHS.src}/js/authorization.js`,
-    signin: `${PATHS.src}/js/signin.js`,
-    signup: `${PATHS.src}/js/signup.js`
-  },
+  entry: ENTRIES,
   output: {
     filename: `${PATHS.assets}js/[name].[hash].js`,
     path: PATHS.dist,
@@ -38,11 +40,8 @@ module.exports = {
       chunks: "all",
       cacheGroups: {
         vendor: {
-          maxInitialRequests: 20,
-          maxAsyncRequests: 20,
           test: /[\\/]node_modules[\\/]/,
           name: "vendors",
-          filename: `${PATHS.assets}js/[name].[hash].js`,
           chunks: 'all'
         }
       },
@@ -107,12 +106,28 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/index.html`,
       filename: `./index.html`,
-      chunks: ["runtime", "vendors", "default", "index"]
+      excludeChunks: Object.keys(ENTRIES).filter(el => !["index", "default"].includes(el)),
+      minify: {
+        collapseWhitespace: true, 
+        removeComments: true, 
+        removeRedundantAttributes: true, 
+        removeScriptTypeAttributes: true, 
+        removeStyleLinkTypeAttributes: true, 
+        useShortDoctype: true
+      }
     }),
     ...PAGES.map(page => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
       filename: `./${page.split(".")[0]}/index.html`,
-      chunks: ["runtime", "vendors", "default", page.split(".")[0]]
+      excludeChunks: Object.keys(ENTRIES).filter(el => ![page.split(".")[0], "default"].includes(el)),
+      minify: {
+        collapseWhitespace: true, 
+        removeComments: true, 
+        removeRedundantAttributes: true, 
+        removeScriptTypeAttributes: true, 
+        removeStyleLinkTypeAttributes: true, 
+        useShortDoctype: true
+      }
     }))
   ]
 }

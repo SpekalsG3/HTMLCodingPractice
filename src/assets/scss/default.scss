@@ -237,6 +237,10 @@ footer {
         width: 100%;
     }
 
+    .wrap-align {
+        width: 95%;
+    }
+
     .header-menu-icon {
         display: block;
     }
@@ -252,7 +256,7 @@ footer {
         width: 100%;
         border-top: 1px solid rgba($darkColor, 0.05);
         background: #fff;
-        z-index: 0;
+        visibility: hidden;
     }
 
     .header-content .header-links + .header-links,
@@ -260,6 +264,14 @@ footer {
     .header-signup-button {
         margin-top: 20px;
         margin-left: 0px;
+    }
+
+    header.shift {
+        z-index: 1;
+    }
+
+    header.shift .header-content {
+        visibility: visible;
     }
 
     .content {
