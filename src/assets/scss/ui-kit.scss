@@ -1,3 +1,7 @@
+@import "utils/mixins.scss";
+@import "utils/fonts.scss";
+@import "utils/vars.scss";
+
 .kit-one-main {
     position: relative;
     width: 100%;
@@ -8,6 +12,7 @@
 
 .kit-form-block {
     position: relative;
+    min-width: 350px;
     width: 350px;
     padding-top: 40px;
     padding-bottom: 30px;
@@ -26,7 +31,7 @@
 
 .kit-form-title {
     position: relative;
-    font: bold 24px Quicksand, sans-serif;
+    font: bold 24px $addFont, sans-serif;
     letter-spacing: 1px;
 }
 
@@ -50,10 +55,10 @@
     display: block;
     margin-bottom: 4px;
     margin-left: 1px;
-    font: bold 12px Montserrat, sans-serif;
+    font: bold 12px $mainFont, sans-serif;
     text-transform: uppercase;
     letter-spacing: .1px;
-    color: #1F2041;
+    color: $darkColor;
 }
 
 .kit-form-input {
@@ -62,17 +67,14 @@
     padding-right: 44px;
     height: 42px;
     width: calc(100% - 58px);
-    border: 1px solid rgba(31, 32, 65, .25);
+    border: 1px solid rgba($darkColor, .25);
     border-radius: 4px;
     box-shadow: none;
     font-size: 14px;
-    font-family: Montserrat;
-    color: rgba(31, 32, 65, .75);
+    font-family: $mainFont;
+    color: rgba($darkColor, .75);
     cursor: pointer;
     text-overflow: ellipsis;
-    -webkit-transition: box-shadow .2s;
-    -moz-transition: box-shadow .2s;
-    -o-transition: box-shadow .2s;
     transition: box-shadow .2s;
 }
 
@@ -88,14 +90,17 @@
     width: 317px;
 }
 
+.form-submit-input {
+    width: 320px;
+}
+
 .kit-form-submit {
     position: relative;
-    width: 320px;
     height: 44px;
-    background: linear-gradient(#BC9CFF, #8BA4F9);
+    background: $purpleGrad;
     border: none;
     border-radius: 22px;
-    font: bold 12px Montserrat;
+    font: bold 12px $mainFont;
     color: #fff;
     text-transform: uppercase;
     letter-spacing: .2px;
@@ -186,7 +191,7 @@
     margin-left: 1px;
     height: 18px;
     width: 18px;
-    border: 1px solid rgba(31, 32, 65, 0.25);
+    border: 1px solid rgba($darkColor, 0.25);
     border-radius: 4px;
 }
 
@@ -194,7 +199,7 @@
     position: absolute;
     width: 6px;
     height: 8px;
-    background: linear-gradient(#BC9CFF, #8BA4F9);
+    background: $purpleGrad;
     transform: rotateZ(45deg);
     transition: .1s;
     opacity: 0;
@@ -220,8 +225,8 @@
 }
 
 .kit-checkbox-title {
-    font: 14px Montserrat;
-    color: rgba(31, 32, 65, .75);
+    font: 14px $mainFont;
+    color: rgba($darkColor, .75);
 }
 
 .kit-bold {
@@ -230,15 +235,15 @@
 
 .kit-checkbox-note {
     margin-top: 5px;
-    font: 12px Montserrat;
-    color: rgba(31, 32, 65, 0.5);
+    font: 12px $mainFont;
+    color: rgba($darkColor, 0.5);
 }
 
 .kit-radio,
 .kit-switch {
     margin-top: 10px;
-    font: 14px Montserrat;
-    color: rgba(31, 32, 65, .75);
+    font: 14px $mainFont;
+    color: rgba($darkColor, .75);
 }
 
 .kit-radio label,
@@ -257,7 +262,7 @@
     margin-right: 10px;
     width: 18px;
     height: 18px;
-    border: 1px solid #BC9CFF;
+    border: 1px solid $purpleColor;
     border-radius: 25px;
 }
 
@@ -268,7 +273,7 @@
     width: 10px;
     height: 10px;
     border-radius: 25px;
-    background: linear-gradient(#BC9CFF, #8BA4F9);
+    background: $purpleGrad;
 }
 
 .kit-radio-checkmark div:after,
@@ -297,7 +302,7 @@
     width: 38px;
     height: 18px;
     border-radius: 25px;
-    border: 1px solid rgba(31, 32, 65, .25);
+    border: 1px solid rgba($darkColor, .25);
 }
 
 .kit-switch-dot {
@@ -306,7 +311,7 @@
     top: 4px;
     width: 10px;
     height: 10px;
-    background: linear-gradient(#BC9CFF, #8BA4F9);
+    background: $purpleGrad;
     border-radius: 25px;
     transition: .2s;
 }
@@ -316,11 +321,11 @@
 }
 
 .kit-switch-checkmark .kit-switch-dot div:after {
-    background: rgba(31, 32, 65, .25);
+    background: rgba($darkColor, .25);
 }
 
 .kit-switch input:checked + .kit-switch-checkmark {
-    border: 1px solid #BC9CFF;
+    border: 1px solid $purpleColor;
 }
 
 .kit-switch input:checked + .kit-switch-checkmark .kit-switch-dot {
@@ -329,4 +334,10 @@
 
 .kit-switch input:checked + .kit-switch-checkmark .kit-switch-dot div {
     opacity: 0;
+}
+
+@media screen and (max-width: 979px) {
+    .kit-form {
+        justify-content: center;
+    }
 }

@@ -1,4 +1,4 @@
-const webpack =  require("webpack");
+const webpack = require("webpack");
 const path = require("path");
 const fs = require("fs");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -28,6 +28,9 @@ module.exports = {
   externals: {
     paths: PATHS
   },
+  node: {
+    fs: "empty"
+  },
   entry: ENTRIES,
   output: {
     filename: `${PATHS.assets}js/[name].[hash].js`,
@@ -49,6 +52,9 @@ module.exports = {
   },
   module: {
     rules: [{
+      test: /modernizr/,
+      loader: 'imports-loader?this=>window!exports-loader?window.Modernizr'
+    }, {
       test: /\.js$/,
       loader: "babel-loader",
       exclude: "/node_modules/"

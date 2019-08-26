@@ -1,4 +1,16 @@
 import "../assets/scss/room.scss";
+import "moment";
+
+import "../static/lib/css/daterangepicker.min.css";
+import "../static/lib/css/dropdown.css";
+import "../static/lib/css/rangeslider.min.css";
+
+import "../static/lib/js/jquery.daterangepicker.min.js";
+import "../static/lib/js/jquery.dropdown.js";
+import "../static/lib/js/modernizr.min.js";
+import "jquery-ui";
+import "../static/lib/js/infragistics.core.js";
+import "../static/lib/js/infragistics.dv.js";
 
 var data = [
     { "Оценка": "Хорошо", "Количество": 65 },

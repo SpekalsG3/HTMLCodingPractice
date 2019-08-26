@@ -1,7 +1,6 @@
 @import "utils/mixins.scss";
 @import "utils/fonts.scss";
 @import "utils/vars.scss";
-@import "utils/libs.scss";
 
 body {
     margin: 0;
@@ -126,7 +125,7 @@ input:focus {
 
 .header-signup-button {
     height: 34px;
-    background: linear-gradient($purpleColor, #8BA4F9);
+    background: $purpleGrad;
     line-height: 34px;
 }
 
