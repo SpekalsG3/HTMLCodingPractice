@@ -38,10 +38,6 @@
 }
 
 @media screen and (max-width: 1300px) {
-    .content .wrap {
-        display: flex;
-        justify-content: center;
-    }
 
 	.main {
 		background-position: top;
@@ -49,7 +45,7 @@
 	}
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 450px) {
     .main-block {
         width: 100%;
     }
@@ -58,6 +54,11 @@
 @media screen and (max-width: 979px) {
     .content {
         height: calc(100vh - 70px);
+    }
+
+    .content .wrap {
+        display: flex;
+        justify-content: center;
     }
     
     .main-block {
@@ -69,7 +70,7 @@
     }
 
     .main-slogan {
-        right: auto;
+        justify-self: flex-end;
     }
 
     .kit-form-title {
