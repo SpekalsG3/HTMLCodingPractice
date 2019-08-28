@@ -18,17 +18,6 @@ var data = [
     { "Оценка": "Удовлетворительно", "Количество": 65 }
 ];
 
-$(".room-total-chart").igDoughnutChart({
-    innerExtent: 90,
-    series:
-    [{
-        name: "Количество",
-        labelMemberPath: "Оценка",
-        valueMemberPath: "Количество",
-        dataSource: data
-    }]
-});
-
 $(".kit-form-field[data-index='2']").dropdown({
     specClass: "guests",
     placeholder: "Сколько гостей",
@@ -54,6 +43,17 @@ $(".kit-form-field[data-index='2']").dropdown({
     ],
     clearBtn: true,
     applyBtn: true
+});
+
+$(".room-total-chart").igDoughnutChart({
+    innerExtent: 90,
+    series:
+    [{
+        name: "Количество",
+        labelMemberPath: "Оценка",
+        valueMemberPath: "Количество",
+        dataSource: data
+    }]
 });
 
 var URISearch = window.location.search.slice(1).split(/(&|=)/).filter(function(v, i) {

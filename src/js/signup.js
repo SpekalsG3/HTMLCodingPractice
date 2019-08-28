@@ -1,4 +1,7 @@
+import "../assets/scss/authorization.scss";
 import "../assets/scss/signup.scss";
+import "moment";
+import "../static/lib/css/daterangepicker.min.css";
 
 $(".kit-form-field[data-index='2']").dateRangePicker({
 	format: "DD.MM.YYYY",

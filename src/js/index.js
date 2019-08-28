@@ -61,7 +61,7 @@ $(".kit-form-field[data-index='2']").dropdown({
     clearBtn: true,
     applyBtn: true
 });
-
+/*
 var inputsToCheck;
 var wrongValues = ["ДД.ММ.ГГГГ", "ДД.ММ.ГГГГ", "Сколько гостей"];
 
@@ -90,4 +90,4 @@ $(".main-search").submit(function(e) {
 
         e.preventDefault();
     }
-});
+});*/

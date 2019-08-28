@@ -13,3 +13,14 @@ window.addEventListener("touchmove", function () {
 	$content.removeClass("shift");
 	$header.removeClass("shift");
 });
+
+$(".kit-form").submit(function(e) {
+	$(".kit-form-input").each(function() {
+		if (this.value == "") {
+			e.preventDefault();
+			this.classList.add("kit-input-error");
+		} else {
+			this.classList.remove("kit-input-error");
+		}
+	});
+});

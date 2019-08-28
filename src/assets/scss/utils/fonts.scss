@@ -1,3 +1,5 @@
+@import "./mixins.scss";
+
 @include font-face(Montserrat, "../fonts/Montserrat-Regular", normal, normal, ttf);
 @include font-face(Montserrat, "../fonts/Montserrat-Bold", bold, normal, ttf);
 @include font-face(Quicksand, "../fonts/Quicksand-Regular", normal, normal, ttf);

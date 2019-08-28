@@ -1,4 +1,3 @@
-@import "utils/mixins.scss";
 @import "utils/fonts.scss";
 @import "utils/vars.scss";
 
@@ -191,7 +190,11 @@ footer {
     height: 43px;
     font: 14px $mainFont;
     border-radius: 4px;
-    border: 1px solid rgba($darkColor, 0.25);
+    border: 1px solid rgba($darkColor, .25);
+}
+
+.email-input::placeholder {
+    color: rgba($darkColor, .25);
 }
 
 .email-submit {
@@ -253,7 +256,7 @@ footer {
         left: 0;
         padding: 20px 0;
         width: 100%;
-        border-top: 1px solid rgba($darkColor, 0.05);
+        border-top: 1px solid rgba($darkColor, .05);
         background: #fff;
         visibility: hidden;
     }
@@ -341,18 +344,5 @@ footer {
 
     .kit-form-submit {
         width: 100%;
-    }
-
-    [data-size="short"] {
-        width: 42%;
-    }
-
-    [data-size="long"],
-    .form-submit-input {
-        width: 88%;
-    }
-
-    [data-space="left"] {
-        margin-left: 4%;
     }
 }

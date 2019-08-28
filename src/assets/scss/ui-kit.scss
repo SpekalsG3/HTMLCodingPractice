@@ -1,4 +1,3 @@
-@import "utils/mixins.scss";
 @import "utils/fonts.scss";
 @import "utils/vars.scss";
 
@@ -76,6 +75,10 @@
     cursor: pointer;
     text-overflow: ellipsis;
     transition: box-shadow .2s;
+}
+
+.kit-input-error {
+    box-shadow: 0 0 6px #FA7464;
 }
 
 [data-size="short"] {
@@ -340,5 +343,18 @@
 @media screen and (max-width: 979px) {
     .kit-form {
         justify-content: center;
+    }
+
+    [data-size="short"] {
+        width: 42%;
+    }
+
+    [data-size="long"],
+    .form-submit-input {
+        width: 88%;
+    }
+
+    [data-space="left"] {
+        margin-left: 4%;
     }
 }

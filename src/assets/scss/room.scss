@@ -1,4 +1,3 @@
-@import "utils/mixins.scss";
 @import "utils/fonts.scss";
 @import "utils/vars.scss";
 
@@ -385,12 +384,12 @@
 	padding-left: 31px;
 }
 
-.form {
-	display: flex;
-	align-items: center;
-	flex-wrap: wrap;
-	position: relative;
+.kit-form {
 	margin-top: 14px;
+}
+
+.kit-form-input::placeholder {
+    color: rgba($darkColor, .75);
 }
 
 .search-submit-input {
@@ -430,7 +429,7 @@
 	position: absolute;
 	bottom: 5px;
 	left: 66px;
-	width: 178px;
+	width: calc(100% - 150px);
 	height: 1px;
 	background: rgba($darkColor, .25);
 }
@@ -441,10 +440,10 @@
 
 .room-booking-nametag {
 	position: relative;
-	width: 69%;
+	width: 222px;
 }
 
-.hint:after {
+.room-booking-nametag.hint:after {
 	content: "";
 	position: absolute;
 	top: -1px;
@@ -489,7 +488,7 @@
 
 	.room-booking {
 		margin: 0;
-		padding-left: 0;
+		padding-left: 0; 
 		width: 100%;
 		display: flex;
 		flex-direction: column;
@@ -540,6 +539,14 @@
 		padding-right: 0;
 	}
 
+	.room-booking-nametag {
+		width: auto;
+	}
+
+	.room-booking-nametag.hint:after {
+		right: -31px;
+	}
+
 	.form {
 		justify-content: center;
 	}
@@ -547,9 +554,5 @@
 	.kit-form-field[data-index="2"],
 	.kit-form-field[data-index="3"] {
 		width: 88%;
-	}
-
-	[data-space="left"] {
-		margin-left: 63px;
 	}
 }
