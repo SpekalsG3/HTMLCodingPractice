@@ -16,72 +16,89 @@ include ../includes/header.pug
 	.wrap
 		form.content-settings
 			.content-settings-wrap
-				.kit-form-field.settings-date(data-index='0', data-size='medium')
-					.kit-form-label Даты пребывания в отеле
-					.expand.kit-arrow
-					input.kit-form-input.search-comeinout(readonly='readonly', type='text', name='comeinout')
-				.kit-form-field(data-index='1', data-space='up', data-size='medium')
-					.kit-form-label Гости
-				.kit-form-field(data-space='long-up')
-					.settings-field-top
-						.kit-form-label Диапазон цены
-						.settings-price
-							span.settings-price-from 5 000
-							span.ruble &#x20bd;
-							| -
-							span.settings-price-to 10 000
-							span.ruble &#x20bd;
-					input.settings-price-range(type='text', name='price-range')
-					.settings-note Стоимость за сутки пребывания в номере
-				.kit-form-field.kit-checkbox(data-index='2', data-space='long-up')
-					.kit-form-label Checkbox buttons
-					.kit-checkbox-options
-						label
-							input(type='checkbox', name='smoke', value='0')
-							.kit-checkbox-checkmark
-								div
-							span.kit-checkbox-text
-								.kit-checkbox-title Можно курить
-						label
-							input(type='checkbox', name='pets', value='1')
-							.kit-checkbox-checkmark
-								div
-							span.kit-checkbox-text
-								.kit-checkbox-title Можно с питомцами
-						label
-							input(type='checkbox', name='guests', value='2')
-							.kit-checkbox-checkmark
-								div
-							span.kit-checkbox-text
-								.kit-checkbox-title
-									| Можно пригласить гостей
-									br
-									| (до 10 человек)
-				.kit-form-field.kit-checkbox(data-index='4')
-					.kit-form-label Доступность
-					.kit-checkbox-options
-						label
-							input(type='checkbox', name='wide', value='3')
-							.kit-checkbox-checkmark
-								div
-							span.kit-checkbox-text
-								.kit-checkbox-title.kit-bold Широкий коридор
-								.kit-checkbox-note
-									| Ширина коридоров в номере
-									br
-									| не менее 91 см.
-						label
-							input(type='checkbox', name='helper', value='4')
-							.kit-checkbox-checkmark
-								div
-							span.kit-checkbox-text
-								.kit-checkbox-title.kit-bold Помощник для инвалидов
-								.kit-checkbox-note
-									| На 1 этаже вас встретит специалист
-									br
-									| и проводит до номера.
-				.kit-form-field(data-index='5', data-space='long-up', data-size='medium')
-					.kit-form-label Удобства номера
+				+kit-form-field({
+					text: "Даты пребывания в отеле",
+					settings: {
+						class: "settings-date",
+						"data-index": "0",
+						"data-size": "medium"
+					},
+					input: {
+						name: "comeinout"
+					}
+				})
+				+kit-form-field({
+					purpose: "dropdown",
+					text: "Даты пребывания в отеле",
+					settings: {
+						"data-index": "1",
+						"data-space": "up",
+						"data-size": "medium"
+					}
+				})
+				+kit-form-field({
+					purpose: "range",
+					text: "Диапазон цены",
+					from: "5 000",
+					to: "10 000",
+					note: "Стоимость за сутки пребывания в номере",
+					settings: {
+						"data-space": "long-up"
+					},
+					input: {
+						name: "price-range"
+					}
+				})
+				+kit-form-field({
+					purpose: "checkbox",
+					text: "Checkbox buttons",
+					settings: {
+						class: "kit-checkbox",
+						"data-index": "2",
+						"data-space": "long-up"
+					},
+					input: [{
+						name: "smoke",
+						value: 0,
+						title: "Можно курить"
+					}, {
+						name: "pets",
+						value: 1,
+						title: "Можно с питомцами"
+					}, {
+						name: "guests",
+						value: 2,
+						title: "Можно пригласить гостей<br>(до 10 человек)"
+					}]
+				})
+				+kit-form-field({
+					purpose: "checkbox",
+					text: "Доступность",
+					settings: {
+						class: "kit-checkbox",
+						"data-index": "4",
+					},
+					input: [{
+						name: "wide",
+						value: 3,
+						title: "Широкий коридор",
+						note: "Ширина коридоров в номере<br>не менее 91 см."
+					}, {
+						name: "helper",
+						value: 4,
+						title: "Помощник для инвалидов",
+						note: "На 1 этаже вас встретит специалист<br>и проводит до номера."
+					}]
+				})
+				+kit-form-field({
+					purpose: "dropdown",
+					text: "Удобства номера",
+					settings: {
+						"data-index": "5",
+						"data-space": "long-up",
+						"data-size": "medium"
+					}
+				})
 				.kit-form-field.kit-checkbox.convertible.default(data-space='long-up')
 					.kit-form-label Дополнительные удобства
 					.kit-arrow.expand.kit-checkbox-arrow

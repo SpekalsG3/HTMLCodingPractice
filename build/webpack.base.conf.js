@@ -60,7 +60,7 @@ module.exports = {
     }, {
       test: /\.js$/,
       loader: "babel-loader",
-      exclude: ["/node_modules/", "../static/lib/"]
+      exclude: "/node_modules/",
     }, {
       test: /\.(woff(2)?|ttf)$/,
       loader: "file-loader",

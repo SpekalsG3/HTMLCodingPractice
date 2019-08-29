@@ -3,6 +3,33 @@ mixin kit-form-field(args)
 		if args.purpose == "submit"
 			.forward.kit-arrow
 			button.kit-form-submit #{args.text}
+		else if args.purpose == "range"
+			.settings-field-top
+				.kit-form-label #{args.text}
+				.settings-price
+					span.settings-price-from #{args.from}
+					span.ruble &#x20bd;
+					| -
+					span.settings-price-to #{args.to}
+					span.ruble &#x20bd;
+			input.settings-price-range(type='text')&attributes(args.input)
+			if args.note
+				.settings-note #{args.note}
+		else if args.purpose == "checkbox"
+			.kit-form-label #{args.text}
+			.kit-checkbox-options
+				each val in args.input
+					label
+						input(type='checkbox')&attributes({name:val.name, value:val.value})
+						.kit-checkbox-checkmark
+							div
+						if val.note
+							span.kit-checkbox-text
+								.kit-checkbox-title.kit-bold !{val.title}
+								.kit-checkbox-note !{val.note}
+						else
+							span.kit-checkbox-text
+								.kit-checkbox-title !{val.title}
 		else
 			.kit-form-label #{args.text}
 			if args.purpose != "dropdown"
