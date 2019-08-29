@@ -11,8 +11,8 @@ const PATHS = {
   assets: "assets/"
 }
 
-const PAGES_DIR = `${PATHS.src}/html`;
-const PAGES = fs.readdirSync(PAGES_DIR).filter(el => el != "index.html");
+const PAGES_DIR = `${PATHS.src}/pug/pages`;
+const PAGES = fs.readdirSync(PAGES_DIR).filter(el => el != "index.pug");
 
 const ENTRIES = {
   default: `${PATHS.src}/js/default.js`,
@@ -51,13 +51,16 @@ module.exports = {
     },
   },
   module: {
-    rules: [{
+    rules: [ {
+      test: /\.pug$/,
+      loader: "pug-loader"
+    }, {
       test: /modernizr/,
       loader: 'imports-loader?this=>window!exports-loader?window.Modernizr'
     }, {
       test: /\.js$/,
       loader: "babel-loader",
-      exclude: "/node_modules/"
+      exclude: ["/node_modules/", "../static/lib/"]
     }, {
       test: /\.(woff(2)?|ttf)$/,
       loader: "file-loader",
@@ -110,7 +113,8 @@ module.exports = {
       "window.jQuery": "jquery"
     }),
     new HtmlWebpackPlugin({
-      template: `${PAGES_DIR}/index.html`,
+      // template: `${PAGES_DIR}/index.html`,
+      template: `${PAGES_DIR}/index.pug`,
       filename: `./index.html`,
       excludeChunks: Object.keys(ENTRIES).filter(el => !["index", "default"].includes(el)),
       minify: {

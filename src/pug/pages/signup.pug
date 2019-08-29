@@ -1,0 +1,57 @@
+include ../includes/ui.kit.pug
+
+doctype html
+head
+	title Найдите номер - Toxin
+	meta(charset='utf-8')
+	meta(name='viewport' content='width=device-width, initial-scale=1')
+	link(rel='icon' type='image/x-icon' href='/favicon.ico')
+	link(rel='mask-icon' href='/assets/img/icons/logo_icon.svg' color='#BC9CFF')
+
+include ../includes/header.pug
++header(true, true, false)
+
+.content.kit-one-main.wrap-container
+	.content-cover
+	.wrap
+		.main-block.kit-form-block
+			.kit-form-title Регистрация аккаунта
+			form.kit-form(method='POST', action='/fake-script/change-me', data-space='up')
+				.kit-form-field(data-size='long')
+					input.kit-form-input(placeholder='Имя', type='text', name='firstname')
+					input.kit-form-input.main-second-field(placeholder='Фамилия', type='text', name='lastname')
+				.kit-form-field.kit-radio
+					label
+						input(type='radio', name='gender', value='male', checked='')
+						.kit-radio-checkmark
+							div
+						span Мужчина
+					label
+						input(type='radio', name='gender', value='female')
+						.kit-radio-checkmark
+							div
+						span Женщина
+				.kit-form-field(data-index='2', data-space='up', data-size='long')
+					.kit-form-label Дата рождения
+					input.kit-form-input.signup-birthday(readonly='readonly', placeholder='ДД.ММ.ГГГГ', type='text', name='birthday')
+				.kit-form-field(data-space='up', data-size='long')
+					.kit-form-label Данные для входа в сервис
+					input.kit-form-input(placeholder='Email', type='text', name='email')
+					input.kit-form-input.main-second-field(placeholder='Пароль', type='password', name='password')
+				.kit-form-field.kit-switch(data-size='long')
+					label
+						input(type='checkbox', name='offer')
+						.kit-switch-checkmark
+							.kit-switch-dot
+								div
+						span Получать спецпрделожения
+				.kit-form-field.form-submit-input(data-size='long', data-space='up')
+					.forward.kit-arrow
+					button.kit-form-submit Перейти к оплате
+				.kit-form-field.main-question
+					span Уже есть аккаунт на Toxin?
+					a(href='/signin/')
+						div Войти
+
+
+include ../includes/footer.pug

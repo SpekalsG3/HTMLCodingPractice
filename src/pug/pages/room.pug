@@ -1,0 +1,133 @@
+include ../includes/ui.kit.pug
+
+doctype html
+head
+	title Номер 888 - Toxin
+	meta(charset='utf-8')
+	meta(name='viewport' content='width=device-width, initial-scale=1')
+	link(rel='icon' type='image/x-icon' href='/favicon.ico')
+	link(rel='mask-icon' href='/assets/img/icons/logo_icon.svg' color='#BC9CFF')
+
+include ../includes/header.pug
++header(true, true, true)
+
+.room.content.wrap-container
+	.content-cover
+	.room-images
+		div(data-index='0')
+			img(src='/assets/img/rooms/888-0.jpg')
+		div(data-index='1')
+			div(data-index='2')
+				img(src='/assets/img/rooms/888-1.jpg')
+			div(data-index='2')
+				img(src='/assets/img/rooms/888-2.jpg')
+	.wrap
+		.room-info
+			.room-tags
+				.room-info-label Сведения о номере
+				.room-tag
+					.room-tag-image
+						img.room-tag-logo(src='/assets/img/icons/insert_emoticon.svg')
+					.room-tag-content
+						.room-tag-label Комфорт
+						.room-tag-text Шумопоглощающие стены
+				.room-tag
+					.room-tag-image
+						img.room-tag-logo(src='/assets/img/icons/location_city.svg')
+					.room-tag-content
+						.room-tag-label Удобство
+						.room-tag-text Окно в каждой из спален
+				.room-tag
+					.room-tag-image
+						img.room-tag-logo(src='/assets/img/icons/whatshot.svg')
+					.room-tag-content
+						.room-tag-label Уют
+						.room-tag-text Номер оснащён камином
+			.room-info-total
+				.room-info-label Впечатления от номера
+				.room-total-statistic
+					.room-total-chart
+						.room-total-number
+							div 260
+							span голосов
+					.room-total-legend
+						div(data-index='0') Великолепно
+						div(data-index='1') Хорошо
+						div(data-index='2') Удовлетворительно
+						div(data-index='3') Разочарован
+			.room-info-reviews
+				.room-info-label Отзывы посетителей номера
+				.room-reviews-number 2 отзыва
+				.room-review
+					.room-review-profile
+						img.room-profile-avatar(src='/assets/img/avatars/Murad_Sarafanov.jpg')
+						.room-profile-info
+							.room-profile-name Мурад Сарафанов
+							.room-profile-online 5 дней назад
+					.room-review-content
+						.room-review-likes(data-liked='true')
+							.room-review-heart
+							div 12
+						.room-review-text
+							| Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+				.room-review
+					.room-review-profile
+						img.room-profile-avatar(src='/assets/img/avatars/Patrisiya_Styoklyshkova.jpg')
+						.room-profile-info
+							.room-profile-name Патрисия Стёклышкова
+							.room-profile-online Неделю назад
+					.room-review-content
+						.room-review-likes(data-liked='false')
+							.room-review-heart
+							div 2
+						.room-review-text
+							| Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент
+			.room-rules
+				.room-info-label Правила
+				.room-rules-list
+					div Нельзя с питомцами
+					div Без вечеринок и мероприятий
+					div Время прибытия — после 13:00, а выезд до 12:00
+			.room-repeal
+				.room-info-label Отмена
+				.room-repeal-text
+					| Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+		.room-booking.kit-form-block
+			.content-room-main
+				.content-room-title
+					span.content-room-n &numero;
+					span.content-room-number 888
+					span.content-room-special Люкс
+				.content-room-price
+					span 9 990&#x20bd;
+					| в сутки
+			form.kit-form(method='GET', action='filter/')
+				.kit-form-field(data-index='0', data-size='short')
+					.kit-form-label Прибытие
+					.expand.kit-arrow
+					input.kit-form-input.search-comein(readonly='readonly', type='text', name='comein', placeholder='ДД.ММ.ГГГГ')
+				.kit-form-field(data-index='1', data-space='left', data-size='short')
+					.kit-form-label Выезд
+					.expand.kit-arrow
+					input.kit-form-input.search-comeout(readonly='readonly', type='text', name='comeout', placeholder='ДД.ММ.ГГГГ')
+				.kit-form-field(data-index='2', data-space='up', data-size='long')
+					.kit-form-label Гости
+				.kit-form-field(data-index='3', data-space='up')
+					.room-booking-field.room-booking-option
+						.room-booking-nametag 9 990&#x20bd; х 4 суток
+						div 39 960&#x20bd;
+					.room-booking-field.room-booking-option
+						.room-booking-nametag.hint Сбор за услуги: скидка 2 179&#x20bd;
+						div 0&#x20bd;
+					.room-booking-field.room-booking-option
+						.room-booking-nametag.hint Сбор за дополнительные услуги
+						div 300&#x20bd;
+					.room-booking-field.room-booking-total
+						.room-booking-nametag Итого
+						.room-booking-price 38 081&#x20bd;
+				.kit-form-field.search-submit-input(data-size='long')
+					.forward.kit-arrow
+					button.kit-form-submit Забронировать
+
+
+include ../includes/footer.pug

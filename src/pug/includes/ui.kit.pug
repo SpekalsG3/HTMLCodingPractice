@@ -1,0 +1,10 @@
+mixin kit-form-field(args)
+	.kit-form-field&attributes(args.settings)
+		if args.purpose == "submit"
+			.forward.kit-arrow
+			button.kit-form-submit #{args.text}
+		else
+			.kit-form-label #{args.text}
+			if args.purpose != "dropdown"
+				.expand.kit-arrow
+				input.kit-form-input.search-comein(readonly="readonly" type="text")&attributes(args.input)
