@@ -23,7 +23,7 @@ include ../includes/header.pug
 				img(src='/assets/img/rooms/888-2.jpg')
 	.wrap
 		.room-info
-			.room-tags
+			div
 				.room-info-label Сведения о номере
 				+kit-infotag({
 					image: "insert_emoticon",
@@ -79,12 +79,12 @@ include ../includes/header.pug
 					},
 					text: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"
 				})
-			.room-rules
+			.room-info-rules
 				.room-info-label Правила
 				+kit-bullet-list(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"])
-			.room-repeal
+			.room-info-repeal
 				.room-info-label Отмена
-				.room-repeal-text
+				.room-info-text
 					| Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 		.room-booking.kit-form-block
 			.content-room-main
