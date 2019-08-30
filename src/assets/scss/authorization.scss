@@ -2,30 +2,30 @@
 @import "utils/vars.scss";
 
 .content {
-    background-image: url(/assets/img/authorization.jpg);
+  background-image: url(/assets/img/authorization.jpg);
 }
 
 .kit-form-main .wrap {
-	justify-content: center;
-	align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .kit-form-block {
-	padding-left: 31px;
+  padding-left: 31px;
 }
 
 .kit-form-field[data-index="0"] {
-	margin-top: 16px;
+  margin-top: 16px;
 }
 
 .main-question {
-	width: 91%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-    margin-top: 31px;
+  width: 91%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 31px;
 }
 
 .main-question-text {
-	font: 14px $mainFont;
+  font: 14px $mainFont;
 }

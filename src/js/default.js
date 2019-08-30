@@ -5,26 +5,26 @@ var $content = $(".content");
 var $header = $("header");
 
 $(".header-menu-icon").click(function() {
-	$content.toggleClass("shift");
-	$header.toggleClass("shift");
+  $content.toggleClass("shift");
+  $header.toggleClass("shift");
 });
 
 window.addEventListener("touchmove", function () {
-	$content.removeClass("shift");
-	$header.removeClass("shift");
+  $content.removeClass("shift");
+  $header.removeClass("shift");
 });
 
 $(".kit-form").submit(function(e) {
-	$(".kit-form-input").each(function() {
-		if (this.value == "") {
-			e.preventDefault();
-			this.classList.add("kit-input-error");
-		} else {
-			this.classList.remove("kit-input-error");
-		}
-	});
+  $(".kit-form-input").each(function() {
+    if (this.value == "") {
+      e.preventDefault();
+      this.classList.add("kit-input-error");
+    } else {
+      this.classList.remove("kit-input-error");
+    }
+  });
 });
 
 $(".kit-checkbox.expandable").click(function() {
-	$(this).toggleClass("default");
+  $(this).toggleClass("default");
 });

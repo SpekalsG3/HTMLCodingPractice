@@ -2,38 +2,38 @@ include ../includes/ui.kit.pug
 
 doctype html
 head
-	title Авторизация - Toxin
-	meta(charset='utf-8')
-	meta(name='viewport' content='width=device-width, initial-scale=1')
-	link(rel='icon' type='image/x-icon' href='/favicon.ico')
-	link(rel='mask-icon' href='/assets/img/icons/logo_icon.svg' color='#BC9CFF')
+  title Авторизация - Toxin
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='icon' type='image/x-icon' href='/favicon.ico')
+  link(rel='mask-icon' href='/assets/img/icons/logo_icon.svg' color='#BC9CFF')
 
 include ../includes/header.pug
 +header(true, false, true)
 
 .content.kit-form-main.wrap-container
-	.content-cover
-	.wrap
-		.kit-form-block
-			.kit-form-title Войти
-			form.kit-form(method='POST', action='/fake-script/change-me', data-space='up')
-				.kit-form-field(data-index='0', data-size='long')
-					input.kit-form-input(placeholder='Email', type='text', name='email')
-					input.kit-form-input(placeholder='Пароль', type='password', name='password' data-space="tiny-up")
-				+kit-submit({
-					settings: {
-						"data-size": "long",
-						"data-space": "up"
-					},
-					text: "Войти"
-				})
-				.kit-form-field.main-question
-					.main-question-text Нет аккаунта на Toxin?
-					+kit-button({
-						settings: {
-							href: "/signup/"
-						},
-						text: "Создать"
-					})
+  .content-cover
+  .wrap
+    .kit-form-block
+      .kit-form-title Войти
+      form.kit-form(method='POST', action='/fake-script/change-me', data-space='up')
+        .kit-form-field(data-index='0', data-size='long')
+          input.kit-form-input(placeholder='Email', type='text', name='email')
+          input.kit-form-input(placeholder='Пароль', type='password', name='password' data-space="tiny-up")
+        +kit-submit({
+          settings: {
+            "data-size": "long",
+            "data-space": "up"
+          },
+          text: "Войти"
+        })
+        .kit-form-field.main-question
+          .main-question-text Нет аккаунта на Toxin?
+          +kit-button({
+            settings: {
+              href: "/signup/"
+            },
+            text: "Создать"
+          })
 
 include ../includes/footer.pug

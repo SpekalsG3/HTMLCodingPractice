@@ -2,79 +2,79 @@ include ../includes/ui.kit.pug
 
 doctype html
 head
-	title Найдите номер - Toxin
-	meta(charset='utf-8')
-	meta(name='viewport' content='width=device-width, initial-scale=1')
-	link(rel='icon' type='image/x-icon' href='/favicon.ico')
-	link(rel='mask-icon' href='/assets/img/icons/logo_icon.svg' color='#BC9CFF')
+  title Найдите номер - Toxin
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='icon' type='image/x-icon' href='/favicon.ico')
+  link(rel='mask-icon' href='/assets/img/icons/logo_icon.svg' color='#BC9CFF')
 
 include ../includes/header.pug
 +header(true, true, false)
 
 .content.kit-form-main.wrap-container
-	.content-cover
-	.wrap
-		.kit-form-block
-			.kit-form-title Регистрация аккаунта
-			form.kit-form(method='POST', action='/fake-script/change-me', data-space='up')
-				.kit-form-field(data-size='long')
-					input.kit-form-input(placeholder='Имя', type='text', name='firstname')
-					input.kit-form-input(placeholder='Фамилия', type='text', name='lastname' data-space="tiny-up")
-				+kit-radio({
-					input: [{
-						settings: {
-							value: "male",
-							checked: ""
-						},
-						text: "Мужчина"
-					}, {
-						settings: {
-							value: "female"
-						},
-						text: "Женщина"
-					}]
-				})
-				+kit-date({
-					settings: {
-						"data-index": 2,
-						"data-space": "up",
-						"data-size": "long"
-					},
-					noArrow: true,
-					input: {
-						name: "birthdate",
-						placeholder: "ДД.ММ.ГГГГ"
-					},
-					text: "Дата рождения"
-				})
-				.kit-form-field(data-space='up', data-size='long')
-					.kit-form-label Данные для входа в сервис
-					input.kit-form-input(placeholder='Email', type='text', name='email')
-					input.kit-form-input(placeholder='Пароль', type='password', name='password' data-space="tiny-up")
-				+kit-switch({
-					settings: {
-						"data-size": "long"
-					},
-					input: [{
-						name: "offer",
-						text: "Получать спецпрделожения"
-					}]
-				})
-				+kit-submit({
-					settings: {
-						"data-size": "long",
-						"data-space": "up"
-					},
-					text: "Перейти к оплате"
-				})
-				.kit-form-field.main-question
-					.main-question-text Уже есть аккаунт на Toxin?
-					+kit-button({
-						settings: {
-							href: "/signin/"
-						},
-						text: "Войти"
-					})
+  .content-cover
+  .wrap
+    .kit-form-block
+      .kit-form-title Регистрация аккаунта
+      form.kit-form(method='POST', action='/fake-script/change-me', data-space='up')
+        .kit-form-field(data-size='long')
+          input.kit-form-input(placeholder='Имя', type='text', name='firstname')
+          input.kit-form-input(placeholder='Фамилия', type='text', name='lastname' data-space="tiny-up")
+        +kit-radio({
+          input: [{
+            settings: {
+              value: "male",
+              checked: ""
+            },
+            text: "Мужчина"
+          }, {
+            settings: {
+              value: "female"
+            },
+            text: "Женщина"
+          }]
+        })
+        +kit-date({
+          settings: {
+            "data-index": 2,
+            "data-space": "up",
+            "data-size": "long"
+          },
+          noArrow: true,
+          input: {
+            name: "birthdate",
+            placeholder: "ДД.ММ.ГГГГ"
+          },
+          text: "Дата рождения"
+        })
+        .kit-form-field(data-space='up', data-size='long')
+          .kit-form-label Данные для входа в сервис
+          input.kit-form-input(placeholder='Email', type='text', name='email')
+          input.kit-form-input(placeholder='Пароль', type='password', name='password' data-space="tiny-up")
+        +kit-switch({
+          settings: {
+            "data-size": "long"
+          },
+          input: [{
+            name: "offer",
+            text: "Получать спецпрделожения"
+          }]
+        })
+        +kit-submit({
+          settings: {
+            "data-size": "long",
+            "data-space": "up"
+          },
+          text: "Перейти к оплате"
+        })
+        .kit-form-field.main-question
+          .main-question-text Уже есть аккаунт на Toxin?
+          +kit-button({
+            settings: {
+              href: "/signin/"
+            },
+            text: "Войти"
+          })
 
 
 include ../includes/footer.pug

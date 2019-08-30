@@ -3,86 +3,86 @@
 @import "utils/vars.scss";
 
 .content {
-	padding: 31px 0 76px;
-	border-bottom: 1px solid rgba($darkColor, .25);
+  padding: 31px 0 76px;
+  border-bottom: 1px solid rgba($darkColor, .25);
 }
 
 .settings-note {
-	font: 12px $mainFont;
-	color: rgba($darkColor, .5);
+  font: 12px $mainFont;
+  color: rgba($darkColor, .5);
 }
 
 .kit-checkbox[data-index="2"] {
-    align-items: center;
+  align-items: center;
 }
 
 .kit-form-field[data-index="4"] {
-	margin-top: 35px;
+  margin-top: 35px;
 }
 
 .kit-form-field[data-index="4"] label + label {
-	margin-top: 12px;
+  margin-top: 12px;
 }
 
 .kit-form-input::placeholder {
-    color: rgba($darkColor, .75);
+  color: rgba($darkColor, .75);
 }
 
 .content-items {
-	margin-left: 60px;
-	display: flex;
-	flex-direction: column;
+  margin-left: 60px;
+  display: flex;
+  flex-direction: column;
 }
 
 .content-items-title {
-	font: bold 24px $mainFont;
-	letter-spacing: -.5px;
-	margin-bottom: 20px;
+  font: bold 24px $mainFont;
+  letter-spacing: -.5px;
+  margin-bottom: 20px;
 }
 
 .content-items-rooms {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 
 
 @media screen and (max-width: 1219px) and (min-width: 980px) {
-	.content-rooms {
-		justify-content: space-around;
-	}
+  .content-rooms {
+    justify-content: space-around;
+  }
 }
 
 @media screen and (max-width: 1219px) and (min-width: 1195px) {
-	.content-rooms a + a {
-		margin-right: 12px;
-	}
+  .content-rooms a + a {
+    margin-right: 12px;
+  }
 }
 
 @media screen and (max-width: 979px) {
-    .content .wrap {
-        flex-direction: column;
-    }
+  .content .wrap {
+    flex-direction: column;
+  }
 
-    .content-settings {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  .content-settings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .content-items {
-        margin-left: 0;
-        margin-top: 60px;
-    }
+  .content-items {
+    margin-left: 0;
+    margin-top: 60px;
+  }
 
-    .content-items-title {
-        text-align: center;
-    }
+  .content-items-title {
+    text-align: center;
+  }
 
-    .content-rooms {
-        align-items: center;
-        justify-content: center;
-    }
+  .content-rooms {
+    align-items: center;
+    justify-content: center;
+  }
 }

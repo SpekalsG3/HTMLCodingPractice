@@ -2,67 +2,67 @@ include ../includes/ui.kit.pug
 
 doctype html
 head
-	title Найдите номер - Toxin
-	meta(charset='utf-8')
-	meta(name='viewport' content='width=device-width, initial-scale=1')
-	link(rel='icon' type='image/x-icon' href='/favicon.ico')
-	link(rel='mask-icon' href='/assets/img/icons/logo_icon.svg' color='#BC9CFF')
+  title Найдите номер - Toxin
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='icon' type='image/x-icon' href='/favicon.ico')
+  link(rel='mask-icon' href='/assets/img/icons/logo_icon.svg' color='#BC9CFF')
 
 include ../includes/header.pug
 +header(false, true, true)
 
 .kit-form-main.wrap-container.content
-	.content-cover
-	.wrap
-		.kit-form-block
-			.kit-form-title
-				span.main-line(data-index='0') Найдём номера под
-				br
-				span.main-line(data-index='1') ваши пожелания
-			form.kit-form(method='GET' action='filter/' data-space='up')
-				+kit-date({
-					text: "Прибытие",
-					settings: {
-						"data-index": "0",
-						"data-size": "short"
-					},
-					input: {
-						class: "search-comein",
-						name: "comein",
-						placeholder: "ДД.ММ.ГГГГ"
-					}
-				})
-				+kit-date({
-					text: "Выезд",
-					settings: {
-						"data-index": "1",
-						"data-size": "short",
-						"data-space": "left"
-					},
-					input: {
-						class: "search-comeout",
-						name: "comeout",
-						placeholder: "ДД.ММ.ГГГГ"
-					}
-				})
-				+kit-dropdown({
-					text: "Гости",
-					settings: {
-						"data-index": "2",
-						"data-size": "long",
-						"data-space": "up"
-					}
-				})
-				+kit-submit({
-					text: "Подобрать номер",
-					settings: {
-							"data-size": "long"
-					},
-					input: {
-							placeholder: "ДД.ММ.ГГГГ"
-					}
-				})
-		.main-slogan
-				| Лучшие номера для вашей работы, отдыха и просто вдохновения
+  .content-cover
+  .wrap
+    .kit-form-block
+      .kit-form-title
+        span.main-line(data-index='0') Найдём номера под
+        br
+        span.main-line(data-index='1') ваши пожелания
+      form.kit-form(method='GET' action='filter/' data-space='up')
+        +kit-date({
+          text: "Прибытие",
+          settings: {
+            "data-index": "0",
+            "data-size": "short"
+          },
+          input: {
+            class: "search-comein",
+            name: "comein",
+            placeholder: "ДД.ММ.ГГГГ"
+          }
+        })
+        +kit-date({
+          text: "Выезд",
+          settings: {
+            "data-index": "1",
+            "data-size": "short",
+            "data-space": "left"
+          },
+          input: {
+            class: "search-comeout",
+            name: "comeout",
+            placeholder: "ДД.ММ.ГГГГ"
+          }
+        })
+        +kit-dropdown({
+          text: "Гости",
+          settings: {
+            "data-index": "2",
+            "data-size": "long",
+            "data-space": "up"
+          }
+        })
+        +kit-submit({
+          text: "Подобрать номер",
+          settings: {
+              "data-size": "long"
+          },
+          input: {
+              placeholder: "ДД.ММ.ГГГГ"
+          }
+        })
+    .main-slogan
+        | Лучшие номера для вашей работы, отдыха и просто вдохновения
 
 include ../includes/footer.pug

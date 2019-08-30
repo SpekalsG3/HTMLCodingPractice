@@ -2,11 +2,11 @@
 @import "utils/vars.scss";
 
 .kit-one-main {
-    position: relative;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+  position: relative;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 
@@ -14,109 +14,109 @@
 /*      FORM          */
 
 .kit-form-block {
-    position: relative;
-    min-width: 350px;
-    width: 350px;
-    padding-top: 40px;
-    padding-bottom: 30px;
-    background: #fff;
-    border: 1px solid rgba(0, 0, 0, .12);
-    box-shadow: 0 0 25px rgba(0, 0, 0, .2);
-    border-radius: 4px;
+  position: relative;
+  min-width: 350px;
+  width: 350px;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, .12);
+  box-shadow: 0 0 25px rgba(0, 0, 0, .2);
+  border-radius: 4px;
 }
 
 .kit-form {
-    position: relative;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .kit-form-title {
-    position: relative;
-    font: bold 24px $addFont, sans-serif;
-    letter-spacing: 1px;
+  position: relative;
+  font: bold 24px $addFont, sans-serif;
+  letter-spacing: 1px;
 }
 
 .kit-form-field {
-    position: relative;
+  position: relative;
 }
 
 [data-space="left"] {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 [data-space="tiny-up"] {
-    margin-top: 8px;
+  margin-top: 8px;
 }
 
 [data-space="up"] {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 [data-space="long-up"] {
-    margin-top: 32px;
+  margin-top: 32px;
 }
 
 .kit-form-label {
-    display: block;
-    margin-bottom: 4px;
-    margin-left: 1px;
-    font: bold 12px $mainFont, sans-serif;
-    text-transform: uppercase;
-    letter-spacing: .1px;
-    color: $darkColor;
+  display: block;
+  margin-bottom: 4px;
+  margin-left: 1px;
+  font: bold 12px $mainFont, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .1px;
+  color: $darkColor;
 }
 
 .kit-form-input {
-    position: relative;
-    padding-left: 14px;
-    padding-right: 44px;
-    height: 42px;
-    width: calc(100% - 58px);
-    border: 1px solid rgba($darkColor, .25);
-    border-radius: 4px;
-    box-shadow: none;
-    font-size: 14px;
-    font-family: $mainFont;
-    color: rgba($darkColor, .75);
-    cursor: pointer;
-    text-overflow: ellipsis;
-    transition: box-shadow .2s;
+  position: relative;
+  padding-left: 14px;
+  padding-right: 44px;
+  height: 42px;
+  width: calc(100% - 58px);
+  border: 1px solid rgba($darkColor, .25);
+  border-radius: 4px;
+  box-shadow: none;
+  font-size: 14px;
+  font-family: $mainFont;
+  color: rgba($darkColor, .75);
+  cursor: pointer;
+  text-overflow: ellipsis;
+  transition: box-shadow .2s;
 }
 
 .kit-input-error {
-    box-shadow: 0 0 6px #FA7464;
+  box-shadow: 0 0 6px #FA7464;
 }
 
 [data-size="short"] {
-    width: 149px;
+  width: 149px;
 }
 
 [data-size="medium"] {
-    width: 265px;
+  width: 265px;
 }
 
 [data-size="long"] {
-    width: 317px;
+  width: 317px;
 }
 
 .form-submit-input {
-    width: 320px;
+  width: 320px;
 }
 
 .kit-form-submit {
-    position: relative;
-    height: 44px;
-    width: 100%;
-    background: $purpleGrad;
-    border: none;
-    border-radius: 22px;
-    font: bold 12px $mainFont;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: .2px;
-    cursor: pointer;
+  position: relative;
+  height: 44px;
+  width: 100%;
+  background: $purpleGrad;
+  border: none;
+  border-radius: 22px;
+  font: bold 12px $mainFont;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .2px;
+  cursor: pointer;
 }
 
 
@@ -124,36 +124,36 @@
 /*      ARROWS          */
 
 .kit-arrow {
-    position: absolute;
-    z-index: 2;
-    width: 44px;
-    height: 46px;
-    cursor: pointer;
+  position: absolute;
+  z-index: 2;
+  width: 44px;
+  height: 46px;
+  cursor: pointer;
 }
 
 .kit-arrow.expand {
-    right: -2px;
-    background: url(/assets/img/icons/expand_more.svg) center no-repeat;
+  right: -2px;
+  background: url(/assets/img/icons/expand_more.svg) center no-repeat;
 }
 
 .kit-arrow.forward {
-    right: 0;
-    top: 0;
-    background: url(/assets/img/icons/arrow_forward.svg) center no-repeat;
+  right: 0;
+  top: 0;
+  background: url(/assets/img/icons/arrow_forward.svg) center no-repeat;
 }
 
 .kit-arrow.prev,
 .kit-arrow.next {
-    background: url(/assets/img/icons/slider_arrow.svg) center no-repeat;
-    background-size: 14px;
+  background: url(/assets/img/icons/slider_arrow.svg) center no-repeat;
+  background-size: 14px;
 }
 
 .kit-arrow.prev {
-    transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
 }
 
 .kit-arrow.next {
-    transform: rotateZ(-90deg);
+  transform: rotateZ(-90deg);
 }
 
 
@@ -163,101 +163,101 @@
 /*      SWITCH          */
 
 .kit-checkbox.default .kit-checkbox-options {
-    display: none;
+  display: none;
 }
 
 .kit-checkbox-options {
-    margin-top: 16px;
+  margin-top: 16px;
 }
 
 .kit-checkbox.expandable .kit-form-label {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .kit-checkbox.expandable .kit-checkbox-arrow {
-    transform: rotateZ(180deg);
+  transform: rotateZ(180deg);
 }
 
 .kit-checkbox.default .kit-checkbox-arrow {
-    transform: none;
+  transform: none;
 }
 
 .kit-checkbox-arrow {
-    height: 14px;
-    top: 0;
+  height: 14px;
+  top: 0;
 }
 
 .kit-checkbox-options label {
-    display: flex;
-    position: relative;
-    cursor: pointer;
+  display: flex;
+  position: relative;
+  cursor: pointer;
 }
 
 .kit-checkbox-options label + label,
 .kit-switch label + label {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .kit-checkbox input,
 .kit-radio input,
 .kit-switch input {
-    position: absolute;
-    opacity: 0;
+  position: absolute;
+  opacity: 0;
 }
 
 .kit-checkbox-checkmark {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 1px;
-    height: 18px;
-    width: 18px;
-    border: 1px solid rgba($darkColor, 0.25);
-    border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1px;
+  height: 18px;
+  width: 18px;
+  border: 1px solid rgba($darkColor, 0.25);
+  border-radius: 4px;
 }
 
 .kit-checkbox-checkmark div {
-    position: absolute;
-    width: 6px;
-    height: 8px;
-    background: $purpleGrad;
-    transform: rotateZ(45deg);
-    transition: .1s;
-    opacity: 0;
+  position: absolute;
+  width: 6px;
+  height: 8px;
+  background: $purpleGrad;
+  transform: rotateZ(45deg);
+  transition: .1s;
+  opacity: 0;
 }
 
 .kit-checkbox-checkmark div:after {
-    content: "";
-    position: absolute;
-    width: 83%;
-    height: 87%;
-    top: -1px;
-    left: -1px;
-    background: #fff;
+  content: "";
+  position: absolute;
+  width: 83%;
+  height: 87%;
+  top: -1px;
+  left: -1px;
+  background: #fff;
 }
 
 .kit-checkbox input:checked + .kit-checkbox-checkmark div {
-    opacity: 1;
+  opacity: 1;
 }
 
 .kit-checkbox-text {
-    /*margin-left: 31px;*/
-    margin-left: 10px;
+  /*margin-left: 31px;*/
+  margin-left: 10px;
 }
 
 .kit-checkbox-title {
-    font: 14px $mainFont;
-    color: rgba($darkColor, .75);
+  font: 14px $mainFont;
+  color: rgba($darkColor, .75);
 }
 
 .kit-bold {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .kit-checkbox-note {
-    margin-top: 5px;
-    font: 12px $mainFont;
-    color: rgba($darkColor, 0.5);
+  margin-top: 5px;
+  font: 12px $mainFont;
+  color: rgba($darkColor, 0.5);
 }
 
 
@@ -267,102 +267,102 @@
 
 .kit-radio,
 .kit-switch {
-    margin-top: 10px;
-    font: 14px $mainFont;
-    color: rgba($darkColor, .75);
+  margin-top: 10px;
+  font: 14px $mainFont;
+  color: rgba($darkColor, .75);
 }
 
 .kit-radio label,
 .kit-switch label {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 .kit-radio label {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 .kit-radio-checkmark {
-    position: relative;
-    margin-right: 10px;
-    width: 18px;
-    height: 18px;
-    border: 1px solid $purpleColor;
-    border-radius: 25px;
+  position: relative;
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  border: 1px solid $purpleColor;
+  border-radius: 25px;
 }
 
 .kit-radio-checkmark div {
-    position: absolute;
-    left: 4px;
-    top: 4px;
-    width: 10px;
-    height: 10px;
-    border-radius: 25px;
-    background: $purpleGrad;
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 25px;
+  background: $purpleGrad;
 }
 
 .kit-radio-checkmark div:after,
 .kit-switch-checkmark div:after,
 .kit-switch-dot div {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border-radius: 25px;
-    transition: .2s;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 25px;
+  transition: .2s;
 }
 .kit-radio-checkmark div:after {
-    background: #fff;
+  background: #fff;
 }
 
 .kit-radio input:checked + .kit-radio-checkmark div:after {
-    opacity: 0;
+  opacity: 0;
 }
 
 
 /*      SWITCH          */
 
 .kit-switch-checkmark {
-    position: relative;
-    margin-right: 10px;
-    width: 38px;
-    height: 18px;
-    border-radius: 25px;
-    border: 1px solid rgba($darkColor, .25);
+  position: relative;
+  margin-right: 10px;
+  width: 38px;
+  height: 18px;
+  border-radius: 25px;
+  border: 1px solid rgba($darkColor, .25);
 }
 
 .kit-switch-dot {
-    position: absolute;
-    left: 4px;
-    top: 4px;
-    width: 10px;
-    height: 10px;
-    background: $purpleGrad;
-    border-radius: 25px;
-    transition: .2s;
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  background: $purpleGrad;
+  border-radius: 25px;
+  transition: .2s;
 }
 
 .kit-switch-dot div {
-    background: #fff;
+  background: #fff;
 }
 
 .kit-switch-checkmark .kit-switch-dot div:after {
-    background: rgba($darkColor, .25);
+  background: rgba($darkColor, .25);
 }
 
 .kit-switch input:checked + .kit-switch-checkmark {
-    border: 1px solid $purpleColor;
+  border: 1px solid $purpleColor;
 }
 
 .kit-switch input:checked + .kit-switch-checkmark .kit-switch-dot {
-    left: 24px;
+  left: 24px;
 }
 
 .kit-switch input:checked + .kit-switch-checkmark .kit-switch-dot div {
-    opacity: 0;
+  opacity: 0;
 }
 
 
@@ -370,14 +370,14 @@
 /*      RANGE SLIDER        */
 
 .kit-range-top {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .kit-range-legend {
-    display: inline-block;
-    font: 12px $mainFont;
-    color: rgba($darkColor, .5);
+  display: inline-block;
+  font: 12px $mainFont;
+  color: rgba($darkColor, .5);
 }
 
 
@@ -385,255 +385,255 @@
 /*      kitS       */
 
 .kit-kits a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .kit-kit {
-    width: 270px;
-    height: 257px;
-    box-shadow: 0 10px 20px rgba($darkColor, .05);
-    border-radius: 4px;
-    margin-bottom: 21px;
+  width: 270px;
+  height: 257px;
+  box-shadow: 0 10px 20px rgba($darkColor, .05);
+  border-radius: 4px;
+  margin-bottom: 21px;
 }
 
 .kit-kit-gallery {
-    position: relative;
-    width: 100%;
-    height: 151px;
+  position: relative;
+  width: 100%;
+  height: 151px;
 }
 
 .kit-kit-images {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .kit-kit-images img {
-    object-fit: cover;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transition: .2s;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: .2s;
 }
 
 .kit-kit:hover .kit-kit-prev,
 .kit-kit:hover .kit-kit-next {
-    display: flex;
-    opacity: 1;
+  display: flex;
+  opacity: 1;
 }
 
 .kit-kit-prev,
 .kit-kit-next {
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    top: 0;
-    height: 100%;
-    width: 42px;
-    cursor: pointer;
-    opacity: 0;
-    transition: .1s;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  top: 0;
+  height: 100%;
+  width: 42px;
+  cursor: pointer;
+  opacity: 0;
+  transition: .1s;
 }
 
 .kit-kit-prev {
-    background: linear-gradient(90deg, rgba(0, 0, 0, .5) 0%, transparent 99.99%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(90deg, rgba(0, 0, 0, .5) 0%, transparent 99.99%, rgba(255, 255, 255, 0) 100%);
 }
 
 .kit-kit-next {
-    background: linear-gradient(-90deg, rgba(0, 0, 0, .5) 0%, transparent 99.99%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(-90deg, rgba(0, 0, 0, .5) 0%, transparent 99.99%, rgba(255, 255, 255, 0) 100%);
 }
 
 .kit-kit-next {
-    right: 0;
+  right: 0;
 }
 
 .kit-kit-points {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    margin: 10px 15px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 10px 15px;
 }
 
 .kit-kit-points div + div {
-    margin-left: 3.75px;
+  margin-left: 3.75px;
 }
 
 .kit-kit-points div {
-    display: inline-block;
-    width: 5.5px;
-    height: 5.5px;
-    border: 1px solid #fff;
-    border-radius: 25px;
-    box-shadow: 0 5px 5px rgba($darkColor, .3);
-    transition: .2s;
+  display: inline-block;
+  width: 5.5px;
+  height: 5.5px;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  box-shadow: 0 5px 5px rgba($darkColor, .3);
+  transition: .2s;
 }
 
 .kit-kit-points div[data-selected] {
-    background: #fff;
+  background: #fff;
 }
 
 .kit-kit-main {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 17px 0 20px;
-    padding-top: 12px;
-    height: 43px;
-    border-bottom: 1px solid rgba($darkColor, .1);
-    font-family: $mainFont;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 17px 0 20px;
+  padding-top: 12px;
+  height: 43px;
+  border-bottom: 1px solid rgba($darkColor, .1);
+  font-family: $mainFont;
 }
 
 .kit-kit-title {
-    display: flex;
-    align-items: center;
-    color: $darkColor;
+  display: flex;
+  align-items: center;
+  color: $darkColor;
 }
 
 .kit-kit-title span + span {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 .kit-kit-n {
-    font-weight: bold;
-    font-size: 14px;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .kit-kit-number {
-    font-weight: bold;
-    font-size: 17px;
+  font-weight: bold;
+  font-size: 17px;
 }
 
 .kit-kit-special {
-    margin-top: 3px;
-    font-weight: bold;
-    font-size: 12px;
-    text-transform: uppercase;
-    color: $purpleColor;
+  margin-top: 3px;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: $purpleColor;
 }
 
 .kit-kit-price {
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    color: rgba($darkColor, .5);
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: rgba($darkColor, .5);
 }
 
 .kit-kit-price span {
-    margin-right: 4px;
-    font-weight: bold;
-    font-size: 14px;
+  margin-right: 4px;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .kit-kit-feedback {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 19px 0 20px;
-    padding-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 19px 0 20px;
+  padding-top: 12px;
 }
 
 .kit-kit-amount {
-    display: flex;
-    align-items: center;
-    margin-bottom: 3px;
-    font-size: 14px;
-    font-family: $mainFont;
-    color: rgba($darkColor, .5);
+  display: flex;
+  align-items: center;
+  margin-bottom: 3px;
+  font-size: 14px;
+  font-family: $mainFont;
+  color: rgba($darkColor, .5);
 }
 
 .kit-kit-amount span {
-    font-weight: bold;
-    margin-right: 4px;
+  font-weight: bold;
+  margin-right: 4px;
 }
 
 .kit-kit-stars {
-    padding-left: 3px;
+  padding-left: 3px;
 }
 
 .kit-kit-stars div {
-    display: inline-block;
-    width: 20px;
-    height: 16px;
+  display: inline-block;
+  width: 20px;
+  height: 16px;
 }
 
 .kit-kit-stars div[data-full="true"] {
-    background: url(/assets/img/icons/star.svg) center no-repeat;
+  background: url(/assets/img/icons/star.svg) center no-repeat;
 }
 
 .kit-kit-stars div[data-full="false"] {
-    background: url(/assets/img/icons/star_border.svg) center no-repeat;
+  background: url(/assets/img/icons/star_border.svg) center no-repeat;
 }
 
 
 
 /*      PAGES       */
 .kit-pages {
-    align-self: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .kit-pages-buttons {
-    display: flex;
+  display: flex;
 }
 
 .kit-page-button {
-    width: 40px;
-    height: 40px;
-    border-radius: 25px;
-    font: 12px $mainFont;
-    color: rgba($darkColor, .5);
-    text-align: center;
-    line-height: 40px;
-    user-select: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+  font: 12px $mainFont;
+  color: rgba($darkColor, .5);
+  text-align: center;
+  line-height: 40px;
+  user-select: none;
 }
 
 .kit-page-number[data-selected] {
-    color: white;
-    font-weight: bold;
-    background: $purpleGrad;
+  color: white;
+  font-weight: bold;
+  background: $purpleGrad;
 }
 
 .kit-page-prev {
-    display: none;
+  display: none;
 }
 
 .kit-page-skip.prev {
-    display: none;
+  display: none;
 }
 
 .kit-page-prev,
 .kit-page-next {
-    position: relative;
-    overflow: hidden;
-    background: $greenGrad;
-    cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  background: $greenGrad;
+  cursor: pointer;
 }
 
 .kit-page-prev:after,
 .kit-page-next:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: url(/assets/img/icons/arrow_forward.svg) center no-repeat;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: url(/assets/img/icons/arrow_forward.svg) center no-repeat;
 }
 
 .kit-page-prev:after {
-    transform: rotateZ(180deg);
+  transform: rotateZ(180deg);
 }
 
 .kit-pages-note {
-    margin-top: 10px;
-    font: 14px $mainFont;
-    color: rgba($darkColor, .75);;
+  margin-top: 10px;
+  font: 14px $mainFont;
+  color: rgba($darkColor, .75);;
 }
 
 
@@ -641,34 +641,34 @@
 /*      TAGS        */
 
 .kit-tag {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    width: 280px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 280px;
 }
 
 .kit-tag + .kit-tag {
-    padding-top: 20px;
-    border-top: 1px solid rgba($darkColor, .1);
+  padding-top: 20px;
+  border-top: 1px solid rgba($darkColor, .1);
 }
 
 .kit-tag-image {
-    height: 48px;
-    width: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 48px;
+  width: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .kit-tag-content {
-    height: 100%;
-    width: 222px;
-    font: 14px $mainFont;
-    line-height: 171%;
+  height: 100%;
+  width: 222px;
+  font: 14px $mainFont;
+  line-height: 171%;
 }
 
 .kit-tag-label {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 
@@ -676,79 +676,79 @@
 /*      REVIEWS         */
 
 .kit-review + .kit-review {
-    margin-top: 22px;
+  margin-top: 22px;
 }
 
 .kit-review-avatar {
-    width: 46px;
-    height: 46px;
-    border: 2px solid #fff;
-    border-radius: 32px;
-    box-shadow: 0 10px 20px rgba($darkColor, .1);
+  width: 46px;
+  height: 46px;
+  border: 2px solid #fff;
+  border-radius: 32px;
+  box-shadow: 0 10px 20px rgba($darkColor, .1);
 }
 
 .kit-review-profile {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .kit-review-info {
-    height: 49px;
-    margin-left: 7px;
-    font: 14px $mainFont;
-    color: rgba($darkColor, .75);
-    line-height: 171%;
+  height: 49px;
+  margin-left: 7px;
+  font: 14px $mainFont;
+  color: rgba($darkColor, .75);
+  line-height: 171%;
 }
 
 .kit-review-name {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .kit-review-content {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
 }
 
 .kit-review-likes {
-    display: flex;
-    align-items: center;
-    margin-left: 4px;
-    width: 38px;
-    height: 17px;
-    border-radius: 25px;
-    font: 12px $mainFont;
+  display: flex;
+  align-items: center;
+  margin-left: 4px;
+  width: 38px;
+  height: 17px;
+  border-radius: 25px;
+  font: 12px $mainFont;
 }
 
 .kit-review-likes[data-liked="true"] {
-    border: 1px solid #BC9CFF;
-    color: #BC9CFF;
+  border: 1px solid #BC9CFF;
+  color: #BC9CFF;
 }
 
 .kit-review-likes[data-liked="false"] {
-    border: 1px solid rgba($darkColor, .25);
-    color: rgba($darkColor, .25);
+  border: 1px solid rgba($darkColor, .25);
+  color: rgba($darkColor, .25);
 }
 
 .kit-review-likes .kit-review-heart {
-    height: 18px;
-    width: 18px;
+  height: 18px;
+  width: 18px;
 }
 
 .kit-review-likes[data-liked="true"] .kit-review-heart {
-    background: url(/assets/img/icons/favorite.svg) center no-repeat;
+  background: url(/assets/img/icons/favorite.svg) center no-repeat;
 }
 
 .kit-review-likes[data-liked="false"] .kit-review-heart {
-    background: url(/assets/img/icons/favorite_border.svg) center no-repeat;
+  background: url(/assets/img/icons/favorite_border.svg) center no-repeat;
 }
 
 .kit-review-text {
-    width: calc(100% - 57px);
-    margin-left: 13px;
-    font: 14px $mainFont;
-    color: rgba($darkColor, .75);
-    line-height: 24px;
+  width: calc(100% - 57px);
+  margin-left: 13px;
+  font: 14px $mainFont;
+  color: rgba($darkColor, .75);
+  line-height: 24px;
 }
 
 
@@ -756,30 +756,30 @@
 /*      BULLET LIST         */
 
 .kit-bullet-list {
-    font: 14px $mainFont;
-    color: rgba($darkColor, .75);
+  font: 14px $mainFont;
+  color: rgba($darkColor, .75);
 }
 
 .kit-bullet-list div {
-    width: 100%;
-    position: relative;
-    padding-left: 20px;
-    line-height: 24px;
+  width: 100%;
+  position: relative;
+  padding-left: 20px;
+  line-height: 24px;
 }
 
 .kit-bullet-list div:before {
-    content: "";
-    position: absolute;
-    top: 4px;
-    left: 0;
-    width: 10px;
-    height: 10px;
-    background: rgba($darkColor, .25);
-    border-radius: 25px;
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: rgba($darkColor, .25);
+  border-radius: 25px;
 }
 
 .kit-bullet-list div + div {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 
@@ -787,53 +787,53 @@
 /*      BUTTON       */
 
 .kit-button {
-    position: relative;
-    height: 45px;
-    width: 110px;
-    background-size: 90%;
-    font: bold 12px $mainFont;
-    line-height: 45px;
-    text-align: center;
-    text-transform: uppercase;
+  position: relative;
+  height: 45px;
+  width: 110px;
+  background-size: 90%;
+  font: bold 12px $mainFont;
+  line-height: 45px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .kit-button span {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .kit-button:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    transition: .2s;
-    z-index: 0;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: .2s;
+  z-index: 0;
 }
 
 .kit-button.hollow {
-    color: $purpleColor;
+  color: $purpleColor;
 }
 
 .kit-button.hollow:before {
-    background: url(/assets/img/icons/gradient_border.svg) center no-repeat;
+  background: url(/assets/img/icons/gradient_border.svg) center no-repeat;
 }
 
 .kit-button.fill {
-    width: 99px;
-    margin-right: 5px;
-    color: #FFF;
+  width: 99px;
+  margin-right: 5px;
+  color: #FFF;
 }
 
 .kit-button.fill:before {
-    border-radius: 22px;
-    background: $purpleGrad;
+  border-radius: 22px;
+  background: $purpleGrad;
 }
 
 .kit-button:hover:before {
-    opacity: .5;
+  opacity: .5;
 }
 
 
@@ -841,200 +841,200 @@
 /*      ROOMS       */
 
 .kit-room {
-    width: 270px;
-    height: 257px;
-    box-shadow: 0 10px 20px rgba($darkColor, .05);
-    border-radius: 4px;
-    margin-bottom: 21px;
+  width: 270px;
+  height: 257px;
+  box-shadow: 0 10px 20px rgba($darkColor, .05);
+  border-radius: 4px;
+  margin-bottom: 21px;
 }
 
 .kit-room-gallery {
-    position: relative;
-    width: 100%;
-    height: 151px;
+  position: relative;
+  width: 100%;
+  height: 151px;
 }
 
 .kit-room-images {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .kit-room-images img {
-    object-fit: cover;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transition: .2s;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: .2s;
 }
 
 .kit-room:hover .kit-room-prev,
 .kit-room:hover .kit-room-next {
-    display: flex;
-    opacity: 1;
+  display: flex;
+  opacity: 1;
 }
 
 .kit-room-prev,
 .kit-room-next {
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    top: 0;
-    height: 100%;
-    width: 42px;
-    cursor: pointer;
-    opacity: 0;
-    transition: .1s;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  top: 0;
+  height: 100%;
+  width: 42px;
+  cursor: pointer;
+  opacity: 0;
+  transition: .1s;
 }
 
 .kit-room-prev {
-    background: linear-gradient(90deg, rgba(0, 0, 0, .5) 0%, transparent 99.99%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(90deg, rgba(0, 0, 0, .5) 0%, transparent 99.99%, rgba(255, 255, 255, 0) 100%);
 }
 
 .kit-room-next {
-    background: linear-gradient(-90deg, rgba(0, 0, 0, .5) 0%, transparent 99.99%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(-90deg, rgba(0, 0, 0, .5) 0%, transparent 99.99%, rgba(255, 255, 255, 0) 100%);
 }
 
 .kit-room-next {
-    right: 0;
+  right: 0;
 }
 
 .kit-room-points {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    margin: 10px 15px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 10px 15px;
 }
 
 .kit-room-points div + div {
-    margin-left: 3.75px;
+  margin-left: 3.75px;
 }
 
 .kit-room-points div {
-    display: inline-block;
-    width: 5.5px;
-    height: 5.5px;
-    border: 1px solid #fff;
-    border-radius: 25px;
-    box-shadow: 0 5px 5px rgba($darkColor, .3);
-    transition: .2s;
+  display: inline-block;
+  width: 5.5px;
+  height: 5.5px;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  box-shadow: 0 5px 5px rgba($darkColor, .3);
+  transition: .2s;
 }
 
 .kit-room-points div[data-selected] {
-    background: #fff;
+  background: #fff;
 }
 
 .kit-room-main {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 17px 0 20px;
-    padding-top: 12px;
-    height: 43px;
-    border-bottom: 1px solid rgba($darkColor, .1);
-    font-family: $mainFont;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 17px 0 20px;
+  padding-top: 12px;
+  height: 43px;
+  border-bottom: 1px solid rgba($darkColor, .1);
+  font-family: $mainFont;
 }
 
 .kit-room-title {
-    display: flex;
-    align-items: center;
-    color: $darkColor;
+  display: flex;
+  align-items: center;
+  color: $darkColor;
 }
 
 .kit-room-title span + span {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 .kit-room-n {
-    font-weight: bold;
-    font-size: 14px;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .kit-room-number {
-    font-weight: bold;
-    font-size: 17px;
+  font-weight: bold;
+  font-size: 17px;
 }
 
 .kit-room-special {
-    margin-top: 3px;
-    font-weight: bold;
-    font-size: 12px;
-    text-transform: uppercase;
-    color: $purpleColor;
+  margin-top: 3px;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: $purpleColor;
 }
 
 .kit-room-price {
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    color: rgba($darkColor, .5);
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: rgba($darkColor, .5);
 }
 
 .kit-room-price span {
-    margin-right: 4px;
-    font-weight: bold;
-    font-size: 14px;
+  margin-right: 4px;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .kit-room-feedback {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 19px 0 20px;
-    padding-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 19px 0 20px;
+  padding-top: 12px;
 }
 
 .kit-room-amount {
-    display: flex;
-    align-items: center;
-    margin-bottom: 3px;
-    font-size: 14px;
-    font-family: $mainFont;
-    color: rgba($darkColor, .5);
+  display: flex;
+  align-items: center;
+  margin-bottom: 3px;
+  font-size: 14px;
+  font-family: $mainFont;
+  color: rgba($darkColor, .5);
 }
 
 .kit-room-amount span {
-    font-weight: bold;
-    margin-right: 4px;
+  font-weight: bold;
+  margin-right: 4px;
 }
 
 .kit-room-stars {
-    padding-left: 3px;
+  padding-left: 3px;
 }
 
 .kit-room-stars div {
-    display: inline-block;
-    width: 20px;
-    height: 16px;
+  display: inline-block;
+  width: 20px;
+  height: 16px;
 }
 
 .kit-room-stars div[data-full="true"] {
-    background: url(/assets/img/icons/star.svg) center no-repeat;
+  background: url(/assets/img/icons/star.svg) center no-repeat;
 }
 
 .kit-room-stars div[data-full="false"] {
-    background: url(/assets/img/icons/star_border.svg) center no-repeat;
+  background: url(/assets/img/icons/star_border.svg) center no-repeat;
 }
 
 
 @media screen and (max-width: 979px) {
-    .kit-form {
-        justify-content: center;
-    }
+  .kit-form {
+    justify-content: center;
+  }
 
-    [data-size="short"] {
-        width: 42%;
-    }
+  [data-size="short"] {
+    width: 42%;
+  }
 
-    [data-size="long"],
-    .form-submit-input {
-        width: 88%;
-    }
+  [data-size="long"],
+  .form-submit-input {
+    width: 88%;
+  }
 
-    [data-space="left"] {
-        margin-left: 4%;
-    }
+  [data-space="left"] {
+    margin-left: 4%;
+  }
 }

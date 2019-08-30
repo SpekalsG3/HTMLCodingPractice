@@ -2,270 +2,270 @@ include ../includes/ui.kit.pug
 
 doctype html
 head
-	title Номера, которые мы для вас подобрали - Toxin
-	meta(charset='utf-8')
-	meta(name='viewport', content='width=device-width, initial-scale=1')
-	link(rel='icon', type='image/x-icon', href='/favicon.ico')
-	link(rel='mask-icon', href='/assets/img/icons/logo_icon.svg', color='#BC9CFF')
+  title Номера, которые мы для вас подобрали - Toxin
+  meta(charset='utf-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  link(rel='icon', type='image/x-icon', href='/favicon.ico')
+  link(rel='mask-icon', href='/assets/img/icons/logo_icon.svg', color='#BC9CFF')
 
 include ../includes/header.pug
 +header(true, true, true)
 
 .content.wrap-container
-	.content-cover
-	.wrap
-		form.content-settings
-			.content-settings-wrap
-				+kit-date({
-					text: "Даты пребывания в отеле",
-					settings: {
-						"data-index": "0",
-						"data-size": "medium"
-					},
-					input: {
-						name: "comeinout"
-					}
-				})
-				+kit-dropdown({
-					text: "Даты пребывания в отеле",
-					settings: {
-						"data-index": "1",
-						"data-space": "up",
-						"data-size": "medium"
-					}
-				})
-				+kit-range({
-					text: "Диапазон цены",
-					from: "5 000",
-					to: "10 000",
-					note: "Стоимость за сутки пребывания в номере",
-					settings: {
-						"data-space": "long-up"
-					},
-					input: {
-						name: "price-range"
-					}
-				})
-				+kit-checkbox({
-					text: "Checkbox buttons",
-					settings: {
-						"data-index": "2",
-						"data-space": "long-up"
-					},
-					input: [{
-						name: "smoke",
-						value: 0,
-						title: "Можно курить"
-					}, {
-						name: "pets",
-						value: 1,
-						title: "Можно с питомцами"
-					}, {
-						name: "guests",
-						value: 2,
-						title: "Можно пригласить гостей<br>(до 10 человек)"
-					}]
-				})
-				+kit-checkbox({
-					text: "Доступность",
-					settings: {
-						"data-index": "4",
-					},
-					input: [{
-						name: "wide",
-						value: 3,
-						title: "Широкий коридор",
-						note: "Ширина коридоров в номере<br>не менее 91 см."
-					}, {
-						name: "helper",
-						value: 4,
-						title: "Помощник для инвалидов",
-						note: "На 1 этаже вас встретит специалист<br>и проводит до номера."
-					}]
-				})
-				+kit-dropdown({
-					text: "Удобства номера",
-					settings: {
-						"data-index": "5",
-						"data-space": "long-up",
-						"data-size": "medium"
-					}
-				})
-				+kit-checkbox({
-					expandable: true,
-					text: "Дополнительные удобства",
-					settings: {
-						"data-space": "long-up"
-					},
-					input: [{
-						name: "breakfast",
-						value: 5,
-						title: "Завтрак"
-					}, {
-						name: "desk",
-						value: 6,
-						title: "Письменный стол"
-					}, {
-						name: "feeding",
-						value: 7,
-						title: "Стул для кормления"
-					}, {
-						name: "cradle",
-						value: 8,
-						title: "Кроватка"
-					}, {
-						name: "tv",
-						value: 9,
-						title: "Телевизор"
-					}, {
-						name: "shampoo",
-						value: 10,
-						title: "Шампунь"
-					}, {
-						name: "tv",
-						value: 11,
-						title: "Телевизор"
-					}, {
-						name: "shampoo",
-						value: 12,
-						title: "Шампунь"
-					}]
-				})
-		.content-items
-			.content-items-title Номера, которые мы для вас подобрали
-			.content-items-rooms
-				+kit-room({
-					number: 888,
-					settings: {
-						"data-index": "0"
-					},
-					images: 3,
-					special: true,
-					price: "9 990",
-					stars: 5,
-					feedbacks: 145
-				})
-				+kit-room({
-					number: 840,
-					settings: {
-						"data-index": "1"
-					},
-					images: 1,
-					special: false,
-					price: "9 990",
-					stars: 4,
-					feedbacks: 65
-				})
-				+kit-room({
-					number: 980,
-					settings: {
-						"data-index": "2"
-					},
-					images: 1,
-					special: true,
-					price: "8 500",
-					stars: 3,
-					feedbacks: 35
-				})
-				+kit-room({
-					number: 856,
-					settings: {
-						"data-index": "3"
-					},
-					images: 1,
-					special: false,
-					price: "7 300",
-					stars: 5,
-					feedbacks: 19
-				})
-				+kit-room({
-					number: 740,
-					settings: {
-						"data-index": "4"
-					},
-					images: 1,
-					special: false,
-					price: "6 000",
-					stars: 4,
-					feedbacks: 44
-				})
-				+kit-room({
-					number: 982,
-					settings: {
-						"data-index": "5"
-					},
-					images: 1,
-					special: false,
-					price: "5 800",
-					stars: 3,
-					feedbacks: 56
-				})
-				+kit-room({
-					number: 678,
-					settings: {
-						"data-index": "6"
-					},
-					images: 1,
-					special: false,
-					price: "5 500",
-					stars: 5,
-					feedbacks: 45
-				})
-				+kit-room({
-					number: 450,
-					settings: {
-						"data-index": "7"
-					},
-					images: 1,
-					special: false,
-					price: "5 300",
-					stars: 4,
-					feedbacks: 39
-				})
-				+kit-room({
-					number: 350,
-					settings: {
-						"data-index": "8"
-					},
-					images: 1,
-					special: false,
-					price: "5 000",
-					stars: 3,
-					feedbacks: 77
-				})
-				+kit-room({
-					number: 666,
-					settings: {
-						"data-index": "9"
-					},
-					images: 1,
-					special: false,
-					price: "5 000",
-					stars: 5,
-					feedbacks: 25
-				})
-				+kit-room({
-					number: 444,
-					settings: {
-						"data-index": "10"
-					},
-					images: 1,
-					special: false,
-					price: "5 000",
-					stars: 3,
-					feedbacks: 15
-				})
-				+kit-room({
-					number: 352,
-					settings: {
-						"data-index": "11"
-					},
-					images: 1,
-					special: false,
-					price: "5 000",
-					stars: 3,
-					feedbacks: 55
-				})
-			+kit-pages
+  .content-cover
+  .wrap
+    form.content-settings
+      .content-settings-wrap
+        +kit-date({
+          text: "Даты пребывания в отеле",
+          settings: {
+            "data-index": "0",
+            "data-size": "medium"
+          },
+          input: {
+            name: "comeinout"
+          }
+        })
+        +kit-dropdown({
+          text: "Даты пребывания в отеле",
+          settings: {
+            "data-index": "1",
+            "data-space": "up",
+            "data-size": "medium"
+          }
+        })
+        +kit-range({
+          text: "Диапазон цены",
+          from: "5 000",
+          to: "10 000",
+          note: "Стоимость за сутки пребывания в номере",
+          settings: {
+            "data-space": "long-up"
+          },
+          input: {
+            name: "price-range"
+          }
+        })
+        +kit-checkbox({
+          text: "Checkbox buttons",
+          settings: {
+            "data-index": "2",
+            "data-space": "long-up"
+          },
+          input: [{
+            name: "smoke",
+            value: 0,
+            title: "Можно курить"
+          }, {
+            name: "pets",
+            value: 1,
+            title: "Можно с питомцами"
+          }, {
+            name: "guests",
+            value: 2,
+            title: "Можно пригласить гостей<br>(до 10 человек)"
+          }]
+        })
+        +kit-checkbox({
+          text: "Доступность",
+          settings: {
+            "data-index": "4",
+          },
+          input: [{
+            name: "wide",
+            value: 3,
+            title: "Широкий коридор",
+            note: "Ширина коридоров в номере<br>не менее 91 см."
+          }, {
+            name: "helper",
+            value: 4,
+            title: "Помощник для инвалидов",
+            note: "На 1 этаже вас встретит специалист<br>и проводит до номера."
+          }]
+        })
+        +kit-dropdown({
+          text: "Удобства номера",
+          settings: {
+            "data-index": "5",
+            "data-space": "long-up",
+            "data-size": "medium"
+          }
+        })
+        +kit-checkbox({
+          expandable: true,
+          text: "Дополнительные удобства",
+          settings: {
+            "data-space": "long-up"
+          },
+          input: [{
+            name: "breakfast",
+            value: 5,
+            title: "Завтрак"
+          }, {
+            name: "desk",
+            value: 6,
+            title: "Письменный стол"
+          }, {
+            name: "feeding",
+            value: 7,
+            title: "Стул для кормления"
+          }, {
+            name: "cradle",
+            value: 8,
+            title: "Кроватка"
+          }, {
+            name: "tv",
+            value: 9,
+            title: "Телевизор"
+          }, {
+            name: "shampoo",
+            value: 10,
+            title: "Шампунь"
+          }, {
+            name: "tv",
+            value: 11,
+            title: "Телевизор"
+          }, {
+            name: "shampoo",
+            value: 12,
+            title: "Шампунь"
+          }]
+        })
+    .content-items
+      .content-items-title Номера, которые мы для вас подобрали
+      .content-items-rooms
+        +kit-room({
+          number: 888,
+          settings: {
+            "data-index": "0"
+          },
+          images: 3,
+          special: true,
+          price: "9 990",
+          stars: 5,
+          feedbacks: 145
+        })
+        +kit-room({
+          number: 840,
+          settings: {
+            "data-index": "1"
+          },
+          images: 1,
+          special: false,
+          price: "9 990",
+          stars: 4,
+          feedbacks: 65
+        })
+        +kit-room({
+          number: 980,
+          settings: {
+            "data-index": "2"
+          },
+          images: 1,
+          special: true,
+          price: "8 500",
+          stars: 3,
+          feedbacks: 35
+        })
+        +kit-room({
+          number: 856,
+          settings: {
+            "data-index": "3"
+          },
+          images: 1,
+          special: false,
+          price: "7 300",
+          stars: 5,
+          feedbacks: 19
+        })
+        +kit-room({
+          number: 740,
+          settings: {
+            "data-index": "4"
+          },
+          images: 1,
+          special: false,
+          price: "6 000",
+          stars: 4,
+          feedbacks: 44
+        })
+        +kit-room({
+          number: 982,
+          settings: {
+            "data-index": "5"
+          },
+          images: 1,
+          special: false,
+          price: "5 800",
+          stars: 3,
+          feedbacks: 56
+        })
+        +kit-room({
+          number: 678,
+          settings: {
+            "data-index": "6"
+          },
+          images: 1,
+          special: false,
+          price: "5 500",
+          stars: 5,
+          feedbacks: 45
+        })
+        +kit-room({
+          number: 450,
+          settings: {
+            "data-index": "7"
+          },
+          images: 1,
+          special: false,
+          price: "5 300",
+          stars: 4,
+          feedbacks: 39
+        })
+        +kit-room({
+          number: 350,
+          settings: {
+            "data-index": "8"
+          },
+          images: 1,
+          special: false,
+          price: "5 000",
+          stars: 3,
+          feedbacks: 77
+        })
+        +kit-room({
+          number: 666,
+          settings: {
+            "data-index": "9"
+          },
+          images: 1,
+          special: false,
+          price: "5 000",
+          stars: 5,
+          feedbacks: 25
+        })
+        +kit-room({
+          number: 444,
+          settings: {
+            "data-index": "10"
+          },
+          images: 1,
+          special: false,
+          price: "5 000",
+          stars: 3,
+          feedbacks: 15
+        })
+        +kit-room({
+          number: 352,
+          settings: {
+            "data-index": "11"
+          },
+          images: 1,
+          special: false,
+          price: "5 000",
+          stars: 3,
+          feedbacks: 55
+        })
+      +kit-pages
 
 include ../includes/footer.pug
