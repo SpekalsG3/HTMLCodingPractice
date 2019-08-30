@@ -24,3 +24,7 @@ $(".kit-form").submit(function(e) {
 		}
 	});
 });
+
+$(".kit-checkbox.expandable").click(function() {
+	$(this).toggleClass("default");
+});

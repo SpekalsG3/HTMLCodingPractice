@@ -19,39 +19,62 @@ include ../includes/header.pug
 			form.kit-form(method='POST', action='/fake-script/change-me', data-space='up')
 				.kit-form-field(data-size='long')
 					input.kit-form-input(placeholder='Имя', type='text', name='firstname')
-					input.kit-form-input.main-second-field(placeholder='Фамилия', type='text', name='lastname')
-				.kit-form-field.kit-radio
-					label
-						input(type='radio', name='gender', value='male', checked='')
-						.kit-radio-checkmark
-							div
-						span Мужчина
-					label
-						input(type='radio', name='gender', value='female')
-						.kit-radio-checkmark
-							div
-						span Женщина
-				.kit-form-field(data-index='2', data-space='up', data-size='long')
-					.kit-form-label Дата рождения
-					input.kit-form-input.signup-birthday(readonly='readonly', placeholder='ДД.ММ.ГГГГ', type='text', name='birthday')
+					input.kit-form-input(placeholder='Фамилия', type='text', name='lastname' data-space="tiny-up")
+				+kit-radio({
+					input: [{
+						settings: {
+							value: "male",
+							checked: ""
+						},
+						text: "Мужчина"
+					}, {
+						settings: {
+							value: "female"
+						},
+						text: "Женщина"
+					}]
+				})
+				+kit-date({
+					settings: {
+						"data-index": 2,
+						"data-space": "up",
+						"data-size": "long"
+					},
+					noArrow: true,
+					input: {
+						name: "birthdate",
+						placeholder: "ДД.ММ.ГГГГ"
+					},
+					text: "Дата рождения"
+				})
 				.kit-form-field(data-space='up', data-size='long')
 					.kit-form-label Данные для входа в сервис
 					input.kit-form-input(placeholder='Email', type='text', name='email')
-					input.kit-form-input.main-second-field(placeholder='Пароль', type='password', name='password')
-				.kit-form-field.kit-switch(data-size='long')
-					label
-						input(type='checkbox', name='offer')
-						.kit-switch-checkmark
-							.kit-switch-dot
-								div
-						span Получать спецпрделожения
-				.kit-form-field.form-submit-input(data-size='long', data-space='up')
-					.forward.kit-arrow
-					button.kit-form-submit Перейти к оплате
+					input.kit-form-input(placeholder='Пароль', type='password', name='password' data-space="tiny-up")
+				+kit-switch({
+					settings: {
+						"data-size": "long"
+					},
+					input: [{
+						name: "offer",
+						text: "Получать спецпрделожения"
+					}]
+				})
+				+kit-submit({
+					settings: {
+						"data-size": "long",
+						"data-space": "up"
+					},
+					text: "Перейти к оплате"
+				})
 				.kit-form-field.main-question
-					span Уже есть аккаунт на Toxin?
-					a(href='/signin/')
-						div Войти
+					.main-question-text Уже есть аккаунт на Toxin?
+					+kit-button({
+						settings: {
+							href: "/signin/"
+						},
+						text: "Войти"
+					})
 
 
 include ../includes/footer.pug

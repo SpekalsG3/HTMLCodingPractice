@@ -19,13 +19,21 @@ include ../includes/header.pug
 			form.kit-form(method='POST', action='/fake-script/change-me', data-space='up')
 				.kit-form-field(data-index='0', data-size='long')
 					input.kit-form-input(placeholder='Email', type='text', name='email')
-					input.kit-form-input.main-second-field(placeholder='Пароль', type='password', name='password')
-				.kit-form-field.form-submit-input(data-size='long', data-space='up')
-					.forward.kit-arrow
-					button.kit-form-submit Войти
+					input.kit-form-input(placeholder='Пароль', type='password', name='password' data-space="tiny-up")
+				+kit-submit({
+					settings: {
+						"data-size": "long",
+						"data-space": "up"
+					},
+					text: "Войти"
+				})
 				.kit-form-field.main-question
-					span Нет аккаунта на Toxin?Toxin?
-					a(href='/signup/')
-						div Создать
+					.main-question-text Нет аккаунта на Toxin?
+					+kit-button({
+						settings: {
+							href: "/signup/"
+						},
+						text: "Создать"
+					})
 
 include ../includes/footer.pug

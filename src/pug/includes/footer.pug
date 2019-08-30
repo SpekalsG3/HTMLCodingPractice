@@ -30,9 +30,13 @@ footer
 					| Получайте специальные
 					br
 					| предложения и новости сервиса
-				form.footer-email(method='GET' action='fake-script/change-me')
-					input.email-input(type='text' name='email' placeholder='Email')
-					input.email-submit(type='submit' name='email-submit' value='')
+				+kit-subscription({
+					action: "fake-script/change-me",
+					settings: {
+						name: "email",
+						placeholder: "Email"
+					}
+				})
 	.bar.content-bar.wrap-container
 		.wrap-align.wrap.footer-copyright
 			.footer-copyright-text Copyright © 2018 Toxin отель. Все права зачищены.

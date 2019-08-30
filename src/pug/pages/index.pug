@@ -20,18 +20,19 @@ include ../includes/header.pug
 				br
 				span.main-line(data-index='1') ваши пожелания
 			form.kit-form(method='GET' action='filter/' data-space='up')
-				+kit-form-field({
+				+kit-date({
 					text: "Прибытие",
 					settings: {
 						"data-index": "0",
 						"data-size": "short"
 					},
 					input: {
+						class: "search-comein",
 						name: "comein",
 						placeholder: "ДД.ММ.ГГГГ"
 					}
 				})
-				+kit-form-field({
+				+kit-date({
 					text: "Выезд",
 					settings: {
 						"data-index": "1",
@@ -39,12 +40,12 @@ include ../includes/header.pug
 						"data-space": "left"
 					},
 					input: {
+						class: "search-comeout",
 						name: "comeout",
 						placeholder: "ДД.ММ.ГГГГ"
 					}
 				})
-				+kit-form-field({
-					purpose: "dropdown",
+				+kit-dropdown({
 					text: "Гости",
 					settings: {
 						"data-index": "2",
@@ -52,16 +53,14 @@ include ../includes/header.pug
 						"data-space": "up"
 					}
 				})
-				+kit-form-field({
-						purpose: "submit",
-						text: "Подобрать номер",
-						settings: {
-								class: "form-submit-input",
-								"data-size": "long"
-						},
-						input: {
-								placeholder: "ДД.ММ.ГГГГ"
-						}
+				+kit-submit({
+					text: "Подобрать номер",
+					settings: {
+							"data-size": "long"
+					},
+					input: {
+							placeholder: "ДД.ММ.ГГГГ"
+					}
 				})
 		.main-slogan
 				| Лучшие номера для вашей работы, отдыха и просто вдохновения

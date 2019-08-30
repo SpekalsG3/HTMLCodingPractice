@@ -18,30 +18,14 @@
 	margin-top: 16px;
 }
 
-.main-second-field {
-	margin-top: 8px;
-}
-
 .main-question {
-	width: 93%;
+	width: 91%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
     margin-top: 31px;
 }
 
-.main-question span {
+.main-question-text {
 	font: 14px $mainFont;
-}
-
-.main-question div {
-	height: 45px;
-	width: 110px;
-	background: url(/assets/img/icons/gradient_border.svg) center no-repeat;
-	background-size: 90%;
-	font: bold 12px $mainFont;
-	line-height: 45px;
-	text-align: center;
-	text-transform: uppercase;
-	color: $purpleColor;
 }

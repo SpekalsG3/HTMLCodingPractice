@@ -16,10 +16,9 @@ include ../includes/header.pug
 	.wrap
 		form.content-settings
 			.content-settings-wrap
-				+kit-form-field({
+				+kit-date({
 					text: "Даты пребывания в отеле",
 					settings: {
-						class: "settings-date",
 						"data-index": "0",
 						"data-size": "medium"
 					},
@@ -27,8 +26,7 @@ include ../includes/header.pug
 						name: "comeinout"
 					}
 				})
-				+kit-form-field({
-					purpose: "dropdown",
+				+kit-dropdown({
 					text: "Даты пребывания в отеле",
 					settings: {
 						"data-index": "1",
@@ -36,8 +34,7 @@ include ../includes/header.pug
 						"data-size": "medium"
 					}
 				})
-				+kit-form-field({
-					purpose: "range",
+				+kit-range({
 					text: "Диапазон цены",
 					from: "5 000",
 					to: "10 000",
@@ -49,11 +46,9 @@ include ../includes/header.pug
 						name: "price-range"
 					}
 				})
-				+kit-form-field({
-					purpose: "checkbox",
+				+kit-checkbox({
 					text: "Checkbox buttons",
 					settings: {
-						class: "kit-checkbox",
 						"data-index": "2",
 						"data-space": "long-up"
 					},
@@ -71,11 +66,9 @@ include ../includes/header.pug
 						title: "Можно пригласить гостей<br>(до 10 человек)"
 					}]
 				})
-				+kit-form-field({
-					purpose: "checkbox",
+				+kit-checkbox({
 					text: "Доступность",
 					settings: {
-						class: "kit-checkbox",
 						"data-index": "4",
 					},
 					input: [{
@@ -90,8 +83,7 @@ include ../includes/header.pug
 						note: "На 1 этаже вас встретит специалист<br>и проводит до номера."
 					}]
 				})
-				+kit-form-field({
-					purpose: "dropdown",
+				+kit-dropdown({
 					text: "Удобства номера",
 					settings: {
 						"data-index": "5",
@@ -99,449 +91,181 @@ include ../includes/header.pug
 						"data-size": "medium"
 					}
 				})
-				.kit-form-field.kit-checkbox.convertible.default(data-space='long-up')
-					.kit-form-label Дополнительные удобства
-					.kit-arrow.expand.kit-checkbox-arrow
-					.kit-checkbox-options
-						label
-							input(type='checkbox', name='breakfast', value='5')
-							span.kit-input-box
-								.kit-checkbox-checkmark
-							.kit-checkbox-text
-								.kit-checkbox-title Завтрак
-						label
-							input(type='checkbox', name='desk', value='6')
-							span.kit-input-box
-								.kit-checkbox-checkmark
-							.kit-checkbox-text
-								.kit-checkbox-title Письменный стол
-						label
-							input(type='checkbox', name='feeding', value='7')
-							span.kit-input-box
-								.kit-checkbox-checkmark
-							.kit-checkbox-text
-								.kit-checkbox-title Стул для кормления
-						label
-							input(type='checkbox', name='cradle', value='8')
-							span.kit-input-box
-								.kit-checkbox-checkmark
-							.kit-checkbox-text
-								.kit-checkbox-title Кроватка
-						label
-							input(type='checkbox', name='tv', value='9')
-							span.kit-input-box
-								.kit-checkbox-checkmark
-							.kit-checkbox-text
-								.kit-checkbox-title Телевизор
-						label
-							input(type='checkbox', name='shampoo', value='10')
-							span.kit-input-box
-								.kit-checkbox-checkmark
-							.kit-checkbox-text
-								.kit-checkbox-title Шампунь
-						label
-							input(type='checkbox', name='tv', value='11')
-							span.kit-input-box
-								.kit-checkbox-checkmark
-							.kit-checkbox-text
-								.kit-checkbox-title Телевизор
-						label
-							input(type='checkbox', name='shampoo', value='12')
-							span.kit-input-box
-								.kit-checkbox-checkmark
-							.kit-checkbox-text
-								.kit-checkbox-title Шампунь
+				+kit-checkbox({
+					expandable: true,
+					text: "Дополнительные удобства",
+					settings: {
+						"data-space": "long-up"
+					},
+					input: [{
+						name: "breakfast",
+						value: 5,
+						title: "Завтрак"
+					}, {
+						name: "desk",
+						value: 6,
+						title: "Письменный стол"
+					}, {
+						name: "feeding",
+						value: 7,
+						title: "Стул для кормления"
+					}, {
+						name: "cradle",
+						value: 8,
+						title: "Кроватка"
+					}, {
+						name: "tv",
+						value: 9,
+						title: "Телевизор"
+					}, {
+						name: "shampoo",
+						value: 10,
+						title: "Шампунь"
+					}, {
+						name: "tv",
+						value: 11,
+						title: "Телевизор"
+					}, {
+						name: "shampoo",
+						value: 12,
+						title: "Шампунь"
+					}]
+				})
 		.content-items
 			.content-items-title Номера, которые мы для вас подобрали
 			.content-rooms
-				a(href='/room/?room=888')
-					.content-room
-						.content-room-gallery(data-index='0')
-							.content-room-prev
-								.kit-arrow.prev
-							.content-room-images
-								img(src='/assets/img/rooms/888-0.jpg')
-								img(src='/assets/img/rooms/888-1.jpg')
-								img(src='/assets/img/rooms/888-2.jpg')
-							.content-room-next
-								.kit-arrow.next
-							.content-room-points
-								div(data-selected='')
-								div
-								div
-								div
-						.content-room-main
-							.content-room-title
-								span.content-room-n &numero;
-								span.content-room-number 888
-								span.content-room-special Люкс
-							.content-room-price
-								span 9 990&#x20bd;
-								| в сутки
-						.content-room-feedback
-							.content-room-stars
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='true')
-							.content-room-amount
-								span 145
-								| Отзывов
-				a(href='/room/?room=840')
-					.content-room
-						.content-room-gallery(data-index='1')
-							.content-room-prev
-								.kit-arrow.prev
-							.content-room-images
-								img(src='/assets/img/rooms/840-0.jpg')
-							.content-room-next
-								.kit-arrow.next
-							.content-room-points
-								div(data-selected='')
-								div
-								div
-								div
-						.content-room-main
-							.content-room-title
-								span.content-room-n &numero;
-								span.content-room-number 840
-							.content-room-price
-								span 9 990&#x20bd;
-								| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&vcy; &scy;&ucy;&tcy;&kcy;&icy;
-						.content-room-feedback
-							.content-room-stars
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='false')
-							.content-room-amount
-								span 65
-								| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&Ocy;&tcy;&zcy;&ycy;&vcy;&ocy;&vcy;
-				a(href='/room/?room=980')
-					.content-room
-						.content-room-gallery(data-index='2')
-							.content-room-prev
-								.kit-arrow.prev
-							.content-room-images
-								img(src='/assets/img/rooms/980-0.jpg')
-							.content-room-next
-								.kit-arrow.next
-							.content-room-points
-								div(data-selected='')
-								div
-								div
-								div
-						.content-room-main
-							.content-room-title
-								span.content-room-n &numero;
-								span.content-room-number 980
-								span.content-room-special &Lcy;&yucy;&kcy;&scy;
-							.content-room-price
-								span 8 500&Rcy;
-								| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&vcy; &scy;&ucy;&tcy;&kcy;&icy;
-						.content-room-feedback
-							.content-room-stars
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='false')
-								div(data-full='false')
-							.content-room-amount
-								span 35
-								| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&Ocy;&tcy;&zcy;&ycy;&vcy;&ocy;&vcy;
-				a(href='/room/?room=856')
-					.content-room
-						.content-room-gallery(data-index='3')
-							.content-room-prev
-								.kit-arrow.prev
-							.content-room-images
-								img(src='/assets/img/rooms/856-0.jpg')
-							.content-room-next
-								.kit-arrow.next
-							.content-room-points
-								div(data-selected='')
-								div
-								div
-								div
-						.content-room-main
-							.content-room-title
-								span.content-room-n &numero;
-								span.content-room-number 856
-							.content-room-price
-								span 7 300&Rcy;
-								| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&vcy; &scy;&ucy;&tcy;&kcy;&icy;
-						.content-room-feedback
-							.content-room-stars
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='true')
-							.content-room-amount
-								span 19
-								| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&Ocy;&tcy;&zcy;&ycy;&vcy;&ocy;&vcy;
-				a(href='/room/?room=740')
-					.content-room
-						.content-room-gallery(data-index='4')
-							.content-room-prev
-								.kit-arrow.prev
-							.content-room-images
-								img(src='/assets/img/rooms/740-0.jpg')
-							.content-room-next
-								.kit-arrow.next
-							.content-room-points
-								div(data-selected='')
-								div
-								div
-								div
-						.content-room-main
-							.content-room-title
-								span.content-room-n &numero;
-								span.content-room-number 740
-							.content-room-price
-								span 6 000&Rcy;
-								| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&vcy; &scy;&ucy;&tcy;&kcy;&icy;
-						.content-room-feedback
-							.content-room-stars
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='false')
-							.content-room-amount
-								span 44
-								| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&Ocy;&tcy;&zcy;&ycy;&vcy;&ocy;&vcy;
-				a(href='/room/?room=982')
-					.content-room
-						.content-room-gallery(data-index='5')
-							.content-room-prev
-								.kit-arrow.prev
-							.content-room-images
-								img(src='/assets/img/rooms/982-0.jpg')
-							.content-room-next
-								.kit-arrow.next
-							.content-room-points
-								div(data-selected='')
-								div
-								div
-								div
-						.content-room-main
-							.content-room-title
-								span.content-room-n &numero;
-								span.content-room-number 982
-							.content-room-price
-								span 5 800&Rcy;
-								| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&vcy; &scy;&ucy;&tcy;&kcy;&icy;
-						.content-room-feedback
-							.content-room-stars
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='false')
-								div(data-full='false')
-							.content-room-amount
-								span 56
-								| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&Ocy;&tcy;&zcy;&ycy;&vcy;&ocy;&vcy;
-				a(href='/room/?room=678')
-					.content-room
-						.content-room-gallery(data-index='6')
-							.content-room-prev
-								.kit-arrow.prev
-							.content-room-images
-								img(src='/assets/img/rooms/678-0.jpg')
-							.content-room-next
-								.kit-arrow.next
-							.content-room-points
-								div(data-selected='')
-								div
-								div
-								div
-						.content-room-main
-							.content-room-title
-								span.content-room-n &numero;
-								span.content-room-number 678
-							.content-room-price
-								span 5 500&Rcy;
-								| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&vcy; &scy;&ucy;&tcy;&kcy;&icy;
-						.content-room-feedback
-							.content-room-stars
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='true')
-							.content-room-amount
-								span 45
-								| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&Ocy;&tcy;&zcy;&ycy;&vcy;&ocy;&vcy;
-				a(href='/room/?room=450')
-					.content-room
-						.content-room-gallery(data-index='7')
-							.content-room-prev
-								.kit-arrow.prev
-							.content-room-images
-								img(src='/assets/img/rooms/450-0.jpg')
-							.content-room-next
-								.kit-arrow.next
-							.content-room-points
-								div(data-selected='')
-								div
-								div
-								div
-						.content-room-main
-							.content-room-title
-								span.content-room-n &numero;
-								span.content-room-number 450
-							.content-room-price
-								span 5 300&Rcy;
-								| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&vcy; &scy;&ucy;&tcy;&kcy;&icy;
-						.content-room-feedback
-							.content-room-stars
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='false')
-							.content-room-amount
-								span 39
-								| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&Ocy;&tcy;&zcy;&ycy;&vcy;&ocy;&vcy;
-				a(href='/room/?room=350')
-					.content-room
-						.content-room-gallery(data-index='8')
-							.content-room-prev
-								.kit-arrow.prev
-							.content-room-images
-								img(src='/assets/img/rooms/350-0.jpg')
-							.content-room-next
-								.kit-arrow.next
-							.content-room-points
-								div(data-selected='')
-								div
-								div
-								div
-						.content-room-main
-							.content-room-title
-								span.content-room-n &numero;
-								span.content-room-number 350
-							.content-room-price
-								span 5 000&Rcy;
-								| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&vcy; &scy;&ucy;&tcy;&kcy;&icy;
-						.content-room-feedback
-							.content-room-stars
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='false')
-								div(data-full='false')
-							.content-room-amount
-								span 77
-								| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&Ocy;&tcy;&zcy;&ycy;&vcy;&ocy;&vcy;
-				a(href='/room/?room=666')
-					.content-room
-						.content-room-gallery(data-index='9')
-							.content-room-prev
-								.kit-arrow.prev
-							.content-room-images
-								img(src='/assets/img/rooms/666-0.jpg')
-							.content-room-next
-								.kit-arrow.next
-							.content-room-points
-								div(data-selected='')
-								div
-								div
-								div
-						.content-room-main
-							.content-room-title
-								span.content-room-n &numero;
-								span.content-room-number 666
-							.content-room-price
-								span 5 000&Rcy;
-								| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&vcy; &scy;&ucy;&tcy;&kcy;&icy;
-						.content-room-feedback
-							.content-room-stars
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='true')
-							.content-room-amount
-								span 25
-								| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&Ocy;&tcy;&zcy;&ycy;&vcy;&ocy;&vcy;
-				a(href='/room/?room=444')
-					.content-room
-						.content-room-gallery(data-index='10')
-							.content-room-prev
-								.kit-arrow.prev
-							.content-room-images
-								img(src='/assets/img/rooms/444-0.jpg')
-							.content-room-next
-								.kit-arrow.next
-							.content-room-points
-								div(data-selected='')
-								div
-								div
-								div
-						.content-room-main
-							.content-room-title
-								span.content-room-n &numero;
-								span.content-room-number 444
-							.content-room-price
-								span 5 000&Rcy;
-								| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&vcy; &scy;&ucy;&tcy;&kcy;&icy;
-						.content-room-feedback
-							.content-room-stars
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='false')
-								div(data-full='false')
-							.content-room-amount
-								span 15
-								| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&Ocy;&tcy;&zcy;&ycy;&vcy;&ocy;&vcy;
-				a(href='/room/?room=352')
-					.content-room
-						.content-room-gallery(data-index='11')
-							.content-room-prev
-								.kit-arrow.prev
-							.content-room-images
-								img(src='/assets/img/rooms/352-0.jpg')
-							.content-room-next
-								.kit-arrow.next
-							.content-room-points
-								div(data-selected='')
-								div
-								div
-								div
-						.content-room-main
-							.content-room-title
-								span.content-room-n &numero;
-								span.content-room-number 352
-							.content-room-price
-								span 5 000&Rcy;
-								| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&vcy; &scy;&ucy;&tcy;&kcy;&icy;
-						.content-room-feedback
-							.content-room-stars
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='true')
-								div(data-full='false')
-								div(data-full='false')
-							.content-room-amount
-								span 55
-								| &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&Ocy;&tcy;&zcy;&ycy;&vcy;&ocy;&vcy;
-			.content-pages
-				.content-pages-buttons
-					.content-page-button.content-page-prev
-					.content-page-button.content-page-number(data-selected='') 1
-					.content-page-button.content-page-skip.prev ...
-					.content-page-button.content-page-number 2
-					.content-page-button.content-page-number 3
-					.content-page-button.content-page-number 4
-					.content-page-button.content-page-skip.next ...
-					.content-page-button.content-page-number 15
-					.content-page-button.content-page-next
-				.content-pages-note
-					| 1 &ndash; 12 &icy;&zcy; 100+ &vcy;&acy;&rcy;&icy;&acy;&ncy;&tcy;&ocy;&vcy; &acy;&rcy;&iecy;&ncy;&dcy;&ycy;
+				+kit-room({
+					number: 888,
+					settings: {
+						"data-index": "0"
+					},
+					images: 3,
+					special: true,
+					price: "9 990",
+					stars: 5,
+					feedbacks: 145
+				})
+				+kit-room({
+					number: 840,
+					settings: {
+						"data-index": "1"
+					},
+					images: 1,
+					special: false,
+					price: "9 990",
+					stars: 4,
+					feedbacks: 65
+				})
+				+kit-room({
+					number: 980,
+					settings: {
+						"data-index": "2"
+					},
+					images: 1,
+					special: true,
+					price: "8 500",
+					stars: 3,
+					feedbacks: 35
+				})
+				+kit-room({
+					number: 856,
+					settings: {
+						"data-index": "3"
+					},
+					images: 1,
+					special: false,
+					price: "7 300",
+					stars: 5,
+					feedbacks: 19
+				})
+				+kit-room({
+					number: 740,
+					settings: {
+						"data-index": "4"
+					},
+					images: 1,
+					special: false,
+					price: "6 000",
+					stars: 4,
+					feedbacks: 44
+				})
+				+kit-room({
+					number: 982,
+					settings: {
+						"data-index": "5"
+					},
+					images: 1,
+					special: false,
+					price: "5 800",
+					stars: 3,
+					feedbacks: 56
+				})
+				+kit-room({
+					number: 678,
+					settings: {
+						"data-index": "6"
+					},
+					images: 1,
+					special: false,
+					price: "5 500",
+					stars: 5,
+					feedbacks: 45
+				})
+				+kit-room({
+					number: 450,
+					settings: {
+						"data-index": "7"
+					},
+					images: 1,
+					special: false,
+					price: "5 300",
+					stars: 4,
+					feedbacks: 39
+				})
+				+kit-room({
+					number: 350,
+					settings: {
+						"data-index": "8"
+					},
+					images: 1,
+					special: false,
+					price: "5 000",
+					stars: 3,
+					feedbacks: 77
+				})
+				+kit-room({
+					number: 666,
+					settings: {
+						"data-index": "9"
+					},
+					images: 1,
+					special: false,
+					price: "5 000",
+					stars: 5,
+					feedbacks: 25
+				})
+				+kit-room({
+					number: 444,
+					settings: {
+						"data-index": "10"
+					},
+					images: 1,
+					special: false,
+					price: "5 000",
+					stars: 3,
+					feedbacks: 15
+				})
+				+kit-room({
+					number: 352,
+					settings: {
+						"data-index": "11"
+					},
+					images: 1,
+					special: false,
+					price: "5 000",
+					stars: 3,
+					feedbacks: 55
+				})
+			+kit-pages
 
 include ../includes/footer.pug

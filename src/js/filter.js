@@ -133,11 +133,7 @@ $(".kit-form-field[data-index='5']").dropdown({
 	]
 });
 
-$(".kit-checkbox.convertible").click(function() {
-	$(this).toggleClass("default");
-});
-
-var $priceRange = $(".settings-price-range");
+var $priceRange = $(".kit-range-input");
 
 $priceRange.ionRangeSlider({
 		skin: "round",
@@ -153,12 +149,12 @@ $priceRange.ionRangeSlider({
 
 $priceRange.on("change", function() {
 	var $inp = $(this);
-	$(".settings-price-from").text($inp.data("from"));
-	$(".settings-price-to").text($inp.data("to"));
+	$(".kit-range-from").text($inp.data("from"));
+	$(".kit-range-to").text($inp.data("to"));
 });
 
-var images = document.getElementsByClassName("content-room-images");
-var imagePoints = document.getElementsByClassName("content-room-points");
+var images = document.getElementsByClassName("kit-room-images");
+var imagePoints = document.getElementsByClassName("kit-room-points");
 var sliderIndexes = [];
 
 for (var i = 0; i < images.length; i++) {
@@ -192,12 +188,12 @@ function SlideNextPhoto(index) {
 $(".content-rooms a").click(function(e) {
 	e.preventDefault();
 	var targetClassName = e.target.className.slice(0, -5);
-	if (targetClassName == "kit-arrow" || targetClassName == "content-room")
+	if (targetClassName == "kit-arrow" || targetClassName == "kit-room")
 		return;
 	window.location.href = e.currentTarget.href + "&" + window.location.search.slice(1);
 });
 
-$(".content-room-prev").click(function(e) {
+$(".kit-room-prev").click(function(e) {
 	var index = parseInt(this.parentNode.getAttribute("data-index"));
 	if (sliderIndexes[index] == 0) {
 		for (var i = 0; i < images[index].children.length-1; i++) {
@@ -208,7 +204,7 @@ $(".content-room-prev").click(function(e) {
 	}
 });
 
-$(".content-room-next").click(function() {
+$(".kit-room-next").click(function() {
 	var index = parseInt(this.parentNode.getAttribute("data-index"));
 	if (sliderIndexes[index] == images[index].children.length - 1) {
 		for (var i = 0; i < images[index].children.length-1; i++) {
@@ -221,28 +217,28 @@ $(".content-room-next").click(function() {
 
 
 var pageNow = 1;
-var lastPage = parseInt(document.getElementsByClassName("content-page-number")[document.getElementsByClassName("content-page-number").length-1].innerHTML);
+var lastPage = parseInt(document.getElementsByClassName("kit-page-number")[document.getElementsByClassName("kit-page-number").length-1].innerHTML);
 
 function GoPrevPage() {
 	pageNow--;
 	if (pageNow == lastPage - 2 || pageNow == lastPage - 1) {
-		$(".content-page-next").css("display", "block");
-		$(".content-page-number")[pageNow - lastPage + 5].removeAttribute("data-selected");
-		$(".content-page-number")[pageNow - lastPage + 4].setAttribute("data-selected", "");
+		$(".kit-page-next").css("display", "block");
+		$(".kit-page-number")[pageNow - lastPage + 5].removeAttribute("data-selected");
+		$(".kit-page-number")[pageNow - lastPage + 4].setAttribute("data-selected", "");
 	} else if (pageNow > 2 && pageNow < lastPage - 1) {
-		$(".content-page-skip.next").css("display", "block");
-		var pageNumbers = $(".content-page-number");
+		$(".kit-page-skip.next").css("display", "block");
+		var pageNumbers = $(".kit-page-number");
 		for (var i = 1; i < pageNumbers.length - 1; i++) {
 			pageNumbers[i].innerHTML = pageNow - 2 + i;
 		}
 		if (pageNow == 3) {
-			$(".content-page-skip.prev").css("display", "none");
+			$(".kit-page-skip.prev").css("display", "none");
 		}
 	} else if (pageNow == 1 || pageNow == 2) {
-		$(".content-page-number")[pageNow].removeAttribute("data-selected");
-		$(".content-page-number")[pageNow-1].setAttribute("data-selected", "");
+		$(".kit-page-number")[pageNow].removeAttribute("data-selected");
+		$(".kit-page-number")[pageNow-1].setAttribute("data-selected", "");
 		if (pageNow == 1) {
-			$(".content-page-prev").css("display", "none");
+			$(".kit-page-prev").css("display", "none");
 		}
 	}
 }
@@ -250,26 +246,26 @@ function GoPrevPage() {
 function GoNextPage() {
 	pageNow++;
 	if (pageNow == 2 || pageNow == 3) {
-		$(".content-page-prev").css("display", "block");
-		$(".content-page-number")[pageNow-2].removeAttribute("data-selected");
-		$(".content-page-number")[pageNow-1].setAttribute("data-selected", "");
+		$(".kit-page-prev").css("display", "block");
+		$(".kit-page-number")[pageNow-2].removeAttribute("data-selected");
+		$(".kit-page-number")[pageNow-1].setAttribute("data-selected", "");
 	} else if (pageNow > 3 && pageNow < lastPage - 1) {
-		$(".content-page-skip.prev").css("display", "block");
-		var pageNumbers = $(".content-page-number");
+		$(".kit-page-skip.prev").css("display", "block");
+		var pageNumbers = $(".kit-page-number");
 		for (var i = 1; i < pageNumbers.length - 1; i++) {
 			pageNumbers[i].innerHTML = pageNow - 2 + i;
 		}
 		if (pageNow == lastPage - 2) {
-			$(".content-page-skip.next").css("display", "none");
+			$(".kit-page-skip.next").css("display", "none");
 		}
 	} else if (pageNow == lastPage - 1 || pageNow == lastPage) {
-		$(".content-page-number")[pageNow - lastPage + 3].removeAttribute("data-selected");
-		$(".content-page-number")[pageNow - lastPage + 4].setAttribute("data-selected", "");
+		$(".kit-page-number")[pageNow - lastPage + 3].removeAttribute("data-selected");
+		$(".kit-page-number")[pageNow - lastPage + 4].setAttribute("data-selected", "");
 		if (pageNow == lastPage) {
-			$(".content-page-next").css("display", "none");
+			$(".kit-page-next").css("display", "none");
 		}
 	}
 }
 
-$(".content-page-prev").click(GoPrevPage);
-$(".content-page-next").click(GoNextPage);
+$(".kit-page-prev").click(GoPrevPage);
+$(".kit-page-next").click(GoNextPage);
