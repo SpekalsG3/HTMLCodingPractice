@@ -1,0 +1,120 @@
+.dropdown {
+    position: absolute;
+    width: 100%;
+    border-radius: 2px;
+    background: #fff;
+    z-index: 3;
+}
+
+.dropdown__head {
+    margin-top: 1px;
+    margin-left: 1px;
+}
+
+.dropdown--default .dropdown__body {
+    display: none;
+}
+
+.dropdown--extended {
+    border: 1px solid rgba(31, 32, 65, .5);
+}
+
+.dropdown__body {
+    z-index: 2;
+    padding: 7px 7px 7px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, .05);
+    font: 12px Montserrat;
+}
+
+.dropdown__placeholder {
+    border-radius: 0;
+    font: 14px Montserrat;
+    line-height: 44px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.dropdown--extended .dropdown__placeholder.form__input {
+    width: calc(100% - 57px);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid rgba(31, 32, 65, .5);
+    border-radius: 0;
+}
+
+.dropdown__option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+}
+
+.dropdown__option + .dropdown__option {
+    margin-top: 7px;
+}
+
+.dropdown__title {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.dropdown__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown__button {
+    width: 30px;
+    height: 30px;
+    border-radius: 25px;
+    border: 1px solid rgba(31, 32, 65, .5);
+    color: 1px solid rgba(31, 32, 65, .5);
+    line-height: 30px;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+.dropdown__button--disabled {
+    border: 1px solid rgba(31, 32, 65, .25);
+    color: 1px solid rgba(31, 32, 65, .25);
+}
+
+.dropdown__value {
+    border: none;
+    width: 32px;
+    text-align: center;
+    font: bold 14px Montserrat;
+}
+
+.dropdown__confirm div {
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.dropdown__clear {
+    color: rgba(31, 32, 65, .5);
+}
+
+.dropdown__apply {
+    color: #BC9CFF;
+}
+
+.dropdown--extended .page__arrow {
+    top: 0;
+    right: -1px;
+}
+
+.dropdown__head .form__input {
+    left: -1px;
+}
