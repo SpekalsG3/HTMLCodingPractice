@@ -6,20 +6,20 @@
     z-index: 3;
 }
 
-.dropdown-head {
+.dropdown__head {
     margin-top: 1px;
     margin-left: 1px;
 }
 
-.dropdown.default .dropdown-body {
+.dropdown--default .dropdown__body {
     display: none;
 }
 
-.dropdown.extended {
+.dropdown--extended {
     border: 1px solid rgba(31, 32, 65, .5);
 }
 
-.dropdown-body {
+.dropdown__body {
     z-index: 2;
     padding: 7px 7px 7px 15px;
     display: flex;
@@ -28,7 +28,7 @@
     font: 12px Montserrat;
 }
 
-.dropdown-placeholder {
+.dropdown__placeholder {
     border-radius: 0;
     font: 14px Montserrat;
     line-height: 44px;
@@ -37,7 +37,7 @@
     white-space: nowrap;
 }
 
-.dropdown.extended .dropdown-placeholder.kit-form-input {
+.dropdown--extended .dropdown__placeholder.form__input {
     width: calc(100% - 57px);
     border-top: none;
     border-left: none;
@@ -46,7 +46,7 @@
     border-radius: 0;
 }
 
-.dropdown-option {
+.dropdown__option {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,22 +54,22 @@
     height: 30px;
 }
 
-.dropdown-option + .dropdown-option {
+.dropdown__option + .dropdown__option {
     margin-top: 7px;
 }
 
-.option-title {
+.dropdown__title {
     font-weight: bold;
     text-transform: uppercase;
 }
 
-.option-buttons {
+.dropdown__buttons {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.option-btn {
+.dropdown__button {
     width: 30px;
     height: 30px;
     border-radius: 25px;
@@ -84,37 +84,37 @@
     cursor: pointer;
 }
 
-.option-btn.disabled {
+.dropdown__button--disabled {
     border: 1px solid rgba(31, 32, 65, .25);
     color: 1px solid rgba(31, 32, 65, .25);
 }
 
-.option-value {
+.dropdown__value {
     border: none;
     width: 32px;
     text-align: center;
     font: bold 14px Montserrat;
 }
 
-.dropdown-confirm div {
+.dropdown__confirm div {
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
 }
 
-.dropdown-clear {
+.dropdown__clear {
     color: rgba(31, 32, 65, .5);
 }
 
-.dropdown-apply {
+.dropdown__apply {
     color: #BC9CFF;
 }
 
-.dropdown.extended .kit-arrow {
+.dropdown--extended .page__arrow {
     top: 0;
     right: -1px;
 }
 
-.dropdown-head .kit-form-input {
+.dropdown__head .form__input {
     left: -1px;
 }

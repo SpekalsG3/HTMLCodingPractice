@@ -43,15 +43,15 @@ DropdownController.prototype.createDropdown = function(params) {
     var dropdown = '<div style="left: ' + this.DropdownView.pos.left + 'px; top: ' + this.DropdownView.pos.top + 'px;" class="';
     if (params.specClass != undefined)
         dropdown += params.specClass + '-dropdown ';
-    
-    dropdown += 'dropdown default"><div class="dropdown-head"><div class="expand kit-arrow"></div><div type="text" name="';
+
+    dropdown += 'dropdown dropdown--default"><div class="dropdown__head"><div class="page__arrow page__arrow--expand"></div><div type="text" name="';
 
     if (params.specClass != undefined)
         dropdown += params.specClass;
     else
         dropdown += 'dropdown';
 
-    dropdown += '" class="dropdown-placeholder kit-form-input search-';
+    dropdown += '" class="dropdown__placeholder form__input search-';
 
     if (params.specClass != undefined)
         dropdown += params.specClass;
@@ -61,32 +61,32 @@ DropdownController.prototype.createDropdown = function(params) {
     if (params.placeholder != undefined)
         dropdown += params.placeholder;
     
-    dropdown += '</div></div><div class="dropdown-body">';
+    dropdown += '</div></div><div class="dropdown__body">';
 
     if (params.options != undefined) {
         for (var i = 0; i < params.options.length; i++) {
-            dropdown += '<div class="dropdown-option"><div class="option-title">' + params.options[i].title + '</div><div class="option-buttons" data-index="' + i + '"><div class="option-less option-btn disabled">-</div><input readonly="readonly" class="option-value" name="' + params.options[i].title + '" value="';
+            dropdown += '<div class="dropdown__option"><div class="dropdown__title">' + params.options[i].title + '</div><div class="dropdown__buttons" data-index="' + i + '"><div class="dropdown__less dropdown__button dropdown__button--disabled">-</div><input readonly="readonly" class="dropdown__value" name="' + params.options[i].title + '" value="';
             
             if (params.options[i].value != undefined)
                 dropdown += params.options[i].value;
             else
                 dropdown += '0';
 
-            dropdown += '"/><div class="option-more option-btn">+</div></div></div>';
+            dropdown += '"/><div class="dropdown__more dropdown__button">+</div></div></div>';
         }
     }
 
     if (params.clearBtn != undefined || params.applyBtn != undefined) {
-        dropdown += '<div class="dropdown-confirm dropdown-option">';
+        dropdown += '<div class="dropdown__confirm dropdown__option">';
 
         if (params.clearBtn != undefined) {
             if (params.clearBtn)
-                dropdown += '<div class="dropdown-clear hidden">Очистить</div>';
+                dropdown += '<div class="dropdown__clear">Очистить</div>';
         }
 
         if (params.applyBtn != undefined) {
             if (params.applyBtn)
-                dropdown += '<div class="dropdown-apply">Применить</div>';
+                dropdown += '<div class="dropdown__apply">Применить</div>';
         }
 
         dropdown += '</div>';
@@ -134,9 +134,9 @@ DropdownController.prototype.reduceValue = function(target) {
     var newValue = this.DropdownModel.options[index].value;
     target.parentNode.children[1].value = newValue;
     if (newValue == this.DropdownModel.options[index].min) {
-        target.classList.add("disabled");
+        target.classList.add("dropdown__button--disabled");
     }
-    target.parentNode.children[2].classList.remove("disabled");
+    target.parentNode.children[2].classList.remove("dropdown__button--disabled");
     this.DropdownView.setPlaceholder(this.DropdownModel.updatePlaceholder());
 }
 
@@ -147,25 +147,25 @@ DropdownController.prototype.increaseValue = function(target) {
     var newValue = this.DropdownModel.options[index].value;
     target.parentNode.children[1].value = newValue;
     if (newValue == this.DropdownModel.options[index].max) {
-        target.classList.add("disabled");
+        target.classList.add("dropdown__button--disabled");
     }
-    target.parentNode.children[0].classList.remove("disabled");
+    target.parentNode.children[0].classList.remove("dropdown__button--disabled");
     this.DropdownView.setPlaceholder(this.DropdownModel.updatePlaceholder());
 }
 
 DropdownController.prototype.close = function() {
-    this.DropdownView.$dropdown.removeClass("extended").removeClass("default").addClass("default");
+    this.DropdownView.$dropdown.removeClass("dropdown--extended").removeClass("dropdown--default").addClass("dropdown--default");
 }
 
 DropdownController.prototype.closeAndOpen = function() {
-    this.DropdownView.$dropdown.toggleClass("default");
-    this.DropdownView.$dropdown.toggleClass("extended");
+    this.DropdownView.$dropdown.toggleClass("dropdown--default");
+    this.DropdownView.$dropdown.toggleClass("dropdown--extended");
 }
 
 DropdownController.prototype.clear = function() {
-    this.DropdownView.$dropdown.find(".dropdown-input").val(this.DropdownModel.placeholder);
-    this.DropdownView.$dropdown.find(".option-less").removeClass("disabled").addClass("disabled");
-    this.DropdownView.$dropdown.find(".option-more").removeClass("disabled");
+    this.DropdownView.$dropdown.find(".dropdown__input").val(this.DropdownModel.placeholder);
+    this.DropdownView.$dropdown.find(".dropdown__less").removeClass("dropdown__button--disabled").addClass("dropdown__button--disabled");
+    this.DropdownView.$dropdown.find(".dropdown__more").removeClass("dropdown__button--disabled");
     var amounts = this.DropdownView.$dropdown.find(".option-amount");
     for(var i = 0; i < amounts.length; i++) {
         amounts[i].innerHTML = this.DropdownModel.options[i].min;
@@ -186,13 +186,13 @@ DropdownController.prototype.setOptionValue = function(title, value) {
     for (var i = 0; i < this.DropdownModel.options.length; i++) {
         if (this.DropdownModel.options[i].title == title) {
             this.DropdownModel.options[i].value = value;
-            var thisOptionButtons = $(".option-buttons")[i];
+            var thisOptionButtons = $(".dropdown__buttons")[i];
             thisOptionButtons.children[1].value = value;
             if (value == this.DropdownModel.options[i].max) {
-                thisOptionButtons.children[0].classList.remove("disabled");
-                thisOptionButtons.children[2].classList.add("disabled");
+                thisOptionButtons.children[0].classList.remove("dropdown__button--disabled");
+                thisOptionButtons.children[2].classList.add("dropdown__button--disabled");
             } else if (value > 0) {
-                thisOptionButtons.children[0].classList.remove("disabled");
+                thisOptionButtons.children[0].classList.remove("dropdown__button--disabled");
             }
             break;
         }
@@ -227,17 +227,17 @@ DropdownView.prototype.addListeners = function() {
     });
     
     this.$dropdown.children().eq(1).click(function(e) {
-        if (_this.$dropdown.find(".dropdown-apply")[0] == e.target) {
+        if (_this.$dropdown.find(".dropdown__apply")[0] == e.target) {
             _this.onClosingAndOpening.manage();
             return;
-        } else if (_this.$dropdown.find(".dropdown-clear")[0] == e.target) {
+        } else if (_this.$dropdown.find(".dropdown__clear")[0] == e.target) {
             _this.onClearing.manage();
             return;
-        } else if ($(e.target).hasClass("disabled")) {
+        } else if ($(e.target).hasClass("dropdown__button--disabled")) {
             return;
         }
-        var less = _this.$dropdown.find(".option-less");
-        var more = _this.$dropdown.find(".option-more");
+        var less = _this.$dropdown.find(".dropdown__less");
+        var more = _this.$dropdown.find(".dropdown__more");
         for (var i = 0; i < less.length; i++) {
             if (e.target == less[i]) {
                 _this.onReducing.manage(e.target);
@@ -251,7 +251,7 @@ DropdownView.prototype.addListeners = function() {
 }
 
 DropdownView.prototype.setPlaceholder = function(value) {
-    this.$dropdown.find(".dropdown-placeholder").html(value);
+    this.$dropdown.find(".dropdown__placeholder").html(value);
 }
 
 

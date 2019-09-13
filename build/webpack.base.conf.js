@@ -113,7 +113,6 @@ module.exports = {
       "window.jQuery": "jquery"
     }),
     new HtmlWebpackPlugin({
-      // template: `${PAGES_DIR}/index.html`,
       template: `${PAGES_DIR}/index.pug`,
       filename: `./index.html`,
       excludeChunks: Object.keys(ENTRIES).filter(el => !["index", "default"].includes(el)),
