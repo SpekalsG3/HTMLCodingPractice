@@ -1,7 +1,9 @@
-.kit-one-main {
-  height: 683px;
-}
+.content {
+  &--form {
+    height: 683px;
+  }
 
-.kit-form-block {
-  margin-bottom: 28px;
+  & .form {
+    margin-bottom: 28px;
+  }
 }

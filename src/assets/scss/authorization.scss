@@ -3,29 +3,29 @@
 
 .content {
   background-image: url(/assets/img/authorization.jpg);
+
+  &__question {
+    width: 91%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 31px;
+  }
+
+  &__text {
+    font: 14px $mainFont;
+  }
+
+  &--form .page__wrap-inner {
+    justify-content: center;
+    align-items: center;
+  }
 }
 
-.kit-form-main .wrap {
-  justify-content: center;
-  align-items: center;
-}
-
-.kit-form-block {
+.form {
   padding-left: 31px;
-}
 
-.kit-form-field[data-index="0"] {
-  margin-top: 16px;
-}
-
-.main-question {
-  width: 91%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 31px;
-}
-
-.main-question-text {
-  font: 14px $mainFont;
+  &__field[data-index="0"] {
+    margin-top: 16px;
+  }
 }

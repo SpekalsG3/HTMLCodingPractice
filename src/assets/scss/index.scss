@@ -1,55 +1,50 @@
 @import "utils/fonts.scss";
 @import "utils/vars.scss";
 
-.kit-form-main {
-  background-image: url(/assets/img/landing_main.jpg);
-  height: 830px;
-}
+.content{
+  &--form {
+    background-image: url(/assets/img/landing_main.jpg);
+    height: 830px;
+  }
 
-.kit-form-block {
-  margin-top: 70px;
-  height: 302px;
-  padding-left: 30px;
-}
+  & .form {
+    margin-top: 70px;
+    height: 302px;
+    padding-left: 30px;
 
-.main-line[data-index="0"] {
-  letter-spacing: 1.2px;
-}
+    &__input::placeholder {
+      color: rgba($darkColor, .75);
+    }
 
-.main-line[data-index="1"] {
-  letter-spacing: 1.5px;
-}
+    &__submit {
+      &--input {
+        margin-top: 32px;
+      }
+    }
+  }
 
-.kit-form-input::placeholder {
-  color: rgba($darkColor, .75);
-}
-
-.form-submit-input {
-  margin-top: 32px;
-}
-
-.main-slogan {
-  position: absolute;
-  right: 52px;
-  bottom: 21px;
-  width: 297px;
-  height: 48px;
-  font: 14px $mainFont;
-  color: rgba(31, 32, 65, .75);
-  line-height: 24px;
-  text-align: right;
+  &__slogan {
+    position: absolute;
+    right: 52px;
+    bottom: 21px;
+    width: 297px;
+    height: 48px;
+    font: 14px $mainFont;
+    color: rgba(31, 32, 65, .75);
+    line-height: 24px;
+    text-align: right;
+  }
 }
 
 @media screen and (max-width: 1300px) {
-
-  .main {
+  .content .page__wrap-inner {
     background-position: top;
     background-size: auto calc(100% + 100px);
   }
 }
 
 @media screen and (max-width: 450px) {
-  .main-block {
+  .content .form {
     width: 100%;
   }
 }
@@ -57,30 +52,30 @@
 @media screen and (max-width: 979px) {
   .content {
     height: calc(100vh - 70px);
-  }
 
-  .content .wrap {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .main-block {
-    padding-left: 0;
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+    &__slogan {
+      justify-self: flex-end;
+    }
 
-  .main-slogan {
-    justify-self: flex-end;
-  }
+    & .page__wrap-inner {
+      display: flex;
+      justify-content: center;
+    }
 
-  .kit-form-title {
-    text-align: center;
-  }
+    & .form {
+      padding-left: 0;
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-  .main-search {
-    justify-content: center;
+      &__title {
+        text-align: center;
+      }
+
+      &__inputs {
+        justify-content: center;
+      }
+    }
   }
 }

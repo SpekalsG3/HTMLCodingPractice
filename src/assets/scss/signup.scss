@@ -1,19 +1,21 @@
-.kit-form-main {
-  height: 701px;
+.content {
+  &--form {
+    height: 701px;
+  }
+
+  &.form {
+    margin-bottom: 2px;
+
+    &__title {
+      letter-spacing: 1.2px;
+    }
+
+    &__inputs {
+      margin-top: 19px;
+    }
+  }
 }
 
-.kit-radio {
+.radio {
   display: flex;
-}
-
-.kit-form-block {
-  margin-bottom: 2px;
-}
-
-.main-signup {
-  margin-top: 19px;
-}
-
-.kit-form-title {
-  letter-spacing: 1.2px;
 }
