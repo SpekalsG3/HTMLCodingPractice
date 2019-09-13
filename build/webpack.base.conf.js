@@ -35,7 +35,7 @@ module.exports = {
   output: {
     filename: `${PATHS.assets}js/[name].[hash].js`,
     path: PATHS.dist,
-    publicPath: "/"
+    publicPath: "/dist/"
   },
   optimization: {
     runtimeChunk: "single",
