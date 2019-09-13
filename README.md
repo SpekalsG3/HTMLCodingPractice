@@ -9,4 +9,4 @@ To build project for production run next command:
 > npm run build
 Project will be build in "dist" folder.
 
-If you only want to see the result you can open it on [GitHub Pages](https://spekalsg3.github.io/HTMLPractice/dist/) or download "dist" folder.
+If you only want to see the result you can open it on [GitHub Pages](https://spekalsg3.github.io/HTMLPractice/dist/) or download repository and open "index.html" file.
