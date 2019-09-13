@@ -9,7 +9,15 @@ import "../static/lib/js/jquery.daterangepicker.min.js";
 import "../static/lib/js/jquery.dropdown.js";
 import "../static/lib/js/jquery.rangeslider.js";
 
-$(".kit-form-field[data-index='1']").dropdown({
+import "../pug/components/form/form.scss";
+import "../pug/components/form/__range/form__range.scss";
+import "../pug/components/form/__checkbox/form__checkbox.scss";
+import "../pug/components/pagination/pagination.scss";
+import "../pug/components/pagination/pagination.js";
+import "../pug/components/room-card/room-card.scss";
+import "../pug/components/room-card/room-card.js";
+
+$(".form__field[data-index='1']").dropdown({
   valuePattern: "TS",
   specClass: "guests",
   placeholder: "Сколько гостей",
@@ -68,10 +76,10 @@ var URISearch = window.location.search.slice(1).split(/(&|=)/).filter(function(v
 });
 
 for (var i = 0; i < 3; i++) {
-  $(".kit-form-field[data-index='1']")[0].controller.setOptionValue(decodeURI(URISearch[4 + i * 2]), parseInt(URISearch[5 + i * 2]));
+  $(".form__field[data-index='1']")[0].controller.setOptionValue(decodeURI(URISearch[4 + i * 2]), parseInt(URISearch[5 + i * 2]));
 }
 
-$(".kit-form-field[data-index='0']").dateRangePicker({
+$(".form__field[data-index='0']").dateRangePicker({
   format: "DD MMM",
   separator: " по ",
   singleMonth: true,
@@ -86,11 +94,11 @@ $(".kit-form-field[data-index='0']").dateRangePicker({
     return date1 + " по " + parsedDate[0] + " " + months[parsedDate[1]];
   },
   setValue: function(s, s1, s2) {
-    $(".search-comeinout").val(s1 + " - " + s2);
+    $(".comeinout").val(s1 + " - " + s2);
   }
 });
 
-$(".kit-form-field[data-index='5']").dropdown({
+$(".form__field[data-index='5']").dropdown({
   valuePattern: "S",
   placeholder: "Удобства номера",
   SPlaceholderSpelling: function(index, value) {
@@ -133,7 +141,7 @@ $(".kit-form-field[data-index='5']").dropdown({
   ]
 });
 
-var $priceRange = $(".kit-range-input");
+var $priceRange = $(".range__input");
 
 $priceRange.ionRangeSlider({
     skin: "round",
@@ -149,123 +157,6 @@ $priceRange.ionRangeSlider({
 
 $priceRange.on("change", function() {
   var $inp = $(this);
-  $(".kit-range-from").text($inp.data("from"));
-  $(".kit-range-to").text($inp.data("to"));
+  $(".range__from").text($inp.data("from"));
+  $(".range__to").text($inp.data("to"));
 });
-
-var images = document.getElementsByClassName("kit-room-images");
-var imagePoints = document.getElementsByClassName("kit-room-points");
-var sliderIndexes = [];
-
-for (var i = 0; i < images.length; i++) {
-  var photos = images[i].children;
-  sliderIndexes[i] = 0;
-  for (var j = 0; j < photos.length; j++) {
-    photos[j].style.left = j * 100 + "%";
-  }
-}
-
-function SlidePrevPhoto(index) {
-  var thisImages = images[index].children;
-  for (var i = 0; i < thisImages.length; i++) {
-    thisImages[i].style.left = parseInt(thisImages[i].style.left) + 100 + "%";
-  }
-  imagePoints[index].children[sliderIndexes[index]].style.background = "none";
-  sliderIndexes[index]--;
-  imagePoints[index].children[sliderIndexes[index]].style.background = "#fff";
-}
-
-function SlideNextPhoto(index) {
-  var thisImages = images[index].children;
-  for (var i = 0; i < thisImages.length; i++) {
-    thisImages[i].style.left = parseInt(thisImages[i].style.left) - 100 + "%";
-  }
-  imagePoints[index].children[sliderIndexes[index]].style.background = "none";
-  sliderIndexes[index]++;
-  imagePoints[index].children[sliderIndexes[index]].style.background = "#fff";
-}
-
-$(".content-rooms a").click(function(e) {
-  e.preventDefault();
-  var targetClassName = e.target.className.slice(0, -5);
-  if (targetClassName == "kit-arrow" || targetClassName == "kit-room")
-    return;
-  window.location.href = e.currentTarget.href + "&" + window.location.search.slice(1);
-});
-
-$(".kit-room-prev").click(function(e) {
-  var index = parseInt(this.parentNode.getAttribute("data-index"));
-  if (sliderIndexes[index] == 0) {
-    for (var i = 0; i < images[index].children.length-1; i++) {
-      SlideNextPhoto(index);
-    }
-  } else {
-    SlidePrevPhoto(index);
-  }
-});
-
-$(".kit-room-next").click(function() {
-  var index = parseInt(this.parentNode.getAttribute("data-index"));
-  if (sliderIndexes[index] == images[index].children.length - 1) {
-    for (var i = 0; i < images[index].children.length-1; i++) {
-      SlidePrevPhoto(index);
-    }
-  } else {
-    SlideNextPhoto(index);
-  }
-});
-
-
-var pageNow = 1;
-var lastPage = parseInt(document.getElementsByClassName("kit-page-number")[document.getElementsByClassName("kit-page-number").length-1].innerHTML);
-
-function GoPrevPage() {
-  pageNow--;
-  if (pageNow == lastPage - 2 || pageNow == lastPage - 1) {
-    $(".kit-page-next").css("display", "block");
-    $(".kit-page-number")[pageNow - lastPage + 5].removeAttribute("data-selected");
-    $(".kit-page-number")[pageNow - lastPage + 4].setAttribute("data-selected", "");
-  } else if (pageNow > 2 && pageNow < lastPage - 1) {
-    $(".kit-page-skip.next").css("display", "block");
-    var pageNumbers = $(".kit-page-number");
-    for (var i = 1; i < pageNumbers.length - 1; i++) {
-      pageNumbers[i].innerHTML = pageNow - 2 + i;
-    }
-    if (pageNow == 3) {
-      $(".kit-page-skip.prev").css("display", "none");
-    }
-  } else if (pageNow == 1 || pageNow == 2) {
-    $(".kit-page-number")[pageNow].removeAttribute("data-selected");
-    $(".kit-page-number")[pageNow-1].setAttribute("data-selected", "");
-    if (pageNow == 1) {
-      $(".kit-page-prev").css("display", "none");
-    }
-  }
-}
-
-function GoNextPage() {
-  pageNow++;
-  if (pageNow == 2 || pageNow == 3) {
-    $(".kit-page-prev").css("display", "block");
-    $(".kit-page-number")[pageNow-2].removeAttribute("data-selected");
-    $(".kit-page-number")[pageNow-1].setAttribute("data-selected", "");
-  } else if (pageNow > 3 && pageNow < lastPage - 1) {
-    $(".kit-page-skip.prev").css("display", "block");
-    var pageNumbers = $(".kit-page-number");
-    for (var i = 1; i < pageNumbers.length - 1; i++) {
-      pageNumbers[i].innerHTML = pageNow - 2 + i;
-    }
-    if (pageNow == lastPage - 2) {
-      $(".kit-page-skip.next").css("display", "none");
-    }
-  } else if (pageNow == lastPage - 1 || pageNow == lastPage) {
-    $(".kit-page-number")[pageNow - lastPage + 3].removeAttribute("data-selected");
-    $(".kit-page-number")[pageNow - lastPage + 4].setAttribute("data-selected", "");
-    if (pageNow == lastPage) {
-      $(".kit-page-next").css("display", "none");
-    }
-  }
-}
-
-$(".kit-page-prev").click(GoPrevPage);
-$(".kit-page-next").click(GoNextPage);

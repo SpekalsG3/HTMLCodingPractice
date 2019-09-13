@@ -1,33 +1,33 @@
 mixin header(main, signin, signup)
-  header.bar.content-bar.wrap-container
-    .wrap-align.wrap
+  header.header.page__bar.page__bar--shadow.page__wrap
+    .page__wrap-inner.page__wrap-inner--align
       if main
         a(href="/")
-          .logo
-            img.icon(src="/assets/img/icons/logo_icon.svg")
-            img.brand(src="/assets/img/icons/logo_brand.svg")
+          .page__logo
+            img.page__icon(src="/assets/img/icons/logo_icon.svg")
+            img.page__brand(src="/assets/img/icons/logo_brand.svg")
       else
-        .logo
-          img.icon(src="/assets/img/icons/logo_icon.svg")
-          img.brand(src="/assets/img/icons/logo_brand.svg")
-      .header-menu
-      nav.header-content
-        a.header-content-links(href="/fake-link/change-me") О нас
-        a.header-content-links.services.convertible(href="/fake-link/change-me")
-          .expand.kit-arrow
+        .page__logo
+          img.page__icon(src="/assets/img/icons/logo_icon.svg")
+          img.page__brand(src="/assets/img/icons/logo_brand.svg")
+      .header__menu
+      nav.header__content
+        a.header__link(href="/fake-link/change-me") О нас
+        a.header__link.header__link--expand(href="/fake-link/change-me")
+          .page__arrow.page__arrow--expand.header__arrow
           div Услуги
-        a.header-content-links(href="/fake-link/change-me") Вакансии
-        a.header-content-links(href="/fake-link/change-me") Новости
-        a.header-content-links.deals.convertible(href="/fake-link/change-me")
-          .expand.kit-arrow
+        a.header__link(href="/fake-link/change-me") Вакансии
+        a.header__link(href="/fake-link/change-me") Новости
+        a.header__link.header__link--expand(href="/fake-link/change-me")
+          .page__arrow.page__arrow--expand.header__arrow
           div Соглашения
         if signin
           a(href="/signin/")
-            .header-content-signin Войти
+            .header__signin Войти
         else
-          .header-content-signin Войти
+          .header__signin Войти
         if signup
           a(href="/signup/")
-            .header-content-signup Зарегистрироваться
+            .header__signup Зарегистрироваться
         else
-          .header-content-signup Зарегистрироваться
+          .header__signup Зарегистрироваться

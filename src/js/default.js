@@ -1,30 +1,29 @@
 import "../assets/scss/default.scss";
-import "../assets/scss/ui-kit.scss";
 
 var $content = $(".content");
 var $header = $("header");
 
-$(".header-menu-icon").click(function() {
-  $content.toggleClass("shift");
-  $header.toggleClass("shift");
+$(".header__menu").click(function() {
+  $content.toggleClass("content--shift");
+  $header.toggleClass("header--shift");
 });
 
 window.addEventListener("touchmove", function () {
-  $content.removeClass("shift");
-  $header.removeClass("shift");
+  $content.removeClass("content--shift");
+  $header.removeClass("header--shift");
 });
 
-$(".kit-form").submit(function(e) {
-  $(".kit-form-input").each(function() {
+$(".form").submit(function(e) {
+  $(this).find(".form__input").each(function() {
     if (this.value == "") {
       e.preventDefault();
-      this.classList.add("kit-input-error");
+      this.classList.add("form__input--error");
     } else {
-      this.classList.remove("kit-input-error");
+      this.classList.remove("form__input--error");
     }
   });
 });
 
-$(".kit-checkbox.expandable").click(function() {
-  $(this).toggleClass("default");
+$(".checkbox--expandable").click(function() {
+  $(this).toggleClass("checkbox--default");
 });

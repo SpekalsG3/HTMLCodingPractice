@@ -1,46 +1,49 @@
-footer
-  nav.footer-block.content-bar.wrap-container
-    .footer-wrap.wrap
+include ../components/subscription/subscription.pug
+
+footer.footer
+  nav.footer__nav.page__bar.page__wrap
+    .footer__inner.page__wrap-inner
       div
-        .logo
-          img.icon(src='/assets/img/icons/logo_icon.svg')
-          img.brand(src='/assets/img/icons/logo_brand.svg')
-        .footer-slogan
+        .page__logo
+          img.page__icon(src='/assets/img/icons/logo_icon.svg')
+          img.page__brand(src='/assets/img/icons/logo_brand.svg')
+        .footer__slogan
           | Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-      .footer-info
-        .footer-info-name Навигация
-        div О нас
-        div Новости
-        div Служба поддержки
-        div Услуги
-      .footer-info
-        .footer-info-name О нас
-        div О сервисе
-        div Наша команда
-        div Вакансии
-        div Инвесторы
-      .footer-info
-        .footer-info-name Служба поддержки
-        div Соглашения
-        div Сообщества
-        div Связь с нами
-      .footer-info
-        .footer-info-name Подписка
-        .footer-info-line
+      .footer__info
+        .footer__title Навигация
+        a(href="fake-link").footer__link О нас
+        a(href="fake-link").footer__link Новости
+        a(href="fake-link").footer__link Служба поддержки
+        a(href="fake-link").footer__link Услуги
+      .footer__info
+        .footer__title О нас
+        a(href="fake-link").footer__link О сервисе
+        a(href="fake-link").footer__link Наша команда
+        a(href="fake-link").footer__link Вакансии
+        a(href="fake-link").footer__link Инвесторы
+      .footer__info
+        .footer__title Служба поддержки
+        a(href="fake-link").footer__link Соглашения
+        a(href="fake-link").footer__link Сообщества
+        a(href="fake-link").footer__link Связь с нами
+      .footer__info
+        .footer__title Подписка
+        .footer__line.footer__link
           | Получайте специальные
           br
           | предложения и новости сервиса
-        +kit-subscription({
+        +subscription({
           action: "fake-script/change-me",
           settings: {
             name: "email",
-            placeholder: "Email"
+            placeholder: "Email",
+            "data-size": "medium"
           }
         })
-  .bar.content-bar.wrap-container
-    .wrap-align.wrap
-      .footer-reference-text Copyright © 2018 Toxin отель. Все права зачищены.
+  .page__bar.page__bar--shadow.page__wrap
+    .page__wrap-inner.page__wrap-inner--align
+      .footer__copyright Copyright © 2018 Toxin отель. Все права зачищены.
       div
-        img.footer-reference-social(src='/assets/img/icons/twitter_icon.svg')
-        img.footer-reference-social(src='/assets/img/icons/facebook_icon.svg')
-        img.footer-reference-social(src='/assets/img/icons/instagram_icon.svg')
+        img.footer__social(src='/assets/img/icons/twitter_icon.svg')
+        img.footer__social(src='/assets/img/icons/facebook_icon.svg')
+        img.footer__social(src='/assets/img/icons/instagram_icon.svg')

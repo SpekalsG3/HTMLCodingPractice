@@ -1,4 +1,4 @@
-include ../includes/ui.kit.pug
+include ../components/form/form.pug
 
 doctype html
 head
@@ -11,29 +11,9 @@ head
 include ../includes/header.pug
 +header(true, false, true)
 
-.content.kit-form-main.wrap-container
-  .content-cover
-  .wrap
-    .kit-form-block
-      .kit-form-title Войти
-      form.kit-form(method='POST', action='/fake-script/change-me', data-space='up')
-        .kit-form-field(data-index='0', data-size='long')
-          input.kit-form-input(placeholder='Email', type='text', name='email')
-          input.kit-form-input(placeholder='Пароль', type='password', name='password' data-space="tiny-up")
-        +kit-submit({
-          settings: {
-            "data-size": "long",
-            "data-space": "up"
-          },
-          text: "Войти"
-        })
-        .kit-form-field.main-question
-          .main-question-text Нет аккаунта на Toxin?
-          +kit-button({
-            settings: {
-              href: "/signup/"
-            },
-            text: "Создать"
-          })
+.page__wrap.content.content--form
+  .content__cover
+  .page__wrap-inner
+    +form({name: "signin"})
 
 include ../includes/footer.pug

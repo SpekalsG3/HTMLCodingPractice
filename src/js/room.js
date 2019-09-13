@@ -12,13 +12,20 @@ import "jquery-ui";
 import "../static/lib/js/infragistics.core.js";
 import "../static/lib/js/infragistics.dv.js";
 
+import "../pug/components/form/form.scss";
+import "../pug/components/form/__submit/form__submit.scss";
+import "../pug/components/tag/tag.scss";
+import "../pug/components/review/review.scss";
+import "../pug/components/review/review.js";
+import "../pug/components/bullet-list/bullet-list.scss";
+
 var data = [
   { "Оценка": "Хорошо", "Количество": 65 },
   { "Оценка": "Великолепно", "Количество": 130 },
   { "Оценка": "Удовлетворительно", "Количество": 65 }
 ];
 
-$(".kit-form-field[data-index='2']").dropdown({
+$(".form__field[data-index='2']").dropdown({
   specClass: "guests",
   placeholder: "Сколько гостей",
   TPlaceholderSpelling: function(value) {
@@ -45,7 +52,7 @@ $(".kit-form-field[data-index='2']").dropdown({
   applyBtn: true
 });
 
-$(".room-total-chart").igDoughnutChart({
+$(".total__chart").igDoughnutChart({
   innerExtent: 90,
   series:
   [{
@@ -61,10 +68,10 @@ var URISearch = window.location.search.slice(1).split(/(&|=)/).filter(function(v
 });
 
 for (var i = 0; i < 3; i++) {
-  $(".kit-form-field[data-index='2']")[0].controller.setOptionValue(decodeURI(URISearch[6 + i * 2]), parseInt(URISearch[7 + i * 2]));
+  $(".form__field[data-index='2']")[0].controller.setOptionValue(decodeURI(URISearch[6 + i * 2]), parseInt(URISearch[7 + i * 2]));
 }
 
-$(".kit-form-field[data-index='0']").dateRangePicker({
+$(".form__field[data-index='0']").dateRangePicker({
   format: "DD.MM.YYYY",
   separator: " по ",
   singleMonth: true,
@@ -79,18 +86,18 @@ $(".kit-form-field[data-index='0']").dateRangePicker({
     return date1 + " по " + parsedDate[0] + " " + months[parsedDate[1]];
   },
   setValue: function(s, s1, s2) {
-    $(".search-comein").val(s1);
-    $(".search-comeout").val(s2);
+    $(".comein").val(s1);
+    $(".comeout").val(s2);
   }
 });
 
-$(".kit-form-field[data-index='1']").dateRangePicker({
+$(".form__field[data-index='1']").dateRangePicker({
   autoClose: true,
   singleDate : true,
   showShortcuts: false,
   singleMonth: true,
   format: "DD.MM.YYYY",
   setValue: function(s, s2) {
-    $(".search-comeout").val(s2);
+    $(".comeout").val(s2);
   }
 });
