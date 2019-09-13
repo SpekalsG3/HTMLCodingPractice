@@ -1,0 +1,89 @@
+@import "../../../assets/scss/utils/vars.scss";
+
+.page {
+  &__form {
+    @media screen and (max-width: 979px) {
+      padding-left: 0;
+    }
+  }
+}
+
+.form {
+  &__note {
+    font: 12px $mainFont;
+    color: rgba($darkColor, .5);
+  }
+
+  &--solo {
+    position: relative;
+    min-width: 350px;
+    width: 350px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, .12);
+    box-shadow: 0 0 25px rgba(0, 0, 0, .2);
+    border-radius: 4px;
+  }
+
+  &__inputs {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__title {
+    position: relative;
+    font: bold 24px $addFont;
+    letter-spacing: 1px;
+
+    &-line[data-index="0"] {
+      letter-spacing: 1.2px;
+    }
+
+    &-line[data-index="1"] {
+      letter-spacing: 1.5px;
+    }
+  }
+
+  &__field {
+    position: relative;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 4px;
+    margin-left: 1px;
+    font: bold 12px $mainFont, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .1px;
+    color: $darkColor;
+  }
+
+  &__input {
+    position: relative;
+    padding-left: 14px;
+    padding-right: 44px;
+    height: 42px;
+    width: calc(100% - 58px);
+    border: 1px solid rgba($darkColor, .25);
+    border-radius: 4px;
+    box-shadow: none;
+    font-size: 14px;
+    font-family: $mainFont;
+    color: rgba($darkColor, .75);
+    cursor: pointer;
+    text-overflow: ellipsis;
+    transition: .2s;
+
+    &--text:hover,
+    &--text:focus {
+      border: 1px solid rgba($darkColor, .5);
+    }
+
+    &--error {
+      box-shadow: 0 0 6px #FA7464;
+    }
+  }
+}

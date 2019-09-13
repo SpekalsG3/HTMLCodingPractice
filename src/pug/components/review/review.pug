@@ -1,0 +1,13 @@
+mixin review(args)
+  .review
+    .review__profile
+      img.review__avatar&attributes({src:'/assets/img/avatars/' + args.profile.avatar + '.jpg'})
+      .review__info
+        .review__name #{args.profile.name}
+        .review__online #{args.profile.online}
+    .review__content
+      .review__likes&attributes({"data-liked": args.likes.liked})
+        .review__heart
+        span.review__amount #{args.likes.total}
+      .review__text
+        | #{args.text}

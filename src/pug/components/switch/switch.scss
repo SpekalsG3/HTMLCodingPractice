@@ -1,0 +1,74 @@
+@import "../../../assets/scss/utils/vars.scss";
+
+.switch {
+  margin-top: 10px;
+  font: 14px $mainFont;
+  color: rgba($darkColor, .75);
+
+  & label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  & label + label {
+    margin-top: 10px;
+  }
+
+  & input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  &__checkmark div:after,
+  &__dot div {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 25px;
+    transition: .2s;
+  }
+
+  &__checkmark {
+    position: relative;
+    margin-right: 10px;
+    width: 38px;
+    height: 18px;
+    border-radius: 25px;
+    border: 1px solid rgba($darkColor, .25);
+  }
+
+  &__dot {
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    background: $purpleGrad;
+    border-radius: 25px;
+    transition: .2s;
+
+    & div {
+      background: #fff;
+    }
+
+    & div:after {
+      background: rgba($darkColor, .25);
+    }
+  }
+
+  & input:checked + &__checkmark {
+    border: 1px solid $purpleColor;
+  }
+
+  & input:checked + &__dot {
+    left: 24px;
+  }
+
+  & input:checked + &__dot div {
+    opacity: 0;
+  }
+}

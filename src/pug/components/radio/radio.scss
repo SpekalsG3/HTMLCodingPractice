@@ -1,0 +1,54 @@
+@import "../../../assets/scss/utils/vars.scss";
+
+.radio {
+  margin-top: 10px;
+  font: 14px $mainFont;
+  color: rgba($darkColor, .75);
+
+  & input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  & label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+
+  & input:checked + &__checkmark div:after {
+    opacity: 0;
+  }
+
+  &__checkmark {
+    position: relative;
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid $purpleColor;
+    border-radius: 25px;
+
+    & div {
+      position: absolute;
+      left: 4px;
+      top: 4px;
+      width: 10px;
+      height: 10px;
+      border-radius: 25px;
+      background: $purpleGrad;
+    }
+
+    & div:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border-radius: 25px;
+      transition: .2s;
+      background: #fff;
+    }
+  }
+}

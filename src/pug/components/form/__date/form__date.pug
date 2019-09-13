@@ -1,0 +1,6 @@
+mixin form__date(args)
+  .form__field&attributes(args.settings)
+    .form__label #{args.text}
+    unless args.noArrow
+      .page__arrow.page__arrow--expand
+    input.form__input(readonly="readonly" type="text")&attributes(args.input)

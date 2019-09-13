@@ -1,0 +1,8 @@
+mixin button(args)
+  a&attributes(args.settings)
+    if args.fill
+      .button.button--fill
+        span #{args.text}
+    else
+      .button.button--hollow
+        span #{args.text}

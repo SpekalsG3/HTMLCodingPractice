@@ -1,0 +1,69 @@
+@import "../../../assets/scss/utils/vars.scss";
+
+.pagination {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+
+  &__buttons {
+    display: flex;
+  }
+
+  &__button {
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+    font: 12px $mainFont;
+    color: rgba($darkColor, .5);
+    text-align: center;
+    line-height: 40px;
+    user-select: none;
+  }
+
+  &__number {
+    &--selected {
+      color: white;
+      font-weight: bold;
+      background: $purpleGrad;
+    }
+  }
+
+  &__prev,
+  &__next {
+    position: relative;
+    overflow: hidden;
+    background: $greenGrad;
+    cursor: pointer;
+  }
+
+  &__prev:after,
+  &__next:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: url(/assets/img/icons/arrow_forward.svg) center no-repeat;
+  }
+
+  &__prev:after {
+    transform: rotateZ(180deg);
+  }
+
+  &__prev {
+    display: none;
+
+    &--skip {
+      display: none;
+    }
+  }
+
+  &__note {
+    margin-top: 10px;
+    font: 14px $mainFont;
+    color: rgba($darkColor, .75);;
+  }
+}

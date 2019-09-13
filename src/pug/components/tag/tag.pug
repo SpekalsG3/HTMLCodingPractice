@@ -1,0 +1,7 @@
+mixin tag(args)
+  .tag
+    .tag__image
+      img.tag__logo&attributes({src: '/assets/img/icons/' + args.image + '.svg'})
+    .tag__content
+      .tag__label #{args.label}
+      .tag__text #{args.text}

@@ -1,0 +1,35 @@
+mixin room-card(args)
+  a&attributes({href:'/room/?room=' + args.number})
+    .room-card
+      .room-card__gallery&attributes(args.settings)
+        .room-card__gallery--prev
+          .page__arrow.page__arrow--prev
+        .room-card__images
+          each _, i in Array(args.images)
+            img&attributes({src:'/assets/img/rooms/' + args.number + '-' + i + '.jpg'})
+        .room-card__gallery--next
+          .page__arrow.page__arrow--next
+        .room-card__points
+          each _, i in Array(args.images)
+            if i == 0
+              div.room-card__points--selected
+            else
+              div
+      .room-card__main
+        .room-card__title
+          span.room-card__n &numero;
+          span.room-card__number #{args.number}
+          if args.special
+            span.room-card__special Люкс
+        .room-card__price
+          span #{args.price}&#x20bd;
+          | в сутки
+      .room-card__feedback
+        .room-card__stars
+          each _ in Array(args.stars)
+            div(data-full='true')
+          each _ in Array(5-args.stars)
+            div(data-full='false')
+        .room-card__amount
+          span #{args.feedbacks}
+          | Отзывов

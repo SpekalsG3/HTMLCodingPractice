@@ -1,0 +1,8 @@
+mixin radio(args)
+  .form__field.radio&attributes(args.settings)
+    each val in args.input
+      label
+        input(type='radio' name='gender')&attributes(val.settings)
+        .radio__checkmark
+          div
+        span #{val.text}

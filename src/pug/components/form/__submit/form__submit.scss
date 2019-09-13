@@ -1,0 +1,21 @@
+@import "../../../../assets/scss/utils/vars.scss";
+
+.form {
+  &__submit {
+    position: relative;
+    height: 44px;
+    width: 100%;
+    background: $purpleGrad;
+    border: none;
+    border-radius: 22px;
+    font: bold 12px $mainFont;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: .2px;
+    cursor: pointer;
+
+    &--input {
+      width: 320px;
+    }
+  }
+}
