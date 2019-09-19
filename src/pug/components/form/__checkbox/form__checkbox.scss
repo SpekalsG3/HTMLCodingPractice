@@ -6,19 +6,19 @@
     margin-top: 16px;
   }
 
-  &--default &__options {
+  &_default &__options {
     display: none;
   }
 
-  &--expandable .form__label {
+  &_expandable .form__label {
     cursor: pointer;
   }
 
-  &--expandable &__arrow {
+  &_expandable &__arrow {
     transform: rotateZ(180deg);
   }
 
-  &--default &__arrow {
+  &_default &__arrow {
     transform: none;
   }
 
@@ -87,7 +87,7 @@
     font: 14px $mainFont;
     color: rgba($darkColor, .75);
 
-    &--bold {
+    &_bold {
       font-weight: bold;
     }
   }

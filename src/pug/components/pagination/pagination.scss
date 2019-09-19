@@ -23,7 +23,7 @@
   }
 
   &__number {
-    &--selected {
+    &_selected {
       color: white;
       font-weight: bold;
       background: $purpleGrad;
@@ -56,7 +56,7 @@
   &__prev {
     display: none;
 
-    &--skip {
+    &_skip {
       display: none;
     }
   }

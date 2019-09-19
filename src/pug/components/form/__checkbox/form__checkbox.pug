@@ -1,7 +1,7 @@
 mixin form__checkbox(args)
   if args.expandable
-    .form__field.checkbox.checkbox--expandable.checkbox--default.form__checkbox&attributes(args.settings)
-      .page__arrow.page__arrow--expand.checkbox__arrow
+    .form__field.checkbox.checkbox_expandable.checkbox_default.form__checkbox&attributes(args.settings)
+      .page__arrow.page__arrow_expand.checkbox__arrow
       .form__label #{args.text}
       .checkbox__options
         each val in args.input
@@ -11,7 +11,7 @@ mixin form__checkbox(args)
               div
             if val.note
               span.checkbox__text
-                .checkbox__title.checkbox__title--bold !{val.title}
+                .checkbox__title.checkbox__title_bold !{val.title}
                 .checkbox__note !{val.note}
             else
               span.checkbox__text
@@ -27,7 +27,7 @@ mixin form__checkbox(args)
               div
             if val.note
               span.checkbox__text
-                .checkbox__title.checkbox__title--bold !{val.title}
+                .checkbox__title.checkbox__title_bold !{val.title}
                 .checkbox__note !{val.note}
             else
               span.checkbox__text

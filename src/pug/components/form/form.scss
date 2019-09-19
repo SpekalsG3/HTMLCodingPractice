@@ -14,7 +14,7 @@
     color: rgba($darkColor, .5);
   }
 
-  &--solo {
+  &_solo {
     position: relative;
     min-width: 350px;
     width: 350px;
@@ -77,12 +77,12 @@
     text-overflow: ellipsis;
     transition: .2s;
 
-    &--text:hover,
-    &--text:focus {
+    &_text:hover,
+    &_text:focus {
       border: 1px solid rgba($darkColor, .5);
     }
 
-    &--error {
+    &_error {
       box-shadow: 0 0 6px #FA7464;
     }
   }

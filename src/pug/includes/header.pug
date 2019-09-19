@@ -1,6 +1,6 @@
 mixin header(main, signin, signup)
-  header.header.page__bar.page__bar--shadow.page__wrap
-    .page__wrap-inner.page__wrap-inner--align
+  header.header.page__bar.page__bar_shadow.page__wrap
+    .page__wrap-inner.page__wrap-inner_align
       if main
         a(href="/")
           .page__logo
@@ -13,13 +13,13 @@ mixin header(main, signin, signup)
       .header__menu
       nav.header__content
         a.header__link(href="/fake-link/change-me") О нас
-        a.header__link.header__link--expand(href="/fake-link/change-me")
-          .page__arrow.page__arrow--expand.header__arrow
+        a.header__link.header__link_expand(href="/fake-link/change-me")
+          .page__arrow.page__arrow_expand.header__arrow
           div Услуги
         a.header__link(href="/fake-link/change-me") Вакансии
         a.header__link(href="/fake-link/change-me") Новости
-        a.header__link.header__link--expand(href="/fake-link/change-me")
-          .page__arrow.page__arrow--expand.header__arrow
+        a.header__link.header__link_expand(href="/fake-link/change-me")
+          .page__arrow.page__arrow_expand.header__arrow
           div Соглашения
         if signin
           a(href="/signin/")

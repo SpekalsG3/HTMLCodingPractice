@@ -165,7 +165,7 @@
     display: flex;
     justify-content: space-between;
     
-    &--option {
+    &_option {
       font: 14px $mainFont;
       color: rgba($darkColor, .75);
 
@@ -174,7 +174,7 @@
       }
     }
 
-    &--total {
+    &_total {
       position: relative;
       margin-top: 30px;
       margin-left: 2px;
@@ -197,7 +197,7 @@
     position: relative;
     max-width: 214px;
 
-    &--hint{
+    &_hint{
       position: relative;
 
       &:after {
@@ -404,7 +404,7 @@
     &__nametag {
       width: auto;
 
-      &--hint:after {
+      &_hint:after {
         right: -31px;
       }
     }

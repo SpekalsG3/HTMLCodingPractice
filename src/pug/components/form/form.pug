@@ -4,7 +4,7 @@ mixin form(args)
       include ./__date/form__date.pug
       include ./__dropdown/form__dropdown.pug
       include ./__submit/form__submit.pug
-      .form.form--solo&attributes({class: args.class})
+      .form.form_solo&attributes({class: args.class})
         .form__title
           span.form__title-line(data-index='0') Найдём номера под
           br
@@ -184,7 +184,7 @@ mixin form(args)
       include ./__date/form__date.pug
       include ./__dropdown/form__dropdown.pug
       include ./__submit/form__submit.pug
-      .form.form--solo&attributes({class: args.class})&attributes({class: "content__" + args.class})
+      .form.form_solo&attributes({class: args.class})
         .booking__head
           .booking__title
             span.booking__n &numero;
@@ -228,16 +228,16 @@ mixin form(args)
             }
           })
           .form__field(data-index='3' data-space='up')
-            .booking__field.booking__field--option
+            .booking__field.booking__field_option
               .booking__nametag 9 990&#x20bd; х 4 суток
               div 39 960&#x20bd;
-            .booking__field.booking__field--option
-              .booking__nametag.booking__nametag--hint Сбор за услуги: скидка 2 179&#x20bd;
+            .booking__field.booking__field_option
+              .booking__nametag.booking__nametag_hint Сбор за услуги: скидка 2 179&#x20bd;
               div 0&#x20bd;
-            .booking__field.booking__field--option
-              .booking__nametag.booking__nametag--hint Сбор за дополнительные услуги
+            .booking__field.booking__field_option
+              .booking__nametag.booking__nametag_hint Сбор за дополнительные услуги
               div 300&#x20bd;
-            .booking__field.booking__field--total
+            .booking__field.booking__field_total
               .booking__nametag Итого
               .booking__price 38 081&#x20bd;
           +form__submit({
@@ -254,7 +254,7 @@ mixin form(args)
     when "signin"
       include ./__submit/form__submit.pug
       include ../button/button.pug
-      .form.form--solo&attributes({class: args.class})
+      .form.form_solo&attributes({class: args.class})
         .form__title Войти
         form.form__inputs(method='POST' action='/fake-script/' data-space='up')
           .form__field(data-index='0' data-size='long')
@@ -282,7 +282,7 @@ mixin form(args)
       include ../switch/switch.pug
       include ../button/button.pug
       include ../radio/radio.pug
-      .form.form--solo&attributes({class: args.class})
+      .form.form_solo&attributes({class: args.class})
         .form__title Войти
         form.form__inputs(method='POST' action='/fake-script/' data-space='up')
           .form__field(data-index='0' data-size='long')

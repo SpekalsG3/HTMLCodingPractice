@@ -30,7 +30,7 @@
     opacity: .5;
   }
 
-  &--hollow {
+  &_hollow {
     color: $purpleColor;
 
     &:before {
@@ -38,7 +38,7 @@
     }
   }
 
-  &--fill {
+  &_fill {
     width: 99px;
     margin-right: 5px;
     color: #FFF;

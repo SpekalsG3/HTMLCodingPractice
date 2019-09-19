@@ -2,7 +2,7 @@
 @import "utils/vars.scss";
 
 .content{
-  &--form {
+  &_form {
     background-image: url(/assets/img/landing_main.jpg);
     height: 830px;
   }
@@ -17,7 +17,7 @@
     }
 
     &__submit {
-      &--input {
+      &_input {
         margin-top: 32px;
       }
     }
