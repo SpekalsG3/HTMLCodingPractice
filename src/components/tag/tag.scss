@@ -1,0 +1,32 @@
+@import "../../utils/vars.scss";
+
+.tag {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 280px;
+
+  & + & {
+    padding-top: 20px;
+    border-top: 1px solid rgba($darkColor, .1);
+  }
+
+  &__image {
+    height: 48px;
+    width: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__content {
+    height: 100%;
+    width: 222px;
+    font: 14px $mainFont;
+    line-height: 171%;
+  }
+
+  &__label {
+    font-weight: bold;
+  }
+}

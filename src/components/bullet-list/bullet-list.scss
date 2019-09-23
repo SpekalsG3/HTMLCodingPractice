@@ -1,0 +1,28 @@
+@import "../../utils/vars.scss";
+
+.bullet-list {
+  font: 14px $mainFont;
+  color: rgba($darkColor, .75);
+
+  & div {
+    width: 100%;
+    position: relative;
+    padding-left: 20px;
+    line-height: 24px;
+  }
+
+  & div:before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background: rgba($darkColor, .25);
+    border-radius: 25px;
+  }
+
+  & div + div {
+    margin-top: 10px;
+  }
+}

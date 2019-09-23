@@ -1,0 +1,14 @@
+@import "../../../utils/vars.scss";
+
+.range {
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__legend {
+    display: inline-block;
+    font: 12px $mainFont;
+    color: rgba($darkColor, .5);
+  }
+}

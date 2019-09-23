@@ -1,0 +1,30 @@
+@import "../../../../utils/vars.scss";
+
+.content {
+  background-image: url(/assets/img/authorization.jpg);
+
+  &__question {
+    width: 91%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 31px;
+  }
+
+  &__text {
+    font: 14px $mainFont;
+  }
+
+  &_form .page__wrap-inner {
+    justify-content: center;
+    align-items: center;
+  }
+
+  & .form {
+    padding-left: 31px;
+
+    &__field[data-index="0"] {
+      margin-top: 16px;
+    }
+  }
+}

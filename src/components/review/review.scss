@@ -1,0 +1,86 @@
+@import "../../utils/vars.scss";
+
+.review {
+  & + & {
+    margin-top: 22px;
+  }
+
+  &__avatar {
+    width: 46px;
+    height: 46px;
+    border: 2px solid #fff;
+    border-radius: 32px;
+    box-shadow: 0 10px 20px rgba($darkColor, .1);
+  }
+
+  &__profile {
+    display: flex;
+    align-items: center;
+  }
+
+  &__info {
+    height: 49px;
+    margin-left: 7px;
+    font: 14px $mainFont;
+    color: rgba($darkColor, .75);
+    line-height: 171%;
+  }
+
+  &__name {
+    font-weight: bold;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  &__likes {
+    display: flex;
+    align-items: center;
+    margin-left: 4px;
+    width: 38px;
+    height: 17px;
+    border-radius: 25px;
+    font: 12px $mainFont;
+    cursor: pointer;
+    transition: .2s;
+
+    &[data-liked="true"] {
+      border: 1px solid #BC9CFF;
+      color: #BC9CFF;
+
+      & .review__heart {
+        background: url(/img/icons/favorite.svg) center no-repeat;
+      }
+    }
+
+    &[data-liked="false"] {
+      border: 1px solid rgba($darkColor, .25);
+      color: rgba($darkColor, .25);
+
+      & .review__heart {
+        background: url(/img/icons/favorite_border.svg) center no-repeat;
+      }
+    }
+
+    & .review__heart {
+      height: 18px;
+      width: 18px;
+    }
+
+    & .review__heart {
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  &__text {
+    width: calc(100% - 57px);
+    margin-left: 13px;
+    font: 14px $mainFont;
+    color: rgba($darkColor, .75);
+    line-height: 24px;
+  }
+}

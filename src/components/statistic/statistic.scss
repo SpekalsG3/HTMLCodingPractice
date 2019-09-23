@@ -1,0 +1,76 @@
+@import "../../utils/vars.scss";
+
+.statistic {
+  display: flex;
+  align-items: flex-end;
+
+  &__chart {
+    position: relative;
+    left: -4px;
+    top: -4px;
+    width: 132px;
+    height: 132px;
+  }
+
+  &__number {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #BC9CFF;
+
+    & div {
+      height: 30px;
+      font-size: 24px;
+      font-family: $addFont;
+    }
+
+    & span {
+      font-size: 14.5px;
+      font-family: $mainFont;
+    }
+  }
+
+  &__legend {
+    margin-bottom: 13px;
+    margin-left: 17px;
+    padding-left: 2px;
+    font: 14px $mainFont;
+    color: rgba($darkColor, .75);
+
+    & div {
+      position: relative;
+      padding-left: 15px;
+    }
+
+    & div:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 3.75px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    & div[data-index="0"]:before {
+      background: $chartColor1;
+    }
+    & div[data-index="1"]:before {
+      background: $chartColor2;
+    }
+    & div[data-index="2"]:before {
+      background: $chartColor3;
+    }
+    & div[data-index="3"]:before {
+      background: $chartColor4;
+    }
+
+    & div + div {
+      margin-top: 6px;
+    }
+  }
+}

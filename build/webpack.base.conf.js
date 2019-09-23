@@ -7,21 +7,18 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const PATHS = {
   src: path.join(__dirname, "../src"),
-  dist: path.join(__dirname, "../dist"),
-  assets: "assets/"
+  dist: path.join(__dirname, "../dist")
 }
 
-const PAGES_DIR = `${PATHS.src}/pug/pages`;
-const PAGES = fs.readdirSync(PAGES_DIR).filter(el => el != "index.pug");
+const PAGES_DIR = `${PATHS.src}/pages/`;
+const PAGES = fs.readdirSync(PAGES_DIR).filter(el => el != "index");
 
 const ENTRIES = {
-  default: `${PATHS.src}/js/default.js`,
-  index: `${PATHS.src}/js/index.js`,
-  filter: `${PATHS.src}/js/filter.js`,
-  room: `${PATHS.src}/js/room.js`,
-  authorization: `${PATHS.src}/js/authorization.js`,
-  signin: `${PATHS.src}/js/signin.js`,
-  signup: `${PATHS.src}/js/signup.js`
+  index: `${PATHS.src}/pages/index/index.js`,
+  filter: `${PATHS.src}/pages/filter/filter.js`,
+  room: `${PATHS.src}/pages/room/room.js`,
+  signin: `${PATHS.src}/pages/signin/signin.js`,
+  signup: `${PATHS.src}/pages/signup/signup.js`
 }
 
 module.exports = {
@@ -33,7 +30,7 @@ module.exports = {
   },
   entry: ENTRIES,
   output: {
-    filename: `${PATHS.assets}js/[name].[hash].js`,
+    filename: `js/[name].[hash].js`,
     path: PATHS.dist,
     publicPath: "/"
   },
@@ -65,7 +62,7 @@ module.exports = {
       test: /\.(woff(2)?|ttf)$/,
       loader: "file-loader",
       options: {
-        name: `${PATHS.assets}fonts/[name].[ext]`
+        name: `fonts/[name].[ext]`
       }
     }, {
       test: /\.scss$/,
@@ -103,8 +100,8 @@ module.exports = {
       filename: `${PATHS.assets}css/[name].[contenthash].css`,
     }),
     new CopyWebpackPlugin([
-      { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
-      { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
+      { from: `${PATHS.src}/img`, to: `img` },
+      { from: `${PATHS.src}/fonts`, to: `fonts` },
       { from: `${PATHS.src}/static`, to: "" }
     ]),
     new webpack.ProvidePlugin({
@@ -113,9 +110,9 @@ module.exports = {
       "window.jQuery": "jquery"
     }),
     new HtmlWebpackPlugin({
-      template: `${PAGES_DIR}/index.pug`,
+      template: `${PAGES_DIR}/index/index.pug`,
       filename: `./index.html`,
-      excludeChunks: Object.keys(ENTRIES).filter(el => !["index", "default"].includes(el)),
+      excludeChunks: Object.keys(ENTRIES).filter(el => el != "index"),
       minify: {
         collapseWhitespace: true, 
         removeComments: true, 
@@ -126,9 +123,9 @@ module.exports = {
       }
     }),
     ...PAGES.map(page => new HtmlWebpackPlugin({
-      template: `${PAGES_DIR}/${page}`,
-      filename: `./${page.split(".")[0]}/index.html`,
-      excludeChunks: Object.keys(ENTRIES).filter(el => ![page.split(".")[0], "default"].includes(el)),
+      template: `${PAGES_DIR}/${page}/${page}.pug`,
+      filename: `./${page}/index.html`,
+      excludeChunks: Object.keys(ENTRIES).filter(el => el != page),
       minify: {
         collapseWhitespace: true, 
         removeComments: true, 

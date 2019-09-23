@@ -4,14 +4,17 @@ To run this project with configuration firstly you need [Node.js](https://nodejs
 
 Then simply clone this repository:
 > git clone https://github.com/SpekalsG3/HTMLPractice.git
+
 Open command prompt or terminal in created folder. Next install all dependencies:
 > npm install
+
 And run project:
 > npm run dev
 
 To build project for production run following command:
 > npm run build
-Project will be build in "dist" folder.
+
+Project will be built in "dist" folder.
 
 If you only want to see the result you need to download 'dist' folder. GitHub pages doesn't work because webpack builds with absolute paths.
 
