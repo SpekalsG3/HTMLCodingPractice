@@ -55,7 +55,7 @@
 
 @media screen and (max-width: 979px) {
   .content {
-    & .page__wrap-inner {
+    &__inner {
       flex-direction: column;
     }
 

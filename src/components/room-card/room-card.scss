@@ -167,11 +167,11 @@
     }
 
     & div[data-full="true"] {
-      background: url(/assets/img/icons/star.svg) center no-repeat;
+      background: url(/img/icons/star.svg) center no-repeat;
     }
 
     & div[data-full="false"] {
-      background: url(/assets/img/icons/star_border.svg) center no-repeat;
+      background: url(/img/icons/star-border.svg) center no-repeat;
     }
   }
 }

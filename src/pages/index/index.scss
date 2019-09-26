@@ -3,7 +3,7 @@
 
 .content{
   &_form {
-    background-image: url(/assets/img/landing_main.jpg);
+    background-image: url(/img/index.jpg);
     height: 830px;
   }
 
@@ -37,9 +37,11 @@
 }
 
 @media screen and (max-width: 1300px) {
-  .content .page__wrap-inner {
-    background-position: top;
-    background-size: auto calc(100% + 100px);
+  .content {
+    &__inner {
+      background-position: top;
+      background-size: auto calc(100% + 100px);
+    }
   }
 }
 
@@ -57,7 +59,7 @@
       justify-self: flex-end;
     }
 
-    & .page__wrap-inner {
+    &__inner {
       display: flex;
       justify-content: center;
     }

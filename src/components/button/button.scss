@@ -30,15 +30,15 @@
     opacity: .5;
   }
 
-  &_hollow {
+  &_back_hollow {
     color: $purpleColor;
 
     &:before {
-      background: url(/assets/img/icons/gradient_border.svg) center no-repeat;
+      background: url(/img/icons/gradient-border.svg) center no-repeat;
     }
   }
 
-  &_fill {
+  &_back_fill {
     width: 99px;
     margin-right: 5px;
     color: #FFF;

@@ -1,9 +1,0 @@
-mixin switch(args)
-  .form__field.switch&attributes(args.settings)
-    each val in args.input
-      label
-        input(type='checkbox')&attributes({name: val.name})
-        .switch__checkmark
-          .switch__dot
-            div
-        span #{val.text}

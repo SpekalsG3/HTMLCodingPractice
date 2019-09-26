@@ -46,7 +46,7 @@
     height: 100%;
     left: 0;
     top: 0;
-    background: url(/assets/img/icons/arrow_forward.svg) center no-repeat;
+    background: url(/img/icons/arrow-forward.svg) center no-repeat;
   }
 
   &__prev:after {
@@ -55,8 +55,10 @@
 
   &__prev {
     display: none;
+  }
 
-    &_skip {
+  &_skip {
+    &_prev {
       display: none;
     }
   }
