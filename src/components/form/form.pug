@@ -1,0 +1,420 @@
+mixin checkbox(args)
+  if args.expandable
+    .form__field&attributes(args.settings)
+      .checkbox(data-expandable="" data-opened="false")
+        .page__arrow.page__arrow_expand
+        .form__label #{args.text}
+        .checkbox__options
+          each val in args.input
+            label
+              input(type='checkbox')&attributes({name:val.name, value:val.value})
+              .checkbox__checkmark
+                div
+              if val.note
+                span.checkbox__text
+                  .checkbox__title.checkbox__title_bold !{val.title}
+                  .checkbox__note !{val.note}
+              else
+                span.checkbox__text
+                  .checkbox__title !{val.title}
+  else
+    .form__field&attributes(args.settings)
+      .checkbox
+        .form__label #{args.text}
+        .checkbox__options
+          each val in args.input
+            label
+              input(type='checkbox')&attributes({name:val.name, value:val.value})
+              .checkbox__checkmark
+                div
+              if val.note
+                span.checkbox__text
+                  .checkbox__title.checkbox__title_bold !{val.title}
+                  .checkbox__note !{val.note}
+              else
+                span.checkbox__text
+                  .checkbox__title !{val.title}
+
+mixin date(args)
+  .form__field&attributes(args.settings)
+    .form__label #{args.text}
+    unless args.noArrow
+      .page__arrow.page__arrow_expand
+    input.form__input(readonly="readonly" type="text")&attributes(args.input)
+
+mixin dropdown(args)
+  .form__field&attributes(args.settings)
+    .form__label #{args.text}
+
+mixin submit(args)
+  .form__field&attributes(args.settings)
+    .submit
+      .page__arrow.page__arrow_forward
+      button.submit__button #{args.text}
+
+mixin range(args)
+  .form__field&attributes(args.settings)
+    .range
+      .range__top
+        .form__label #{args.text}
+        .range__legend
+          span.range__from #{args.from}
+          | &#x20bd;  - 
+          span.range__to #{args.to}
+          | &#x20bd;
+      input.range__input(type='text')&attributes(args.input)
+      if args.note
+        .form__note #{args.note}
+
+mixin switch(args)
+  .form__field&attributes(args.settings)
+    .switch
+      each val in args.input
+        label
+          input(type='checkbox')&attributes({name: val.name})
+          .switch__checkmark
+            .switch__dot
+              div
+          span #{val.text}
+
+mixin radio(args)
+  .form__field&attributes(args.settings)
+    .radio
+      each val in args.input
+        label
+          input(type='radio' name='gender')&attributes(val.settings)
+          .radio__checkmark
+            div
+          span #{val.text}
+
+mixin form(args)
+  case args.name
+    when "index"
+      .form.form_solo&attributes({class: args.class})
+        .form__title
+          span.form__title-line(data-index='0') Найдём номера под
+          br
+          span.form__title-line(data-index='1') ваши пожелания
+        form.form__inputs(method='GET' action='/filter/' data-space='up')
+          +date({
+            text: "Прибытие",
+            settings: {
+              "data-index": "0",
+              "data-size": "short"
+            },
+            input: {
+              class: "comein",
+              name: "comein",
+              placeholder: "ДД.ММ.ГГГГ"
+            }
+          })
+          +date({
+            text: "Выезд",
+            settings: {
+              "data-index": "1",
+              "data-size": "short",
+              "data-space": "left"
+            },
+            input: {
+              class: "comeout",
+              name: "comeout",
+              placeholder: "ДД.ММ.ГГГГ"
+            }
+          })
+          +dropdown({
+            text: "Гости",
+            settings: {
+              "data-index": "2",
+              "data-size": "long",
+              "data-space": "up"
+            }
+          })
+          +submit({
+            text: "Подобрать номер",
+            settings: {
+                "data-size": "long",
+                "data-space": "long-up"
+            },
+            input: {
+                placeholder: "ДД.ММ.ГГГГ"
+            }
+          })
+      - break
+    when "filter"
+      .form&attributes({class: args.class})
+        form.form__inputs(method='GET' action='fake-script')
+          +date({
+            text: "Даты пребывания в отеле",
+            settings: {
+              "data-index": "0",
+              "data-size": "medium"
+            },
+            input: {
+              class: "comeinout",
+              name: "comeinout"
+            }
+          })
+          +dropdown({
+            text: "Даты пребывания в отеле",
+            settings: {
+              "data-index": "1",
+              "data-space": "up",
+              "data-size": "medium"
+            }
+          })
+          +range({
+            text: "Диапазон цены",
+            from: "5 000",
+            to: "10 000",
+            note: "Стоимость за сутки пребывания в номере",
+            settings: {
+              "data-space": "long-up"
+            },
+            input: {
+              name: "price-range"
+            }
+          })
+          +checkbox({
+            text: "Checkbox buttons",
+            settings: {
+              "data-index": "2",
+              "data-space": "long-up"
+            },
+            input: [{
+              name: "smoke",
+              value: 0,
+              title: "Можно курить"
+            }, {
+              name: "pets",
+              value: 1,
+              title: "Можно с питомцами"
+            }, {
+              name: "guests",
+              value: 2,
+              title: "Можно пригласить гостей<br>(до 10 человек)"
+            }]
+          })
+          +checkbox({
+            text: "Доступность",
+            settings: {
+              "data-index": "4",
+              "data-space": "long-up"
+            },
+            input: [{
+              name: "wide",
+              value: 3,
+              title: "Широкий коридор",
+              note: "Ширина коридоров в номере<br>не менее 91 см."
+            }, {
+              name: "helper",
+              value: 4,
+              title: "Помощник для инвалидов",
+              note: "На 1 этаже вас встретит специалист<br>и проводит до номера."
+            }]
+          })
+          +dropdown({
+            text: "Удобства номера",
+            settings: {
+              "data-index": "5",
+              "data-space": "long-up",
+              "data-size": "medium"
+            }
+          })
+          +checkbox({
+            expandable: true,
+            text: "Дополнительные удобства",
+            settings: {
+              "data-space": "long-up",
+              "data-size": "medium"
+            },
+            input: [{
+              name: "breakfast",
+              value: 5,
+              title: "Завтрак"
+            }, {
+              name: "desk",
+              value: 6,
+              title: "Письменный стол"
+            }, {
+              name: "feeding",
+              value: 7,
+              title: "Стул для кормления"
+            }, {
+              name: "cradle",
+              value: 8,
+              title: "Кроватка"
+            }, {
+              name: "tv",
+              value: 9,
+              title: "Телевизор"
+            }, {
+              name: "shampoo",
+              value: 10,
+              title: "Шампунь"
+            }, {
+              name: "tv",
+              value: 11,
+              title: "Телевизор"
+            }, {
+              name: "shampoo",
+              value: 12,
+              title: "Шампунь"
+            }]
+          })
+      - break
+    when "room"
+      .form.form_solo
+        .form__head
+          .form__title
+            span.form__n &numero;
+            span.form__number 888
+            span.form__special Люкс
+          .content__price
+            span 9 990&#x20bd;
+            | в сутки
+        form.form__inputs(method='GET' action='filter/')
+          +date({
+            text: "Прибытие",
+            settings: {
+              "data-index": "0",
+              "data-size": "short"
+            },
+            input: {
+              class: "comein",
+              name: "comein",
+              placeholder: "ДД.ММ.ГГГГ"
+            }
+          })
+          +date({
+            text: "Выезд",
+            settings: {
+              "data-index": "1",
+              "data-size": "short",
+              "data-space": "left"
+            },
+            input: {
+              class: "comeout",
+              name: "comeout",
+              placeholder: "ДД.ММ.ГГГГ"
+            }
+          })
+          +dropdown({
+            text: "Гости",
+            settings: {
+              "data-index": "2",
+              "data-size": "long",
+              "data-space": "up"
+            }
+          })
+          .form__field(data-index='3' data-space='up')
+            .form__field-option
+              .form__nametag 9 990&#x20bd; х 4 суток
+              div 39 960&#x20bd;
+            .form__field-option
+              .form__nametag.form__nametag_hint Сбор за услуги: скидка 2 179&#x20bd;
+              div 0&#x20bd;
+            .form__field-option
+              .form__nametag.form__nametag_hint Сбор за дополнительные услуги
+              div 300&#x20bd;
+            .form__field_total
+              .form__nametag Итого
+              .form__price 38 081&#x20bd;
+          +submit({
+            text: "Забронировать",
+            settings: {
+              "data-size": "long",
+              "data-space": "up"
+            },
+            input: {
+                placeholder: "ДД.ММ.ГГГГ"
+            }
+          })
+      - break
+    when "signin"
+      include ../button/button.pug
+      .form.form_solo&attributes({class: args.class})
+        .form__title Войти
+        form.form__inputs(method='POST' action='/fake-script/' data-space='up')
+          .form__field(data-index='0' data-size='long')
+            input.form__input.form__input_text(placeholder='Email' type='text' name='email')
+            input.form__input.form__input_text(placeholder='Пароль' type='password' name='password' data-space="tiny-up")
+          +submit({
+            settings: {
+              "data-size": "long",
+              "data-space": "up"
+            },
+            text: "Войти"
+          })
+          .form__field.form__question(data-size="long")
+            .content__text Нет аккаунта на Toxin?
+            +button({
+              settings: {
+                href: "/signup/"
+              },
+              text: "Создать"
+            })
+      - break
+    when "signup"
+      include ../button/button.pug
+      .form.form_solo&attributes({class: args.class})
+        .form__title Войти
+        form.form__inputs(method='POST' action='/fake-script/' data-space='up')
+          .form__field(data-index='0' data-size='long')
+            input.form__input(placeholder='Имя' type='text' name='firstname')
+            input.form__input(placeholder='Фамилия' type='text' name='lastname' data-space="tiny-up")
+          +radio({
+            input: [{
+              settings: {
+                value: "male",
+                checked: ""
+              },
+              text: "Мужчина"
+            }, {
+              settings: {
+                value: "female"
+              },
+              text: "Женщина"
+            }]
+          })
+          +date({
+            settings: {
+              "data-index": 2,
+              "data-space": "up",
+              "data-size": "long"
+            },
+            noArrow: true,
+            input: {
+              name: "birthdate",
+              placeholder: "ДД.ММ.ГГГГ"
+            },
+            text: "Дата рождения"
+          })
+          .form__field(data-space='up' data-size='long')
+            .form__label Данные для входа в сервис
+            input.form__input(placeholder='Email' type='text' name='email')
+            input.form__input(placeholder='Пароль' type='password' name='password' data-space="tiny-up")
+          +switch({
+            settings: {
+              "data-size": "long"
+            },
+            input: [{
+              name: "offer",
+              text: "Получать спецпредложения"
+            }]
+          })
+          +submit({
+            settings: {
+              "data-size": "long",
+              "data-space": "up"
+            },
+            text: "Перейти к оплате"
+          })
+          .form__field.form__question
+            .content__text Уже есть аккаунт на Toxin
+            +button({
+              settings: {
+                href: "/signin/"
+              },
+              text: "Войти"
+            })
+      - break

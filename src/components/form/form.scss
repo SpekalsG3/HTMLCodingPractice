@@ -1,0 +1,422 @@
+@import "../../utils/vars.scss";
+
+.page {
+  &__form {
+    @media screen and (max-width: 979px) {
+      padding-left: 0;
+    }
+  }
+}
+
+.form {
+  &__question {
+    width: 91%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 31px;
+  }
+
+  &__note {
+    font: 12px $mainFont;
+    color: rgba($darkColor, .5);
+  }
+
+  &_solo {
+    position: relative;
+    min-width: 350px;
+    width: 350px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, .12);
+    box-shadow: 0 0 25px rgba(0, 0, 0, .2);
+    border-radius: 4px;
+  }
+
+  &__inputs {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__title {
+    position: relative;
+    font: bold 24px $addFont;
+    letter-spacing: 1px;
+
+    &-line[data-index="0"] {
+      letter-spacing: 1.2px;
+    }
+
+    &-line[data-index="1"] {
+      letter-spacing: 1.5px;
+    }
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 4px;
+    margin-left: 1px;
+    font: bold 12px $mainFont, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .1px;
+    color: $darkColor;
+  }
+
+  &__input {
+    position: relative;
+    padding-left: 14px;
+    padding-right: 44px;
+    height: 42px;
+    width: calc(100% - 58px);
+    border: 1px solid rgba($darkColor, .25);
+    border-radius: 4px;
+    box-shadow: none;
+    font-size: 14px;
+    font-family: $mainFont;
+    color: rgba($darkColor, .75);
+    cursor: pointer;
+    text-overflow: ellipsis;
+
+    &_text {
+      transition: .2s;
+
+      &:hover,
+      &:focus {
+        border: 1px solid rgba($darkColor, .5);
+      }
+    }
+
+    &_error {
+      box-shadow: 0 0 6px #FA7464;
+    }
+  }
+
+  &__field {
+    position: relative;
+  }
+}
+
+
+
+.submit {
+  width: 320px;
+
+  &__button {
+    position: relative;
+    height: 44px;
+    width: 100%;
+    background: $purpleGrad;
+    border: none;
+    border-radius: 22px;
+    font: bold 12px $mainFont;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: .2px;
+    cursor: pointer;
+  }
+}
+
+
+
+.range {
+  position: relative;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__legend {
+    display: inline-block;
+    font: 12px $mainFont;
+    color: rgba($darkColor, .5);
+  }
+}
+
+
+
+.checkbox {
+  position: relative;
+
+  &__options {
+    margin-top: 16px;
+  }
+
+  &[data-opened="false"] &__options {
+    display: none;
+  }
+
+  &[data-opened="false"] &__arrow {
+    transform: none;
+  }
+
+  &[data-expandable] .form__label {
+    cursor: pointer;
+  }
+
+  &[data-opened="true"] .page__arrow {
+    transform: rotateZ(180deg);
+  }
+
+  & .page__arrow {
+    height: 14px;
+    top: 0;
+    transition: .2s;
+  }
+
+  &__options label {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+  }
+
+  &__options label + label {
+    margin-top: 10px;
+  }
+
+  & input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  & input:checked + &__checkmark div {
+    opacity: 1;
+  }
+
+  &__checkmark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1px;
+    height: 18px;
+    width: 18px;
+    border: 1px solid rgba($darkColor, 0.25);
+    border-radius: 4px;
+  }
+
+  &__checkmark div {
+    position: absolute;
+    width: 6px;
+    height: 8px;
+    background: $purpleGrad;
+    transform: rotateZ(45deg);
+    transition: .1s;
+    opacity: 0;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 83%;
+      height: 87%;
+      top: -1px;
+      left: -1px;
+      background: #fff;
+    }
+  }
+
+  &__text {
+    margin-left: 10px;
+  }
+
+  &__title {
+    font: 14px $mainFont;
+    color: rgba($darkColor, .75);
+
+    &_bold {
+      font-weight: bold;
+    }
+  }
+
+  &__note {
+    margin-top: 5px;
+    font: 12px $mainFont;
+    color: rgba($darkColor, 0.5);
+  }
+}
+
+
+
+.button {
+  position: relative;
+  height: 45px;
+  width: 110px;
+  background-size: 90%;
+  font: bold 12px $mainFont;
+  line-height: 45px;
+  text-align: center;
+  text-transform: uppercase;
+
+  & span {
+    position: relative;
+    z-index: 1;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: .2s;
+    z-index: 0;
+  }
+
+  &:hover:before {
+    opacity: .5;
+  }
+
+  &_hollow {
+    color: $purpleColor;
+
+    &:before {
+      background: url(/img/icons/gradient-border.svg) center no-repeat;
+    }
+  }
+
+  &_fill {
+    width: 99px;
+    margin-right: 5px;
+    color: #FFF;
+
+    &:before {
+      border-radius: 22px;
+      background: $purpleGrad;
+    }
+  }
+}
+
+
+
+.radio {
+  position: relative;
+  margin-top: 10px;
+  font: 14px $mainFont;
+  color: rgba($darkColor, .75);
+
+  & input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  & label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+
+  & input:checked + &__checkmark div:after {
+    opacity: 0;
+  }
+
+  &__checkmark {
+    position: relative;
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid $purpleColor;
+    border-radius: 25px;
+
+    & div {
+      position: absolute;
+      left: 4px;
+      top: 4px;
+      width: 10px;
+      height: 10px;
+      border-radius: 25px;
+      background: $purpleGrad;
+    }
+
+    & div:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border-radius: 25px;
+      transition: .2s;
+      background: #fff;
+    }
+  }
+}
+
+
+
+.switch {
+  position: relative;
+  margin-top: 10px;
+  font: 14px $mainFont;
+  color: rgba($darkColor, .75);
+
+  & label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  & label + label {
+    margin-top: 10px;
+  }
+
+  & input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  &__checkmark div:after,
+  &__dot div {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 25px;
+    transition: .2s;
+  }
+
+  &__checkmark {
+    position: relative;
+    margin-right: 10px;
+    width: 38px;
+    height: 18px;
+    border-radius: 25px;
+    border: 1px solid rgba($darkColor, .25);
+  }
+
+  &__dot {
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    background: $purpleGrad;
+    border-radius: 25px;
+    transition: .2s;
+
+    & div {
+      background: #fff;
+    }
+
+    & div:after {
+      background: rgba($darkColor, .25);
+    }
+  }
+
+  & input:checked + &__checkmark {
+    border: 1px solid $purpleColor;
+  }
+
+  & input:checked + &__checkmark &__dot {
+    left: 24px;
+  }
+
+  & input:checked + &__checkmark &__dot div {
+    opacity: 0;
+  }
+}
