@@ -10,11 +10,6 @@
   text-align: center;
   text-transform: uppercase;
 
-  & span {
-    position: relative;
-    z-index: 1;
-  }
-
   &:before {
     content: "";
     position: absolute;
@@ -28,6 +23,11 @@
 
   &:hover:before {
     opacity: .5;
+  }
+
+  &__text {
+    position: relative;
+    z-index: 1;
   }
 
   &_back_hollow {

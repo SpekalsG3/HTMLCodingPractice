@@ -6,34 +6,36 @@
   flex-direction: column;
   align-items: center;
 
-  &__images {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    height: 485px;
-    overflow: hidden;
-
-    & img {
-      width: 101%;
-      height: 101%;
-      object-fit: cover;
-    }
-
-    & div[data-index="0"] {
+  &__image {
+    &[data-index="0"] {
       width: 68%;
     }
 
-    & div[data-index="1"] {
+    &[data-index="1"] {
       display: flex;
       flex-direction: column;
       width: 32%;
       height: 100%;
     }
 
-    & div[data-index="2"] {
+    &[data-index="2"] {
       height: 50%;
       width: 100%;
     }
+
+    &-inner {
+      width: 101%;
+      height: 101%;
+      object-fit: cover;
+    }
+  }
+
+  &__images {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 485px;
+    overflow: hidden;
   }
 
   &__price {
@@ -42,7 +44,7 @@
     font-size: 12px;
     color: rgba($darkColor, .5);
 
-    & span {
+    &-amount {
       margin-right: 4px;
       font-weight: bold;
       font-size: 14px;
@@ -74,10 +76,6 @@
 
   &__rules {
     width: 240px;
-
-    & .content__label {
-      margin-left: 19px;
-    }
   }
 
   &__repeal {
@@ -91,124 +89,120 @@
     color: rgba($darkColor, .75);
     line-height: 23px;
   }
-
-  & .form {
-    height: 440px;
-    margin-left: 68px;
-    padding-left: 31px;
-
-    &__inputs {
-      margin-top: 14px;
-    }
-
-    &__submit-input {
-      margin-top: 21px;
-    }
-
-    &__field[data-index="2"],
-    &__field[data-index="3"] {
-      width: 92%;
-    }
-
-    &__head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 38px;
-      font-family: $mainFont;
-      padding-right: 29px;
-    }
-
-    &__title {
-      display: flex;
-      align-items: flex-end;
-      height: 16px;
-      color: $darkColor;
-
-      & span + span {
-        margin-left: 4px;
-      }
-    }
-
-    &__n {
-      font-weight: bold;
-      font-size: 13px;
-    }
-
-    &__number {
-      font-size: 22px;
-    }
-
-    &__special {
-      font-weight: bold;
-      font-size: 12px;
-      text-transform: uppercase;
-      color: #BC9CFF;
-    }
-
-    &__price {
-      letter-spacing: -1.1px;
-    }
-
-    &__field {
-      &[data-index="3"] > div {
-        display: flex;
-        justify-content: space-between;
-      }
-
-      &-option {
-        font: 14px $mainFont;
-        color: rgba($darkColor, .75);
-
-        & + & {
-          margin-top: 17px;
-        }
-      }
-
-      &_total {
-        position: relative;
-        margin-top: 30px;
-        margin-left: 2px;
-        font: bold 19px $mainFont;
-        color: $darkColor;
-
-        &:after {
-          content: "";
-          position: absolute;
-          bottom: 5px;
-          left: 66px;
-          width: calc(100% - 150px);
-          height: 1px;
-          background: rgba($darkColor, .25);
-        }
-      }
-    }
-
-    &__nametag {
-      position: relative;
-      max-width: 214px;
-
-      &_hint{
-        position: relative;
-
-        &:after {
-          content: "";
-          position: absolute;
-          top: -1px;
-          right: -25px;
-          width: 18px;
-          height: 18px;
-          border: 1px solid rgba($darkColor, .25);
-          border-radius: 25px;
-          background: url(/assets/img/icons/hint.svg) center no-repeat;
-        }
-      }
-    }
-  }
 }
 
 .content .form__field-option + .form__field-option {
   margin-top: 17px;
+}
+
+.form {
+  height: 440px;
+  margin-left: 68px;
+  padding-left: 31px;
+
+  &__inputs {
+    margin-top: 14px;
+  }
+
+  &__field[data-index="2"],
+  &__field[data-index="3"] {
+    width: 92%;
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 38px;
+    font-family: $mainFont;
+    padding-right: 29px;
+  }
+
+  &__title {
+    display: flex;
+    align-items: flex-end;
+    height: 16px;
+    color: $darkColor;
+  }
+
+  &__number,
+  &__special {
+    margin-left: 4px;
+  }
+
+  &__n {
+    font-weight: bold;
+    font-size: 13px;
+  }
+
+  &__number {
+    font-size: 22px;
+  }
+
+  &__special {
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #BC9CFF;
+  }
+
+  &__price {
+    letter-spacing: -1.1px;
+  }
+
+  &__field {
+    &-option {
+      display: flex;
+      justify-content: space-between;
+      font: 14px $mainFont;
+      color: rgba($darkColor, .75);
+
+      & + & {
+        margin-top: 17px;
+      }
+    }
+
+    &-total {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      margin-top: 30px;
+      margin-left: 2px;
+      font: bold 19px $mainFont;
+      color: $darkColor;
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 5px;
+        left: 66px;
+        width: calc(100% - 150px);
+        height: 1px;
+        background: rgba($darkColor, .25);
+      }
+    }
+  }
+
+  &__nametag {
+    position: relative;
+    max-width: 214px;
+
+    &_has_hint{
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: -1px;
+        right: -25px;
+        width: 18px;
+        height: 18px;
+        border: 1px solid rgba($darkColor, .25);
+        border-radius: 25px;
+        background: url(/assets/img/icons/hint.svg) center no-repeat;
+      }
+    }
+  }
 }
 
 .reviews {
@@ -233,23 +227,24 @@
   .content {
     &__images {
       height: 50vh;
-
-      & div[data-index="0"] {
+    }
+    &__image {
+      &[data-index="0"] {
         width: 100%;
         height: 65%;
       }
 
-      & div[data-index="1"] {
+      &[data-index="1"] {
         width: 100%;
         height: 36%;
         flex-direction: row;
       }
 
-      & div[data-index="2"] {
+      &[data-index="2"] {
         height: 100%;
       }
 
-      & img {
+      &-inner {
         width: 100%;
         height: 100%;
       }
@@ -264,10 +259,6 @@
     &__info {
       max-width: 95%;
       justify-content: space-around;
-
-      & > div {
-        margin-top: 44px;
-      }
     }
 
     &__label {
@@ -291,31 +282,18 @@
     &__repeal {
       margin-right: 0
     }
-
-    & .form {
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      padding-left: 0;
-      margin-left: 0;
-
-      &__inputs {
-        justify-content: space-evenly;
-      }
-    }
   }
 
-  .total__legend {
-    margin-left: 12px;
-  }
-
-  .content .form {
-    margin: 0;
-    padding-left: 0; 
-    width: 100%;
-    display: flex;
+  .form {
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    padding-left: 0;
+    margin-left: 0;
+
+    &__inputs {
+      justify-content: space-evenly;
+    }
 
     &__head {
       width: 88%;
@@ -325,9 +303,15 @@
     &__nametag {
       width: auto;
 
-      &_hint:after {
+      &_has_hint:after {
         right: -31px;
       }
+    }
+  }
+
+  .total {
+    &__legend {
+      margin-left: 12px;
     }
   }
 }

@@ -5,22 +5,6 @@
   padding: 31px 0 76px;
   border-bottom: 1px solid rgba($darkColor, .25);
 
-  & .form {
-    width: min-content;
-
-    &__field[data-index="4"] {
-      margin-top: 35px;
-
-      & label + label {
-        margin-top: 12px;
-      }
-    }
-
-    &__input::placeholder {
-      color: rgba($darkColor, .75);
-    }
-  }
-
   &__items {
     margin-left: 60px;
     display: flex;
@@ -30,7 +14,6 @@
   &__title {
     font: bold 24px $mainFont;
     letter-spacing: -.5px;
-    margin-bottom: 20px;
   }
 
   &__rooms {
@@ -41,8 +24,24 @@
   }
 }
 
+.form {
+  width: min-content;
+
+  &__field[data-index="4"] {
+    margin-top: 35px;
+
+    & label + label {
+      margin-top: 12px;
+    }
+  }
+
+  &__input::placeholder {
+    color: rgba($darkColor, .75);
+  }
+}
+
 @media screen and (max-width: 1219px) and (min-width: 569px) {
-  .content__rooms a {
+  .room-card {
     margin-right: 12px;
   }
 }

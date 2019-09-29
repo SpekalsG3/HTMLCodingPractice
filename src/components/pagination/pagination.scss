@@ -5,7 +5,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
 
   &__buttons {
     display: flex;
@@ -20,46 +19,46 @@
     text-align: center;
     line-height: 40px;
     user-select: none;
-  }
 
-  &__number {
-    &_selected {
-      color: white;
-      font-weight: bold;
-      background: $purpleGrad;
+    &_number {
+      &_selected {
+        color: white;
+        font-weight: bold;
+        background: $purpleGrad;
+      }
     }
-  }
 
-  &__prev,
-  &__next {
-    position: relative;
-    overflow: hidden;
-    background: $greenGrad;
-    cursor: pointer;
-  }
+    &_prev,
+    &_next {
+      position: relative;
+      overflow: hidden;
+      background: $greenGrad;
+      cursor: pointer;
+    }
 
-  &__prev:after,
-  &__next:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: url(/img/icons/arrow-forward.svg) center no-repeat;
-  }
+    &_prev:after,
+    &_next:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background: url(/img/icons/arrow-forward.svg) center no-repeat;
+    }
 
-  &__prev:after {
-    transform: rotateZ(180deg);
-  }
+    &_prev:after {
+      transform: rotateZ(180deg);
+    }
 
-  &__prev {
-    display: none;
-  }
-
-  &_skip {
     &_prev {
       display: none;
+    }
+
+    &_skip {
+      &_prev {
+        display: none;
+      }
     }
   }
 

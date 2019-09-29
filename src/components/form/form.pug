@@ -6,10 +6,10 @@ mixin checkbox(args)
         .form__label #{args.text}
         .checkbox__options
           each val in args.input
-            label
-              input(type='checkbox')&attributes({name:val.name, value:val.value})
+            label.checkbox__option
+              input.checkbox__input(type='checkbox')&attributes({name:val.name, value:val.value})
               .checkbox__checkmark
-                div
+                .checkbox__arrow
               if val.note
                 span.checkbox__text
                   .checkbox__title.checkbox__title_bold !{val.title}
@@ -23,10 +23,10 @@ mixin checkbox(args)
         .form__label #{args.text}
         .checkbox__options
           each val in args.input
-            label
-              input(type='checkbox')&attributes({name:val.name, value:val.value})
+            label.checkbox__option
+              input.checkbox__input(type='checkbox')&attributes({name:val.name, value:val.value})
               .checkbox__checkmark
-                div
+                .checkbox__arrow
               if val.note
                 span.checkbox__text
                   .checkbox__title.checkbox__title_bold !{val.title}
@@ -70,21 +70,21 @@ mixin switch(args)
   .form__field&attributes(args.settings)
     .switch
       each val in args.input
-        label
-          input(type='checkbox')&attributes({name: val.name})
+        label.switch__option
+          input.switch__input(type='checkbox')&attributes({name: val.name})
           .switch__checkmark
             .switch__dot
-              div
+              .switch__dot-cover
           span #{val.text}
 
 mixin radio(args)
   .form__field&attributes(args.settings)
     .radio
       each val in args.input
-        label
-          input(type='radio' name='gender')&attributes(val.settings)
+        label.radio__option
+          input.radio__input(type='radio' name='gender')&attributes(val.settings)
           .radio__checkmark
-            div
+            .radio__arrow
           span #{val.text}
 
 mixin form(args)
@@ -270,7 +270,7 @@ mixin form(args)
             span.form__number 888
             span.form__special Люкс
           .content__price
-            span 9 990&#x20bd;
+            .content__price-amount 9 990&#x20bd;
             | в сутки
         form.form__inputs(method='GET' action='filter/')
           +date({
@@ -311,12 +311,12 @@ mixin form(args)
               .form__nametag 9 990&#x20bd; х 4 суток
               div 39 960&#x20bd;
             .form__field-option
-              .form__nametag.form__nametag_hint Сбор за услуги: скидка 2 179&#x20bd;
+              .form__nametag.form__nametag_has_hint Сбор за услуги: скидка 2 179&#x20bd;
               div 0&#x20bd;
             .form__field-option
-              .form__nametag.form__nametag_hint Сбор за дополнительные услуги
+              .form__nametag.form__nametag_has_hint Сбор за дополнительные услуги
               div 300&#x20bd;
-            .form__field_total
+            .form__field-total
               .form__nametag Итого
               .form__price 38 081&#x20bd;
           +submit({
@@ -345,7 +345,7 @@ mixin form(args)
             },
             text: "Войти"
           })
-          .form__field.form__question(data-size="long")
+          .form__field_type_question(data-size="long")
             .content__text Нет аккаунта на Toxin?
             +button({
               settings: {
@@ -409,7 +409,7 @@ mixin form(args)
             },
             text: "Перейти к оплате"
           })
-          .form__field.form__question
+          .form__field_type_question
             .content__text Уже есть аккаунт на Toxin
             +button({
               settings: {

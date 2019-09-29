@@ -1,9 +1,9 @@
 mixin statistic(args)
   .statistic&attributes({class: args.class})
     .statistic__chart
-      .statistic__number
-        div #{args.total[0]}
-        span #{args.total[1]}
+      .statistic__total
+        .statistic__total-number #{args.total[0]}
+        span.statistic__total-title #{args.total[1]}
     .statistic__legend
       each val, i in args.legend
-        div&attributes({"data-index": i}) #{val}
+        .statistic__point&attributes({"data-index": i}) #{val}

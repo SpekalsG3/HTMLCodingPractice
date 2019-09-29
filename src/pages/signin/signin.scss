@@ -1,9 +1,21 @@
 .content {
+  background-image: url(/img/authorization.jpg);
+
   &_form {
     height: 683px;
   }
 
-  & .form {
-    margin-bottom: 28px;
+  &__inner {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.form {
+  margin-bottom: 28px;
+  padding-left: 31px;
+
+  &__field[data-index="0"] {
+    margin-top: 16px;
   }
 }

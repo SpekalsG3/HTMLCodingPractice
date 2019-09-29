@@ -1,14 +1,14 @@
-mixin pagination()
-    .pagination
+mixin pagination(args)
+    .pagination&attributes(args.settings)
       .pagination__buttons
-        .pagination__button.pagination__prev
-        .pagination__button.pagination__number.pagination__number_selected 1
-        .pagination__button.pagination_skip_prev ...
-        .pagination__button.pagination__number 2
-        .pagination__button.pagination__number 3
-        .pagination__button.pagination__number 4
-        .pagination__button.pagination_skip_next ...
-        .pagination__button.pagination__number 15
-        .pagination__button.pagination__next
+        .pagination__button.pagination__button_prev
+        .pagination__button.pagination__button_number.pagination__button_number_selected 1
+        .pagination__button.pagination__button_skip_prev ...
+        .pagination__button.pagination__button_number 2
+        .pagination__button.pagination__button_number 3
+        .pagination__button.pagination__button_number 4
+        .pagination__button.pagination__button_skip_next ...
+        .pagination__button.pagination__button_number 15
+        .pagination__button.pagination__button_next
       .pagination__note
         | 1 – 12 из 100+ вариантов аренды

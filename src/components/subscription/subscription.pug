@@ -1,7 +1,4 @@
 mixin subscription(args)
   form.subscription(method='GET')&attributes(args.settings)
-    input.form__input.form__input_text(type='text')&attributes(args.input)&attributes({class: "subscription__input"})
-    input.page__arrow.page__arrow_submit(type='submit' value='')&attributes({
-      name: "subscription__submit",
-      class: "subscription__submit"
-    })
+    input.form__input.form__input_text(type='text')&attributes(args.input)
+    input.page__arrow.page__arrow_submit(type='submit' value='')

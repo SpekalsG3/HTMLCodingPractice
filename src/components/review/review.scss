@@ -64,16 +64,11 @@
         background: url(/img/icons/favorite-border.svg) center no-repeat;
       }
     }
+  }
 
-    & .review__heart {
-      height: 18px;
-      width: 18px;
-    }
-
-    & .review__heart {
-      height: 18px;
-      width: 18px;
-    }
+  &__heart {
+    height: 18px;
+    width: 18px;
   }
 
   &__text {

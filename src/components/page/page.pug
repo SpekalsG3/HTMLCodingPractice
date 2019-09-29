@@ -75,6 +75,7 @@ mixin page(args)
               +room-card({
                 number: 888,
                 settings: {
+                  "data-space": "up",
                   "data-index": "0"
                 },
                 images: 3,
@@ -86,6 +87,7 @@ mixin page(args)
               +room-card({
                 number: 840,
                 settings: {
+                  "data-space": "up",
                   "data-index": "1"
                 },
                 images: 1,
@@ -97,6 +99,7 @@ mixin page(args)
               +room-card({
                 number: 980,
                 settings: {
+                  "data-space": "up",
                   "data-index": "2"
                 },
                 images: 1,
@@ -108,6 +111,7 @@ mixin page(args)
               +room-card({
                 number: 856,
                 settings: {
+                  "data-space": "up",
                   "data-index": "3"
                 },
                 images: 1,
@@ -119,6 +123,7 @@ mixin page(args)
               +room-card({
                 number: 740,
                 settings: {
+                  "data-space": "up",
                   "data-index": "4"
                 },
                 images: 1,
@@ -130,6 +135,7 @@ mixin page(args)
               +room-card({
                 number: 982,
                 settings: {
+                  "data-space": "up",
                   "data-index": "5"
                 },
                 images: 1,
@@ -141,6 +147,7 @@ mixin page(args)
               +room-card({
                 number: 678,
                 settings: {
+                  "data-space": "up",
                   "data-index": "6"
                 },
                 images: 1,
@@ -152,6 +159,7 @@ mixin page(args)
               +room-card({
                 number: 450,
                 settings: {
+                  "data-space": "up",
                   "data-index": "7"
                 },
                 images: 1,
@@ -163,6 +171,7 @@ mixin page(args)
               +room-card({
                 number: 350,
                 settings: {
+                  "data-space": "up",
                   "data-index": "8"
                 },
                 images: 1,
@@ -174,6 +183,7 @@ mixin page(args)
               +room-card({
                 number: 666,
                 settings: {
+                  "data-space": "up",
                   "data-index": "9"
                 },
                 images: 1,
@@ -185,6 +195,7 @@ mixin page(args)
               +room-card({
                 number: 444,
                 settings: {
+                  "data-space": "up",
                   "data-index": "10"
                 },
                 images: 1,
@@ -196,6 +207,7 @@ mixin page(args)
               +room-card({
                 number: 352,
                 settings: {
+                  "data-space": "up",
                   "data-index": "11"
                 },
                 images: 1,
@@ -204,7 +216,9 @@ mixin page(args)
                 stars: 3,
                 feedbacks: 55
               })
-            +pagination
+            +pagination({settings: {
+              "data-space": "up"
+            }})
 
       -break
     when "room"
@@ -219,13 +233,13 @@ mixin page(args)
       .content
         .content__cover
         .content__images
-          div(data-index='0')
-            img(src='/img/rooms/888-0.jpg')
-          div(data-index='1')
-            div(data-index='2')
-              img(src='/img/rooms/888-1.jpg')
-            div(data-index='2')
-              img(src='/img/rooms/888-2.jpg')
+          .content__image(data-index='0')
+            img.content__image-inner(src='/img/rooms/888-0.jpg')
+          .content__image(data-index='1')
+            .content__image(data-index='2')
+              img.content__image-inner(src='/img/rooms/888-1.jpg')
+            .content__image(data-index='2')
+              img.content__image-inner(src='/img/rooms/888-2.jpg')
         .content__inner
           .content__info
             div
@@ -280,7 +294,7 @@ mixin page(args)
                 text: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"
               })
             .rules.content__rules
-              .content__label Правила
+              .content__label(data-space="left") Правила
               +bullet-list(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"])
             .repeal.content__repeal
               .content__label Отмена
@@ -293,7 +307,7 @@ mixin page(args)
 
       +header(true, false, true)
 
-      .content.content_form.content_authorization
+      .content.content_form
         .content__cover
         .content__inner
           +form({name: "signin"})
@@ -303,7 +317,7 @@ mixin page(args)
 
       +header(true, true, false)
 
-      .content.content_form.content_authorization
+      .content.content_form
         .content__cover
         .content__inner
           +form({name: "signup"})

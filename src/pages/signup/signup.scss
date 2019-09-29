@@ -1,21 +1,37 @@
 .content {
+  background-image: url(/img/authorization.jpg);
+
   &_form {
     height: 701px;
   }
 
-  &.form {
+  & .form {
     margin-bottom: 2px;
+  }
 
-    &__title {
-      letter-spacing: 1.2px;
-    }
-
-    &__inputs {
-      margin-top: 19px;
-    }
+  &__inner {
+    justify-content: center;
+    align-items: center;
   }
 }
 
 .radio {
   display: flex;
+}
+
+.form {
+  padding-left: 31px;
+  margin-bottom: 2px;
+
+  &__field[data-index="0"] {
+    margin-top: 16px;
+  }
+
+  &__title {
+    letter-spacing: 1.2px;
+  }
+
+  &__inputs {
+    margin-top: 19px;
+  }
 }
