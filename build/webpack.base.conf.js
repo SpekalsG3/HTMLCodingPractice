@@ -57,7 +57,7 @@ module.exports = {
     }, {
       test: /\.js$/,
       loader: "babel-loader",
-      exclude: "/node_modules/",
+      exclude: "/node_modules/"
     }, {
       test: /\.(woff(2)?|ttf)$/,
       loader: "file-loader",
