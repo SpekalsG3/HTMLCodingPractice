@@ -1,9 +1,13 @@
 @import "../../utils/fonts.scss";
 @import "../../utils/vars.scss";
 
-.content{
+.content {
   background-image: url(/img/index.jpg);
   height: 830px;
+
+  @media screen and (max-width: 979px) {
+    height: calc(100vh - 70px);
+  }
 
   &__form {
     margin-top: 70px;
@@ -19,10 +23,38 @@
     color: rgba(31, 32, 65, .75);
     line-height: 24px;
     text-align: right;
+
+    @media screen and (max-width: 979px) {
+      justify-self: flex-end;
+    }
+  }
+
+  &__inner {
+    @media screen and (max-width: 1300px) {
+      background-position: top;
+      background-size: auto calc(100% + 100px);
+    }
+
+    @media screen and (max-width: 979px) {
+      display: flex;
+      justify-content: center;
+    }
   }
 }
 
 .form {
+  @media screen and (max-width: 450px) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 979px) {
+    padding-left: 0;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   &__input::placeholder {
     color: rgba($darkColor, .75);
   }
@@ -32,42 +64,8 @@
       margin-top: 32px;
     }
   }
-}
 
-@media screen and (max-width: 1300px) {
-  .content__inner {
-    background-position: top;
-    background-size: auto calc(100% + 100px);
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .form {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 979px) {
-  .content {
-    height: calc(100vh - 70px);
-
-    &__slogan {
-      justify-self: flex-end;
-    }
-
-    &__inner {
-      display: flex;
-      justify-content: center;
-    }
-  }
-
-  .form {
-    padding-left: 0;
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
+  @media screen and (max-width: 979px) {
     &__title {
       text-align: center;
     }
@@ -77,3 +75,4 @@
     }
   }
 }
+

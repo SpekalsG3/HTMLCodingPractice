@@ -9,11 +9,20 @@
     margin-left: 60px;
     display: flex;
     flex-direction: column;
+
+    @media screen and (max-width: 979px) {
+      margin-left: 0;
+      margin-top: 60px;
+    }
   }
 
   &__title {
     font: bold 24px $mainFont;
     letter-spacing: -.5px;
+
+    @media screen and (max-width: 979px) {
+      text-align: center;
+    }
   }
 
   &__rooms {
@@ -21,10 +30,35 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+
+    @media screen and (max-width: 1219px) and (min-width: 980px) {
+      justify-content: space-around;
+    }
+
+    @media screen and (max-width: 979px) {
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   &__room {
     margin-top: 20px;
+
+    @media screen and (max-width: 1219px) and (min-width: 569px) {
+      margin-right: 12px;
+    }
+  }
+
+  @media screen and (max-width: 979px) {
+    &__inner {
+      flex-direction: column;
+    }
+
+    &__settings {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 }
 
@@ -37,45 +71,5 @@
 
   &__input::placeholder {
     color: rgba($darkColor, .75);
-  }
-}
-
-@media screen and (max-width: 1219px) and (min-width: 569px) {
-  .content__room {
-    margin-right: 12px;
-  }
-}
-
-@media screen and (max-width: 1219px) and (min-width: 980px) {
-  .content__rooms {
-    justify-content: space-around;
-  }
-}
-
-@media screen and (max-width: 979px) {
-  .content {
-    &__inner {
-      flex-direction: column;
-    }
-
-    &__settings {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    &__items {
-      margin-left: 0;
-      margin-top: 60px;
-    }
-
-    &__title {
-      text-align: center;
-    }
-
-    &__rooms {
-      align-items: center;
-      justify-content: center;
-    }
   }
 }
