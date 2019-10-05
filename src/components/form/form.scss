@@ -154,14 +154,21 @@
 
   &__options {
     margin-top: 16px;
+
+    &_hidden {
+      display: none;
+    }
   }
 
-  &[data-expandable] &__options {
-    display: none;
-  }
-
-  &[data-expandable] .arrow {
+  &__arrow {
+    position: absolute;
+    z-index: 2;
+    width: 44px;
+    height: 46px;
+    cursor: pointer;
+    right: -2px;
     height: 14px;
+    background: url(/img/icons/expand-more.svg) center no-repeat;
     transition: .2s;
   }
 
@@ -180,7 +187,7 @@
     opacity: 0;
   }
 
-  &__input:checked + &__checkmark &__arrow {
+  &__input:checked + &__checkmark &__checkmark-arrow {
     opacity: 1;
   }
 
@@ -193,25 +200,25 @@
     width: 18px;
     border: 1px solid rgba($darkColor, 0.25);
     border-radius: 4px;
-  }
 
-  &__checkmark &__arrow {
-    position: absolute;
-    width: 6px;
-    height: 8px;
-    background: $purpleGrad;
-    transform: rotateZ(45deg);
-    transition: .1s;
-    opacity: 0;
-
-    &:after {
-      content: "";
+    &-arrow {
       position: absolute;
-      width: 83%;
-      height: 87%;
-      top: -1px;
-      left: -1px;
-      background: #fff;
+      width: 6px;
+      height: 8px;
+      background: $purpleGrad;
+      transform: rotateZ(45deg);
+      transition: .1s;
+      opacity: 0;
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 83%;
+        height: 87%;
+        top: -1px;
+        left: -1px;
+        background: #fff;
+      }
     }
   }
 
