@@ -44,7 +44,7 @@ DropdownController.prototype.createDropdown = function(params) {
     if (params.specClass != undefined)
         dropdown += params.specClass + '-dropdown ';
 
-    dropdown += 'dropdown dropdown_default"><div class="dropdown__head"><div class="page__arrow page__arrow_expand"></div><div type="text" name="';
+    dropdown += 'dropdown dropdown_default"><div class="dropdown__head"><div class="arrow arrow_expand"></div><div type="text" name="';
 
     if (params.specClass != undefined)
         dropdown += params.specClass;

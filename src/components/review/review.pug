@@ -7,7 +7,7 @@ mixin review(args)
         .review__online #{args.profile.online}
     .review__content
       .review__likes&attributes({"data-liked": args.likes.liked})
-        .review__heart
+        .review__heart&attributes({"data-liked": args.likes.liked})
         span.review__amount #{args.likes.total}
       .review__text
         | #{args.text}

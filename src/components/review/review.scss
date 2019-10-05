@@ -50,25 +50,26 @@
     &[data-liked="true"] {
       border: 1px solid #BC9CFF;
       color: #BC9CFF;
-
-      & .review__heart {
-        background: url(/img/icons/favorite.svg) center no-repeat;
-      }
     }
 
     &[data-liked="false"] {
       border: 1px solid rgba($darkColor, .25);
       color: rgba($darkColor, .25);
-
-      & .review__heart {
-        background: url(/img/icons/favorite-border.svg) center no-repeat;
-      }
     }
   }
 
   &__heart {
     height: 18px;
     width: 18px;
+    background: center no-repeat;
+
+    &[data-liked="true"] {
+      background-image: url(/img/icons/favorite.svg);
+    }
+
+    &[data-liked="false"] {
+      background-image: url(/img/icons/favorite-border.svg);
+    }
   }
 
   &__text {

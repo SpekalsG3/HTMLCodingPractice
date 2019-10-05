@@ -1,27 +1,43 @@
-mixin header(main, signin, signup)
+mixin arrow(args)
+  case args.type
+    when "expand"
+      .arrow.arrow_expand
+      -break
+    when "forward"
+      .arrow.arrow_forward
+      -break
+    when "prev"
+      .arrow.arrow_prev
+      -break
+    when "next"
+      .arrow.arrow_next
+      -break
+
+mixin logo
+  .logo
+    img.logo__icon(src="/img/icons/logo-icon.svg")
+    img.logo__brand(src="/img/icons/logo-brand.svg")
+
+mixin header(index, signin, signup)
   header.header
-    .page__bar.page__bar_shadow
+    .header__bar.header__bar_shadow
       .header__inner.header__inner_align
-        if main
+        if index
           a(href="/")
-            .page__logo
-              img.page__icon(src="/img/icons/logo-icon.svg")
-              img.page__brand(src="/img/icons/logo-brand.svg")
+            +logo
         else
-          .page__logo
-            img.page__icon(src="/img/icons/logo-icon.svg")
-            img.page__brand(src="/img/icons/logo-brand.svg")
+          +logo
         .header__menu
         nav.header__content
           a.header__link(href="/fake-link/change-me") О нас
           a.header__link.header__link_expand(href="/fake-link/change-me")
-            .page__arrow.page__arrow_expand.header__arrow
-            div Услуги
+            .header__arrow
+            .header__link-text Услуги
           a.header__link(href="/fake-link/change-me") Вакансии
           a.header__link(href="/fake-link/change-me") Новости
           a.header__link.header__link_expand(href="/fake-link/change-me")
-            .page__arrow.page__arrow_expand.header__arrow
-            div Соглашения
+            .header__arrow
+            .header__link-text Соглашения
           if signin
             a(href="/signin/")
               .header__signin Войти
@@ -50,9 +66,9 @@ mixin page(args)
       +header(false, true, true)
 
       .content.content_form
-        .content__cover
         .content__inner
-          +form({name: "index"})
+          .content__form
+            +form({name: "index"})
           .content__slogan
             | Лучшие номера для вашей работы, отдыха и просто вдохновения
 
@@ -65,157 +81,156 @@ mixin page(args)
       +header(true, true, true)
 
       .content
-        .content__cover
         .content__inner
           .content__settings
             +form({name: "filter"})
           .content__items
             .content__title Номера, которые мы для вас подобрали
             .content__rooms
-              +room-card({
-                number: 888,
-                settings: {
-                  "data-space": "up",
-                  "data-index": "0"
-                },
-                images: 3,
-                special: true,
-                price: "9 990",
-                stars: 5,
-                feedbacks: 145
-              })
-              +room-card({
-                number: 840,
-                settings: {
-                  "data-space": "up",
-                  "data-index": "1"
-                },
-                images: 1,
-                special: false,
-                price: "9 990",
-                stars: 4,
-                feedbacks: 65
-              })
-              +room-card({
-                number: 980,
-                settings: {
-                  "data-space": "up",
-                  "data-index": "2"
-                },
-                images: 1,
-                special: true,
-                price: "8 500",
-                stars: 3,
-                feedbacks: 35
-              })
-              +room-card({
-                number: 856,
-                settings: {
-                  "data-space": "up",
-                  "data-index": "3"
-                },
-                images: 1,
-                special: false,
-                price: "7 300",
-                stars: 5,
-                feedbacks: 19
-              })
-              +room-card({
-                number: 740,
-                settings: {
-                  "data-space": "up",
-                  "data-index": "4"
-                },
-                images: 1,
-                special: false,
-                price: "6 000",
-                stars: 4,
-                feedbacks: 44
-              })
-              +room-card({
-                number: 982,
-                settings: {
-                  "data-space": "up",
-                  "data-index": "5"
-                },
-                images: 1,
-                special: false,
-                price: "5 800",
-                stars: 3,
-                feedbacks: 56
-              })
-              +room-card({
-                number: 678,
-                settings: {
-                  "data-space": "up",
-                  "data-index": "6"
-                },
-                images: 1,
-                special: false,
-                price: "5 500",
-                stars: 5,
-                feedbacks: 45
-              })
-              +room-card({
-                number: 450,
-                settings: {
-                  "data-space": "up",
-                  "data-index": "7"
-                },
-                images: 1,
-                special: false,
-                price: "5 300",
-                stars: 4,
-                feedbacks: 39
-              })
-              +room-card({
-                number: 350,
-                settings: {
-                  "data-space": "up",
-                  "data-index": "8"
-                },
-                images: 1,
-                special: false,
-                price: "5 000",
-                stars: 3,
-                feedbacks: 77
-              })
-              +room-card({
-                number: 666,
-                settings: {
-                  "data-space": "up",
-                  "data-index": "9"
-                },
-                images: 1,
-                special: false,
-                price: "5 000",
-                stars: 5,
-                feedbacks: 25
-              })
-              +room-card({
-                number: 444,
-                settings: {
-                  "data-space": "up",
-                  "data-index": "10"
-                },
-                images: 1,
-                special: false,
-                price: "5 000",
-                stars: 3,
-                feedbacks: 15
-              })
-              +room-card({
-                number: 352,
-                settings: {
-                  "data-space": "up",
-                  "data-index": "11"
-                },
-                images: 1,
-                special: false,
-                price: "5 000",
-                stars: 3,
-                feedbacks: 55
-              })
+              .content__room
+                +room-card({
+                  number: 888,
+                  settings: {
+                    "data-index": "0"
+                  },
+                  images: 3,
+                  special: true,
+                  price: "9 990",
+                  stars: 5,
+                  feedbacks: 145
+                })
+              .content__room
+                +room-card({
+                  number: 840,
+                  settings: {
+                    "data-index": "1"
+                  },
+                  images: 1,
+                  special: false,
+                  price: "9 990",
+                  stars: 4,
+                  feedbacks: 65
+                })
+              .content__room
+                +room-card({
+                  number: 980,
+                  settings: {
+                    "data-index": "2"
+                  },
+                  images: 1,
+                  special: true,
+                  price: "8 500",
+                  stars: 3,
+                  feedbacks: 35
+                })
+              .content__room
+                +room-card({
+                  number: 856,
+                  settings: {
+                    "data-index": "3"
+                  },
+                  images: 1,
+                  special: false,
+                  price: "7 300",
+                  stars: 5,
+                  feedbacks: 19
+                })
+              .content__room
+                +room-card({
+                  number: 740,
+                  settings: {
+                    "data-index": "4"
+                  },
+                  images: 1,
+                  special: false,
+                  price: "6 000",
+                  stars: 4,
+                  feedbacks: 44
+                })
+              .content__room
+                +room-card({
+                  number: 982,
+                  settings: {
+                    "data-index": "5"
+                  },
+                  images: 1,
+                  special: false,
+                  price: "5 800",
+                  stars: 3,
+                  feedbacks: 56
+                })
+              .content__room
+                +room-card({
+                  number: 678,
+                  settings: {
+                    "data-index": "6"
+                  },
+                  images: 1,
+                  special: false,
+                  price: "5 500",
+                  stars: 5,
+                  feedbacks: 45
+                })
+              .content__room
+                +room-card({
+                  number: 450,
+                  settings: {
+                    "data-index": "7"
+                  },
+                  images: 1,
+                  special: false,
+                  price: "5 300",
+                  stars: 4,
+                  feedbacks: 39
+                })
+              .content__room
+                +room-card({
+                  number: 350,
+                  settings: {
+                    "data-index": "8"
+                  },
+                  images: 1,
+                  special: false,
+                  price: "5 000",
+                  stars: 3,
+                  feedbacks: 77
+                })
+              .content__room
+                +room-card({
+                  number: 666,
+                  settings: {
+                    "data-index": "9"
+                  },
+                  images: 1,
+                  special: false,
+                  price: "5 000",
+                  stars: 5,
+                  feedbacks: 25
+                })
+              .content__room
+                +room-card({
+                  number: 444,
+                  settings: {
+                    "data-index": "10"
+                  },
+                  images: 1,
+                  special: false,
+                  price: "5 000",
+                  stars: 3,
+                  feedbacks: 15
+                })
+              .content__room
+                +room-card({
+                  number: 352,
+                  settings: {
+                    "data-index": "11"
+                  },
+                  images: 1,
+                  special: false,
+                  price: "5 000",
+                  stars: 3,
+                  feedbacks: 55
+                })
             +pagination({settings: {
               "data-space": "up"
             }})
@@ -231,7 +246,6 @@ mixin page(args)
       +header(true, true, true)
 
       .content
-        .content__cover
         .content__images
           .content__image(data-index='0')
             img.content__image-inner(src='/img/rooms/888-0.jpg')
@@ -242,7 +256,7 @@ mixin page(args)
               img.content__image-inner(src='/img/rooms/888-2.jpg')
         .content__inner
           .content__info
-            div
+            .content__info-inner
               .content__label Сведения о номере
               +tag({
                 image: "insert-emoticon",
@@ -266,9 +280,9 @@ mixin page(args)
                 total: [260, "голосов"],
                 legend: ["Великолепно", "Хорошо", "Удовлетворительно", "Разочарован"]
               })
-            .reviews.content__reviews
+            .content__reviews
               .content__label Отзывы посетителей номера
-              .reviews__number 2 отзыва
+              .content__reviews-number 2 отзыва
               +review({
                 profile: {
                   avatar: "murad-sarafanov",
@@ -293,14 +307,15 @@ mixin page(args)
                 },
                 text: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"
               })
-            .rules.content__rules
+            .content__rules
               .content__label(data-space="left") Правила
               +bullet-list(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"])
-            .repeal.content__repeal
+            .content__repeal
               .content__label Отмена
               .content__text
                 | Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
-          +form({name: "room"})
+          .content__form
+            +form({name: "room"})
 
       -break
     when "signin"
@@ -308,9 +323,9 @@ mixin page(args)
       +header(true, false, true)
 
       .content.content_form
-        .content__cover
         .content__inner
-          +form({name: "signin"})
+          .content__form
+            +form({name: "signin"})
 
       -break
     when "signup"
@@ -318,9 +333,9 @@ mixin page(args)
       +header(true, true, false)
 
       .content.content_form
-        .content__cover
         .content__inner
-          +form({name: "signup"})
+          .content__form
+            +form({name: "signup"})
 
       -break
 
@@ -329,9 +344,7 @@ mixin page(args)
     nav.footer__nav
       .footer__inner
         .footer__brand
-          .page__logo
-            img.page__icon(src='/img/icons/logo-icon.svg')
-            img.page__brand(src='/img/icons/logo-brand.svg')
+          +logo
           .footer__slogan
             | Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
         .footer__info
@@ -353,7 +366,7 @@ mixin page(args)
           a(href="fake-link").footer__link Связь с нами
         .footer__info
           .footer__title Подписка
-          .footer__line.footer__link
+          .footer__link.footer__link_double_line
             | Получайте специальные
             br
             | предложения и новости сервиса
@@ -368,10 +381,10 @@ mixin page(args)
               "data-size": "medium"
             }
           })
-    .page__bar.page__bar_shadow
+    .footer__bar.footer__bar_shadow
       .footer__inner.footer__inner_align
         .footer__copyright Copyright © 2018 Toxin отель. Все права зачищены.
-        div
-          img.footer__social(src='/img/icons/twitter-icon.svg')
-          img.footer__social(src='/img/icons/facebook-icon.svg')
-          img.footer__social(src='/img/icons/instagram-icon.svg')
+        .footer__social
+          img.footer__social-image(src='/img/icons/twitter-icon.svg')
+          img.footer__social-image(src='/img/icons/facebook-icon.svg')
+          img.footer__social-image(src='/img/icons/instagram-icon.svg')

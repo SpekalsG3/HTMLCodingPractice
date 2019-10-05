@@ -3,12 +3,12 @@ mixin room-card(args)
     .room-card
       .room-card__gallery&attributes(args.settings)
         .room-card__gallery_prev
-          .page__arrow.page__arrow_prev
+          +arrow({type: "prev"})
         .room-card__images
           each _, i in Array(args.images)
             img.room-card__image&attributes({src:'/assets/img/rooms/' + args.number + '-' + i + '.jpg'})
         .room-card__gallery_next
-          .page__arrow.page__arrow_next
+          +arrow({type: "next"})
         .room-card__points
           each _, i in Array(args.images)
             if i == 0

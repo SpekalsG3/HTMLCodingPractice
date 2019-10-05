@@ -1,12 +1,12 @@
 @import "../../utils/vars.scss";
 
 .tag {
-  margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   width: 280px;
 
   & + & {
+    margin-top: 20px;
     padding-top: 20px;
     border-top: 1px solid rgba($darkColor, .1);
   }

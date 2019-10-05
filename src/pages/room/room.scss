@@ -6,6 +6,10 @@
   flex-direction: column;
   align-items: center;
 
+  &__form {
+    margin-left: 68px;
+  }
+
   &__image {
     &[data-index="0"] {
       width: 68%;
@@ -65,6 +69,7 @@
   }
 
   &__label {
+    display: inline-block;
     margin-bottom: 20px;
     font: bold 19px $mainFont;
     letter-spacing: -.4px;
@@ -74,11 +79,27 @@
     margin-right: 40px;
   }
 
+  &__reviews {
+    width: 100%;
+    margin-top: 33px;
+    margin-bottom: 31px;
+
+    &-number {
+      display: inline-block;
+      margin-top: 6px;
+      float: right;
+      font: 14px $mainFont;
+      color: rgba($darkColor, .5);
+    }
+  }
+
   &__rules {
+    margin-top: 30px;
     width: 240px;
   }
 
   &__repeal {
+    margin-top: 30px;
     margin-right: 9px;
     width: 340px;
   }
@@ -87,26 +108,26 @@
     width: 100%;
     font: 14px $mainFont;
     color: rgba($darkColor, .75);
-    line-height: 23px;
+    line-height: 24px;
   }
 }
 
-.content .form__field-option + .form__field-option {
-  margin-top: 17px;
-}
-
 .form {
-  height: 440px;
-  margin-left: 68px;
-  padding-left: 31px;
-
   &__inputs {
     margin-top: 14px;
   }
 
-  &__field[data-index="2"],
-  &__field[data-index="3"] {
-    width: 92%;
+  &__field {
+    &-option {
+      & + & {
+        margin-top: 17px;
+      }
+    }
+
+    &[data-index="2"],
+    &[data-index="3"] {
+      width: 92%;
+    }
   }
 
   &__head {
@@ -146,7 +167,7 @@
     color: #BC9CFF;
   }
 
-  &__price {
+  &__price-total {
     letter-spacing: -1.1px;
   }
 
@@ -205,26 +226,38 @@
   }
 }
 
-.reviews {
-  width: 100%;
-  margin-top: 13px;
-  margin-bottom: 31px;
-
-  & .content__label {
-    display: inline-block;
+@media screen and (max-width: 1140px) and (min-width: 979px) {
+  .content__total {
+    margin-top: 20px;
   }
+}
 
-  &__number {
-    display: inline-block;
-    margin-top: 6px;
-    float: right;
-    font: 14px $mainFont;
-    color: rgba($darkColor, .5);
+@media screen and (max-width: 678px) {
+  .content__total {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 979px) and (min-width: 642px) {
+  .content {
+    &__total {
+      margin-left: 8px;
+    }
+
+    &__repeal {
+      margin-left: 20px;
+    }
   }
 }
 
 @media screen and (max-width: 979px) {
   .content {
+    &__form {
+      width: 100%;
+      margin-left: 0;
+      margin-bottom: 20px;
+    }
+
     &__images {
       height: 50vh;
     }
@@ -273,23 +306,17 @@
       margin-bottom: 0;
     }
 
-    &__rules {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-    }
-
     &__repeal {
       margin-right: 0
     }
   }
 
   .form {
+    display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     padding-left: 0;
-    margin-left: 0;
 
     &__inputs {
       justify-content: space-evenly;

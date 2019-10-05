@@ -23,5 +23,14 @@ $(".form").submit(function(e) {
 });
 
 $(".checkbox[data-expandable]").click(function() {
-  $(this).attr("data-opened", (i, attr) => attr === "false" ? "true" : "false");
+  var $this = $(this);
+  var flag = $this.attr("data-opened") === "false" ? "true" : "false";
+  $this.attr("data-opened", flag);
+  if (flag === "true") {
+    $this.find(".checkbox__options").css("display", "block");
+    $this.find(".arrow").css("transform", "rotateZ(180deg)");
+  } else {
+    $this.find(".checkbox__options").css("display", "none");
+    $this.find(".arrow").css("transform", "rotateZ(0deg)");
+  }
 });

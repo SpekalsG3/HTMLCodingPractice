@@ -1,9 +1,15 @@
+mixin label(args)
+  if args.clickable
+    .label.label_clickable #{args.text}
+  else
+    .label #{args.text}
+
 mixin checkbox(args)
   if args.expandable
     .form__field&attributes(args.settings)
       .checkbox(data-expandable="" data-opened="false")
-        .page__arrow.page__arrow_expand
-        .form__label #{args.text}
+        +arrow({type: "expand"})
+        +label({text: args.text, clickable: true})
         .checkbox__options
           each val in args.input
             label.checkbox__option
@@ -20,7 +26,7 @@ mixin checkbox(args)
   else
     .form__field&attributes(args.settings)
       .checkbox
-        .form__label #{args.text}
+        +label({text: args.text})
         .checkbox__options
           each val in args.input
             label.checkbox__option
@@ -37,26 +43,26 @@ mixin checkbox(args)
 
 mixin date(args)
   .form__field&attributes(args.settings)
-    .form__label #{args.text}
+    +label({text: args.text})
     unless args.noArrow
-      .page__arrow.page__arrow_expand
+      +arrow({type: "expand"})
     input.form__input(readonly="readonly" type="text")&attributes(args.input)
 
 mixin dropdown(args)
   .form__field&attributes(args.settings)
-    .form__label #{args.text}
+    +label({text: args.text})
 
 mixin submit(args)
   .form__field&attributes(args.settings)
     .submit
-      .page__arrow.page__arrow_forward
+      +arrow({type: "forward"})
       button.submit__button #{args.text}
 
 mixin range(args)
   .form__field&attributes(args.settings)
     .range
       .range__top
-        .form__label #{args.text}
+        +label({text: args.text})
         .range__legend
           span.range__from #{args.from}
           | &#x20bd;  - 
@@ -75,7 +81,7 @@ mixin switch(args)
           .switch__checkmark
             .switch__dot
               .switch__dot-cover
-          span #{val.text}
+          span.switch__text #{val.text}
 
 mixin radio(args)
   .form__field&attributes(args.settings)
@@ -85,7 +91,7 @@ mixin radio(args)
           input.radio__input(type='radio' name='gender')&attributes(val.settings)
           .radio__checkmark
             .radio__arrow
-          span #{val.text}
+          span.readio__text #{val.text}
 
 mixin form(args)
   case args.name
@@ -309,16 +315,16 @@ mixin form(args)
           .form__field(data-index='3' data-space='up')
             .form__field-option
               .form__nametag 9 990&#x20bd; х 4 суток
-              div 39 960&#x20bd;
+              .form__price 39 960&#x20bd;
             .form__field-option
               .form__nametag.form__nametag_has_hint Сбор за услуги: скидка 2 179&#x20bd;
-              div 0&#x20bd;
+              .form__price 0&#x20bd;
             .form__field-option
               .form__nametag.form__nametag_has_hint Сбор за дополнительные услуги
-              div 300&#x20bd;
+              .form__price 300&#x20bd;
             .form__field-total
               .form__nametag Итого
-              .form__price 38 081&#x20bd;
+              .form__price_total 38 081&#x20bd;
           +submit({
             text: "Забронировать",
             settings: {
@@ -346,7 +352,7 @@ mixin form(args)
             text: "Войти"
           })
           .form__field_type_question(data-size="long")
-            .content__text Нет аккаунта на Toxin?
+            .form__field-text Нет аккаунта на Toxin?
             +button({
               settings: {
                 href: "/signup/"
@@ -360,22 +366,23 @@ mixin form(args)
         .form__title Войти
         form.form__inputs(method='POST' action='/fake-script/' data-space='up')
           .form__field(data-index='0' data-size='long')
-            input.form__input(placeholder='Имя' type='text' name='firstname')
-            input.form__input(placeholder='Фамилия' type='text' name='lastname' data-space="tiny-up")
-          +radio({
-            input: [{
-              settings: {
-                value: "male",
-                checked: ""
-              },
-              text: "Мужчина"
-            }, {
-              settings: {
-                value: "female"
-              },
-              text: "Женщина"
-            }]
-          })
+            input.form__input.form__input_text(placeholder='Имя' type='text' name='firstname')
+            input.form__input.form__input_text(placeholder='Фамилия' type='text' name='lastname' data-space="tiny-up")
+          .form__radio
+            +radio({
+              input: [{
+                settings: {
+                  value: "male",
+                  checked: ""
+                },
+                text: "Мужчина"
+              }, {
+                settings: {
+                  value: "female"
+                },
+                text: "Женщина"
+              }]
+            })
           +date({
             settings: {
               "data-index": 2,
@@ -390,18 +397,19 @@ mixin form(args)
             text: "Дата рождения"
           })
           .form__field(data-space='up' data-size='long')
-            .form__label Данные для входа в сервис
-            input.form__input(placeholder='Email' type='text' name='email')
-            input.form__input(placeholder='Пароль' type='password' name='password' data-space="tiny-up")
-          +switch({
-            settings: {
-              "data-size": "long"
-            },
-            input: [{
-              name: "offer",
-              text: "Получать спецпредложения"
-            }]
-          })
+            +label({text: "Данные для входа в сервис"})
+            input.form__input.form__input_text(placeholder='Email' type='text' name='email')
+            input.form__input.form__input_text(placeholder='Пароль' type='password' name='password' data-space="tiny-up")
+          .form__switch
+            +switch({
+              settings: {
+                "data-size": "long"
+              },
+              input: [{
+                name: "offer",
+                text: "Получать спецпредложения"
+              }]
+            })
           +submit({
             settings: {
               "data-size": "long",
@@ -410,7 +418,7 @@ mixin form(args)
             text: "Перейти к оплате"
           })
           .form__field_type_question
-            .content__text Уже есть аккаунт на Toxin
+            .form__field-text Уже есть аккаунт на Toxin
             +button({
               settings: {
                 href: "/signin/"

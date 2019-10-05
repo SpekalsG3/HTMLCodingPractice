@@ -1,11 +1,10 @@
+@import "../../utils/vars.scss";
+
 .content {
   background-image: url(/img/authorization.jpg);
-
-  &_form {
     height: 701px;
-  }
 
-  & .form {
+  &__form {
     margin-bottom: 2px;
   }
 
@@ -20,11 +19,14 @@
 }
 
 .form {
-  padding-left: 31px;
-  margin-bottom: 2px;
+  &__field {
+    &[data-index="0"] {
+      margin-top: 16px;
+    }
 
-  &__field[data-index="0"] {
-    margin-top: 16px;
+    &-text {
+      font: 14px $mainFont;
+    }
   }
 
   &__title {
@@ -33,5 +35,13 @@
 
   &__inputs {
     margin-top: 19px;
+  }
+
+  &__switch {
+    margin-top: 10px
+  }
+
+  &__radio {
+    margin-top: 10px;
   }
 }

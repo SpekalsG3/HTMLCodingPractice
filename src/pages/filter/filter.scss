@@ -22,6 +22,10 @@
     justify-content: space-between;
     flex-wrap: wrap;
   }
+
+  &__room {
+    margin-top: 20px;
+  }
 }
 
 .form {
@@ -29,10 +33,6 @@
 
   &__field[data-index="4"] {
     margin-top: 35px;
-
-    & label + label {
-      margin-top: 12px;
-    }
   }
 
   &__input::placeholder {
@@ -41,7 +41,7 @@
 }
 
 @media screen and (max-width: 1219px) and (min-width: 569px) {
-  .room-card {
+  .content__room {
     margin-right: 12px;
   }
 }

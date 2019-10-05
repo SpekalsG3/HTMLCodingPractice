@@ -4,14 +4,14 @@ import "../subscription/subscription.scss"
 import "../form/form.js"
 
 var $content = $(".content");
-var $header = $("header");
+var $header = $(".header__content");
 
 $(".header__menu").click(function() {
-  $content.toggleClass("content_shift");
-  $header.toggleClass("header_shift");
+  $content.toggleClass("content_shifted");
+  $header.toggleClass("header__content_shifted");
 });
 
 window.addEventListener("touchmove", function () {
-  $content.removeClass("content_shift");
-  $header.removeClass("header_shift");
+  $content.removeClass("content_shifted");
+  $header.removeClass("header__content_shifted");
 });

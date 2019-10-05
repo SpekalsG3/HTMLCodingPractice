@@ -2,25 +2,11 @@
 @import "../../utils/vars.scss";
 
 .content{
-  &_form {
-    background-image: url(/img/index.jpg);
-    height: 830px;
-  }
+  background-image: url(/img/index.jpg);
+  height: 830px;
 
-  & .form {
+  &__form {
     margin-top: 70px;
-    height: 302px;
-    padding-left: 30px;
-
-    &__input::placeholder {
-      color: rgba($darkColor, .75);
-    }
-
-    &__submit {
-      &_input {
-        margin-top: 32px;
-      }
-    }
   }
 
   &__slogan {
@@ -36,17 +22,27 @@
   }
 }
 
-@media screen and (max-width: 1300px) {
-  .content {
-    &__inner {
-      background-position: top;
-      background-size: auto calc(100% + 100px);
+.form {
+  &__input::placeholder {
+    color: rgba($darkColor, .75);
+  }
+
+  &__submit {
+    &_input {
+      margin-top: 32px;
     }
   }
 }
 
+@media screen and (max-width: 1300px) {
+  .content__inner {
+    background-position: top;
+    background-size: auto calc(100% + 100px);
+  }
+}
+
 @media screen and (max-width: 450px) {
-  .content .form {
+  .form {
     width: 100%;
   }
 }
@@ -63,21 +59,21 @@
       display: flex;
       justify-content: center;
     }
+  }
 
-    & .form {
-      padding-left: 0;
-      margin-top: 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+  .form {
+    padding-left: 0;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-      &__title {
-        text-align: center;
-      }
+    &__title {
+      text-align: center;
+    }
 
-      &__inputs {
-        justify-content: center;
-      }
+    &__inputs {
+      justify-content: center;
     }
   }
 }
