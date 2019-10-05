@@ -8,14 +8,14 @@ mixin checkbox(args)
   if args.expandable
     .form__field&attributes(args.settings)
       .checkbox(data-expandable="" data-opened="false")
-        +arrow({type: "expand"})
+        .checkbox__arrow
         +label({text: args.text, clickable: true})
         .checkbox__options
           each val in args.input
             label.checkbox__option
               input.checkbox__input(type='checkbox')&attributes({name:val.name, value:val.value})
               .checkbox__checkmark
-                .checkbox__arrow
+                .checkbox__checkmark-arrow
               if val.note
                 span.checkbox__text
                   .checkbox__title.checkbox__title_bold !{val.title}
@@ -32,7 +32,7 @@ mixin checkbox(args)
             label.checkbox__option
               input.checkbox__input(type='checkbox')&attributes({name:val.name, value:val.value})
               .checkbox__checkmark
-                .checkbox__arrow
+                .checkbox__checkmark-arrow
               if val.note
                 span.checkbox__text
                   .checkbox__title.checkbox__title_bold !{val.title}
