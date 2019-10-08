@@ -4,6 +4,7 @@ mixin statistic(args)
       .statistic__total
         .statistic__total-number #{args.total[0]}
         span.statistic__total-title #{args.total[1]}
+      canvas.statistic__canvas&attributes({width: args.width, height: args.height})
     .statistic__legend
       each val, i in args.legend
         .statistic__point&attributes({"data-index": i}) #{val}

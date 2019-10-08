@@ -8,11 +8,16 @@
     position: relative;
     left: -4px;
     top: -4px;
-    width: 132px;
-    height: 132px;
+  }
+
+  &__canvas {
+    position: relative;
+    z-index: 2;
   }
 
   &__total {
+    top: 0;
+    position: absolute;
     width: 100%;
     height: 100%;
     display: flex;
