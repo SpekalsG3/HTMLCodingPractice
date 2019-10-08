@@ -63,6 +63,8 @@ mixin page(args)
   case args.name
     when "index"
 
+      include ../dropdown/dropdown.pug
+
       +header(false, true, true)
 
       .content.content_form
@@ -75,6 +77,7 @@ mixin page(args)
       -break
     when "filter"
 
+      include ../dropdown/dropdown.pug
       include ../pagination/pagination.pug
       include ../room-card/room-card.pug
 
@@ -238,6 +241,7 @@ mixin page(args)
       -break
     when "room"
 
+      include ../dropdown/dropdown.pug
       include ../tag/tag.pug
       include ../review/review.pug
       include ../bullet-list/bullet-list.pug
@@ -276,6 +280,8 @@ mixin page(args)
             .content__total
               .content__label Впечатления от номера
               +statistic({
+                width: 120,
+                height: 120,
                 total: [260, "голосов"],
                 legend: ["Великолепно", "Хорошо", "Удовлетворительно", "Разочарован"]
               })
@@ -328,6 +334,8 @@ mixin page(args)
 
       -break
     when "signup"
+
+      include ../dropdown/dropdown.pug
 
       +header(true, true, false)
 
