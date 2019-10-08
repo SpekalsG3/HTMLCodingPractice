@@ -62,28 +62,59 @@ var URISearch = window.location.search.slice(1).split(/(&|=)/).filter(function(v
   return !(i % 2);
 });
 
+var monthNames = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октября", "Ноябрь", "Декабрь"];
+
+var date1 = "";
+URISearch[1].split('.').forEach(function(el, i) {
+  date1 = '-' + el + date1;
+});
+
+var date2 = "";
+URISearch[3].split('.').forEach(function(el, i) {
+  date2 = '-' + el + date2;
+});
+
+date1 = date1.slice(1);
+date2 = date2.slice(1);
+
+$(".form__field[data-index='0']").daterangepicker({
+  singleMonth: true,
+  linkedCalendars: false,
+  locale: {
+    format: "DD MMM",
+    separator: "-",
+    monthNames: monthNames
+  },
+  startDate: new Date(date1),
+  endDate: new Date(date2)
+}, function(date_in, date_out) {
+  $(".form__field[data-index='0']").find(".form__input").val(date_in.locale('ru').format("DD MMM") + ' - ' + date_out.locale('ru').format("DD MMM"));
+});
+
+date1 = "";
+date2 = "";
+
+URISearch[1].slice(0, -4).split('.').forEach(function(el, i) {
+  if (i == 1) {
+    date1 += monthNames[parseInt(el)].slice(0, 3).toLowerCase();
+  } else {
+    date1 += el + ' '
+  }
+});
+
+URISearch[3].slice(0, -4).split('.').forEach(function(el, i) {
+  if (i == 1) {
+    date2 += monthNames[parseInt(el)].slice(0, 3).toLowerCase();
+  } else {
+    date2 += el + ' '
+  }
+});
+
+$(".form__field[data-index='0']").find(".form__input").val(date1 + " - " + date2);
+
 for (var i = 0; i < 3; i++) {
   $(".form__field[data-index='1']")[0].controller.setOptionValue(decodeURI(URISearch[4 + i * 2]), parseInt(URISearch[5 + i * 2]));
 }
-
-$(".form__field[data-index='0']").dateRangePicker({
-  format: "DD MMM",
-  separator: " по ",
-  singleMonth: true,
-  language: "ru",
-  getValue: function() {
-    var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    var parsedDate = URISearch[1].split('.');
-    parsedDate.forEach(function(el, i, arr) { arr[i] = parseInt(el); });
-    var date1 = parsedDate[0] + " " + months[parsedDate[1]];
-    var parsedDate = URISearch[3].split('.');
-    parsedDate.forEach(function(el, i, arr) { arr[i] = parseInt(el); });
-    return date1 + " по " + parsedDate[0] + " " + months[parsedDate[1]];
-  },
-  setValue: function(s, s1, s2) {
-    $(".comeinout").val(s1 + " - " + s2);
-  }
-});
 
 $(".form__field[data-index='5']").dropdown({
   valuePattern: "S",

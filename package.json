@@ -57,6 +57,9 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
+    "chart.js": "^2.8.0",
+    "daterangepicker": "^3.0.5",
+    "ion-rangeslider": "^2.3.0",
     "jquery": "^3.4.1",
     "jquery-ui": "^1.12.1",
     "modernizr": "^3.7.1",

@@ -2,14 +2,13 @@ import "./form.scss"
 
 import "moment";
 
-import "../../lib/css/daterangepicker.min.css";
-import "../../lib/js/jquery.daterangepicker.min.js";
+import "daterangepicker"
+import "daterangepicker/daterangepicker.css"
 
-import "../../lib/css/dropdown.css";
-import "../../lib/js/jquery.dropdown.js";
+import "../dropdown/dropdown.js"
 
-import "../../lib/css/rangeslider.min.css";
-import "../../lib/js/jquery.rangeslider.js";
+import "ion-rangeslider/css/ion.rangeSlider.min.css"
+import "ion-rangeslider"
 
 $(".form").submit(function(e) {
   $(this).find(".form__input").each(function() {
@@ -28,9 +27,9 @@ $(".checkbox[data-expandable]").click(function() {
   $this.attr("data-opened", flag);
   if (flag === "true") {
     $this.find(".checkbox__options").css("display", "block");
-    $this.find(".arrow").css("transform", "rotateZ(180deg)");
+    $this.find(".checkbox__arrow").css("transform", "rotateZ(180deg)");
   } else {
     $this.find(".checkbox__options").css("display", "none");
-    $this.find(".arrow").css("transform", "rotateZ(0deg)");
+    $this.find(".checkbox__arrow").css("transform", "rotateZ(0deg)");
   }
 });

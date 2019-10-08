@@ -1,34 +1,30 @@
 import "../../components/page/page.js";
 import "./index.scss";
 
-$(".form__field[data-index='0']").dateRangePicker({
-  format: "DD.MM.YYYY",
-  separator: " по ",
+var $comein = $(".form__field[data-index='0']").find(".form__input")
+var $comeout = $(".form__field[data-index='1']").find(".form__input");
+
+$(".form__field[data-index='0']").daterangepicker({
   singleMonth: true,
-  language: "ru",
-  getValue: function() {
-    if ($(".comein").val() && $(".comeout").val())
-      return $(".comein").val() + " по " + $(".comeout").val();
-    else if ($(".comeout").val())
-      return " по " + $(".comeout").val();
-    else
-      return '';
-  },
-  setValue: function(s, s1, s2) {
-    $(".comein").val(s1);
-    $(".comeout").val(s2);
+  locale: {
+    format: "DD.MM.YYYY",
   }
+}, function(date_in, date_out) {
+  $comein.val(date_in.format("DD.MM.YYYY"));
+  $comeout.val(date_out.format("DD.MM.YYYY"));
+  $(".form__field[data-index='1']").data("daterangepicker").setStartDate(date_out.format("DD.MM.YYYY"));
+  $(".form__field[data-index='1']").data("daterangepicker").setEndDate(date_out.format("DD.MM.YYYY"));
 });
 
-$(".form__field[data-index='1']").dateRangePicker({
-  autoClose: true,
-  singleDate: true,
-  showShortcuts: false,
+$(".form__field[data-index='1']").daterangepicker({
+  singleDatePicker: true,
   singleMonth: true,
-  format: "DD.MM.YYYY",
-  setValue: function(s, s2) {
-    $(".comeout").val(s2);
+  locale: {
+    format: "DD.MM.YYYY",
   }
+}, function(date_out) {
+  $comeout.val(date_out.format("DD.MM.YYYY"));
+  $(".form__field[data-index='0']").data("daterangepicker").setEndDate(date_out.format("DD.MM.YYYY"));
 });
 
 $(".form__field[data-index='2']").dropdown({

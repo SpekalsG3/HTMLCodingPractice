@@ -7,15 +7,6 @@ import "../../components/bullet-list/bullet-list.scss"
 
 import "./room.scss";
 
-
-
-/*import "../pug/components/form/form.scss";
-import "../pug/components/form/__submit/form__submit.scss";
-import "../pug/components/tag/tag.scss";
-import "../pug/components/review/review.scss";
-import "../pug/components/review/review.js";
-import "../pug/components/bullet-list/bullet-list.scss";*/
-
 var data = [
   { "Оценка": "Хорошо", "Количество": 65 },
   { "Оценка": "Великолепно", "Количество": 130 },
@@ -49,15 +40,23 @@ $(".form__field[data-index='2']").dropdown({
   applyBtn: true
 });
 
-$(".statistic__chart").igDoughnutChart({
-  innerExtent: 90,
-  series:
-  [{
-    name: "Количество",
-    labelMemberPath: "Оценка",
-    valueMemberPath: "Количество",
-    dataSource: data
-  }]
+var statistic_ctx = $(".statistic__canvas")[0].getContext('2d');
+
+var chart = new Chart(statistic_ctx, {
+  type: "doughnut",
+  data: {
+    datasets: [{
+      data: [65, 65, 130, 0],
+      backgroundColor: ["#BC9CFF", "#6FCF97", "#FFE39C", "#919191"]
+    }],
+    labels: ["Удовлетворительно", "Хорошо", "Великолепно", "Разочарован"]
+  },
+  options: {
+    legend: {
+      display: false
+    },
+    cutoutPercentage: 85
+  }
 });
 
 var URISearch = window.location.search.slice(1).split(/(&|=)/).filter(function(v, i) {
@@ -68,33 +67,61 @@ for (var i = 0; i < 3; i++) {
   $(".form__field[data-index='2']")[0].controller.setOptionValue(decodeURI(URISearch[6 + i * 2]), parseInt(URISearch[7 + i * 2]));
 }
 
-$(".form__field[data-index='0']").dateRangePicker({
-  format: "DD.MM.YYYY",
-  separator: " по ",
-  singleMonth: true,
-  language: "ru",
-  getValue: function() {
-    var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    var parsedDate = URISearch[3].split('.');
-    parsedDate.forEach(function(el, i, arr) { arr[i] = parseInt(el); });
-    var date1 = parsedDate[0] + " " + months[parsedDate[1]];
-    var parsedDate = URISearch[5].split('.');
-    parsedDate.forEach(function(el, i, arr) { arr[i] = parseInt(el); });
-    return date1 + " по " + parsedDate[0] + " " + months[parsedDate[1]];
-  },
-  setValue: function(s, s1, s2) {
-    $(".comein").val(s1);
-    $(".comeout").val(s2);
-  }
+var splittedDate1 = URISearch[3].split('.');
+var splittedDate2 = URISearch[5].split('.');
+
+var $comein = $(".form__field[data-index='0']").find(".form__input")
+var $comeout = $(".form__field[data-index='1']").find(".form__input");
+
+var date1 = "";
+var date2 = "";
+
+splittedDate1.forEach(function(el, i) {
+  date1 += el + '.';
 });
 
-$(".form__field[data-index='1']").dateRangePicker({
-  autoClose: true,
-  singleDate : true,
-  showShortcuts: false,
+splittedDate1.forEach(function(el, i) {
+  date2 += el + '.';
+});
+
+
+$comein.val(date1.slice(0, -1));
+$comeout.val(date2.slice(0, -1));
+
+
+date1 = "";
+splittedDate1.forEach(function(el, i) {
+  date1 = '.' + el + date1;
+});
+
+date2 = "";
+splittedDate2.forEach(function(el, i) {
+  date2 = '.' + el + date2;
+});
+
+
+$(".form__field[data-index='0']").daterangepicker({
   singleMonth: true,
-  format: "DD.MM.YYYY",
-  setValue: function(s, s2) {
-    $(".comeout").val(s2);
-  }
+  locale: {
+    format: "DD.MM.YYYY",
+  },
+  startDate: new Date(date1.slice(1)),
+  endDate: new Date(date2.slice(1))
+}, function(date_in, date_out) {
+  $comein.val(date_in.format("DD.MM.YYYY"));
+  $comeout.val(date_out.format("DD.MM.YYYY"));
+  $(".form__field[data-index='1']").data("daterangepicker").setEndDate(date_out.format("DD.MM.YYYY"));
+  $(".form__field[data-index='1']").data("daterangepicker").setStartDate(date_out.format("DD.MM.YYYY"));
+});
+
+$(".form__field[data-index='1']").daterangepicker({
+  singleDatePicker: true,
+  singleMonth: true,
+  locale: {
+    format: "DD.MM.YYYY",
+  },
+  endDate: new Date(date2)
+}, function(date_out) {
+  $comeout.val(date_out.format("DD.MM.YYYY"));
+  $(".form__field[data-index='0']").data("daterangepicker").setEndDate(date_out.format("DD.MM.YYYY"));
 });

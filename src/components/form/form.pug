@@ -10,7 +10,7 @@ mixin checkbox(args)
       .checkbox(data-expandable="" data-opened="false")
         .checkbox__arrow
         +label({text: args.text, clickable: true})
-        .checkbox__options
+        .checkbox__options(data-expandable="")
           each val in args.input
             label.checkbox__option
               input.checkbox__input(type='checkbox')&attributes({name:val.name, value:val.value})
@@ -47,10 +47,6 @@ mixin date(args)
     unless args.noArrow
       +arrow({type: "expand"})
     input.form__input(readonly="readonly" type="text")&attributes(args.input)
-
-mixin dropdown(args)
-  .form__field&attributes(args.settings)
-    +label({text: args.text})
 
 mixin submit(args)
   .form__field&attributes(args.settings)

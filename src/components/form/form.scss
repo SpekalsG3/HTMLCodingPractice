@@ -155,6 +155,10 @@
   &__options {
     margin-top: 16px;
 
+    &[data-expandable] {
+      display: none;
+    }
+
     &_hidden {
       display: none;
     }
