@@ -54,11 +54,12 @@ mixin page(args)
 
   doctype html
   head
-    title #{args.title}
     meta(charset='utf-8')
+    title #{args.title}
+    meta(name="description")&attributes({content: args.title})
+    meta(name="keywords" content="WebPack,HTML,PUG,CSS,SCSS,JavaScript,ES6")
     meta(name='viewport' content='width=device-width, initial-scale=1')
-    link(rel='icon' type='image/x-icon' href='/favicon.ico')
-    link(rel='mask-icon' href='/img/icons/logo-icon.svg' color='#BC9CFF')
+    link(rel='mask-icon' href='/assets/img/icons/logo-icon.svg' color='#BC9CFF')
 
   case args.name
     when "index"
