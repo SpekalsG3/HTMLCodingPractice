@@ -3,6 +3,8 @@ import "./page.scss"
 import "../subscription/subscription.scss"
 import "../form/form.js"
 
+import "../../favicons/favicons.js"
+
 var $content = $(".content");
 var $header = $(".header__content");
 
