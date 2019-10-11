@@ -59,7 +59,7 @@ module.exports = {
       loader: "babel-loader",
       exclude: "/node_modules/"
     }, {
-      test: /\.(woff(2)?|ttf)$/,
+      test: /-webfont\.(woff(2)?|ttf|svg)$/,
       loader: "file-loader",
       options: {
         name: `fonts/[name].[ext]`
