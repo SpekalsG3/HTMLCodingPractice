@@ -16,7 +16,7 @@
     height: 46px;
     cursor: pointer;
     right: -2px;
-    background: url(/img/icons/expand-more.svg) center no-repeat;
+    background: url(/img/icons/arrow-expand.svg) center no-repeat;
   }
 
   &__head {
@@ -119,6 +119,7 @@
   }
 
   &__value {
+    outline: none;
     border: none;
     width: 32px;
     text-align: center;

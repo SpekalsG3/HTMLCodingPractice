@@ -1,65 +1,9 @@
 @import "../../utils/fonts.scss";
 @import "../../utils/vars.scss";
 
-body {
+.page {
   margin: 0;
   background: #fff;
-}
-
-input {
-  outline: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-a:focus,
-button:focus,
-input:focus {
-  outline: none;
-}
-
-
-[data-space="left"] {
-  margin-left: 20px;
-
-  @media screen and (max-width: 979px) {
-    margin-left: 4%;
-  }
-}
-
-[data-space="tiny-up"] {
-  margin-top: 8px;
-}
-
-[data-space="up"] {
-  margin-top: 20px;
-}
-
-[data-space="long-up"] {
-  margin-top: 32px;
-}
-
-
-[data-size="short"] {
-  width: 149px;
-
-  @media screen and (max-width: 979px) {
-    width: 42%;
-  }
-}
-
-[data-size="medium"] {
-  width: 265px;
-}
-
-[data-size="long"] {
-  width: 317px;
-
-  @media screen and (max-width: 979px) {
-    width: 88%;
-  }
 }
 
 
@@ -88,7 +32,7 @@ input:focus {
 
   &_expand {
     right: -2px;
-    background: url(/img/icons/expand-more.svg) center no-repeat;
+    background: url(/img/icons/arrow-expand.svg) center no-repeat;
   }
 
   &_forward {
@@ -100,7 +44,7 @@ input:focus {
   &_submit {
     right: 0;
     top: 0;
-    background: url(/img/icons/arrow-forward-purple.svg) center no-repeat;
+    background: url(/img/icons/arrow-submit.svg) center no-repeat;
   }
 
   &_prev,
@@ -167,6 +111,7 @@ input:focus {
   box-shadow: 0 10px 20px rgba($darkColor, .05);
 
   &__link {
+    text-decoration: none;
     position: relative;
     font-size: 14px;
     color: rgba($darkColor, .5);
@@ -230,11 +175,12 @@ input:focus {
     height: 100%;
     width: 21px;
     right: -2px;
-    background: url(/img/icons/expand-more.svg) center no-repeat;
+    background: url(/img/icons/arrow-expand.svg) center no-repeat;
   }
 
   &__signin,
   &__signup {
+    text-decoration: none;
     position: relative;
     padding: 0 19px;
     margin-left: 20px;
@@ -269,6 +215,11 @@ input:focus {
 .footer {
   min-height: 442px;
   box-shadow: 0 10px 20px rgba($darkColor, .05);
+
+  &__subscription {
+    margin-top: 20px;
+    width: 265px;
+  }
 
   &__nav {
     display: flex;
@@ -318,6 +269,7 @@ input:focus {
   }
 
   &__link {
+    text-decoration: none;
     display: block;
     position: relative;
     margin-top: 20px;
@@ -378,6 +330,18 @@ input:focus {
   position: relative;
   top: 0;
   transition: .2s;
+
+  &__label {
+    &_indent {
+      &_left {
+        margin-left: 20px;
+
+        @media screen and (max-width: 979px) {
+          margin-left: 4%;
+        }
+      }
+    }
+  }
 
   &_form {
     min-height: calc(100vh - 512px);

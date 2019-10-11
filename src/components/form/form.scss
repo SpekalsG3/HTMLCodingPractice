@@ -46,6 +46,10 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+
+    &_indent_up {
+      margin-top: 20px;
+    }
   }
 
   &__title {
@@ -63,6 +67,7 @@
   }
 
   &__input {
+    outline: none;
     position: relative;
     padding-left: 14px;
     padding-right: 44px;
@@ -76,6 +81,12 @@
     color: rgba($darkColor, .75);
     cursor: pointer;
     text-overflow: ellipsis;
+
+    &_indent {
+      &_tinyup {
+        margin-top: 8px;
+      }
+    }
 
     &_text {
       transition: .2s;
@@ -94,6 +105,28 @@
   &__field {
     position: relative;
 
+    &_indent {
+      &_left {
+        margin-left: 20px;
+
+        @media screen and (max-width: 979px) {
+          margin-left: 4%;
+        }
+      }
+
+      &_up {
+        margin-top: 20px;
+      }
+
+      &_longup {
+        margin-top: 32px;
+      }
+
+      &_tinyup {
+        margin-top: 10px;
+      }
+    }
+
     &_type {
       &_question {
         width: 91%;
@@ -102,6 +135,26 @@
         align-items: center;
         margin-top: 31px;
       }
+    }
+
+    &_short {
+      width: 149px;
+
+      @media screen and (max-width: 979px) {
+        width: 42%;
+      }
+    }
+
+    &_long {
+      width: 317px;
+
+      @media screen and (max-width: 979px) {
+        width: 88%;
+      }
+    }
+
+    &_medium {
+      width: 265px;
     }
   }
 }
@@ -116,6 +169,7 @@
   }
 
   &__button {
+    outline: none;
     position: relative;
     height: 44px;
     width: 100%;
@@ -172,7 +226,7 @@
     cursor: pointer;
     right: -2px;
     height: 14px;
-    background: url(/img/icons/expand-more.svg) center no-repeat;
+    background: url(/img/icons/arrow-expand.svg) center no-repeat;
     transition: .2s;
   }
 

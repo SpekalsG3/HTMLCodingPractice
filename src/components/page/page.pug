@@ -39,13 +39,11 @@ mixin header(index, signin, signup)
             .header__arrow
             .header__link-text Соглашения
           if signin
-            a(href="/signin/")
-              .header__signin Войти
+            a(href="/signin/").header__signin Войти
           else
             .header__signin Войти
           if signup
-            a(href="/signup/")
-              .header__signup Зарегистрироваться
+            a(href="/signup/").header__signup Зарегистрироваться
           else
             .header__signup Зарегистрироваться
 
@@ -61,291 +59,291 @@ mixin page(args)
     meta(name='viewport' content='width=device-width, initial-scale=1')
     link(rel='mask-icon' href='/assets/img/icons/logo-icon.svg' color='#BC9CFF')
 
-  case args.name
-    when "index"
+  body.page
+    case args.name
+      when "index"
 
-      include ../dropdown/dropdown.pug
+        include ../dropdown/dropdown.pug
 
-      +header(false, true, true)
+        +header(false, true, true)
 
-      .content.content_form
-        .content__inner
-          .content__form
-            +form({name: "index"})
-          .content__slogan
-            | Лучшие номера для вашей работы, отдыха и просто вдохновения
+        .content.content_form
+          .content__inner
+            .content__form
+              +form({name: "index"})
+            .content__slogan
+              | Лучшие номера для вашей работы, отдыха и просто вдохновения
 
-      -break
-    when "filter"
+        -break
+      when "filter"
 
-      include ../dropdown/dropdown.pug
-      include ../pagination/pagination.pug
-      include ../room-card/room-card.pug
+        include ../dropdown/dropdown.pug
+        include ../pagination/pagination.pug
+        include ../room-card/room-card.pug
 
-      +header(true, true, true)
+        +header(true, true, true)
 
-      .content
-        .content__inner
-          .content__settings
-            +form({name: "filter"})
-          .content__items
-            .content__title Номера, которые мы для вас подобрали
-            .content__rooms
-              .content__room
-                +room-card({
-                  number: 888,
-                  settings: {
-                    "data-index": "0"
-                  },
-                  images: 3,
-                  special: true,
-                  price: "9 990",
-                  stars: 5,
-                  feedbacks: 145
+        .content
+          .content__inner
+            .content__settings
+              +form({name: "filter"})
+            .content__items
+              .content__title Номера, которые мы для вас подобрали
+              .content__rooms
+                .content__room
+                  +room-card({
+                    number: 888,
+                    settings: {
+                      "data-index": "0"
+                    },
+                    images: 3,
+                    special: true,
+                    price: "9 990",
+                    stars: 5,
+                    feedbacks: 145
+                  })
+                .content__room
+                  +room-card({
+                    number: 840,
+                    settings: {
+                      "data-index": "1"
+                    },
+                    images: 1,
+                    special: false,
+                    price: "9 990",
+                    stars: 4,
+                    feedbacks: 65
+                  })
+                .content__room
+                  +room-card({
+                    number: 980,
+                    settings: {
+                      "data-index": "2"
+                    },
+                    images: 1,
+                    special: true,
+                    price: "8 500",
+                    stars: 3,
+                    feedbacks: 35
+                  })
+                .content__room
+                  +room-card({
+                    number: 856,
+                    settings: {
+                      "data-index": "3"
+                    },
+                    images: 1,
+                    special: false,
+                    price: "7 300",
+                    stars: 5,
+                    feedbacks: 19
+                  })
+                .content__room
+                  +room-card({
+                    number: 740,
+                    settings: {
+                      "data-index": "4"
+                    },
+                    images: 1,
+                    special: false,
+                    price: "6 000",
+                    stars: 4,
+                    feedbacks: 44
+                  })
+                .content__room
+                  +room-card({
+                    number: 982,
+                    settings: {
+                      "data-index": "5"
+                    },
+                    images: 1,
+                    special: false,
+                    price: "5 800",
+                    stars: 3,
+                    feedbacks: 56
+                  })
+                .content__room
+                  +room-card({
+                    number: 678,
+                    settings: {
+                      "data-index": "6"
+                    },
+                    images: 1,
+                    special: false,
+                    price: "5 500",
+                    stars: 5,
+                    feedbacks: 45
+                  })
+                .content__room
+                  +room-card({
+                    number: 450,
+                    settings: {
+                      "data-index": "7"
+                    },
+                    images: 1,
+                    special: false,
+                    price: "5 300",
+                    stars: 4,
+                    feedbacks: 39
+                  })
+                .content__room
+                  +room-card({
+                    number: 350,
+                    settings: {
+                      "data-index": "8"
+                    },
+                    images: 1,
+                    special: false,
+                    price: "5 000",
+                    stars: 3,
+                    feedbacks: 77
+                  })
+                .content__room
+                  +room-card({
+                    number: 666,
+                    settings: {
+                      "data-index": "9"
+                    },
+                    images: 1,
+                    special: false,
+                    price: "5 000",
+                    stars: 5,
+                    feedbacks: 25
+                  })
+                .content__room
+                  +room-card({
+                    number: 444,
+                    settings: {
+                      "data-index": "10"
+                    },
+                    images: 1,
+                    special: false,
+                    price: "5 000",
+                    stars: 3,
+                    feedbacks: 15
+                  })
+                .content__room
+                  +room-card({
+                    number: 352,
+                    settings: {
+                      "data-index": "11"
+                    },
+                    images: 1,
+                    special: false,
+                    price: "5 000",
+                    stars: 3,
+                    feedbacks: 55
+                  })
+              .content__pagination
+                +pagination
+
+        -break
+      when "room"
+
+        include ../dropdown/dropdown.pug
+        include ../tag/tag.pug
+        include ../review/review.pug
+        include ../bullet-list/bullet-list.pug
+        include ../statistic/statistic.pug
+
+        +header(true, true, true)
+
+        .content
+          .content__images
+            .content__image(data-index='0')
+              img.content__image-inner(src='/img/rooms/888-0.jpg')
+            .content__image(data-index='1')
+              .content__image(data-index='2')
+                img.content__image-inner(src='/img/rooms/888-1.jpg')
+              .content__image(data-index='2')
+                img.content__image-inner(src='/img/rooms/888-2.jpg')
+          .content__inner
+            .content__info
+              .content__info-inner
+                .content__label Сведения о номере
+                +tag({
+                  image: "insert-emoticon",
+                  label: "Комфорт",
+                  text: "Шумопоглощающие стены"
                 })
-              .content__room
-                +room-card({
-                  number: 840,
-                  settings: {
-                    "data-index": "1"
-                  },
-                  images: 1,
-                  special: false,
-                  price: "9 990",
-                  stars: 4,
-                  feedbacks: 65
+                +tag({
+                  image: "location-city",
+                  label: "Удобство",
+                  text: "Окно в каждой из спален"
                 })
-              .content__room
-                +room-card({
-                  number: 980,
-                  settings: {
-                    "data-index": "2"
-                  },
-                  images: 1,
-                  special: true,
-                  price: "8 500",
-                  stars: 3,
-                  feedbacks: 35
+                +tag({
+                  image: "whatshot",
+                  label: "Уют",
+                  text: "Номер оснащён камином"
                 })
-              .content__room
-                +room-card({
-                  number: 856,
-                  settings: {
-                    "data-index": "3"
-                  },
-                  images: 1,
-                  special: false,
-                  price: "7 300",
-                  stars: 5,
-                  feedbacks: 19
+              .content__total
+                .content__label Впечатления от номера
+                +statistic({
+                  width: 120,
+                  height: 120,
+                  total: [260, "голосов"],
+                  legend: ["Великолепно", "Хорошо", "Удовлетворительно", "Разочарован"]
                 })
-              .content__room
-                +room-card({
-                  number: 740,
-                  settings: {
-                    "data-index": "4"
+              .content__reviews
+                .content__label Отзывы посетителей номера
+                .content__reviews-number 2 отзыва
+                +review({
+                  profile: {
+                    avatar: "murad-sarafanov",
+                    name: "Мурад Сарафанов",
+                    online: "5 дней назад"
                   },
-                  images: 1,
-                  special: false,
-                  price: "6 000",
-                  stars: 4,
-                  feedbacks: 44
-                })
-              .content__room
-                +room-card({
-                  number: 982,
-                  settings: {
-                    "data-index": "5"
+                  likes: {
+                    liked: "true",
+                    total: 12
                   },
-                  images: 1,
-                  special: false,
-                  price: "5 800",
-                  stars: 3,
-                  feedbacks: 56
+                  text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
                 })
-              .content__room
-                +room-card({
-                  number: 678,
-                  settings: {
-                    "data-index": "6"
+                +review({
+                  profile: {
+                    avatar: "patrisiya-styoklyshkova",
+                    name: "Патрисия Стёклышкова",
+                    online: "Неделю назад"
                   },
-                  images: 1,
-                  special: false,
-                  price: "5 500",
-                  stars: 5,
-                  feedbacks: 45
-                })
-              .content__room
-                +room-card({
-                  number: 450,
-                  settings: {
-                    "data-index": "7"
+                  likes: {
+                    liked: "false",
+                    total: 2
                   },
-                  images: 1,
-                  special: false,
-                  price: "5 300",
-                  stars: 4,
-                  feedbacks: 39
+                  text: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"
                 })
-              .content__room
-                +room-card({
-                  number: 350,
-                  settings: {
-                    "data-index": "8"
-                  },
-                  images: 1,
-                  special: false,
-                  price: "5 000",
-                  stars: 3,
-                  feedbacks: 77
-                })
-              .content__room
-                +room-card({
-                  number: 666,
-                  settings: {
-                    "data-index": "9"
-                  },
-                  images: 1,
-                  special: false,
-                  price: "5 000",
-                  stars: 5,
-                  feedbacks: 25
-                })
-              .content__room
-                +room-card({
-                  number: 444,
-                  settings: {
-                    "data-index": "10"
-                  },
-                  images: 1,
-                  special: false,
-                  price: "5 000",
-                  stars: 3,
-                  feedbacks: 15
-                })
-              .content__room
-                +room-card({
-                  number: 352,
-                  settings: {
-                    "data-index": "11"
-                  },
-                  images: 1,
-                  special: false,
-                  price: "5 000",
-                  stars: 3,
-                  feedbacks: 55
-                })
-            +pagination({settings: {
-              "data-space": "up"
-            }})
+              .content__rules
+                .content__label.content__label_indent_left Правила
+                +bullet-list(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"])
+              .content__repeal
+                .content__label Отмена
+                .content__text
+                  | Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+            .content__form
+              +form({name: "room"})
 
-      -break
-    when "room"
+        -break
+      when "signin"
 
-      include ../dropdown/dropdown.pug
-      include ../tag/tag.pug
-      include ../review/review.pug
-      include ../bullet-list/bullet-list.pug
-      include ../statistic/statistic.pug
+        +header(true, false, true)
 
-      +header(true, true, true)
+        .content.content_form
+          .content__inner
+            .content__form
+              +form({name: "signin"})
 
-      .content
-        .content__images
-          .content__image(data-index='0')
-            img.content__image-inner(src='/img/rooms/888-0.jpg')
-          .content__image(data-index='1')
-            .content__image(data-index='2')
-              img.content__image-inner(src='/img/rooms/888-1.jpg')
-            .content__image(data-index='2')
-              img.content__image-inner(src='/img/rooms/888-2.jpg')
-        .content__inner
-          .content__info
-            .content__info-inner
-              .content__label Сведения о номере
-              +tag({
-                image: "insert-emoticon",
-                label: "Комфорт",
-                text: "Шумопоглощающие стены"
-              })
-              +tag({
-                image: "location-city",
-                label: "Удобство",
-                text: "Окно в каждой из спален"
-              })
-              +tag({
-                image: "whatshot",
-                label: "Уют",
-                text: "Номер оснащён камином"
-              })
-            .content__total
-              .content__label Впечатления от номера
-              +statistic({
-                width: 120,
-                height: 120,
-                total: [260, "голосов"],
-                legend: ["Великолепно", "Хорошо", "Удовлетворительно", "Разочарован"]
-              })
-            .content__reviews
-              .content__label Отзывы посетителей номера
-              .content__reviews-number 2 отзыва
-              +review({
-                profile: {
-                  avatar: "murad-sarafanov",
-                  name: "Мурад Сарафанов",
-                  online: "5 дней назад"
-                },
-                likes: {
-                  liked: "true",
-                  total: 12
-                },
-                text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
-              })
-              +review({
-                profile: {
-                  avatar: "patrisiya-styoklyshkova",
-                  name: "Патрисия Стёклышкова",
-                  online: "Неделю назад"
-                },
-                likes: {
-                  liked: "false",
-                  total: 2
-                },
-                text: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"
-              })
-            .content__rules
-              .content__label(data-space="left") Правила
-              +bullet-list(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"])
-            .content__repeal
-              .content__label Отмена
-              .content__text
-                | Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
-          .content__form
-            +form({name: "room"})
+        -break
+      when "signup"
 
-      -break
-    when "signin"
+        include ../dropdown/dropdown.pug
 
-      +header(true, false, true)
+        +header(true, true, false)
 
-      .content.content_form
-        .content__inner
-          .content__form
-            +form({name: "signin"})
+        .content.content_form
+          .content__inner
+            .content__form
+              +form({name: "signup"})
 
-      -break
-    when "signup"
-
-      include ../dropdown/dropdown.pug
-
-      +header(true, true, false)
-
-      .content.content_form
-        .content__inner
-          .content__form
-            +form({name: "signup"})
-
-      -break
+        -break
 
   include ../subscription/subscription.pug
   footer.footer
@@ -378,17 +376,16 @@ mixin page(args)
             | Получайте специальные
             br
             | предложения и новости сервиса
-          +subscription({
-            settings: {
-             "data-space": "up",
-              action: "fake-script/change-me"
-            },
-            input: {
-              name: "email",
-              placeholder: "Email",
-              "data-size": "medium"
-            }
-          })
+          .footer__subscription
+            +subscription({
+              settings: {
+                action: "fake-script/change-me"
+              },
+              input: {
+                name: "email",
+                placeholder: "Email"
+              }
+            })
     .footer__bar.footer__bar_shadow
       .footer__inner.footer__inner_align
         .footer__copyright Copyright © 2018 Toxin отель. Все права зачищены.

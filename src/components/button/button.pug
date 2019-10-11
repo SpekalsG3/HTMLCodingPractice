@@ -1,8 +1,7 @@
 mixin button(args)
-  a&attributes(args.settings)
-    if args.fill
-      .button.button_back_fill
-        span.button__text #{args.text}
-    else
-      .button.button_back_hollow
-        span.button__text #{args.text}
+  if args.fill
+    a.button.button_back_fill
+      span.button__text #{args.text}
+  else
+    a.button.button_back_hollow
+      span.button__text #{args.text}

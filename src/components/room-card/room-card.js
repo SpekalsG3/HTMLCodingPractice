@@ -35,7 +35,7 @@ function SlideNextPhoto(index) {
 $(".content__rooms a").click(function(e) {
   e.preventDefault();
   var targetClassName = e.target.classList[0];
-  if (targetClassName == "page__arrow" || targetClassName == "room-card__gallery_prev" || targetClassName == "room-card__gallery_next")
+  if (targetClassName == "arrow" || targetClassName == "room-card__gallery_prev" || targetClassName == "room-card__gallery_next")
     return;
   window.location.href = e.currentTarget.href + "&" + window.location.search.slice(1);
 });

@@ -5,6 +5,10 @@
   padding: 31px 0 76px;
   border-bottom: 1px solid rgba($darkColor, .25);
 
+  &__pagination {
+    margin-top: 20px;
+  }
+
   &__items {
     margin-left: 60px;
     display: flex;

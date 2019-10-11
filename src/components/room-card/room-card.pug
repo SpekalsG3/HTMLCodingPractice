@@ -1,6 +1,6 @@
 mixin room-card(args)
-  a&attributes({href:'/room/?room=' + args.number})
-    .room-card
+  a.room-card&attributes({href:'/room/?room=' + args.number})
+    .room-card__inner
       .room-card__gallery&attributes(args.settings)
         .room-card__gallery_prev
           +arrow({type: "prev"})

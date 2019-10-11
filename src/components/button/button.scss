@@ -1,6 +1,7 @@
 @import "../../utils/vars.scss";
 
 .button {
+  text-decoration: none;
   position: relative;
   height: 45px;
   width: 110px;
@@ -30,22 +31,24 @@
     z-index: 1;
   }
 
-  &_back_hollow {
-    color: $purpleColor;
+  &_back {
+    &_hollow {
+      color: $purpleColor;
 
-    &:before {
-      background: url(/img/icons/gradient-border.svg) center no-repeat;
+      &:before {
+        background: url(/img/icons/gradient-border.svg) center no-repeat;
+      }
     }
-  }
 
-  &_back_fill {
-    width: 99px;
-    margin-right: 5px;
-    color: #FFF;
+    &_fill {
+      width: 99px;
+      margin-right: 5px;
+      color: #FFF;
 
-    &:before {
-      border-radius: 22px;
-      background: $purpleGrad;
+      &:before {
+        border-radius: 22px;
+        background: $purpleGrad;
+      }
     }
   }
 }
