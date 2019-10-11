@@ -39,11 +39,11 @@ mixin header(index, signin, signup)
             .header__arrow
             .header__link-text Соглашения
           if signin
-            a(href="/signin/").header__signin Войти
+            a.header__signin(href="/signin/") Войти
           else
             .header__signin Войти
           if signup
-            a(href="/signup/").header__signup Зарегистрироваться
+            a.header__signup(href="/signup/") Зарегистрироваться
           else
             .header__signup Зарегистрироваться
 
@@ -355,21 +355,21 @@ mixin page(args)
             | Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
         .footer__info
           .footer__title Навигация
-          a(href="fake-link").footer__link О нас
-          a(href="fake-link").footer__link Новости
-          a(href="fake-link").footer__link Служба поддержки
-          a(href="fake-link").footer__link Услуги
+          a.footer__link(href="fake-link") О нас
+          a.footer__link(href="fake-link") Новости
+          a.footer__link(href="fake-link") Служба поддержки
+          a.footer__link(href="fake-link") Услуги
         .footer__info
           .footer__title О нас
-          a(href="fake-link").footer__link О сервисе
-          a(href="fake-link").footer__link Наша команда
-          a(href="fake-link").footer__link Вакансии
-          a(href="fake-link").footer__link Инвесторы
+          a.footer__link(href="fake-link") О сервисе
+          a.footer__link(href="fake-link") Наша команда
+          a.footer__link(href="fake-link") Вакансии
+          a.footer__link(href="fake-link") Инвесторы
         .footer__info
           .footer__title Служба поддержки
-          a(href="fake-link").footer__link Соглашения
-          a(href="fake-link").footer__link Сообщества
-          a(href="fake-link").footer__link Связь с нами
+          a.footer__link(href="fake-link") Соглашения
+          a.footer__link(href="fake-link") Сообщества
+          a.footer__link(href="fake-link") Связь с нами
         .footer__info
           .footer__title Подписка
           .footer__link.footer__link_double_line
