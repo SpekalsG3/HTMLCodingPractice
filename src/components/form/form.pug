@@ -229,7 +229,7 @@ mixin form(args)
             span.form__number 888
             span.form__special Люкс
           .form__head-price
-            .form__head-price_bold 9 990&#x20bd;
+            .form__head-price-value 9 990&#x20bd;
             | в сутки
         form.form__inputs(method='GET' action='filter/')
           .form__field.form__field_short(data-index="0")
@@ -266,7 +266,7 @@ mixin form(args)
               | 300&#x20bd;
             .form__field-total
               .form__nametag Итого
-              .form___total-price 38 081&#x20bd;
+              .form__total-price 38 081&#x20bd;
           .form__field.form__field_long.form__field_indent_up
             +submit({
               text: "Забронировать",
@@ -287,7 +287,7 @@ mixin form(args)
             +submit({
               text: "Войти"
             })
-          .form__field_long.form__field_type_question
+          .form__field.form__field_type_question
             .form__field-text Нет аккаунта на Toxin?
             +button({
               settings: {
@@ -332,7 +332,7 @@ mixin form(args)
             +label({text: "Данные для входа в сервис"})
             input.form__input.form__input_text(placeholder='Email' type='text' name='email')
             input.form__input.form__input_text.form__input_indent_tinyup(placeholder='Пароль' type='password' name='password')
-          .form__field_indent_tinyup.form__field_long
+          .form__field.form__field_indent_tinyup.form__field_long
             +switch({
               input: [{
                 name: "offer",
@@ -343,7 +343,7 @@ mixin form(args)
             +submit({
               text: "Перейти к оплате"
             })
-          .form__field_type_question
+          .form__field.form__field_type_question
             .form__field-text Уже есть аккаунт на Toxin
             +button({
               settings: {

@@ -2,12 +2,12 @@ mixin room-card(args)
   a.room-card&attributes({href:'/room/?room=' + args.number})
     .room-card__inner
       .room-card__gallery&attributes(args.settings)
-        .room-card__gallery_prev
+        .room-card__prev
           +arrow({type: "prev"})
         .room-card__images
           each _, i in Array(args.images)
             img.room-card__image&attributes({src:'/assets/img/rooms/' + args.number + '-' + i + '.jpg'})
-        .room-card__gallery_next
+        .room-card__next
           +arrow({type: "next"})
         .room-card__points
           each _, i in Array(args.images)
@@ -22,7 +22,7 @@ mixin room-card(args)
           if args.special
             span.room-card__special Люкс
         .room-card__price
-          span.room-card__price-sign #{args.price}&#x20bd;
+          span.room-card__price-value #{args.price}&#x20bd;
           | в сутки
       .room-card__feedback
         .room-card__stars

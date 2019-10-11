@@ -32,15 +32,15 @@ function SlideNextPhoto(index) {
   imagePoints[index].children[sliderIndexes[index]].style.background = "#fff";
 }
 
-$(".content__rooms a").click(function(e) {
+$(".room-card").click(function(e) {
   e.preventDefault();
   var targetClassName = e.target.classList[0];
-  if (targetClassName == "arrow" || targetClassName == "room-card__gallery_prev" || targetClassName == "room-card__gallery_next")
+  if (targetClassName == "arrow" || targetClassName == "room-card__prev" || targetClassName == "room-card__next")
     return;
   window.location.href = e.currentTarget.href + "&" + window.location.search.slice(1);
 });
 
-$(".room-card__gallery_prev").click(function(e) {
+$(".room-card__prev").click(function(e) {
   var index = parseInt(this.parentNode.getAttribute("data-index"));
   if (sliderIndexes[index] == 0) {
     for (var i = 0; i < images[index].children.length-1; i++) {
@@ -51,7 +51,7 @@ $(".room-card__gallery_prev").click(function(e) {
   }
 });
 
-$(".room-card__gallery_next").click(function() {
+$(".room-card__next").click(function() {
   var index = parseInt(this.parentNode.getAttribute("data-index"));
   if (sliderIndexes[index] == images[index].children.length - 1) {
     for (var i = 0; i < images[index].children.length-1; i++) {
