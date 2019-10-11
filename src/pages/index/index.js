@@ -1,8 +1,8 @@
 import "../../components/page/page.js";
 import "./index.scss";
 
-var $comein = $(".form__field[data-index='0']").find(".form__input")
-var $comeout = $(".form__field[data-index='1']").find(".form__input");
+var $comein = $(".form__field[data-index='0']").find(".date__input")
+var $comeout = $(".form__field[data-index='1']").find(".date__input");
 
 $(".form__field[data-index='0']").daterangepicker({
   singleMonth: true,
@@ -28,7 +28,6 @@ $(".form__field[data-index='1']").daterangepicker({
 });
 
 $(".form__field[data-index='2']").dropdown({
-  specClass: "guests",
   placeholder: "Сколько гостей",
   TPlaceholderSpelling: function(value) {
     if (value == 1)

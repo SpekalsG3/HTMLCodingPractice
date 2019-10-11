@@ -22,12 +22,26 @@
   }
 }
 
-.form {
-  &__note {
-    font: 12px $mainFont;
-    color: rgba($darkColor, .5);
+.date {
+  &__input {
+    outline: none;
+    position: relative;
+    padding-left: 14px;
+    padding-right: 44px;
+    height: 42px;
+    width: calc(100% - 58px);
+    border: 1px solid rgba($darkColor, .25);
+    border-radius: 4px;
+    box-shadow: none;
+    font-size: 14px;
+    font-family: $mainFont;
+    color: rgba($darkColor, .75);
+    cursor: pointer;
+    text-overflow: ellipsis;
   }
+}
 
+.form {
   &__head-price {
     display: flex;
     align-items: center;
@@ -202,6 +216,11 @@
 .range {
   position: relative;
 
+  &__note {
+    font: 12px $mainFont;
+    color: rgba($darkColor, 0.5);
+  }
+
   &__top {
     display: flex;
     justify-content: space-between;
@@ -218,6 +237,12 @@
 
 .checkbox {
   position: relative;
+
+  &__note {
+    margin-top: 5px;
+    font: 12px $mainFont;
+    color: rgba($darkColor, 0.5);
+  }
 
   &__options {
     margin-top: 16px;
@@ -305,12 +330,6 @@
     &_bold {
       font-weight: bold;
     }
-  }
-
-  &__note {
-    margin-top: 5px;
-    font: 12px $mainFont;
-    color: rgba($darkColor, 0.5);
   }
 }
 

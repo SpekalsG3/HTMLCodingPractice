@@ -88,7 +88,7 @@ $(".form__field[data-index='0']").daterangepicker({
   startDate: new Date(date1),
   endDate: new Date(date2)
 }, function(date_in, date_out) {
-  $(".form__field[data-index='0']").find(".form__input").val(date_in.locale('ru').format("DD MMM") + ' - ' + date_out.locale('ru').format("DD MMM"));
+  $(".form__field[data-index='0']").find(".date__input").val(date_in.locale('ru').format("DD MMM") + ' - ' + date_out.locale('ru').format("DD MMM"));
 });
 
 date1 = "";
@@ -110,7 +110,7 @@ URISearch[3].slice(0, -4).split('.').forEach(function(el, i) {
   }
 });
 
-$(".form__field[data-index='0']").find(".form__input").val(date1 + " - " + date2);
+$(".form__field[data-index='0']").find(".date__input").val(date1 + " - " + date2);
 
 for (var i = 0; i < 3; i++) {
   $(".form__field[data-index='1']")[0].controller.setOptionValue(decodeURI(URISearch[4 + i * 2]), parseInt(URISearch[5 + i * 2]));

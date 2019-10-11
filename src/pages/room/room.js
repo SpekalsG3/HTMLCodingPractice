@@ -70,8 +70,8 @@ for (var i = 0; i < 3; i++) {
 var splittedDate1 = URISearch[3].split('.');
 var splittedDate2 = URISearch[5].split('.');
 
-var $comein = $(".form__field[data-index='0']").find(".form__input")
-var $comeout = $(".form__field[data-index='1']").find(".form__input");
+var $comein = $(".form__field[data-index='0']").find(".date__input")
+var $comeout = $(".form__field[data-index='1']").find(".date__input");
 
 var date1 = "";
 var date2 = "";

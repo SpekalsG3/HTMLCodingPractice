@@ -40,10 +40,11 @@ mixin checkbox(args)
                 .checkbox__title !{val.title}
 
 mixin date(args)
-  +label({text: args.text})
-  unless args.noArrow
-    +arrow({type: "expand"})
-  input.form__input(readonly="readonly" type="text")&attributes(args.input)
+  .date
+    +label({text: args.text})
+    unless args.noArrow
+      +arrow({type: "expand"})
+    input.date__input(readonly="readonly" type="text")&attributes(args.input)
 
 mixin submit(args)
   .submit
@@ -61,7 +62,7 @@ mixin range(args)
         | &#x20bd;
     input.range__input(type='text')&attributes(args.input)
     if args.note
-      .form__note #{args.note}
+      .range__note #{args.note}
 
 mixin switch(args)
   .switch
@@ -85,7 +86,7 @@ mixin radio(args)
 mixin form(args)
   case args.name
     when "index"
-      .form.form_solo&attributes({class: args.class})
+      .form.form_solo
         .form__title
           span.form__title-line(data-index='0') Найдём номера под
           br
@@ -95,7 +96,6 @@ mixin form(args)
             +date({
               text: "Прибытие",
               input: {
-                class: "comein",
                 name: "comein",
                 placeholder: "ДД.ММ.ГГГГ"
               }
@@ -104,7 +104,6 @@ mixin form(args)
             +date({
               text: "Выезд",
               input: {
-                class: "comeout",
                 name: "comeout",
                 placeholder: "ДД.ММ.ГГГГ"
               }
@@ -122,13 +121,12 @@ mixin form(args)
             })
       - break
     when "filter"
-      .form&attributes({class: args.class})
+      .form
         form.form__inputs(method='GET' action='fake-script')
           .form__field.form__field_medium(data-index="0")
             +date({
               text: "Даты пребывания в отеле",
               input: {
-                class: "comeinout",
                 name: "comeinout"
               }
             })
@@ -236,7 +234,6 @@ mixin form(args)
             +date({
               text: "Прибытие",
               input: {
-                class: "comein",
                 name: "comein",
                 placeholder: "ДД.ММ.ГГГГ"
               }
@@ -245,7 +242,6 @@ mixin form(args)
             +date({
               text: "Выезд",
               input: {
-                class: "comeout",
                 name: "comeout",
                 placeholder: "ДД.ММ.ГГГГ"
               }
@@ -277,7 +273,7 @@ mixin form(args)
       - break
     when "signin"
       include ../button/button.pug
-      .form.form_solo&attributes({class: args.class})
+      .form.form_solo
         .form__title Войти
         form.form__inputs.form__inputs_indent_up(method='POST' action='/fake-script/')
           .form__field.form__field_long(data-index='0')
@@ -298,7 +294,7 @@ mixin form(args)
       - break
     when "signup"
       include ../button/button.pug
-      .form.form_solo&attributes({class: args.class})
+      .form.form_solo
         .form__title Войти
         form.form__inputs.form__inputs_indent_up(method='POST' action='/fake-script/')
           .form__field.form__field_long(data-index='0')
