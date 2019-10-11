@@ -28,6 +28,19 @@
     color: rgba($darkColor, .5);
   }
 
+  &__head-price {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: rgba($darkColor, .5);
+
+    &_bold {
+      margin-right: 4px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+  }
+
   &_solo {
     position: relative;
     min-width: 350px;

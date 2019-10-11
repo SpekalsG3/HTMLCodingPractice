@@ -228,8 +228,8 @@ mixin form(args)
             span.form__n &numero;
             span.form__number 888
             span.form__special Люкс
-          .content__price
-            .content__price-amount 9 990&#x20bd;
+          .form__head-price
+            .form__head-price_bold 9 990&#x20bd;
             | в сутки
         form.form__inputs(method='GET' action='filter/')
           .form__field.form__field_short(data-index="0")
@@ -257,16 +257,16 @@ mixin form(args)
           .form__field.form__field_indent_up(data-index='3')
             .form__field-option
               .form__nametag 9 990&#x20bd; х 4 суток
-              .form__price 39 960&#x20bd;
+              | 39 960&#x20bd;
             .form__field-option
               .form__nametag.form__nametag_has_hint Сбор за услуги: скидка 2 179&#x20bd;
-              .form__price 0&#x20bd;
+              | 0&#x20bd;
             .form__field-option
               .form__nametag.form__nametag_has_hint Сбор за дополнительные услуги
-              .form__price 300&#x20bd;
+              | 300&#x20bd;
             .form__field-total
               .form__nametag Итого
-              .form__price_total 38 081&#x20bd;
+              .form___total-price 38 081&#x20bd;
           .form__field.form__field_long.form__field_indent_up
             +submit({
               text: "Забронировать",
@@ -287,7 +287,7 @@ mixin form(args)
             +submit({
               text: "Войти"
             })
-          .form_field_long.form__field_type_question
+          .form__field_long.form__field_type_question
             .form__field-text Нет аккаунта на Toxin?
             +button({
               settings: {
@@ -304,7 +304,7 @@ mixin form(args)
           .form__field.form__field_long(data-index='0')
             input.form__input.form__input_text(placeholder='Имя' type='text' name='firstname')
             input.form__input.form__input_text.form__input_indent_tinyup(placeholder='Фамилия' type='text' name='lastname')
-          .form__radio
+          .form__field.form__field_indent_tinyup
             +radio({
               input: [{
                 settings: {

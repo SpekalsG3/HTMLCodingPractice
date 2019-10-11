@@ -72,19 +72,6 @@
     }
   }
 
-  &__price {
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    color: rgba($darkColor, .5);
-
-    &-amount {
-      margin-right: 4px;
-      font-weight: bold;
-      font-size: 14px;
-    }
-  }
-
   &__info {
     display: flex;
     flex-wrap: wrap;
@@ -257,7 +244,7 @@
     color: #BC9CFF;
   }
 
-  &__price-total {
+  &__total-price {
     letter-spacing: -1.1px;
   }
 
