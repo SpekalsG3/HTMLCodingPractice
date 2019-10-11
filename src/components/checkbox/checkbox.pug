@@ -1,0 +1,34 @@
+mixin checkbox(args)
+  if args.expandable
+    .checkbox(data-expandable="" data-opened="false")
+      .checkbox__arrow
+      +label({text: args.text, clickable: true})
+      .checkbox__options(data-expandable="")
+        each val in args.input
+          label.checkbox__option
+            input.checkbox__input(type='checkbox')&attributes({name:val.name, value:val.value})
+            .checkbox__checkmark
+              .checkbox__checkmark-arrow
+            if val.note
+              span.checkbox__text
+                .checkbox__title.checkbox__title_bold !{val.title}
+                .checkbox__note !{val.note}
+            else
+              span.checkbox__text
+                .checkbox__title !{val.title}
+  else
+    .checkbox
+      +label({text: args.text})
+      .checkbox__options
+        each val in args.input
+          label.checkbox__option
+            input.checkbox__input(type='checkbox')&attributes({name:val.name, value:val.value})
+            .checkbox__checkmark
+              .checkbox__checkmark-arrow
+            if val.note
+              span.checkbox__text
+                .checkbox__title.checkbox__title_bold !{val.title}
+                .checkbox__note !{val.note}
+            else
+              span.checkbox__text
+                .checkbox__title !{val.title}

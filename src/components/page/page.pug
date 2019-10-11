@@ -1,51 +1,6 @@
-mixin arrow(args)
-  case args.type
-    when "expand"
-      .arrow.arrow_expand
-      -break
-    when "forward"
-      .arrow.arrow_forward
-      -break
-    when "prev"
-      .arrow.arrow_prev
-      -break
-    when "next"
-      .arrow.arrow_next
-      -break
-
-mixin logo
-  .logo
-    img.logo__icon(src="/img/icons/logo-icon.svg")
-    img.logo__brand(src="/img/icons/logo-brand.svg")
-
-mixin header(index, signin, signup)
-  header.header
-    .header__bar.header__bar_shadow
-      .header__inner.header__inner_align
-        if index
-          a(href="/")
-            +logo
-        else
-          +logo
-        .header__menu
-        nav.header__content
-          a.header__link(href="/fake-link/change-me") О нас
-          a.header__link.header__link_expand(href="/fake-link/change-me")
-            .header__arrow
-            .header__link-text Услуги
-          a.header__link(href="/fake-link/change-me") Вакансии
-          a.header__link(href="/fake-link/change-me") Новости
-          a.header__link.header__link_expand(href="/fake-link/change-me")
-            .header__arrow
-            .header__link-text Соглашения
-          if signin
-            a.header__signin(href="/signin/") Войти
-          else
-            .header__signin Войти
-          if signup
-            a.header__signup(href="/signup/") Зарегистрироваться
-          else
-            .header__signup Зарегистрироваться
+include ../arrow/arrow.pug
+include ../logo/logo.pug
+include ../header/header.pug
 
 mixin page(args)
   include ../form/form.pug
@@ -63,8 +18,6 @@ mixin page(args)
     case args.name
       when "index"
 
-        include ../dropdown/dropdown.pug
-
         +header(false, true, true)
 
         .content.content_form
@@ -76,10 +29,6 @@ mixin page(args)
 
         -break
       when "filter"
-
-        include ../dropdown/dropdown.pug
-        include ../pagination/pagination.pug
-        include ../room-card/room-card.pug
 
         +header(true, true, true)
 
@@ -240,12 +189,6 @@ mixin page(args)
         -break
       when "room"
 
-        include ../dropdown/dropdown.pug
-        include ../tag/tag.pug
-        include ../review/review.pug
-        include ../bullet-list/bullet-list.pug
-        include ../statistic/statistic.pug
-
         +header(true, true, true)
 
         .content
@@ -333,8 +276,6 @@ mixin page(args)
 
         -break
       when "signup"
-
-        include ../dropdown/dropdown.pug
 
         +header(true, true, false)
 

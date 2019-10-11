@@ -1,4 +1,7 @@
 import "../../components/page/page.js";
+
+import "../../components/dropdown/dropdown.js";
+
 import "./index.scss";
 
 var $comein = $(".form__field[data-index='0']").find(".date__input")

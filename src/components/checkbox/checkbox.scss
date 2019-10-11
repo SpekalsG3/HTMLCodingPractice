@@ -1,0 +1,99 @@
+@import "../../utils/vars.scss";
+
+.checkbox {
+  position: relative;
+
+  &__note {
+    margin-top: 5px;
+    font: 12px $mainFont;
+    color: rgba($darkColor, 0.5);
+  }
+
+  &__options {
+    margin-top: 16px;
+
+    &[data-expandable] {
+      display: none;
+    }
+
+    &_hidden {
+      display: none;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    z-index: 2;
+    width: 44px;
+    height: 46px;
+    cursor: pointer;
+    right: -2px;
+    height: 14px;
+    background: url(/img/icons/arrow-expand.svg) center no-repeat;
+    transition: .2s;
+  }
+
+  &__option {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+
+    & + & {
+      margin-top: 10px;
+    }
+  }
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  &__input:checked + &__checkmark &__checkmark-arrow {
+    opacity: 1;
+  }
+
+  &__checkmark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1px;
+    height: 18px;
+    width: 18px;
+    border: 1px solid rgba($darkColor, 0.25);
+    border-radius: 4px;
+
+    &-arrow {
+      position: absolute;
+      width: 6px;
+      height: 8px;
+      background: $purpleGrad;
+      transform: rotateZ(45deg);
+      transition: .1s;
+      opacity: 0;
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 83%;
+        height: 87%;
+        top: -1px;
+        left: -1px;
+        background: #fff;
+      }
+    }
+  }
+
+  &__text {
+    margin-top: 1px;
+    margin-left: 10px;
+  }
+
+  &__title {
+    font: 14px $mainFont;
+    color: rgba($darkColor, .75);
+
+    &_bold {
+      font-weight: bold;
+    }
+  }
+}

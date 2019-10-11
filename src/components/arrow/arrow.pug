@@ -1,0 +1,14 @@
+mixin arrow(args)
+  case args.type
+    when "expand"
+      .arrow.arrow_expand
+      -break
+    when "forward"
+      .arrow.arrow_forward
+      -break
+    when "prev"
+      .arrow.arrow_prev
+      -break
+    when "next"
+      .arrow.arrow_next
+      -break

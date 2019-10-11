@@ -1,5 +1,6 @@
 import "../../components/page/page.js";
 
+import "../../components/dropdown/dropdown.js";
 import "../../components/statistic/statistic.js"
 import "../../components/tag/tag.scss"
 import "../../components/review/review.js"

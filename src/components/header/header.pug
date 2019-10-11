@@ -1,0 +1,28 @@
+mixin header(index, signin, signup)
+  header.header
+    .header__bar.header__bar_shadow
+      .header__inner.header__inner_align
+        if index
+          a(href="/")
+            +logo
+        else
+          +logo
+        .header__menu
+        nav.header__content
+          a.header__link(href="/fake-link/change-me") О нас
+          a.header__link.header__link_expand(href="/fake-link/change-me")
+            .header__arrow
+            .header__link-text Услуги
+          a.header__link(href="/fake-link/change-me") Вакансии
+          a.header__link(href="/fake-link/change-me") Новости
+          a.header__link.header__link_expand(href="/fake-link/change-me")
+            .header__arrow
+            .header__link-text Соглашения
+          if signin
+            a.header__signin(href="/signin/") Войти
+          else
+            .header__signin Войти
+          if signup
+            a.header__signup(href="/signup/") Зарегистрироваться
+          else
+            .header__signup Зарегистрироваться

@@ -1,0 +1,21 @@
+@import "../../utils/vars.scss";
+
+.range {
+  position: relative;
+
+  &__note {
+    font: 12px $mainFont;
+    color: rgba($darkColor, 0.5);
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__legend {
+    display: inline-block;
+    font: 12px $mainFont;
+    color: rgba($darkColor, .5);
+  }
+}

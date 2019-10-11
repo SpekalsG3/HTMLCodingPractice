@@ -1,0 +1,9 @@
+mixin switch(args)
+  .switch
+    each val in args.input
+      label.switch__option
+        input.switch__input(type='checkbox')&attributes({name: val.name})
+        .switch__checkmark
+          .switch__dot
+            .switch__dot-cover
+        span.switch__text #{val.text}

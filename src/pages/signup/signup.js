@@ -1,4 +1,6 @@
 import "../../components/page/page.js";
+
+import "../../components/dropdown/dropdown.js";
 import "../../components/button/button.scss";
 
 import "./signup.scss";

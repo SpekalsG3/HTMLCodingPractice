@@ -1,87 +1,10 @@
-mixin label(args)
-  if args.clickable
-    .label.label_clickable #{args.text}
-  else
-    .label #{args.text}
-
-mixin checkbox(args)
-  if args.expandable
-    .checkbox(data-expandable="" data-opened="false")
-      .checkbox__arrow
-      +label({text: args.text, clickable: true})
-      .checkbox__options(data-expandable="")
-        each val in args.input
-          label.checkbox__option
-            input.checkbox__input(type='checkbox')&attributes({name:val.name, value:val.value})
-            .checkbox__checkmark
-              .checkbox__checkmark-arrow
-            if val.note
-              span.checkbox__text
-                .checkbox__title.checkbox__title_bold !{val.title}
-                .checkbox__note !{val.note}
-            else
-              span.checkbox__text
-                .checkbox__title !{val.title}
-  else
-    .checkbox
-      +label({text: args.text})
-      .checkbox__options
-        each val in args.input
-          label.checkbox__option
-            input.checkbox__input(type='checkbox')&attributes({name:val.name, value:val.value})
-            .checkbox__checkmark
-              .checkbox__checkmark-arrow
-            if val.note
-              span.checkbox__text
-                .checkbox__title.checkbox__title_bold !{val.title}
-                .checkbox__note !{val.note}
-            else
-              span.checkbox__text
-                .checkbox__title !{val.title}
-
-mixin date(args)
-  .date
-    +label({text: args.text})
-    unless args.noArrow
-      +arrow({type: "expand"})
-    input.date__input(readonly="readonly" type="text")&attributes(args.input)
-
-mixin submit(args)
-  .submit
-    +arrow({type: "forward"})
-    button.submit__button #{args.text}
-
-mixin range(args)
-  .range
-    .range__top
-      +label({text: args.text})
-      .range__legend
-        span.range__from #{args.from}
-        | &#x20bd;  - 
-        span.range__to #{args.to}
-        | &#x20bd;
-    input.range__input(type='text')&attributes(args.input)
-    if args.note
-      .range__note #{args.note}
-
-mixin switch(args)
-  .switch
-    each val in args.input
-      label.switch__option
-        input.switch__input(type='checkbox')&attributes({name: val.name})
-        .switch__checkmark
-          .switch__dot
-            .switch__dot-cover
-        span.switch__text #{val.text}
-
-mixin radio(args)
-  .radio
-    each val in args.input
-      label.radio__option
-        input.radio__input(type='radio' name='gender')&attributes(val.settings)
-        .radio__checkmark
-          .radio__arrow
-        span.readio__text #{val.text}
+include ../label/label.pug
+include ../checkbox/checkbox.pug
+include ../date/date.pug
+include ../submit/submit.pug
+include ../range/range.pug
+include ../switch/switch.pug
+include ../radio/radio.pug
 
 mixin form(args)
   case args.name

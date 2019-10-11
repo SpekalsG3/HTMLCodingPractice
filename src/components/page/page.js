@@ -1,6 +1,9 @@
 import "./page.scss"
 
 import "../subscription/subscription.scss"
+import "../logo/logo.scss"
+import "../header/header.scss"
+import "../arrow/arrow.scss"
 import "../form/form.js"
 
 import "../../favicons/favicons.js"

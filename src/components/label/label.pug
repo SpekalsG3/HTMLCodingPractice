@@ -1,0 +1,5 @@
+mixin label(args)
+  if args.clickable
+    .label.label_clickable #{args.text}
+  else
+    .label #{args.text}

@@ -1,0 +1,20 @@
+@import "../../utils/vars.scss";
+
+.date {
+  &__input {
+    outline: none;
+    position: relative;
+    padding-left: 14px;
+    padding-right: 44px;
+    height: 42px;
+    width: calc(100% - 58px);
+    border: 1px solid rgba($darkColor, .25);
+    border-radius: 4px;
+    box-shadow: none;
+    font-size: 14px;
+    font-family: $mainFont;
+    color: rgba($darkColor, .75);
+    cursor: pointer;
+    text-overflow: ellipsis;
+  }
+}

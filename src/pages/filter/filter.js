@@ -1,6 +1,7 @@
 import "../../components/page/page.js";
 import "../../components/pagination/pagination.js";
 import "../../components/room-card/room-card.js";
+import "../../components/dropdown/dropdown.js";
 
 import "./filter.scss";
 

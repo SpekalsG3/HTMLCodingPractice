@@ -1,0 +1,6 @@
+mixin date(args)
+  .date
+    +label({text: args.text})
+    unless args.noArrow
+      +arrow({type: "expand"})
+    input.date__input(readonly="readonly" type="text")&attributes(args.input)

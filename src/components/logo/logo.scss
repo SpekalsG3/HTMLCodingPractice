@@ -1,0 +1,14 @@
+.logo {
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  &__brand {
+    position: relative;
+    margin-left: 12.5px;
+  }
+}

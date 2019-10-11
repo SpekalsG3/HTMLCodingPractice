@@ -1,0 +1,12 @@
+mixin range(args)
+  .range
+    .range__top
+      +label({text: args.text})
+      .range__legend
+        span.range__from #{args.from}
+        | &#x20bd;  - 
+        span.range__to #{args.to}
+        | &#x20bd;
+    input.range__input(type='text')&attributes(args.input)
+    if args.note
+      .range__note #{args.note}
