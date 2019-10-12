@@ -2,11 +2,9 @@
 
 .label {
   display: block;
-  margin-bottom: 4px;
-  margin-left: 1px;
+  margin-bottom: 5px;
   font: bold 12px $mainFont, sans-serif;
   text-transform: uppercase;
-  letter-spacing: .1px;
   color: $darkColor;
 
   &_clickable {

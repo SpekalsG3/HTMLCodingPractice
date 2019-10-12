@@ -19,9 +19,13 @@ mixin header(index, signin, signup)
             .header__arrow
             .header__link-text Соглашения
           if signin
-            a.header__signin(href="/signin/") Войти
+            a.header__signin(href="/signin/")
+              img.header__signin-border(src="/img/icons/gradient-border.svg")
+              | Войти
           else
-            .header__signin Войти
+            .header__signin
+              img.header__signin-border(src="/img/icons/gradient-border.svg")
+              | Войти
           if signup
             a.header__signup(href="/signup/") Зарегистрироваться
           else

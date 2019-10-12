@@ -97,7 +97,7 @@
     cursor: pointer;
     height: 100%;
     width: 21px;
-    right: -2px;
+    right: 0;
     background: url(/img/icons/arrow-expand.svg) center no-repeat;
   }
 
@@ -105,12 +105,12 @@
   &__signup {
     text-decoration: none;
     position: relative;
-    padding: 0 19px;
     margin-left: 20px;
     border-radius: 22px;
     font-weight: bold;
     font-size: 12px;
     text-transform: uppercase;
+    text-align: center;
 
     @media screen and (max-width: 979px) {
       margin-top: 20px;
@@ -119,14 +119,22 @@
   }
 
   &__signin {
-    height: 41px;
-    background: url(/img/icons/gradient-border.svg) center no-repeat;
+    padding: 0 19px;
     background-size: 95%;
-    line-height: 41px;
+    line-height: 38px;
     color: $purpleColor;
+
+    &-border {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 86px;
+      height: 36px;
+    }
   }
 
   &__signup {
+    padding: 0 19px;
     height: 34px;
     background: $purpleGrad;
     line-height: 34px;

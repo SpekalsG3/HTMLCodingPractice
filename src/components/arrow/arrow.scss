@@ -2,7 +2,7 @@
   position: absolute;
   z-index: 2;
   width: 44px;
-  height: 46px;
+  height: 44px;
   cursor: pointer;
 
   &_expand {
@@ -11,8 +11,8 @@
   }
 
   &_forward {
-    right: 0;
-    top: 0;
+    right: -1px;
+    top: -1px;
     background: url(/img/icons/arrow-forward.svg) center no-repeat;
   }
 

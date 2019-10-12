@@ -19,7 +19,7 @@
     min-width: 350px;
     width: 350px;
     padding-top: 40px;
-    padding-bottom: 30px;
+    padding-bottom: 28px;
     padding-left: 31px;
     background: #fff;
     border: 1px solid rgba(0, 0, 0, .12);
@@ -83,7 +83,7 @@
       }
     }
 
-    &_error {
+    &_has_error {
       box-shadow: 0 0 6px #FA7464;
     }
   }
@@ -101,7 +101,7 @@
       }
 
       &_up {
-        margin-top: 20px;
+        margin-top: 22px;
       }
 
       &_longup {

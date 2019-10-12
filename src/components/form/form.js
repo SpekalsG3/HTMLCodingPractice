@@ -18,14 +18,30 @@ import "../switch/switch.scss"
 import "../radio/radio.scss"
 
 $(".form").submit(function(e) {
+  var inputError = false;
   $(this).find(".form__input").each(function() {
     if (this.value == "") {
-      e.preventDefault();
-      this.classList.add("form__input_error");
+      dateError = true;
+      this.classList.add("form__input_has_error");
     } else {
-      this.classList.remove("form__input_error");
+      dateError = false;
+      this.classList.remove("form__input_has_error");
     }
   });
+  var dateError = false;
+  $(this).find(".date__input").each(function() {
+    if (this.value == "") {
+      dateError = true;
+      this.classList.add("date__input_has_error");
+    } else {
+      dateError = false;
+      this.classList.remove("date__input_has_error");
+    }
+  });
+  console.log(inputError, dateError)
+  if (inputError || dateError) {
+    e.preventDefault();
+  }
 });
 
 $(".checkbox[data-expandable]").click(function() {

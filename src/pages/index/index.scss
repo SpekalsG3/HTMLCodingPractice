@@ -3,6 +3,8 @@
 
 .content {
   background-image: url(/img/index.jpg);
+  background-position: 50% 97%;
+  background-size: 113% 109%;
   height: 830px;
 
   @media screen and (max-width: 979px) {
@@ -76,3 +78,9 @@
   }
 }
 
+.footer {
+  &__subscription {
+    margin-top: 25px;
+    width: 265px;
+  }
+}
