@@ -2,10 +2,12 @@
 
 .content {
   background-image: url(/img/authorization.jpg);
-    height: 701px;
+  background-position: 50% 97%;
+  background-size: 113% 109%;
+  height: 701px;
 
   &__form {
-    margin-bottom: 2px;
+    margin-bottom: 7px;
   }
 
   &__inner {
@@ -20,8 +22,8 @@
 
 .form {
   &__field {
-    &[data-index="0"] {
-      margin-top: 16px;
+    &[data-index="2"] {
+      margin-top: 24px;
     }
 
     &-text {
@@ -31,10 +33,6 @@
 
   &__title {
     letter-spacing: 1.2px;
-  }
-
-  &__inputs {
-    margin-top: 19px;
   }
 
   &__switch {

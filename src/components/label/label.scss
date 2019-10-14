@@ -1,13 +1,1 @@
 @import "../../utils/vars.scss";
-
-.label {
-  display: block;
-  margin-bottom: 5px;
-  font: bold 12px $mainFont, sans-serif;
-  text-transform: uppercase;
-  color: $darkColor;
-
-  &_clickable {
-    cursor: pointer;
-  }
-}

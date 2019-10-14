@@ -1,4 +1,3 @@
-include ../label/label.pug
 include ../checkbox/checkbox.pug
 include ../date/date.pug
 include ../submit/submit.pug
@@ -32,9 +31,7 @@ mixin form(args)
               }
             })
           .form__field.form__field_long.form__field_indent_up(data-index="2")
-            +dropdown({
-              text: "Гости"
-            })
+            .form__label.form__label_for_dropdown Гости
           .form__field.form__field_long.form__field_indent_longup
             +submit({
               text: "Подобрать номер",
@@ -54,10 +51,8 @@ mixin form(args)
               }
             })
           .form__field.form__field_medium.form__field_indent_up(data-index="1")
-            +dropdown({
-              text: "Даты пребывания в отеле"
-            })
-          .form__field.form__field_indent_longup
+            .form__label.form__label_for_dropdown Гости
+          .form__field.form__field_medium.form__field_indent_longup
             +range({
               text: "Диапазон цены",
               from: "5 000",
@@ -68,23 +63,24 @@ mixin form(args)
               }
             })
           .form__field.form__field_indent_longup(data-index="2")
-            +checkbox({
-              text: "Checkbox buttons",
-              input: [{
-                name: "smoke",
-                value: 0,
-                title: "Можно курить"
-              }, {
-                name: "pets",
-                value: 1,
-                title: "Можно с питомцами"
-              }, {
-                name: "guests",
-                value: 2,
-                title: "Можно пригласить гостей<br>(до 10 человек)"
-              }]
-            })
-          .form__field.form__field_indent_longup(data-index="4")
+            .form__checkbox(data-index="0")
+              +checkbox({
+                text: "Checkbox buttons",
+                input: [{
+                  name: "smoke",
+                  value: 0,
+                  title: "Можно курить"
+                }, {
+                  name: "pets",
+                  value: 1,
+                  title: "Можно с питомцами"
+                }, {
+                  name: "guests",
+                  value: 2,
+                  title: "Можно пригласить гостей<br>(до 10 человек)"
+                }]
+              })
+          .form__field(data-index="4")
             +checkbox({
               text: "Доступность",
               input: [{
@@ -100,13 +96,11 @@ mixin form(args)
               }]
             })
           .form__field.form__field_medium.form__field_indent_longup(data-index="5")
-            +dropdown({
-              text: "Удобства номера"
-            })
+            .form__label.form__label_for_dropdown(data-index="5") Удобства номера
           .form__field.form__field_medium.form__field_indent_longup
             +checkbox({
-              expandable: true,
               text: "Дополнительные удобства",
+              expandable: true,
               input: [{
                 name: "breakfast",
                 value: 5,
@@ -170,9 +164,7 @@ mixin form(args)
               }
             })
           .form__field.form__field_long.form__field_indent_up(data-index="2")
-            +dropdown({
-              text: "Гости"
-            })
+            .form__label.form__label_for_dropdown Гости
           .form__field.form__field_indent_up(data-index='3')
             .form__field-option
               .form__nametag 9 990&#x20bd; х 4 суток
@@ -198,7 +190,7 @@ mixin form(args)
       include ../button/button.pug
       .form.form_solo
         .form__title Войти
-        form.form__inputs.form__inputs_indent_up(method='POST' action='/fake-script/')
+        form.form__inputs(method='POST' action='/fake-script/')
           .form__field.form__field_long(data-index='0')
             input.form__input.form__input_text(placeholder='Email' type='text' name='email')
             input.form__input.form__input_text.form__input_indent_tinyup(placeholder='Пароль' type='password' name='password')
@@ -218,7 +210,7 @@ mixin form(args)
     when "signup"
       include ../button/button.pug
       .form.form_solo
-        .form__title Войти
+        .form__title Регистрация аккаунта
         form.form__inputs.form__inputs_indent_up(method='POST' action='/fake-script/')
           .form__field.form__field_long(data-index='0')
             input.form__input.form__input_text(placeholder='Имя' type='text' name='firstname')
@@ -248,7 +240,7 @@ mixin form(args)
               text: "Дата рождения"
             })
           .form__field.form__field_long.form__field_indent_up
-            +label({text: "Данные для входа в сервис"})
+            .form__label Данные для входа в сервис
             input.form__input.form__input_text(placeholder='Email' type='text' name='email')
             input.form__input.form__input_text.form__input_indent_tinyup(placeholder='Пароль' type='password' name='password')
           .form__field.form__field_indent_tinyup.form__field_long

@@ -3,6 +3,17 @@
 .checkbox {
   position: relative;
 
+  &__label {
+    display: block;
+    font: bold 12px $mainFont, sans-serif;
+    text-transform: uppercase;
+    color: $darkColor;
+
+    &_clickable {
+      cursor: pointer;
+    }
+  }
+
   &__note {
     margin-top: 5px;
     font: 12px $mainFont;

@@ -100,7 +100,7 @@
     display: inline-block;
     margin-bottom: 20px;
     font: bold 19px $mainFont;
-    letter-spacing: -.4px;
+    letter-spacing: -.3px;
 
     @media screen and (max-width: 979px) {
       text-align: center;
@@ -108,7 +108,7 @@
   }
 
   &__total {
-    margin-right: 40px;
+    margin-right: 36px;
 
     @media screen and (max-width: 1140px) and (min-width: 979px) {
       margin-top: 20px;
@@ -146,13 +146,11 @@
   }
 
   &__rules {
-    margin-top: 30px;
     width: 240px;
   }
 
   &__repeal {
-    margin-top: 30px;
-    margin-right: 9px;
+    margin-right: 8px;
     width: 340px;
 
     @media screen and (max-width: 979px) and (min-width: 642px) {
@@ -206,7 +204,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 38px;
+    height: 37px;
     font-family: $mainFont;
     padding-right: 29px;
 

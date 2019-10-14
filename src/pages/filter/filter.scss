@@ -6,11 +6,12 @@
   border-bottom: 1px solid rgba($darkColor, .25);
 
   &__pagination {
-    margin-top: 20px;
+    margin-left: -7px;
+    margin-top: 44px;
   }
 
   &__items {
-    margin-left: 60px;
+    margin-left: 62px;
     display: flex;
     flex-direction: column;
 
@@ -69,8 +70,20 @@
 .form {
   width: min-content;
 
-  &__field[data-index="4"] {
-    margin-top: 35px;
+  &__label {
+    &[data-index="5"] {
+      margin-top: 6px;
+    }
+  }
+
+  &__field {
+    &[data-index="4"] {
+      margin-top: 35px;
+    }
+
+    &[data-index="5"] {
+      margin-top: 27px;
+    }
   }
 
   &__input::placeholder {

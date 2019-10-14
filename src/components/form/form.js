@@ -5,7 +5,7 @@ import "moment";
 import "daterangepicker"
 import "daterangepicker/daterangepicker.css"
 
-import "ion-rangeslider/css/ion.rangeSlider.min.css"
+import "../range/ion.rangeSlider.min.css"
 import "ion-rangeslider"
 
 import "../dropdown/dropdown.js"

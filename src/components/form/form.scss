@@ -14,6 +14,18 @@
     }
   }
 
+  &__label {
+    margin-bottom: 5px;
+    display: block;
+    font: bold 12px $mainFont, sans-serif;
+    text-transform: uppercase;
+    color: $darkColor;
+
+    &_clickable {
+      cursor: pointer;
+    }
+  }
+
   &_solo {
     position: relative;
     min-width: 350px;
@@ -115,11 +127,11 @@
 
     &_type {
       &_question {
-        width: 91%;
+        width: 92%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: 31px;
+        margin-top: 27px;
       }
     }
 
