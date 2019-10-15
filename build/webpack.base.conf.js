@@ -97,7 +97,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: `${PATHS.assets}css/[name].[contenthash].css`,
+      filename: `css/[name].[contenthash].css`,
     }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `img` },
@@ -124,7 +124,7 @@ module.exports = {
     }),
     ...PAGES.map(page => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}/${page}.pug`,
-      filename: `./${page}/index.html`,
+      filename: `./${page}.html`,
       excludeChunks: Object.keys(ENTRIES).filter(el => el != page),
       minify: {
         collapseWhitespace: true, 
