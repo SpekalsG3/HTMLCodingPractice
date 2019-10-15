@@ -6,6 +6,10 @@
   background-size: 113% 114%;
   height: 683px;
 
+  &__form {
+    margin-bottom: 3px;
+  }
+
   &__inner {
     justify-content: center;
     align-items: center;
@@ -13,11 +17,11 @@
 }
 
 .form {
-  &__field {
-    &[data-index="0"] {
-      margin-top: 16px;
-    }
+  &__inputs {
+      margin-top: 18px;
+  }
 
+  &__field {
     &-text {
       font: 14px $mainFont;
     }

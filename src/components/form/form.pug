@@ -62,8 +62,8 @@ mixin form(args)
                 name: "price-range"
               }
             })
-          .form__field.form__field_indent_longup(data-index="2")
-            .form__checkbox(data-index="0")
+          .form__field.form__field_indent_longup
+            .form__checkbox
               +checkbox({
                 text: "Checkbox buttons",
                 input: [{
@@ -80,7 +80,7 @@ mixin form(args)
                   title: "Можно пригласить гостей<br>(до 10 человек)"
                 }]
               })
-          .form__field(data-index="4")
+          .form__field.form__field_indent_longup
             +checkbox({
               text: "Доступность",
               input: [{
@@ -96,7 +96,7 @@ mixin form(args)
               }]
             })
           .form__field.form__field_medium.form__field_indent_longup(data-index="5")
-            .form__label.form__label_for_dropdown(data-index="5") Удобства номера
+            .form__label.form__label_for_dropdown Удобства номера
           .form__field.form__field_medium.form__field_indent_longup
             +checkbox({
               text: "Дополнительные удобства",
@@ -163,9 +163,9 @@ mixin form(args)
                 placeholder: "ДД.ММ.ГГГГ"
               }
             })
-          .form__field.form__field_long.form__field_indent_up(data-index="2")
+          .form__field.form__field_long.form__field_indent_up
             .form__label.form__label_for_dropdown Гости
-          .form__field.form__field_indent_up(data-index='3')
+          .form__field.form__field_long.form__field_indent_up
             .form__field-option
               .form__nametag 9 990&#x20bd; х 4 суток
               | 39 960&#x20bd;
@@ -191,7 +191,7 @@ mixin form(args)
       .form.form_solo
         .form__title Войти
         form.form__inputs(method='POST' action='/fake-script/')
-          .form__field.form__field_long(data-index='0')
+          .form__field.form__field_long
             input.form__input.form__input_text(placeholder='Email' type='text' name='email')
             input.form__input.form__input_text.form__input_indent_tinyup(placeholder='Пароль' type='password' name='password')
           .form__field.form__field_long.form__field_indent_up
@@ -211,8 +211,8 @@ mixin form(args)
       include ../button/button.pug
       .form.form_solo
         .form__title Регистрация аккаунта
-        form.form__inputs.form__inputs_indent_up(method='POST' action='/fake-script/')
-          .form__field.form__field_long(data-index='0')
+        form.form__inputs(method='POST' action='/fake-script/')
+          .form__field.form__field_long
             input.form__input.form__input_text(placeholder='Имя' type='text' name='firstname')
             input.form__input.form__input_text.form__input_indent_tinyup(placeholder='Фамилия' type='text' name='lastname')
           .form__field.form__field_indent_tinyup
@@ -230,7 +230,7 @@ mixin form(args)
                 text: "Женщина"
               }]
             })
-          .form__field.form__field_long.form__field_indent_up(data-index="2")
+          .form__field.form__field_long.form__field_indent_custom(data-index="2")
             +date({
               noArrow: true,
               input: {

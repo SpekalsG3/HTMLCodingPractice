@@ -6,13 +6,13 @@
   background-size: 113% 109%;
   height: 701px;
 
-  &__form {
-    margin-bottom: 7px;
-  }
-
   &__inner {
     justify-content: center;
     align-items: center;
+  }
+
+  &__form {
+    margin-top: 3px;
   }
 }
 
@@ -21,8 +21,12 @@
 }
 
 .form {
+  &__inputs {
+    margin-top: 17px;
+  }
+
   &__field {
-    &[data-index="2"] {
+    &_indent_custom {
       margin-top: 24px;
     }
 

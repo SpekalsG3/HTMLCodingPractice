@@ -17,7 +17,7 @@
   }
 
   &__image {
-    &[data-index="0"] {
+    &_left {
       width: 68%;
 
       @media screen and (max-width: 979px) {
@@ -26,7 +26,7 @@
       }
     }
 
-    &[data-index="1"] {
+    &_right {
       display: flex;
       flex-direction: column;
       width: 32%;
@@ -37,14 +37,14 @@
         height: 36%;
         flex-direction: row;
       }
-    }
 
-    &[data-index="2"] {
-      height: 50%;
-      width: 100%;
+      &_quater {
+        height: 50%;
+        width: 100%;
 
-      @media screen and (max-width: 979px) {
-        height: 100%;
+        @media screen and (max-width: 979px) {
+          height: 100%;
+        }
       }
     }
 
@@ -190,14 +190,10 @@
   &__field {
     &-option {
       & + & {
-        margin-top: 17px;
+        margin-top: 15px;
       }
     }
 
-    &[data-index="2"],
-    &[data-index="3"] {
-      width: 92%;
-    }
   }
 
   &__head {
