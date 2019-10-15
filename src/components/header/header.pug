@@ -3,7 +3,7 @@ mixin header({index=false, signin=false, signup=false} = {})
     .header__bar.header__bar_shadow
       .header__inner.header__inner_align
         if index
-          a(href="/")
+          a(href="/index.html")
             +logo
         else
           +logo
@@ -19,7 +19,7 @@ mixin header({index=false, signin=false, signup=false} = {})
             .header__arrow
             .header__link-text Соглашения
           if signin
-            a.header__signin(href="/signin/")
+            a.header__signin(href="./signin.html")
               img.header__signin-border(src="/img/icons/header-gradient-border.svg")
               | Войти
           else
@@ -27,6 +27,6 @@ mixin header({index=false, signin=false, signup=false} = {})
               img.header__signin-border(src="/img/icons/header-gradient-border.svg")
               | Войти
           if signup
-            a.header__signup(href="/signup/") Зарегистрироваться
+            a.header__signup(href="./signup.html") Зарегистрироваться
           else
             .header__signup Зарегистрироваться

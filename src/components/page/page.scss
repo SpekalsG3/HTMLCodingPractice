@@ -61,6 +61,12 @@
   min-height: 442px;
   box-shadow: 0 10px 20px rgba($darkColor, .05);
 
+
+  &__subscription {
+    margin-top: 25px;
+    width: 260px;
+  }
+
   &__nav {
     display: flex;
     justify-content: center;

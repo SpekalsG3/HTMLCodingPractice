@@ -1,12 +1,12 @@
 mixin room-card({number=0, settings={}, images=0, special=false, price=0, stars=0, feedbacks=0} = {})
-  a.room-card&attributes({href:'/room/?room=' + number})
+  a.room-card&attributes({href:'/room.html?room=' + number})
     .room-card__inner
       .room-card__gallery&attributes(settings)
         .room-card__prev
           +arrow({type: "prev"})
         .room-card__images
           each _, i in Array(images)
-            img.room-card__image&attributes({src:'/assets/img/rooms/' + number + '-' + i + '.jpg'})
+            img.room-card__image&attributes({src:'/img/rooms/' + number + '-' + i + '.jpg'})
         .room-card__next
           +arrow({type: "next"})
         .room-card__points

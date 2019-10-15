@@ -5,15 +5,15 @@ include ../range/range.pug
 include ../switch/switch.pug
 include ../radio/radio.pug
 
-mixin form(args)
-  case args.name
+mixin form({name=""} = {})
+  case name
     when "index"
       .form.form_solo
         .form__title
           span.form__title-line(data-index='0') Найдём номера под
           br
           span.form__title-line(data-index='1') ваши пожелания
-        form.form__inputs.form__inputs_indent_up(method='GET' action='/filter/')
+        form.form__inputs.form__inputs_indent_up(method='GET' action='./filter.html')
           .form__field.form__field_short(data-index="0")
             +date({
               text: "Прибытие",
@@ -146,7 +146,7 @@ mixin form(args)
           .form__head-price
             .form__head-price-value 9 990&#x20bd;
             | в сутки
-        form.form__inputs(method='GET' action='filter/')
+        form.form__inputs(method='GET' action='/fake-script/')
           .form__field.form__field_short(data-index="0")
             +date({
               text: "Прибытие",
