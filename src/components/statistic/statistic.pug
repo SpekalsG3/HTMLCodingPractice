@@ -1,10 +1,10 @@
-mixin statistic(args)
+mixin statistic({width=0, height=0, total=[0, ""], legend=[]} = {})
   .statistic
     .statistic__chart
       .statistic__total
-        .statistic__total-number #{args.total[0]}
-        span.statistic__total-title #{args.total[1]}
-      canvas.statistic__canvas&attributes({width: args.width, height: args.height})
+        .statistic__total-number #{total[0]}
+        span.statistic__total-title #{total[1]}
+      canvas.statistic__canvas&attributes({width: width, height: height})
     .statistic__legend
-      each val, i in args.legend
+      each val, i in legend
         .statistic__point&attributes({"data-index": i}) #{val}

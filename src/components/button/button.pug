@@ -1,8 +1,8 @@
-mixin button(args)
-  if args.fill
-    a.button.button_back_fill
-      span.button__text #{args.text}
+mixin button({fill=true, text="", href="fake-script/change-me"} = {})
+  if fill
+    a.button.button_back_fill&attributes({href: href})
+      span.button__text #{text}
   else
-    a.button.button_back_hollow
+    a.button.button_back_hollow&attributes({href: href})
       img.button__background(src="/img/icons/button-gradient-border.svg")
-      span.button__text #{args.text}
+      span.button__text #{text}

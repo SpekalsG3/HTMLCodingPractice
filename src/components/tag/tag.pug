@@ -1,7 +1,7 @@
-mixin tag(args)
+mixin tag({image="no-image", label="Tag", text="Sample text"} = {})
   .tag
     .tag__image
-      img.tag__logo&attributes({src: '/img/icons/' + args.image + '.svg'})
+      img.tag__logo&attributes({src: '/img/icons/' + image + '.svg'})
     .tag__content
-      .tag__label #{args.label}
-      .tag__text #{args.text}
+      .tag__label #{label}
+      .tag__text #{text}

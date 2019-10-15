@@ -1,5 +1,5 @@
-mixin arrow(args)
-  case args.type
+mixin arrow({type=""} = {})
+  case type
     when "expand"
       .arrow.arrow_expand
       -break

@@ -66,7 +66,7 @@ mixin form(args)
             .form__checkbox
               +checkbox({
                 text: "Checkbox buttons",
-                input: [{
+                options: [{
                   name: "smoke",
                   value: 0,
                   title: "Можно курить"
@@ -83,7 +83,7 @@ mixin form(args)
           .form__field.form__field_indent_longup
             +checkbox({
               text: "Доступность",
-              input: [{
+              options: [{
                 name: "wide",
                 value: 3,
                 title: "Широкий коридор",
@@ -101,7 +101,7 @@ mixin form(args)
             +checkbox({
               text: "Дополнительные удобства",
               expandable: true,
-              input: [{
+              options: [{
                 name: "breakfast",
                 value: 5,
                 title: "Завтрак"
@@ -201,9 +201,8 @@ mixin form(args)
           .form__field.form__field_type_question
             .form__field-text Нет аккаунта на Toxin?
             +button({
-              settings: {
-                href: "/signup/"
-              },
+              fill: false,
+              href: "/signup/",
               text: "Создать"
             })
       - break
@@ -217,7 +216,7 @@ mixin form(args)
             input.form__input.form__input_text.form__input_indent_tinyup(placeholder='Фамилия' type='text' name='lastname')
           .form__field.form__field_indent_tinyup
             +radio({
-              input: [{
+              options: [{
                 settings: {
                   value: "male",
                   checked: ""
@@ -245,7 +244,7 @@ mixin form(args)
             input.form__input.form__input_text.form__input_indent_tinyup(placeholder='Пароль' type='password' name='password')
           .form__field.form__field_indent_tinyup.form__field_long
             +switch({
-              input: [{
+              options: [{
                 name: "offer",
                 text: "Получать спецпредложения"
               }]
@@ -257,9 +256,8 @@ mixin form(args)
           .form__field.form__field_type_question
             .form__field-text Уже есть аккаунт на Toxin
             +button({
-              settings: {
-                href: "/signin/"
-              },
+              fill: false,
+              href: "/signin/",
               text: "Войти"
             })
       - break

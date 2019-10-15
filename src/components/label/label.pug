@@ -1,5 +1,5 @@
-mixin label(args)
-  if args.clickable
-    .label.label_clickable #{args.text}
+mixin label({clickable=false, text="Button"} = {})
+  if clickable
+    .label.label_clickable #{text}
   else
-    .label #{args.text}
+    .label #{text}

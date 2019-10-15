@@ -1,10 +1,10 @@
-mixin checkbox(args)
-  if args.expandable
+mixin checkbox({expandable=false, text="Checkbox Buttons", options=[]} = {})
+  if expandable
     .checkbox(data-expandable="" data-opened="false")
       .checkbox__arrow
-      .checkbox__label.checkbox__label_clickable #{args.text}
+      .checkbox__label.checkbox__label_clickable #{text}
       .checkbox__options(data-expandable="")
-        each val in args.input
+        each val in options
           label.checkbox__option
             input.checkbox__input(type='checkbox')&attributes({name:val.name, value:val.value})
             .checkbox__checkmark
@@ -18,9 +18,9 @@ mixin checkbox(args)
                 .checkbox__title !{val.title}
   else
     .checkbox
-      .checkbox__label #{args.text}
+      .checkbox__label #{text}
       .checkbox__options
-        each val in args.input
+        each val in options
           label.checkbox__option
             input.checkbox__input(type='checkbox')&attributes({name:val.name, value:val.value})
             .checkbox__checkmark

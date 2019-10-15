@@ -1,4 +1,4 @@
-mixin subscription(args)
-  form.subscription(method='GET')
-    input.subscription__input(type='text')&attributes(args.input)
+mixin subscription({action="fake-script/change-me", input={}} = {})
+  form.subscription(method='GET')&attributes(settings)
+    input.subscription__input(type='text')&attributes(input)
     input.subscription__arrow(type='submit' value='')

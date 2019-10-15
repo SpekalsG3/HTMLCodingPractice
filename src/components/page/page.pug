@@ -1,9 +1,10 @@
 include ../arrow/arrow.pug
 include ../logo/logo.pug
 include ../header/header.pug
+include ../subscription/subscription.pug
+include ../form/form.pug
 
 mixin page(args)
-  include ../form/form.pug
 
   doctype html
   head
@@ -18,7 +19,7 @@ mixin page(args)
     case args.name
       when "index"
 
-        +header(false, true, true)
+        +header({index: false, signin: true, signup: true})
 
         .content.content_form
           .content__inner
@@ -30,7 +31,7 @@ mixin page(args)
         -break
       when "filter"
 
-        +header(true, true, true)
+        +header({index: true, signin: true, signup: true})
 
         .content
           .content__inner
@@ -189,7 +190,7 @@ mixin page(args)
         -break
       when "room"
 
-        +header(true, true, true)
+        +header({index: true, signin: true, signup: true})
 
         .content
           .content__images
@@ -267,7 +268,7 @@ mixin page(args)
         -break
       when "signin"
 
-        +header(true, false, true)
+        +header({index: true, signin: false, signup: true})
 
         .content.content_form
           .content__inner
@@ -277,7 +278,7 @@ mixin page(args)
         -break
       when "signup"
 
-        +header(true, true, false)
+        +header({index: true, signin: true, signup: false})
 
         .content.content_form
           .content__inner
@@ -286,7 +287,6 @@ mixin page(args)
 
         -break
 
-  include ../subscription/subscription.pug
   footer.footer
     nav.footer__nav
       .footer__inner
@@ -319,9 +319,6 @@ mixin page(args)
             | предложения и новости сервиса
           .footer__subscription
             +subscription({
-              settings: {
-                action: "fake-script/change-me"
-              },
               input: {
                 name: "email",
                 placeholder: "Email"

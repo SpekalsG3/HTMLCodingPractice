@@ -1,6 +1,6 @@
-mixin radio(args)
+mixin radio({options= []} = {})
   .radio
-    each val in args.input
+    each val in options
       label.radio__option
         input.radio__input(type='radio' name='gender')&attributes(val.settings)
         .radio__checkmark

@@ -1,12 +1,12 @@
-mixin review(args)
+mixin review({profile={}, likes={}, text="Review"} = {})
   .review
     .review__profile
-      img.review__avatar&attributes({src:'/img/avatars/' + args.profile.avatar + '.jpg'})
+      img.review__avatar&attributes({src:'/img/avatars/' + profile.avatar + '.jpg'})
       .review__info
-        .review__name #{args.profile.name}
-        .review__online #{args.profile.online}
+        .review__name #{profile.name}
+        .review__online #{profile.online}
     .review__content
-      .review__likes&attributes({"data-liked": args.likes.liked})
-        .review__heart&attributes({"data-liked": args.likes.liked})
-        span.review__amount #{args.likes.total}
-      .review__text #{args.text}
+      .review__likes&attributes({"data-liked": likes.liked})
+        .review__heart&attributes({"data-liked": likes.liked})
+        span.review__amount #{likes.total}
+      .review__text #{text}

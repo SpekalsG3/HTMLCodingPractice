@@ -1,16 +1,16 @@
-mixin room-card(args)
-  a.room-card&attributes({href:'/room/?room=' + args.number})
+mixin room-card({number=0, settings={}, images=0, special=false, price=0, stars=0, feedbacks=0} = {})
+  a.room-card&attributes({href:'/room/?room=' + number})
     .room-card__inner
-      .room-card__gallery&attributes(args.settings)
+      .room-card__gallery&attributes(settings)
         .room-card__prev
           +arrow({type: "prev"})
         .room-card__images
-          each _, i in Array(args.images)
-            img.room-card__image&attributes({src:'/assets/img/rooms/' + args.number + '-' + i + '.jpg'})
+          each _, i in Array(images)
+            img.room-card__image&attributes({src:'/assets/img/rooms/' + number + '-' + i + '.jpg'})
         .room-card__next
           +arrow({type: "next"})
         .room-card__points
-          each _, i in Array(args.images)
+          each _, i in Array(images)
             if i == 0
               .room-card__point.room-card__point_selected
             else
@@ -18,18 +18,18 @@ mixin room-card(args)
       .room-card__main
         .room-card__title
           span.room-card__n &numero;
-          span.room-card__number #{args.number}
-          if args.special
+          span.room-card__number #{number}
+          if special
             span.room-card__special Люкс
         .room-card__price
-          span.room-card__price-value #{args.price}&#x20bd;
+          span.room-card__price-value #{price}&#x20bd;
           | в сутки
       .room-card__feedback
         .room-card__stars
-          each _ in Array(args.stars)
+          each _ in Array(stars)
             .room-card__star(data-full='true')
-          each _ in Array(5-args.stars)
+          each _ in Array(5-stars)
             .room-card__star(data-full='false')
         .room-card__amount
-          span.room-card__amount-number #{args.feedbacks}
+          span.room-card__amount-number #{feedbacks}
           | Отзывов

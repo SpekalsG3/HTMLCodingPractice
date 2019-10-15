@@ -1,6 +1,6 @@
-mixin switch(args)
+mixin switch({options=[]} = {})
   .switch
-    each val in args.input
+    each val in options
       label.switch__option
         input.switch__input(type='checkbox')&attributes({name: val.name})
         .switch__checkmark

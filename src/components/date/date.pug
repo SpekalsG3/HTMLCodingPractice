@@ -1,6 +1,6 @@
-mixin date(args)
+mixin date({text="", input={}, noArrow = false} = {})
   .date
-    .date__label #{args.text}
-    unless args.noArrow
+    .date__label #{text}
+    unless noArrow
       +arrow({type: "expand"})
-    input.date__input(readonly="readonly" type="text")&attributes(args.input)
+    input.date__input(readonly="readonly" type="text")&attributes(input)

@@ -1,4 +1,4 @@
-mixin submit(args)
+mixin submit({text="Submit"} = {})
   .submit
     +arrow({type: "forward"})
-    button.submit__button #{args.text}
+    button.submit__button #{text}

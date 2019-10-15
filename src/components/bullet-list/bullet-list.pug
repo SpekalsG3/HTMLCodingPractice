@@ -1,4 +1,4 @@
-mixin bullet-list(args)
+mixin bullet-list({options=[]} = {})
   .bullet-list
-    each val in args
-      .bullet-list__option #{val}
+    each value in options
+      .bullet-list__option #{value}
