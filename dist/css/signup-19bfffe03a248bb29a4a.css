@@ -1,0 +1,68 @@
+.button {
+  text-decoration: none;
+  position: relative;
+  height: 44px;
+  width: 100px;
+  font: bold 12px "Montserrat", Helvetica, Arial, sans-serif;
+  line-height: 44px;
+  text-align: center;
+  text-transform: uppercase; }
+  .button__background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .button:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: .2s;
+    z-index: 0; }
+  .button:hover:before {
+    opacity: .5; }
+  .button__text {
+    position: relative;
+    z-index: 1; }
+  .button_back_hollow {
+    color: #BC9CFF; }
+  .button_back_fill {
+    width: 99px;
+    margin-right: 5px;
+    color: #FFF; }
+    .button_back_fill:before {
+      border-radius: 22px;
+      background: linear-gradient(#BC9CFF, #8BA4F9); }
+
+.content {
+  background-image: url(/img/authorization.jpg);
+  background-position: 50% 97%;
+  background-size: 113% 109%;
+  height: 701px; }
+  .content__inner {
+    justify-content: center;
+    align-items: center; }
+  .content__form {
+    margin-top: 3px; }
+
+.radio {
+  display: flex; }
+
+.form__inputs {
+  margin-top: 17px; }
+
+.form__field_indent_custom {
+  margin-top: 24px; }
+
+.form__field-text {
+  font: 14px "Montserrat", Helvetica, Arial, sans-serif; }
+
+.form__title {
+  letter-spacing: 1.2px; }
+
+.form__switch {
+  margin-top: 10px; }
+

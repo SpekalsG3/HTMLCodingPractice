@@ -1,0 +1,80 @@
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../../fonts/montserrat-regular-webfont.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../../fonts/montserrat-bold-webfont.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../../fonts/quicksand-regular-webfont.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../../fonts/quicksand-bold-webfont.ttf") format("truetype"); }
+
+.content {
+  background-image: url(../../img/index.jpg);
+  background-position: 50% 97%;
+  background-size: 113% 109%;
+  height: 830px; }
+  @media screen and (max-width: 979px) {
+    .content {
+      height: calc(100vh - 70px); } }
+  .content__form {
+    margin-top: 70px; }
+  .content__slogan {
+    position: absolute;
+    right: 52px;
+    bottom: 21px;
+    width: 297px;
+    height: 48px;
+    font: 14px "Montserrat", Helvetica, Arial, sans-serif;
+    color: rgba(31, 32, 65, 0.75);
+    line-height: 24px;
+    text-align: right; }
+    @media screen and (max-width: 979px) {
+      .content__slogan {
+        justify-self: flex-end; } }
+  @media screen and (max-width: 1300px) {
+    .content__inner {
+      background-position: top;
+      background-size: auto calc(100% + 100px); } }
+  @media screen and (max-width: 979px) {
+    .content__inner {
+      display: flex;
+      justify-content: center; } }
+
+@media screen and (max-width: 450px) {
+  .form {
+    width: 100%; } }
+
+@media screen and (max-width: 979px) {
+  .form {
+    padding-left: 0;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; } }
+
+.form__input::placeholder {
+  color: rgba(31, 32, 65, 0.75); }
+
+.form__submit_input {
+  margin-top: 32px; }
+
+@media screen and (max-width: 979px) {
+  .form__title {
+    text-align: center; }
+  .form__inputs {
+    justify-content: center; } }
+
