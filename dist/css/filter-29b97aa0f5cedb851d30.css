@@ -30,7 +30,7 @@
       height: 100%;
       left: 0;
       top: 0;
-      background: url(/img/icons/arrow-forward.svg) center no-repeat; }
+      background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTkgMC45ODQzNzVMMTcuMDE1NiA5TDkgMTcuMDE1Nkw3LjU5Mzc1IDE1LjYwOTRMMTMuMTcxOSA5Ljk4NDM4SDAuOTg0Mzc1VjguMDE1NjJIMTMuMTcxOUw3LjU5Mzc1IDIuMzkwNjJMOSAwLjk4NDM3NVoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=) center no-repeat; }
     .pagination__button_prev:after {
       transform: rotateZ(180deg); }
     .pagination__button_prev {
@@ -161,9 +161,9 @@
     width: 24px;
     height: 16px; }
     .room-card__star[data-full="true"] {
-      background: url(/img/icons/star.svg) center no-repeat; }
+      background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMSAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwLjI2MzcgMTUuNzQ4OEw0LjA3NjE3IDE5LjQ5ODhMNS43MTY4IDEyLjQ2NzVMMC4yNzkyOTcgNy43MzMxNUw3LjQ1MTE3IDcuMTIzNzhMMTAuMjYzNyAwLjUxNDQwNEwxMy4wNzYyIDcuMTIzNzhMMjAuMjQ4IDcuNzMzMTVMMTQuODEwNSAxMi40Njc1TDE2LjQ1MTIgMTkuNDk4OEwxMC4yNjM3IDE1Ljc0ODhaIiBmaWxsPSJ1cmwoI3BhaW50MF9saW5lYXIpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MF9saW5lYXIiIHgxPSIxMC4yNjM3IiB5MT0iLTEuNTAxMjIiIHgyPSIxMC4yNjM3IiB5Mj0iMjIuNDk4OCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjQkM5Q0ZGIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzhCQTRGOSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=) center no-repeat; }
     .room-card__star[data-full="false"] {
-      background: url(/img/icons/star-border.svg) center no-repeat; }
+      background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMSAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwLjI2MzcgMTMuOTIwN0wxNC4wMTM3IDE2LjE3MDdMMTMuMDI5MyAxMS45MDVMMTYuMzU3NCA4Ljk5ODc4TDExLjk1MTIgOC42MjM3OEwxMC4yNjM3IDQuNTkyNTNMOC41NzYxNyA4LjYyMzc4TDQuMTY5OTIgOC45OTg3OEw3LjQ5ODA1IDExLjkwNUw2LjUxMzY3IDE2LjE3MDdMMTAuMjYzNyAxMy45MjA3Wk0yMC4yNDggNy43MzMxNUwxNC44MTA1IDEyLjQ2NzVMMTYuNDUxMiAxOS40OTg4TDEwLjI2MzcgMTUuNzQ4OEw0LjA3NjE3IDE5LjQ5ODhMNS43MTY4IDEyLjQ2NzVMMC4yNzkyOTcgNy43MzMxNUw3LjQ1MTE3IDcuMTIzNzhMMTAuMjYzNyAwLjUxNDQwNEwxMy4wNzYyIDcuMTIzNzhMMjAuMjQ4IDcuNzMzMTVaIiBmaWxsPSJ1cmwoI3BhaW50MF9saW5lYXIpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MF9saW5lYXIiIHgxPSIxMC4yNjM3IiB5MT0iLTEuNTAxMjIiIHgyPSIxMC4yNjM3IiB5Mj0iMjIuNDk4OCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjQkM5Q0ZGIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzhCQTRGOSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=) center no-repeat; }
 
 @font-face {
   font-family: "Montserrat";
