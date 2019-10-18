@@ -65,11 +65,11 @@
     background: center no-repeat;
 
     &[data-liked="true"] {
-      background-image: url(/img/icons/favorite.svg);
+      background-image: url(../../img/icons/favorite.svg);
     }
 
     &[data-liked="false"] {
-      background-image: url(/img/icons/favorite-border.svg);
+      background-image: url(../../img/icons/favorite-border.svg);
     }
   }
 

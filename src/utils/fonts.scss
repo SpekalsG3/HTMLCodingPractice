@@ -1,6 +1,6 @@
 @import "./mixins.scss";
 
-@include font-face(Montserrat, "../../fonts/montserrat-regular-webfont", normal, normal, ttf);
-@include font-face(Montserrat, "../../fonts/montserrat-bold-webfont", bold, normal, ttf);
-@include font-face(Quicksand, "../../fonts/quicksand-regular-webfont", normal, normal, ttf);
-@include font-face(Quicksand, "../../fonts/quicksand-bold-webfont", bold, normal, ttf);
+@include font-face(Montserrat, "../fonts/montserrat-regular-webfont", normal, normal, ttf);
+@include font-face(Montserrat, "../fonts/montserrat-bold-webfont", bold, normal, ttf);
+@include font-face(Quicksand, "../fonts/quicksand-regular-webfont", normal, normal, ttf);
+@include font-face(Quicksand, "../fonts/quicksand-bold-webfont", bold, normal, ttf);

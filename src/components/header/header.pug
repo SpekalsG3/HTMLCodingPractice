@@ -20,11 +20,11 @@ mixin header({index=false, signin=false, signup=false} = {})
             .header__link-text Соглашения
           if signin
             a.header__signin(href="./signin.html")
-              img.header__signin-border(src="/img/icons/header-gradient-border.svg")
+              img.header__signin-border&attributes({src: require("../../img/icons/header-gradient-border.svg")})
               | Войти
           else
             .header__signin
-              img.header__signin-border(src="/img/icons/header-gradient-border.svg")
+              img.header__signin-border&attributes({src: require("../../img/icons/header-gradient-border.svg")})
               | Войти
           if signup
             a.header__signup(href="./signup.html") Зарегистрироваться

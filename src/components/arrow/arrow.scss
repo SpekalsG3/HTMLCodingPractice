@@ -7,24 +7,24 @@
 
   &_expand {
     right: -2px;
-    background: url(/img/icons/arrow-expand.svg) center no-repeat;
+    background: url(../../img/icons/arrow-expand.svg) center no-repeat;
   }
 
   &_forward {
     right: -1px;
     top: -1px;
-    background: url(/img/icons/arrow-forward.svg) center no-repeat;
+    background: url(../../img/icons/arrow-forward.svg) center no-repeat;
   }
 
   &_submit {
     right: 0;
     top: 0;
-    background: url(/img/icons/arrow-submit.svg) center no-repeat;
+    background: url(../../img/icons/arrow-submit.svg) center no-repeat;
   }
 
   &_prev,
   &_next {
-    background: url(/img/icons/slider-arrow.svg) center no-repeat;
+    background: url(../../img/icons/arrow-slider.svg) center no-repeat;
     background-size: 14px;
   }
 

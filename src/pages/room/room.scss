@@ -38,7 +38,8 @@
         flex-direction: row;
       }
 
-      &_quater {
+      &_top,
+      &_bottom {
         height: 50%;
         width: 100%;
 
@@ -295,7 +296,7 @@
         height: 18px;
         border: 1px solid rgba($darkColor, .25);
         border-radius: 25px;
-        background: url(/assets/img/icons/hint.svg) center no-repeat;
+        background: url(../../img/icons/hint.svg) center no-repeat;
 
         @media screen and (max-width: 979px) {
           right: -31px;

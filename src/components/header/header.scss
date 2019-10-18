@@ -57,7 +57,7 @@
     display: none;
     width: 44px;
     height: 44px;
-    background: url(/img/icons/menu.svg) center no-repeat;
+    background: url(../../img/icons/menu.svg) center no-repeat;
 
     @media screen and (max-width: 979px) {
       display: block;
@@ -98,7 +98,7 @@
     height: 100%;
     width: 21px;
     right: 0;
-    background: url(/img/icons/arrow-expand.svg) center no-repeat;
+    background: url(../../img/icons/arrow-expand.svg) center no-repeat;
   }
 
   &__signin,
