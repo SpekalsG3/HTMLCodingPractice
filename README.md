@@ -1,5 +1,7 @@
 <h3>This is website for skill practicing purposes.</h3>
 
+You can see this project on Github Pages: [Website](https://spekalsg3.github.io/HTMLPractice/dist/)
+
 To run this project with configuration firstly you need [Node.js](https://nodejs.org/).
 
 Then simply clone this repository:
