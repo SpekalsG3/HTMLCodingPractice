@@ -30,7 +30,7 @@ module.exports = {
   },
   entry: ENTRIES,
   output: {
-    filename: `js/[name].[hash].js`,
+    filename: `js/[name]-[hash].js`,
     path: PATHS.dist,
     publicPath: "/"
   },
@@ -48,7 +48,7 @@ module.exports = {
     },
   },
   module: {
-    rules: [ {
+    rules: [{
       test: /\.pug$/,
       loader: "pug-loader"
     }, {
@@ -62,42 +62,67 @@ module.exports = {
       test: /-webfont\.(woff(2)?|ttf|svg)$/,
       loader: "file-loader",
       options: {
-        name: `fonts/[name].[ext]`
+        name: `fonts/[name].[ext]`,
+        publicPath: "/HTMLPractice/dist/"
       }
     }, {
+      test: /\.(jp(e*)g|png|svg)$/,
+      use: [{
+        loader: "url-loader",
+        options: {
+          name: `img/[name]-[hash].[ext]`
+        }
+      }]
+    }, {
       test: /\.scss$/,
-      use: [
-        "style-loader",
-        MiniCssExtractPlugin.loader,
-        {
-          loader: "css-loader",
-          options: { sourceMap: true }
+      use: [{
+          loader: MiniCssExtractPlugin.loader,
+          options: {
+            publicPath: "/HTMLPractice/dist/"
+          }
         }, {
-          loader: "postcss-loader",
-          options: { sourceMap: true, config: { path: `./postcss.config.js` } }
+          loader: "css-loader",
+          options: {
+            sourceMap: true
+          }
+        }, {
+          loader: 'resolve-url-loader',
+          options: {
+            publicPath: "/HTMLPractice/dist/",
+            url: false
+          }
         }, {
           loader: "sass-loader",
-          options: { sourceMap: true }
+          options: {
+            sourceMap: true
+          }
         }
       ]
     }, {
       test: /\.css$/,
-      use: [
-        "style-loader",
-        MiniCssExtractPlugin.loader,
-        {
+      use: [{
+          loader: MiniCssExtractPlugin.loader,
+          options: {
+            publicPath: "/HTMLPractice/dist/"
+          }
+        }, {
           loader: "css-loader",
-          options: { sourceMap: true }
+          options: {
+            sourceMap: true,
+            url: false
+          }
         }, {
           loader: "postcss-loader",
-          options: { sourceMap: true, config: { path: `./postcss.config.js` } }
+          options: {
+            url: false
+          }
         }
       ]
     }]
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: `css/[name].[contenthash].css`,
+      filename: `css/[name]-[contenthash].css`,
     }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `img` },
