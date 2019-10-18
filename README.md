@@ -2,7 +2,7 @@
 
 You can see this project on Github Pages: [Website](https://spekalsg3.github.io/HTMLPractice/dist/)
 
-<hr>
+
 
 ## How to run
 
