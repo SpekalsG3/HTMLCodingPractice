@@ -23,20 +23,18 @@
       overflow: hidden;
       background: linear-gradient(#6FCf97, #66D2EA);
       cursor: pointer; }
-    .pagination__button_prev:after, .pagination__button_next:after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      left: 0;
-      top: 0;
-      background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTkgMC45ODQzNzVMMTcuMDE1NiA5TDkgMTcuMDE1Nkw3LjU5Mzc1IDE1LjYwOTRMMTMuMTcxOSA5Ljk4NDM4SDAuOTg0Mzc1VjguMDE1NjJIMTMuMTcxOUw3LjU5Mzc1IDIuMzkwNjJMOSAwLjk4NDM3NVoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=) center no-repeat; }
-    .pagination__button_prev:after {
-      transform: rotateZ(180deg); }
     .pagination__button_prev {
       display: none; }
     .pagination__button_skip_prev {
       display: none; }
+  .pagination__arrow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: -1px;
+    top: -1px; }
+    .pagination__arrow_prev {
+      transform: rotateZ(180deg); }
   .pagination__note {
     margin-top: 10px;
     font: 14px "Montserrat", Helvetica, Arial, sans-serif;
