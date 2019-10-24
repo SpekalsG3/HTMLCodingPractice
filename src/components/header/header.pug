@@ -1,9 +1,12 @@
+include ../arrow/arrow.pug
+include ../button/button.pug
+
 mixin header({index=false, signin=false, signup=false} = {})
   header.header
     .header__bar.header__bar_shadow
       .header__inner.header__inner_align
         if index
-          a(href="/index.html")
+          a(href="./index.html")
             +logo
         else
           +logo
@@ -12,21 +15,21 @@ mixin header({index=false, signin=false, signup=false} = {})
           a.header__link(href="/fake-link/change-me") О нас
           a.header__link.header__link_expand(href="/fake-link/change-me")
             .header__arrow
+              +arrow({type: "expand"})
             .header__link-text Услуги
           a.header__link(href="/fake-link/change-me") Вакансии
           a.header__link(href="/fake-link/change-me") Новости
           a.header__link.header__link_expand(href="/fake-link/change-me")
             .header__arrow
+              +arrow({type: "expand"})
             .header__link-text Соглашения
-          if signin
-            a.header__signin(href="./signin.html")
-              img.header__signin-border&attributes({src: require("../../img/icons/header-gradient-border.svg")})
-              | Войти
-          else
-            .header__signin
-              img.header__signin-border&attributes({src: require("../../img/icons/header-gradient-border.svg")})
-              | Войти
-          if signup
-            a.header__signup(href="./signup.html") Зарегистрироваться
-          else
-            .header__signup Зарегистрироваться
+          .header__signin
+            if signin
+              +button({fill: false, text: "Войти", href: "./signin.html"})
+            else
+              +button({fill: false, text: "Войти"})
+          .header__signup
+            if signup
+              +button({fill: true, text: "Зарегистрироваться", href: "./signup.html"})
+            else
+              +button({fill: true, text: "Зарегистрироваться"})
