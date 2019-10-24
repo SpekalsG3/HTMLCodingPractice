@@ -50,7 +50,7 @@ module.exports = {
   module: {
     rules: [{
       test: /\.pug$/,
-      loader: "pug-loader"
+      loader: 'pug-loader'
     }, {
       test: /modernizr/,
       loader: 'imports-loader?this=>window!exports-loader?window.Modernizr'
@@ -62,24 +62,20 @@ module.exports = {
       test: /-webfont\.(woff(2)?|ttf|svg)$/,
       loader: "file-loader",
       options: {
-        name: `fonts/[name].[ext]`,
-        publicPath: "/HTMLPractice/dist/"
+        name: `fonts/[name].[ext]`
       }
     }, {
       test: /\.(jp(e*)g|png|svg)$/,
       use: [{
-        loader: "url-loader",
+        loader: "file-loader",
         options: {
-          name: `img/[name]-[hash].[ext]`
+          name: "img/[name].[ext]"
         }
       }]
     }, {
       test: /\.scss$/,
       use: [{
-          loader: MiniCssExtractPlugin.loader,
-          options: {
-            publicPath: "/HTMLPractice/dist/"
-          }
+          loader: MiniCssExtractPlugin.loader
         }, {
           loader: "css-loader",
           options: {
@@ -88,7 +84,6 @@ module.exports = {
         }, {
           loader: 'resolve-url-loader',
           options: {
-            publicPath: "/HTMLPractice/dist/",
             url: false
           }
         }, {
