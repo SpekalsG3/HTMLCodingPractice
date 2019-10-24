@@ -35,6 +35,11 @@
     cursor: pointer;
     opacity: 0;
     transition: .1s;
+
+    &-inner {
+      height: 42px;
+      width: 100%;
+    }
   }
 
   &__prev {

@@ -3,12 +3,14 @@ mixin room-card({number=0, settings={}, images=0, special=false, price=0, stars=
     .room-card__inner
       .room-card__gallery&attributes(settings)
         .room-card__prev
-          +arrow({type: "prev"})
+          .room-card__prev-inner
+            +arrow({type: "prev"})
         .room-card__images
           each _, i in Array(images)
             img.room-card__image(src=require('../../img/rooms/' + number + '-' + i + '.jpg'))
         .room-card__next
-          +arrow({type: "next"})
+          .room-card__next-inner
+            +arrow({type: "next"})
         .room-card__points
           each _, i in Array(images)
             if i == 0
