@@ -9,7 +9,7 @@ const buildWebpackConfig = merge.smart(baseWebpackConfig, {
   },
   module: {
     rules: [{
-      test: /\.(jp(e*)g|png|svg)$/,
+      test: /\.(jp(e*)g|png|svg|ico)$/,
       use: [{
         loader: "file-loader",
         options: {
