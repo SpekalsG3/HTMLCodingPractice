@@ -1,7 +1,11 @@
+include ../arrow/arrow.pug
+
 mixin pagination
   .pagination
     .pagination__buttons
       .pagination__button.pagination__button_prev
+        .pagination__arrow.pagination__arrow_prev
+          +arrow({type: "forward"})
       .pagination__button.pagination__button_number.pagination__button_number_selected 1
       .pagination__button.pagination__button_skip_prev ...
       .pagination__button.pagination__button_number 2
@@ -9,5 +13,7 @@ mixin pagination
       .pagination__button.pagination__button_skip_next ...
       .pagination__button.pagination__button_number 15
       .pagination__button.pagination__button_next
+        .pagination__arrow.pagination__arrow_next
+          +arrow({type: "forward"})
     .pagination__note
       | 1 – 12 из 100+ вариантов аренды

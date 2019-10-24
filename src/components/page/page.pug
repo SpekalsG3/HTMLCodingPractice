@@ -1,4 +1,3 @@
-include ../arrow/arrow.pug
 include ../logo/logo.pug
 include ../header/header.pug
 include ../subscription/subscription.pug
@@ -196,12 +195,12 @@ mixin page({title="Toxin", name=""} = {})
         .content
           .content__images
             .content__image.content__image_left
-              img.content__image-inner&attributes({src: require("../../img/rooms/888-0.jpg")})
+              img.content__image-inner(src=require("../../img/rooms/888-0.jpg"))
             .content__image.content__image_right
               .content__image.content__image_right_top
-                img.content__image-inner&attributes({src: require("../../img/rooms/888-1.jpg")})
+                img.content__image-inner(src=require("../../img/rooms/888-1.jpg"))
               .content__image.content__image_right_bottom
-                img.content__image-inner&attributes({src: require("../../img/rooms/888-2.jpg")})
+                img.content__image-inner(src=require("../../img/rooms/888-2.jpg"))
           .content__inner
             .content__info
               .content__info-inner
@@ -331,6 +330,6 @@ mixin page({title="Toxin", name=""} = {})
         .footer__inner.footer__inner_align
           .footer__copyright Copyright © 2018 Toxin отель. Все права зачищены.
           .footer__social
-            img.footer__social-image&attributes({src: require("../../img/icons/twitter-icon.svg")})
-            img.footer__social-image&attributes({src: require("../../img/icons/facebook-icon.svg")})
-            img.footer__social-image&attributes({src: require("../../img/icons/instagram-icon.svg")})
+            img.footer__social-image
+            img.footer__social-image
+            img.footer__social-image

@@ -14,6 +14,12 @@
     }
   }
 
+  &__button {
+    position: relative;
+    height: 44px;
+    width: 100px;
+  }
+
   &__label {
     margin-bottom: 5px;
     display: block;

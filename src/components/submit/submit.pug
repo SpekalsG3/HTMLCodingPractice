@@ -1,4 +1,7 @@
+include ../arrow/arrow.pug
+
 mixin submit({text="Submit"} = {})
   .submit
-    +arrow({type: "forward"})
+    .submit__arrow
+      +arrow({type: "forward"})
     button.submit__button #{text}

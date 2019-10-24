@@ -1,7 +1,7 @@
 mixin tag({image="no-image", label="Tag", text="Sample text"} = {})
   .tag
     .tag__image
-      img.tag__logo&attributes({src: require('../../img/icons/' + image + '.svg')})
+      img.tag__logo(src=require('../../img/tags/' + image + '.svg'))
     .tag__content
       .tag__label #{label}
       .tag__text #{text}

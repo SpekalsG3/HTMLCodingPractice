@@ -1,8 +1,19 @@
-mixin button({fill=true, text="", href="fake-script/change-me"} = {})
-  if fill
+mixin button({fill=true, text="", href=""} = {})
+  if fill && href == ""
+    .button.button_back_fill
+      .button__background.button__background_fill
+      span.button__text.button__text_white #{text}
+  else if fill
     a.button.button_back_fill&attributes({href: href})
-      span.button__text #{text}
+      .button__background.button__background_fill
+      span.button__text.button__text_white #{text}
+  else if href == ""
+    .button
+      .button__background.button__background_empty
+      //- img.button__background.button__background_empty&attributes({src: require("./img/gradient-border.svg")})
+      span.button__text.button__text_purple #{text}
   else
-    a.button.button_back_hollow&attributes({href: href})
-      img.button__background&attributes({src: require("../../img/icons/button-gradient-border.svg")})
-      span.button__text #{text}
+    a.button&attributes({href: href})
+      .button__background.button__background_empty
+      //- img.button__background.button__background_empty&attributes({src: require("./img/gradient-border.svg")})
+      span.button__text.button__text_purple #{text}

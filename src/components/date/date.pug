@@ -2,5 +2,6 @@ mixin date({text="", input={}, noArrow = false} = {})
   .date
     .date__label #{text}
     unless noArrow
-      +arrow({type: "expand"})
+      .date__arrow
+        +arrow({type: "expand"})
     input.date__input(readonly="readonly" type="text")&attributes(input)

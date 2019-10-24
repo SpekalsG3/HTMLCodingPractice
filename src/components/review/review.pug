@@ -1,7 +1,7 @@
 mixin review({profile={}, likes={}, text="Review"} = {})
   .review
     .review__profile
-      img.review__avatar&attributes({src: require('../../img/avatars/' + profile.avatar + '.jpg')})
+      img.review__avatar(src=require('../../img/avatars/' + profile.avatar + '.jpg'))
       .review__info
         .review__name #{profile.name}
         .review__online #{profile.online}

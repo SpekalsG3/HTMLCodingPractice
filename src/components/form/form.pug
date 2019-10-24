@@ -200,11 +200,12 @@ mixin form({name=""} = {})
             })
           .form__field.form__field_type_question
             .form__field-text Нет аккаунта на Toxin?
-            +button({
-              fill: false,
-              href: "/signup/",
-              text: "Создать"
-            })
+            .form__button
+              +button({
+                fill: false,
+                href: "/signup/",
+                text: "Создать"
+              })
       - break
     when "signup"
       include ../button/button.pug
@@ -255,9 +256,10 @@ mixin form({name=""} = {})
             })
           .form__field.form__field_type_question
             .form__field-text Уже есть аккаунт на Toxin
-            +button({
-              fill: false,
-              href: "/signin/",
-              text: "Войти"
-            })
+            .form__button
+              +button({
+                fill: false,
+                href: "/signin/",
+                text: "Войти"
+              })
       - break

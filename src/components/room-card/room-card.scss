@@ -171,11 +171,11 @@
     height: 16px;
 
     &[data-full="true"] {
-      background: url(../../img/icons/star.svg) center no-repeat;
+      background: url(./img/star.svg) center no-repeat;
     }
 
     &[data-full="false"] {
-      background: url(../../img/icons/star-border.svg) center no-repeat;
+      background: url(./img/star-border.svg) center no-repeat;
     }
   }
 }

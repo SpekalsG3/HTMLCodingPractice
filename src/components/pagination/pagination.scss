@@ -36,21 +36,6 @@
       cursor: pointer;
     }
 
-    &_prev:after,
-    &_next:after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      left: 0;
-      top: 0;
-      background: url(../../img/icons/arrow-forward.svg) center no-repeat;
-    }
-
-    &_prev:after {
-      transform: rotateZ(180deg);
-    }
-
     &_prev {
       display: none;
     }
@@ -59,6 +44,18 @@
       &_prev {
         display: none;
       }
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: -1px;
+    top: -1px;
+
+    &_prev {
+      transform: rotateZ(180deg);
     }
   }
 

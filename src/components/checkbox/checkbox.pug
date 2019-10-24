@@ -1,7 +1,10 @@
+include ../arrow/arrow.pug
+
 mixin checkbox({expandable=false, text="Checkbox Buttons", options=[]} = {})
   if expandable
     .checkbox(data-expandable="" data-opened="false")
       .checkbox__arrow
+        +arrow({type: "expand"})
       .checkbox__label.checkbox__label_clickable #{text}
       .checkbox__options(data-expandable="")
         each val in options

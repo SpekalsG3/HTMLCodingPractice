@@ -2,56 +2,54 @@
 
 .button {
   text-decoration: none;
-  position: relative;
-  height: 44px;
-  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
   font: bold 12px $mainFont;
-  line-height: 44px;
   text-align: center;
   text-transform: uppercase;
 
   &__background {
     width: 100%;
-    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-  }
-
-  &:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
     transition: .2s;
-    z-index: 0;
-  }
 
-  &:hover:before {
-    opacity: .5;
-  }
-
-  &__text {
-    position: relative;
-    z-index: 1;
-  }
-
-  &_back {
-    &_hollow {
-      color: $purpleColor;
+    &_empty {
+      height: 105%;
+      background: url("./img/gradient-border.svg") center no-repeat;
+      background-size: 100% 100%;
     }
 
     &_fill {
-      width: 99px;
       margin-right: 5px;
-      color: #FFF;
+      height: 100%;
 
       &:before {
         border-radius: 22px;
         background: $purpleGrad;
       }
+    }
+
+    &:hover {
+      opacity: .5;
+    }
+  }
+
+  &__text {
+    position: relative;
+    z-index: 1;
+
+    &_purple {
+      color: $purpleColor;
+    }
+
+    &_white {
+      color: #FFF;
     }
   }
 }

@@ -7,6 +7,14 @@
     width: 100%;
   }
 
+  &__arrow {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    right: -1px;
+    top: -1px;
+  }
+
   &__button {
     outline: none;
     position: relative;

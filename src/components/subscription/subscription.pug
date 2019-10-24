@@ -1,4 +1,8 @@
+include ../arrow/arrow.pug
+
 mixin subscription({action="fake-script/change-me", input={}} = {})
   form.subscription(method='GET')&attributes(settings)
     input.subscription__input(type='text')&attributes(input)
-    input.subscription__arrow(type='submit' value='')
+    .subscription__arrow
+      input.subscription__submit(type='submit' value='')
+      +arrow({type: "submit"})
