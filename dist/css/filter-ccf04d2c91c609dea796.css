@@ -67,6 +67,9 @@
     cursor: pointer;
     opacity: 0;
     transition: .1s; }
+    .room-card__prev-inner, .room-card__next-inner {
+      height: 42px;
+      width: 100%; }
   .room-card__prev {
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, transparent 99.99%, rgba(255, 255, 255, 0) 100%); }
   .room-card__next {
