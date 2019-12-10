@@ -37,7 +37,7 @@ $(".room-card").click(function(e) {
   var targetClassName = e.target.classList[0];
   if (targetClassName == "arrow" || targetClassName == "room-card__prev" || targetClassName == "room-card__next")
     return;
-  window.location = window.location.pathname.slice(0, -12) + $(".room-card").has(e.target).attr("href").slice(1) + window.location.search.slice(1);
+  window.location = window.location.pathname.slice(0, -12) + $(".room-card").has(e.target).attr("href").slice(1) + "&" + window.location.search.slice(1);
 });
 
 $(".room-card__prev").click(function(e) {
