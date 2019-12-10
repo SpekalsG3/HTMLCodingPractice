@@ -68,6 +68,7 @@
     "jquery-ui": "^1.12.1",
     "modernizr": "^3.7.1",
     "moment": "^2.24.0",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "serialize-javascript": "^2.1.2"
   }
 }
