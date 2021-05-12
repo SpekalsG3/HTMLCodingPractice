@@ -60,7 +60,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "daterangepicker": "^3.0.5",
     "extract-loader": "^3.1.0",
     "ion-rangeslider": "^2.3.1",
