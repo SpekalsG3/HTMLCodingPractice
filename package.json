@@ -65,7 +65,7 @@
     "extract-loader": "^3.1.0",
     "ion-rangeslider": "^2.3.1",
     "jquery": "^3.5.0",
-    "jquery-ui": "^1.12.1",
+    "jquery-ui": "^1.13.0",
     "modernizr": "^3.9.1",
     "moment": "^2.24.0",
     "request": "^2.88.2",
